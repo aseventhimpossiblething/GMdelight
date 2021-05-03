@@ -10,8 +10,8 @@ def pullNasdaqAbbreves():
     os.chdir('Sheets');
     #print(os.listdir());
     mglob=str(os.listdir());
-    findit=mglob.find("BidOp")
-    #print(findit)
+    findit=mglob.find("ActivendqAbbrev")
+    print(findit)
     #print("glob Data Type "+str(type(mglob)))
     #os.system('rm ActivendqAbbrev')
     print(os.listdir());
