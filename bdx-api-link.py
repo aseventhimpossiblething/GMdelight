@@ -5,6 +5,11 @@ pwd="open"
 
 nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 print(nasdaqAbbreviations)
+print(datetime.today())
+filedate=datetime.today()
+ndq=str('curl '+'-o NasdaqAbbreviations '+nasdaqAbbreviations+filedate)
+print(ndq)
+os.system(ndq)
 
 
 
@@ -38,11 +43,7 @@ os.system('sudo chmod -R 777 templates')
 #os.system('curl https://www.google.com')
 #os.system('curl https://www.google.com')
 
-print(datetime.today())
-filedate=datetime.today()
-ndq=str('curl '+'-o NasdaqAbbreviations '+nasdaqAbbreviations)
-print(ndq)
-os.system(ndq)
+
 
 
 
