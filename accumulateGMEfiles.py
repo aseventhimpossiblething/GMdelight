@@ -22,7 +22,7 @@ def pullNasdaqAbbreves():
     print("accumilateGMEfiles ran")
     
 pullNasdaqAbbreves();
-3print(os.listdir());
+#print(os.listdir());
 #os.chdir('Sheets');
 print(os.getcwd());
 print(os.listdir());
