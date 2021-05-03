@@ -30,7 +30,7 @@ print(nasdaqAbbreviations)
 filedate=str(datetime.now().date())
 #ndq=str('curl '+'-o NasdaqAbbreviations '+filedate+" "+nasdaqAbbreviations)
 #ndq=str('curl '+'-o Nasd Abbreviations '+filedate+" "+nasdaqAbbreviations)
-ndq=str('curl '+nasdaqAbbreviations+' -o nasdaq Abbreviations'+filedate)
+ndq=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
 print(ndq)
 os.system(ndq)
 
