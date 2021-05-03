@@ -22,10 +22,10 @@ def pullNasdaqAbbreves():
     print("accumilateGMEfiles ran")
     
 pullNasdaqAbbreves();
-print(os.listdir());
+3print(os.listdir());
 #os.chdir('Sheets');
 print(os.getcwd());
 print(os.listdir());
-pandas.read_csv('ActivendqAbbrev')
+3pandas.read_csv('ActivendqAbbrev')
 
 
