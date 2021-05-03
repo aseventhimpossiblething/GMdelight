@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 import pandas
 
-print(os.cwd())
+print(os.getcwd())
 print(os.listdir())
 
 def pullNasdaqAbbreves():
