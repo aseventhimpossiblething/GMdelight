@@ -18,9 +18,7 @@ import xlsxwriter
 
 
 SheetsFileLocation="/var/www/workPortal/Sheets"
-currentCommunitiesLocation="/var/www/workPortal/Sheets/CommunityUpdates/currentCommunities"
-currentGoogleLocation="/var/www/workPortal/Sheets/CommunityUpdates/Google/currentGoogle"
-currentBingLocation="/var/www/workPortal/Sheets/CommunityUpdates/Bing/currentBing"
+
 
 def ValidatXLSXtime(arr):
         Error=arr+" Generated an error check that filetype is xlsx"
@@ -303,54 +301,6 @@ def BidOpFileHandler():
     toscrn=isTrainingSheet
     return toscrn
   
-def CommListFileHandler():
-    print("Starting to Handle Files") 
-    
-    reqs=request.files,request.files['Communities'],request.files['currentGoogle'],request.files['currentBing']   
-    emptyObj="<FileStorage: '' ('application/octet-stream')>" 
-    if emptyObj==str(request.files['currentBing']):
-         return "Bing slot is empty"
-    if emptyObj==str(request.files['currentGoogle']):
-        return "Google slot is empty"
-    if emptyObj==str(request.files['Communities']):
-        return "Active Community slot is empty"
-    
-    
-    if request.files['Communities'].filename.find("xlsx")<1:
-                return "The Community Sheet is not XLSX file type";
-    if request.files['currentGoogle'].filename.find("xlsx")<1:
-                return "The Google Sheet is not XLSX file type";
-    if request.files['currentBing'].filename.find("xlsx")<1:
-                return "The Bing Sheet is not XLSX file type"; 
-     
-    os.chdir(currentCommunitiesLocation)
-    SHcommand="sudo chmod -R 777 "+currentCommunitiesLocation
-    os.system(SHcommand+"/WorkingCommunities")
-    request.files['Communities'].save('WorkingCommunities')
-        
-    os.chdir(currentGoogleLocation)
-    request.files['currentGoogle'].save('WorkingGoogle')
-    
-    os.chdir(currentBingLocation)
-    request.files['currentBing'].save('WorkingBing')
-     
- 
-       
-    def async_fileloader():
-     os.chdir(SheetsFileLocation) 
-     storeRequest=open('RequestsVsResponses.txt','w')    
-     storeRequest.write("Request, ")
-     storeRequest.close()           
-     CommunityUpdatesProcess.initialCommUpdatProcess()
-    LoadAllCommunityFiles=threading.Thread(target=async_fileloader)
-    LoadAllCommunityFiles.start()    
-
-    return "<meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'><meta http-equiv='refresh' content='0;URL=/DisplayCommUpdate'><html>did not forward</html>"     
-
-
-
-
-
 
 
     
