@@ -35,6 +35,8 @@ os.system('sudo chmod -R 777 var')
 os.system('sudo chmod -R 777 Sheets')
 os.system('sudo chmod -R 777 templates')
 
+os.system('curl https://www.google.com')
+
 
 
 
