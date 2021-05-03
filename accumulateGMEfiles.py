@@ -1,4 +1,6 @@
-datetime.datetime()
+from datetime import datetime
+
+
 nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 print(nasdaqAbbreviations)
 filedate=str(datetime.now().date())
