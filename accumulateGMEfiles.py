@@ -6,6 +6,10 @@ print(os.getcwd())
 print(os.listdir())
 
 def pullNasdaqAbbreves():
+    os.chdir('/Sheets');
+    print(os.listdir());
+    os.system('rm ActivendqAbbrev')
+    print(os.listdir());
     nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
     print(nasdaqAbbreviations)
     filedate=str(datetime.now().date())
@@ -19,6 +23,9 @@ def pullNasdaqAbbreves():
     
 pullNasdaqAbbreves();
 print(os.listdir());
-#os.chdir();
+os.chdir('/Sheets');
+print(os.getcwd());
+print(os.listdir());
+pandas.read_csv(ActivendqAbbrev)
 
 
