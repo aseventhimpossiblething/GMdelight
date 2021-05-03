@@ -14,15 +14,15 @@ def pullNasdaqAbbreves():
     #print(findit)
     #print("glob Data Type "+str(type(mglob)))
     #os.system('rm ActivendqAbbrev')
-    #print(os.listdir());
+    print(os.listdir());
     nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
     #print(nasdaqAbbreviations)
     filedate=str(datetime.now().date())
     ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
-    #ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
+    ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
     #print(ndq)
-    #os.system(ndqAbbrecords)
-    #os.system(ActndqAbbrv)
+    os.system(ndqAbbrecords)
+    os.system(ActndqAbbrv)
     print("accumilateGMEfiles ran")
     print("accumilateGMEfiles ran")
     
