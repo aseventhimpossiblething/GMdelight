@@ -1,7 +1,6 @@
 import os
 from datetime import datetime
 import pandas
-import glob
 
 
 print(os.getcwd())
@@ -20,7 +19,7 @@ def pullNasdaqAbbreves():
     print(nasdaqAbbreviations)
     filedate=str(datetime.now().date())
     #ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o Sheets/nasdaqAbbreviations-'+filedate)
-    ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o Sheets/ActivendqAbbrev')
+    ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
     #print(ndq)
     #os.system(ndqAbbrecords)
     os.system(ActndqAbbrv)
