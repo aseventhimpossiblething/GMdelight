@@ -4,14 +4,6 @@ usr="open"
 pwd="open"
 from datetime import datetime
 
-nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
-print(nasdaqAbbreviations)
-print(datetime.today())
-filedate=datetime.today()
-ndq=str('curl '+'-o NasdaqAbbreviations '+nasdaqAbbreviations)
-print(ndq)
-os.system(ndq)
-
 
 
 
@@ -29,6 +21,16 @@ import os
 from flask import Flask, Markup, render_template, request, make_response
 from flask import send_file
 from flask import send_from_directory
+
+
+
+nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+print(nasdaqAbbreviations)
+print(datetime.today())
+filedate=datetime.today()
+ndq=str('curl '+'-o NasdaqAbbreviations '+nasdaqAbbreviations)
+print(ndq)
+os.system(ndq)
 
 
 
