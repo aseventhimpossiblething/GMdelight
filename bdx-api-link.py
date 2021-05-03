@@ -1,6 +1,7 @@
-domain="http://bdxapilink.com"
-usr="BDXPPC"
-pwd="#!!9ooRanch"
+#domain="http://bdxapilink.com"
+domain="GMdelight"
+usr="open"
+pwd="open"
 
 
 
