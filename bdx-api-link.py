@@ -40,7 +40,7 @@ os.system('sudo chmod -R 777 templates')
 
 print(datetime.now)
 filedate=str(datetime.now())
-ndq=str('curl '+nasdaqAbbreviations+'-o Nasdaq Abbreviations ')
+ndq=str('curl '+'-o NasdaqAbbreviations '+nasdaqAbbreviations)
 print(ndq)
 os.system(ndq)
 
