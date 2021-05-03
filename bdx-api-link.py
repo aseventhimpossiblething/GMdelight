@@ -3,6 +3,8 @@ domain="rememberGME"
 usr="open"
 pwd="open"
 
+nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+
 
 
 
