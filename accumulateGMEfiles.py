@@ -32,7 +32,7 @@ def pullNasdaqAbbreves():
     print("accumilateGMEfiles ran")
     
 pullNasdaqAbbreves();
-NasdaqNativeAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
+NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
 NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
 
 print(NasdaqAbbreviations)
