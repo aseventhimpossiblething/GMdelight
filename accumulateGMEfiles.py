@@ -11,4 +11,4 @@ def pullNasdaqAbbreves():
     print("accumilateGMEfiles ran")
     print("accumilateGMEfiles ran")
     
-#pullNasdaqAbbreves()
+pullNasdaqAbbreves()
