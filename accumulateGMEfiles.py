@@ -10,10 +10,15 @@ def pullNasdaqAbbreves():
     os.chdir('Sheets');
     #print(os.listdir());
     mglob=str(os.listdir());
-    findit=mglob.find("ActivendqAbbrev")
-    print(findit)
+    ActivendqAdd=mglob.find("ActivendqAbbrev");
+    if ActivendqAdd>-1:
+       os.system('rm ActivendqAbbrev');
+       
+    
+    
+    #print(ActivendqAdd)
     #print("glob Data Type "+str(type(mglob)))
-    #os.system('rm ActivendqAbbrev')
+   
     print(os.listdir());
     nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
     #print(nasdaqAbbreviations)
