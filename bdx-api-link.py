@@ -22,15 +22,17 @@ from flask import Flask, Markup, render_template, request, make_response
 from flask import send_file
 from flask import send_from_directory
 
+#accumulateGMEfiles.py
 
 
+"""
 nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 print(nasdaqAbbreviations)
 filedate=str(datetime.now().date())
 ndq=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
 print(ndq)
 os.system(ndq)
-
+"""
 
 
 
