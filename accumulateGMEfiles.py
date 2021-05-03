@@ -1,6 +1,8 @@
 import os
 from datetime import datetime
 import pandas
+import glob
+
 
 print(os.getcwd())
 print(os.listdir())
@@ -8,6 +10,8 @@ print(os.listdir())
 def pullNasdaqAbbreves():
     os.chdir('Sheets');
     print(os.listdir());
+    mgolob=str(os.listdir());
+    print("glob Data Type "+type(mglob))
     os.system('rm ActivendqAbbrev')
     print(os.listdir());
     nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
