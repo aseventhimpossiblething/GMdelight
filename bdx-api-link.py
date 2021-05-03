@@ -26,10 +26,7 @@ from flask import send_from_directory
 
 nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 print(nasdaqAbbreviations)
-#print(datetime.today())
 filedate=str(datetime.now().date())
-#ndq=str('curl '+'-o NasdaqAbbreviations '+filedate+" "+nasdaqAbbreviations)
-#ndq=str('curl '+'-o Nasd Abbreviations '+filedate+" "+nasdaqAbbreviations)
 ndq=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
 print(ndq)
 os.system(ndq)
