@@ -31,12 +31,14 @@ from flask import send_from_directory
 
 from datetime import datetime
 
-os.system('sudo chmod -R 777 var')
+#os.system('sudo chmod -R 777 var')
 os.system('sudo chmod -R 777 Sheets')
 os.system('sudo chmod -R 777 templates')
 
-os.system('curl https://www.google.com')
-
+#os.system('curl https://www.google.com')
+#os.system('curl https://www.google.com')
+vAr='curl '+'https://www.google.com'
+os.system('vAr')
 
 
 
