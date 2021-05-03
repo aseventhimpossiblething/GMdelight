@@ -28,7 +28,8 @@ nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 print(nasdaqAbbreviations)
 #print(datetime.today())
 filedate=str(datetime.now().date())
-ndq=str('curl '+'-o NasdaqAbbreviations '+filedate+" "+nasdaqAbbreviations)
+#ndq=str('curl '+'-o NasdaqAbbreviations '+filedate+" "+nasdaqAbbreviations)
+ndq=str('curl '+'-o Nasda Abbreviations '+filedate+" "+nasdaqAbbreviations)
 print(ndq)
 os.system(ndq)
 
