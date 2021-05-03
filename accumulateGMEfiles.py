@@ -10,7 +10,7 @@ print(os.listdir())
 def pullNasdaqAbbreves():
     os.chdir('Sheets');
     print(os.listdir());
-    mgolob=str(os.listdir());
+    mglob=str(os.listdir());
     print("glob Data Type "+type(mglob))
     os.system('rm ActivendqAbbrev')
     print(os.listdir());
