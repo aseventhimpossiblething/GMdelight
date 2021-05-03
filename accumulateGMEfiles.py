@@ -18,12 +18,12 @@ def pullNasdaqAbbreves():
     nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
     print(nasdaqAbbreviations)
     filedate=str(datetime.now().date())
-    ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
-    ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
+    #ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
+    #ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
     #print(ndq)
     #os.system(ndqAbbrecords)
-    os.system(ActndqAbbrv)
-    print("accumilateGMEfiles ran")
+    #os.system(ActndqAbbrv)
+    print("ac#cumilateGMEfiles ran")
     print("accumilateGMEfiles ran")
     
 pullNasdaqAbbreves();
