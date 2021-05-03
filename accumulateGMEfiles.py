@@ -9,7 +9,7 @@ print(os.listdir())
 def pullNasdaqAbbreves():
     os.chdir('Sheets');
     print(os.listdir());
-    #mglob=str(os.listdir());
+    mglob=str(os.listdir());
     ActivendqAdd=mglob.find("ActivendqAbbrev");
     if ActivendqAdd>-1:
        os.system('rm ActivendqAbbrev');
