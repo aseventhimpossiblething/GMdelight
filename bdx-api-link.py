@@ -37,8 +37,10 @@ os.system('sudo chmod -R 777 templates')
 
 #os.system('curl https://www.google.com')
 #os.system('curl https://www.google.com')
+
 print(datetime.now)
-ndq=str('curl '+nasdaqAbbreviations+'-O Nasdaq Abbreviations '+datetime.now())
+filedate=str(datetime.now())
+ndq=str('curl '+nasdaqAbbreviations+'-O Nasdaq Abbreviations ')
 print(ndq)
 os.system(ndq)
 
