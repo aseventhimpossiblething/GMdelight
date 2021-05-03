@@ -11,7 +11,7 @@ def pullNasdaqAbbreves():
     os.chdir('Sheets');
     print(os.listdir());
     mglob=str(os.listdir());
-    print("glob Data Type "+type(mglob))
+    print("glob Data Type "+str(type(mglob)))
     os.system('rm ActivendqAbbrev')
     print(os.listdir());
     nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
