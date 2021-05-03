@@ -1,5 +1,5 @@
 #domain="http://bdxapilink.com"
-domain="GMdelight"
+domain="rememberGME"
 usr="open"
 pwd="open"
 
@@ -125,7 +125,7 @@ print("6")
 
 
 
-
+"""
 @app.route('/apiresponse')
 def off1():
     print("api response called")    
@@ -140,7 +140,7 @@ def official():
     return "."      
        
          
-
+"""
 @app.route('/favicon.png')
 def favicon():
     return send_from_directory('/app/favicon.png','favicon')     
@@ -149,7 +149,7 @@ def favicon():
 
 print("7")
 
-
+"""
 @app.route('/DisplayCommUpdate')
 def CommUpdateDisplay():
     os.chdir('/var/www/workPortal/Sheets/')     
@@ -374,7 +374,7 @@ def BasisN3():
  return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/featuresheet.xlsx', attachment_filename='CTROut5heet2.xlsx')
 
 
-
+"""
 
 
 
@@ -458,7 +458,7 @@ print("14")
 
 
 
-
+"""
 @app.route('/CommunityUpdates')
 def CommunitiesUploads():
     if chckbdxcred().find("NULL")==-1:
@@ -469,13 +469,13 @@ def CommunitiesUploads():
 @app.route('/CommunityFileHander', methods=['POST','GET'])
 def CommunityFileHandling():
     return fileHandler.CommListFileHandler()
-    
+   
 
 @app.route('/account')
 def acc():
     return render_template('account.html')
     
-    
+"""    
 
 print("15")
     
@@ -551,7 +551,7 @@ def CTRmst():
 print("16")
 
     
-
+"""
 
 @app.route('/Budget')
 def Budge():
@@ -559,7 +559,7 @@ def Budge():
         print(str(chckbdxcred()));
         return str(chckbdxcred());
     return render_template('Budget.html');   
-    
+""    
     
     
     
