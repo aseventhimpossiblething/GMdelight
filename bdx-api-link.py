@@ -2,6 +2,7 @@
 domain="rememberGME"
 usr="open"
 pwd="open"
+from datetime import datetime
 
 nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 print(nasdaqAbbreviations)
@@ -34,7 +35,7 @@ from flask import send_from_directory
 
 
 
-from datetime import datetime
+
 
 #os.system('sudo chmod -R 777 var')
 os.system('sudo chmod -R 777 Sheets')
