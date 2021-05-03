@@ -8,8 +8,8 @@ print(os.listdir())
 
 def pullNasdaqAbbreves():
     os.chdir('Sheets');
-    #print(os.listdir());
-    mglob=str(os.listdir());
+    print(os.listdir());
+    #mglob=str(os.listdir());
     ActivendqAdd=mglob.find("ActivendqAbbrev");
     if ActivendqAdd>-1:
        os.system('rm ActivendqAbbrev');
@@ -36,6 +36,6 @@ pullNasdaqAbbreves();
 #os.chdir('Sheets');
 print(os.getcwd());
 print(os.listdir());
-#pandas.read_csv('ActivendqAbbrev')
+pandas.read_csv('ActivendqAbbrev')
 
 
