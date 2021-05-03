@@ -120,7 +120,7 @@ def favicon():
 
 print("7")
 
-"""
+
 
 
 
@@ -152,7 +152,7 @@ def BasisN3():
  return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/featuresheet.xlsx', attachment_filename='CTROut5heet2.xlsx')
 
 
-"""
+
 
 
 
@@ -232,13 +232,6 @@ def CTRupload():
 
 
 
-print("14")
-
-
-
-
-
-print("15")
     
     
    
@@ -309,18 +302,7 @@ def CTRmst():
 
 
 
-print("16")
-
-    
-"""
-
-@app.route('/Budget')
-def Budge():
-    if chckbdxcred().find("NULL")==-1:
-        print(str(chckbdxcred()));
-        return str(chckbdxcred());
-    return render_template('Budget.html');   
-"""    
+ 
     
     
     
@@ -333,6 +315,5 @@ if __name__=='__main__':
 
     
     
-
-print("17")
+print("loaded")
     
