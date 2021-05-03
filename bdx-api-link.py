@@ -1,3 +1,8 @@
+import accumulateGMEfiles
+#delete above after experiment
+
+
+
 #domain="http://bdxapilink.com"
 domain="rememberGME"
 usr="open"
@@ -22,7 +27,7 @@ from flask import Flask, Markup, render_template, request, make_response
 from flask import send_file
 from flask import send_from_directory
 
-import accumulateGMEfiles
+
 
 
 """
