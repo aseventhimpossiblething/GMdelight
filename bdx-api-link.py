@@ -39,7 +39,7 @@ os.system('sudo chmod -R 777 templates')
 #os.system('curl https://www.google.com')
 vAr=str('curl'+' https://www.google.com')
 print(vAr)
-os.system('vAr')
+os.system(vAr)
 
 
 
