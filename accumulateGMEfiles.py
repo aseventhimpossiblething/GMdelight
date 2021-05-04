@@ -37,6 +37,6 @@ NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
 
 print(NasdaqAbbreviations)
 print(NasdaqNativeAbbreviations)
-print(str(os.listdir());)
+print(str(os.listdir()))
 
 
