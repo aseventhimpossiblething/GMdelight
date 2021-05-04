@@ -7,7 +7,7 @@ print(os.getcwd())
 print(os.listdir())
 
 def pullNasdaqAbbreves():
-    os.chdir('Sheets');
+    os.chdir('Sheets/rememberGME');
     mglob=str(os.listdir());
     ActivendqAdd=mglob.find("ActivendqAbbrev");
     if ActivendqAdd>-1:
