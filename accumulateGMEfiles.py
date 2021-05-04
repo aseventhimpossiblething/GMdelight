@@ -1,3 +1,10 @@
+"""
+Welcome to Alpha Vantage! 
+Your dedicated access key is: 70YMNXM4BZWGEGOA
+Please record this API key at a safe place for future data access.
+"""
+
+
 import os
 from datetime import datetime
 import pandas
