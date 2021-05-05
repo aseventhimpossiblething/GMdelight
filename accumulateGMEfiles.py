@@ -101,7 +101,7 @@ print(expChart.json()[0]['close'])
 
 """
 columnNames=workingChart[0].keys()
-print(type(columnNames))
+print(columnNames[0])
 
 
 
