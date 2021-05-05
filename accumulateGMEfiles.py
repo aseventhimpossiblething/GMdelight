@@ -43,12 +43,13 @@ def pullNasdaqAbbreves():
 pullNasdaqAbbreves();
 NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
 NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
-"""
+
 
 print(NasdaqAbbreviations)
 print(NasdaqNativeAbbreviations)
 print(os.getcwd())
-print(str(os.listdir()))
+print(str(os.listdir())
+"""
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 
