@@ -84,7 +84,7 @@ chartIEXdata="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
 workingChart=requests.get(chartIEXdata).json()
-print(workingChart)
+#print(workingChart)
 #requests.get(chartIEXdata)
 """
 print(expChart)
@@ -110,6 +110,7 @@ columnNames=workingChart[0].keys()
 print(type(columnNames))
 print(columnNames)
 #columnNames=str(columnNames)
+print("------------------------")
 list(columnNames)
 print(type(columnNames))
 print(columnNames)
