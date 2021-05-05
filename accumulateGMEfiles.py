@@ -1,9 +1,11 @@
 """
-Welcome to Alpha Vantage! 
+ 
 Your dedicated access key is: 70YMNXM4BZWGEGOA
 Please record this API key at a safe place for future data access.
 https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=demo
 """
+#pk_2a5af8857a7940d4b361bc2b4a14d0ad 
+#sk_20d88bd4d61b4e92b2ae7b22d8f8f0ae
 
 
 import requests
