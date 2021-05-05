@@ -50,6 +50,11 @@ print(os.getcwd())
 print(str(os.listdir()))
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
+
+AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STOCK_STATUS&apikey=70YMNXM4BZWGEGOA"
+
 AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
-response=requests.get(AlphaVantageEndPoint)
-print(response.json())
+response1=requests.get(AlphaVantageEndPoint)
+response2=requests.get(AlphaVantageAbbreviations)
+print(response1.json())
+print(response2.json())
