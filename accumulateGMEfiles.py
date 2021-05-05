@@ -75,3 +75,6 @@ AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_ST
 response2=requests.get(AlphaVantageAbbreviations)
 #print(response1.json())
 print(response2.json())
+
+
+https://sandbox.iexapis.com/stable/stock/AMD/dividends/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e
