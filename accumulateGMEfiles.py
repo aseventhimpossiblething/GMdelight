@@ -14,11 +14,13 @@ https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=d
 #https://cloud.iexapis.com/v1/
 #zeta/stock/{symbol}/batch
 #https://cloud.iexapis.com/stable/stock/aapl/batch?types=quote,news,chart&range=1m&last=10
+"""
 https://cloud.iexapis.com/stable/stock/aapl/batch?types=quote,news,chart&range=1m&last=10?token=pk_2a5af8857a7940d4b361bc2b4a14d0adf 
 https://cloud.iexapis.com/stable/stock/IBM/batch
 https://cloud.iexapis.com/stable/stock/market/batch?symbols=aapl,fb&types=quote,news,chart&range=1m&last=5
 https://cloud.iexapis.com/stable/stock/market/batch?symbols=aapl,fb&types=quote&range=1m&last=5
 #pip install iex-api-python 
+"""
  
 
 import requests
@@ -68,13 +70,23 @@ print(str(os.listdir())
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 
-AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
+#AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 #response1=requests.get(AlphaVantageEndPoint)
-response2=requests.get(AlphaVantageAbbreviations)
+#response2=requests.get(AlphaVantageAbbreviations)
 #print(response1.json())
-print(response2.json())
+#print(response2.json())
 
 
-https://sandbox.iexapis.com/stable/stock/AMD/dividends/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e
+
+chartiexdata=https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
+
+
+#https://sandbox.iexapis.com/stable/stock/AMD/dividends/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e
+
+#https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
+expChart=response.get(chartiexdata)
+print(expChart)
+
+
