@@ -89,7 +89,9 @@ chartiexdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af
 expChart=requests.get(chartiexdata)
 print(expChart)
 print(expChart.json()[0])
+print("-------------------")
 print(expChart.json()[1])
+print("-------------------")
 print(expChart.json()[2])
 
 
