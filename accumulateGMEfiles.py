@@ -106,7 +106,7 @@ print(expChart.json()[0]['close'])
 #print(expChart.json()[0][0])
 
 """
-
+"""
 columnNames=workingChartData[0].keys()
 print(type(columnNames))
 print(columnNames)
@@ -116,18 +116,24 @@ columnNames=list(columnNames)
 print(type(columnNames))
 print(columnNames)
 print(columnNames[0])
-
+"""
 def columnMaker(columndata,columnNumber):
     x=columndata;
     y=columnNumber;
+    labels=x.keys()
+    print("New labels")
+    print(labels)
     newCol=[];
     print(len(x)); 
     count=0;
     for days in x:
+        """
         print(str(count)+" in new function "+str(days));
         print("----------------------") 
         print("----------------------")
         count=count+1;
+        """
+        print("columnmaker done")
         
 columnMaker(workingChartData,0);    
      
