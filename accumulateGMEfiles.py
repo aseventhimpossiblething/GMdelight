@@ -51,5 +51,5 @@ print(str(os.listdir()))
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
-response=requests.get(AlphaVantageEndPoint,"AMD")
+response=requests.get(AlphaVantageEndPoint)
 
