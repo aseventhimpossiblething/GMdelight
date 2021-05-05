@@ -124,7 +124,7 @@ def columnMaker(columndata,columnNumber):
     print(len(x)); 
     for days in x:
         print("in new function "+days[y]);
-columnMaker(columndata,0);    
+columnMaker(workingChartData,0);    
      
      
 
