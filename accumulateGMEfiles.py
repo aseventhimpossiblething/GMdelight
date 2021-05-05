@@ -80,7 +80,7 @@ print(str(os.listdir())
 
 
 
-chartiexdata=https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
+chartiexdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 
 
 #https://sandbox.iexapis.com/stable/stock/AMD/dividends/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e
