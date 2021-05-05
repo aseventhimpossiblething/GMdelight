@@ -96,10 +96,10 @@ print(expChart.json()[2])
 
 print("-------------------")
 print("-------------------")
-print(type(expChart.json()[0]))
+print(type(expChart.json()[0].keys()))
 #print(expChart.json()[0][0])
-print(expChart.json()[0][1])
-print(expChart.json()[0][2])
+str(expChart.json()[0])
+
 
 
 
