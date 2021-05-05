@@ -73,9 +73,9 @@ print(NasdaqNativeAbbreviations)
 
 
 
+chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
 #chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
-#chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
-chartIEXdata="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
+#chartIEXdata="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 
 
 
@@ -83,8 +83,9 @@ chartIEXdata="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae
 
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
-workingChart=requests.get(chartIEXdata).json()
-#print(workingChart)
+workingChartData=requests.get(chartIEXdata).json()
+print(workingChart[0]);
+print(len(workingChart));
 #requests.get(chartIEXdata)
 """
 print(expChart)
@@ -106,7 +107,7 @@ print(expChart.json()[0]['close'])
 
 """
 
-columnNames=workingChart[0].keys()
+columnNames=workingChartData[0].keys()
 print(type(columnNames))
 print(columnNames)
 #columnNames=str(columnNames)
@@ -116,7 +117,14 @@ print(type(columnNames))
 print(columnNames)
 print(columnNames[0])
 
-
+def columnMaker(columndata,columnNumber):
+    x=columndata;
+    y=columnNumber;
+    newCol=[];
+    print(len(x)); 
+#columnMaker(columndata,1);    
+     
+     
 
 
 
