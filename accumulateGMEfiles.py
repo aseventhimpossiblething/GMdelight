@@ -113,7 +113,7 @@ print(columnNames)
 list(columnNames)
 print(type(columnNames))
 print(columnNames)
-print(columnNames[0])
+#print(columnNames[0])
 
 
 
