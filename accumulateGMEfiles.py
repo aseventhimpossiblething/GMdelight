@@ -124,7 +124,7 @@ def columnMaker(columndata,columnNumber):
     #labels=list(x[0].keys())
     label=list(x[0].keys())[y]
     #print("New label")
-    print(""label+" label")
+    print(label+" label")
     print(len(x)); 
     count=0;
     for days in x:
