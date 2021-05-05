@@ -122,7 +122,9 @@ def columnMaker(columndata,columnNumber):
     y=columnNumber;
     newCol=[];
     print(len(x)); 
-#columnMaker(columndata,1);    
+    for days in x:
+        print("in new function "+days[y]);
+columnMaker(columndata,0);    
      
      
 
