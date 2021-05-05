@@ -83,7 +83,7 @@ chartIEXdata="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae
 
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
-workingChart=requests.get(chartIEXdata)
+workingChart=requests.get(chartIEXdata).json()
 print(workingChart)
 #requests.get(chartIEXdata)
 """
@@ -105,7 +105,7 @@ print(expChart.json()[0]['close'])
 #print(expChart.json()[0][0])
 
 """
-"""
+
 columnNames=workingChart[0].keys()
 print(type(columnNames))
 print(columnNames)
@@ -114,15 +114,14 @@ list(columnNames)
 print(type(columnNames))
 print(columnNames)
 print(columnNames[0])
-"""
 
 
 
 
 
 
-#https://sandbox.iexapis.com/v1/stock/market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y%20&token=YOUR_TEST_TOKEN_HERE
 
-
+#https://sandbox.iexapis.com/v1/stock/ market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y%20&token=pk_2a5af8857a7940d4b361bc2b4a14d0ad
+#chartIEXdata="https://cloud.iexapis.com/stable/stock/market/market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y%20&token=pk_2a5af8857a7940d4b361bc2b4a14d0ad
 
 
