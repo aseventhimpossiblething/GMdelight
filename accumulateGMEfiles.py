@@ -55,8 +55,8 @@ print(str(os.listdir())
 
 AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 
-AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
-response1=requests.get(AlphaVantageEndPoint)
+#AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
+#response1=requests.get(AlphaVantageEndPoint)
 response2=requests.get(AlphaVantageAbbreviations)
 print(response1.json())
 print(response2.json())
