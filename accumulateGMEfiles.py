@@ -106,6 +106,7 @@ print(columnNames)
 columnNames=str(columnNames)
 print(type(columnNames))
 print(columnNames)
+print(columnNames[0])
 
 
 
