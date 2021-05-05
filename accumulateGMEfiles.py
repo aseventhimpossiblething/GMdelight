@@ -80,8 +80,9 @@ chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af
 
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
-#workingChart=requests.get(chartIEXdata).json()
-requests.get(chartIEXdata).json()
+workingChart=requests.get(chartIEXdata)
+print(workingChart)
+#requests.get(chartIEXdata)
 """
 print(expChart)
 print(expChart.json()[0])
