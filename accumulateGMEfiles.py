@@ -129,7 +129,7 @@ def columnMaker(columndata,columnNumber):
     count=0;
     for days in x:
         
-        print(str(count)+" in new function "+days[label]);
+        print(str(count)+" in new function "+str(days[label]));
         print("----------------------") 
         print("----------------------")
         count=count+1;
