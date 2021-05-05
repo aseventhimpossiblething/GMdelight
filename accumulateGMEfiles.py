@@ -29,8 +29,6 @@ from datetime import datetime
 import pandas
 
 
-#print(os.getcwd())
-#print(os.listdir())
 
 def pullNasdaqAbbreves():
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
@@ -61,11 +59,9 @@ pullNasdaqAbbreves();
 NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
 NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
 
-
 print(NasdaqAbbreviations)
 print(NasdaqNativeAbbreviations)
-print(os.getcwd())
-print(str(os.listdir())
+
 """
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
@@ -73,20 +69,19 @@ print(str(os.listdir())
 #AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
-#response1=requests.get(AlphaVantageEndPoint)
-#response2=requests.get(AlphaVantageAbbreviations)
-#print(response1.json())
-#print(response2.json())
 
 
 
-chartiexdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
+
+chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
 
 
 #https://sandbox.iexapis.com/stable/stock/AMD/dividends/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
-expChart=requests.get(chartiexdata)
+
+workingChart=requests.get(chartIEXdata)
+"""
 print(expChart)
 print(expChart.json()[0])
 print("-------------------")
@@ -103,6 +98,16 @@ print(expChart.json()[0]['open'])
 print(expChart.json()[0]['close'])
 
 #print(expChart.json()[0][0])
+
+"""
+columnNames=workingChart.keys()
+print(type(columnNames))
+
+
+
+
+
+
 
 
 
