@@ -118,22 +118,23 @@ print(columnNames)
 print(columnNames[0])
 """
 def columnMaker(columndata,columnNumber):
+    newCol=[];
     x=columndata;
     y=columnNumber;
-    labels=list(x[0].keys())
-    print("New labels")
-    print(labels)
-    newCol=[];
+    #labels=list(x[0].keys())
+    label=list(x[0].keys())[y]
+    #print("New label")
+    print(""label+" label")
     print(len(x)); 
     count=0;
     for days in x:
-        """
-        print(str(count)+" in new function "+str(days));
+        
+        print(str(count)+" in new function "+days[label]);
         print("----------------------") 
         print("----------------------")
         count=count+1;
-        """
-        print("columnmaker done")
+        
+    print("columnmaker done")
         
 columnMaker(workingChartData,0);    
      
