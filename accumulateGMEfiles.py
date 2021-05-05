@@ -96,7 +96,8 @@ print(expChart.json()[2])
 
 print("-------------------")
 print("-------------------")
-print(expChart.json()[0][0])
+print(type(expChart.json()[0]))
+#print(expChart.json()[0][0])
 print(expChart.json()[0][1])
 print(expChart.json()[0][2])
 
