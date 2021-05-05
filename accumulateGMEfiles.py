@@ -29,8 +29,8 @@ from datetime import datetime
 import pandas
 
 
-print(os.getcwd())
-print(os.listdir())
+#print(os.getcwd())
+#print(os.listdir())
 
 def pullNasdaqAbbreves():
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
@@ -93,5 +93,12 @@ print("-------------------")
 print(expChart.json()[1])
 print("-------------------")
 print(expChart.json()[2])
+
+print("-------------------")
+print("-------------------")
+print(expChart.json()[0][0])
+print(expChart.json()[0][1])
+print(expChart.json()[0][2])
+
 
 
