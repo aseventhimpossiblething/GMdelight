@@ -120,7 +120,7 @@ print(columnNames[0])
 def columnMaker(columndata,columnNumber):
     x=columndata;
     y=columnNumber;
-    labels=x.keys()
+    labels=x#.keys()
     print("New labels")
     print(labels)
     newCol=[];
