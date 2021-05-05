@@ -93,12 +93,17 @@ print("-------------------")
 print(expChart.json()[1])
 print("-------------------")
 print(expChart.json()[2])
+h=str(expChart.json()[0])
+print(h)
 
 print("-------------------")
 print("-------------------")
 print(expChart.json()[0].keys())
+print(expChart.json()[0]['open'])
+print(expChart.json()[0]['close'])
+
 #print(expChart.json()[0][0])
-h=str(expChart.json()[0])
+
 
 
 
