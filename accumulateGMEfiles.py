@@ -127,7 +127,7 @@ def columnMaker(columndata,columnNumber):
         print(count+" in new function "+days);
         print("----------------------") 
         print("----------------------")
-        count++
+        count=count++
         
 columnMaker(workingChartData,0);    
      
