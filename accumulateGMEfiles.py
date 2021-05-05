@@ -39,10 +39,11 @@ def pullNasdaqAbbreves():
     
     print("accumilateGMEfiles ran")
     print("accumilateGMEfiles ran")
-    
+"""    
 pullNasdaqAbbreves();
 NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
 NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
+"""
 
 print(NasdaqAbbreviations)
 print(NasdaqNativeAbbreviations)
@@ -51,7 +52,7 @@ print(str(os.listdir()))
 
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 
-AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STOCK_STATUS&apikey=70YMNXM4BZWGEGOA"
+AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 
 AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 response1=requests.get(AlphaVantageEndPoint)
