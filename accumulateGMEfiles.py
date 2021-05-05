@@ -103,7 +103,8 @@ print(expChart.json()[0]['close'])
 columnNames=workingChart[0].keys()
 print(type(columnNames))
 print(columnNames)
-columnNames=str(columnNames)
+#columnNames=str(columnNames)
+list(columnNames)
 print(type(columnNames))
 print(columnNames)
 print(columnNames[0])
@@ -114,7 +115,7 @@ print(columnNames[0])
 
 
 
-
+#https://sandbox.iexapis.com/v1/stock/market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y%20&token=YOUR_TEST_TOKEN_HERE
 
 
 
