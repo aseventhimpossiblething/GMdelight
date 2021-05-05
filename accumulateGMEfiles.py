@@ -80,7 +80,8 @@ chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af
 
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
-workingChart=requests.get(chartIEXdata).json()
+#workingChart=requests.get(chartIEXdata).json()
+requests(chartIEXdata)
 """
 print(expChart)
 print(expChart.json()[0])
@@ -100,6 +101,7 @@ print(expChart.json()[0]['close'])
 #print(expChart.json()[0][0])
 
 """
+"""
 columnNames=workingChart[0].keys()
 print(type(columnNames))
 print(columnNames)
@@ -108,7 +110,7 @@ list(columnNames)
 print(type(columnNames))
 print(columnNames)
 print(columnNames[0])
-
+"""
 
 
 
