@@ -2,9 +2,11 @@
 Welcome to Alpha Vantage! 
 Your dedicated access key is: 70YMNXM4BZWGEGOA
 Please record this API key at a safe place for future data access.
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=demo
 """
 
 
+import requests
 import os
 from datetime import datetime
 import pandas
@@ -47,4 +49,6 @@ print(NasdaqNativeAbbreviations)
 print(os.getcwd())
 print(str(os.listdir()))
 
+AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
+response=requests.get(AlphaVantageEndPoint,AMD)
 
