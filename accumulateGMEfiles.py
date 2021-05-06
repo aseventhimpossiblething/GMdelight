@@ -179,7 +179,7 @@ def MonthTableMaker(chartData):
     #NewFrame[names[1]]=PreFrame[1];
     cnt=0;
     for bits in PreFrame:
-        print(cnt)
+        print(NewFrame)
         #bits 
         cnt=cnt+1;
         NewFrame[names[cnt]]=PreFrame[cnt];
