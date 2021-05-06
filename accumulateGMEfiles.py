@@ -74,7 +74,6 @@ def runNasdaq():
             rtest=requests.get(test);
             brokenlines.append(lineItem);
             responseCode.append(rtest);
-            lineItem=lineItem+1;
             print(str(rtest)+"   "+str(lineItem)+" of "+str(sze));
             lineItem=lineItem+1;
         NasdaqTesFrame['broken line numbers']=brokenlines;
