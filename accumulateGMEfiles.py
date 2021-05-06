@@ -23,8 +23,12 @@ import pandas
 
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
+    """
     os.chdir("/GMDelight/GMDelight")
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
+    """
+    os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations")
+  
     print(os.getcwd());
     mglob=str(os.listdir());
     print("_____________________________");
@@ -50,8 +54,14 @@ def pullNasdaqAbbreves():
   
 def runNasdaq():
     #pullNasdaqAbbreves();
-    NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
-    NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
+    os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
+    try:
+       NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
+       NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
+    except:
+       NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
+       NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
+    
     columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
     NasdaqAbbreviations['CQS Symbol']
     
