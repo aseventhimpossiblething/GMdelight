@@ -110,7 +110,7 @@ def MonthTableMaker(chartData):
 def TableGen():
     print("TableGen Run")
     return MonthTableMaker(workingChartData);
-TableGen();
+#TableGen();
     
     
      
