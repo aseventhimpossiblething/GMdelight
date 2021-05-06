@@ -85,7 +85,7 @@ chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af
 
 workingChartData=requests.get(chartIEXdata).json()
 #print(workingChartData[0]);
-print(len(workingChartData));
+#print(len(workingChartData));
 #requests.get(chartIEXdata)
 """
 print(expChart)
@@ -125,8 +125,8 @@ def columnMaker(columndata,columnNumber):
     label=list(x[0].keys())[y];
     newCol.append(label);
     #print("New label")
-    print(label+" label")
-    print(len(x)); 
+    #print(label+" label")
+    #print(len(x)); 
     count=0;
     for days in x:
         newCol.append(days[label])
@@ -144,7 +144,7 @@ def columnMaker(columndata,columnNumber):
 
 def MonthTableMaker(chartData):
     x=chartData;
-    print(len(x[0]));
+    print("len(x[0]) "+str(len(x[0])));
      
     columnMaker(x,0);
 MonthTableMaker(workingChartData);    
