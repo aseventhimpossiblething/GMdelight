@@ -106,7 +106,12 @@ def MonthTableMaker(chartData):
     print(NewFrame);
     return NewFrame;
  
-MonthTableMaker(workingChartData);    
+#MonthTableMaker(workingChartData); 
+def TableGen():
+    print("TableGen Run")
+    return MonthTableMaker(workingChartData);
+TableGen();
+    
     
      
      
