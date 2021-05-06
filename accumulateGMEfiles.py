@@ -136,7 +136,7 @@ def columnMaker(columndata,columnName):
         print("----------------------")
         """
         #count=count+1;
-    #newCol=pandas.DataFrame(newCol, columns=[y]);
+    newCol=pandas.DataFrame(newCol, columns=[y]);
     print(y+" column done"); 
     
     #print(newCol);  
@@ -156,7 +156,7 @@ def MonthTableMaker(chartData):
         #print(str(count)+" "+columns);
         #count=count+1 
         NewFrame.append(columnMaker(x,columns));
-    NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
+    #NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
     print("------------------------------")
     print("------------------------------")
     print(NewFrame);    
