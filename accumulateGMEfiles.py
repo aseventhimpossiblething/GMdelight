@@ -148,12 +148,11 @@ def MonthTableMaker(chartData):
     print("x[0] "+str(x[0]));
     print("len(x[0]) "+str(len(x[0])));
     list(x[0]);
-    count=0;
-    for elements in list(x[0]):
-        print(str(count)+" "+elements);
-        count=count+1 
-     
-    columnMaker(x,elements);
+    #count=0;
+    for columns in list(x[0]):
+        #print(str(count)+" "+columns);
+        #count=count+1 
+        columnMaker(x,columns);
 MonthTableMaker(workingChartData);    
     
      
