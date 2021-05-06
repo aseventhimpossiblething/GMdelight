@@ -160,7 +160,7 @@ def MonthTableMaker(chartData):
     print("------------------------------")
     print("------------------------------")
     #print(NewFrame); 
-    print("len of Frame "+len(NewFrame));
+    print("len of Frame "+str(len(NewFrame)));
 MonthTableMaker(workingChartData);    
     
      
