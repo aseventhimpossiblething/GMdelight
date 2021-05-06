@@ -178,7 +178,9 @@ def MonthTableMaker(chartData):
     NewFrame=pandas.DataFrame(PreFrame[0], columns=[names[0]])
     #NewFrame[names[1]]=PreFrame[1];
     cnt=0;
-    for bits in PreFrame:
+    while cnt<len(PreFrame)-1:
+           
+    #for bits in PreFrame:
         print(NewFrame)
         #bits 
         cnt=cnt+1;
