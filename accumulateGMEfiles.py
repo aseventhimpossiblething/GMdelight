@@ -144,7 +144,7 @@ def columnMaker(columndata,columnNumber):
 
 def MonthTableMaker(chartData):
     x=chartData;
-    print("x[0] "+x[0]);
+    print("x[0] "+str(x[0]));
     print("len(x[0]) "+str(len(x[0])));
     list(x[0]);
     count=0;
