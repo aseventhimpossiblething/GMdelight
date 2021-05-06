@@ -38,7 +38,7 @@ def pullNasdaqAbbreves():
     print(os.listdir());
     print("_____________________________");
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
-     print(os.getcwd());
+    print(os.getcwd());
     mglob=str(os.listdir());
     print("_____________________________");
     ActivendqAdd=mglob.find("ActivendqAbbrev");
