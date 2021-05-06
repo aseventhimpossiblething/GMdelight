@@ -91,7 +91,7 @@ def runNasdaq():
         print("---------------------------------------------------------------------")
         print("---------------------------------------------------------------------")
     trd=threading.Thread(target=nasdaqTester);
-    #trd.start();
+    trd.start();
     #NasdaqTesFrame['broken line numbers']=brokenlines;
     #NasdaqTesFrame['response Code']=responseCode;
     #print(NasdaqTestFrame)
