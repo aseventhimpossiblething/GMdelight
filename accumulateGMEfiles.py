@@ -54,7 +54,7 @@ def runNasdaq():
 
     print(NasdaqAbbreviations);
     print(NasdaqNativeAbbreviations);
-#runNasdaq();
+
 
 
 
@@ -109,7 +109,9 @@ def MonthTableMaker(chartData):
 #MonthTableMaker(workingChartData); 
 def TableGen():
     print("TableGen Run")
-    return MonthTableMaker(workingChartData);
+    MonthTableMaker(workingChartData);
+    #return return MonthTableMaker(workingChartData)[0];
+    return runNasdaq():
 #TableGen();
     
     
