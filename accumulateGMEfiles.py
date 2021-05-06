@@ -130,15 +130,19 @@ def columnMaker(columndata,columnName):
     #count=0;
     for days in x:
         print(str(type(days[y]))+"-"+str(days[y])) ;
+        
         fi=type(days[y]).find('int');
         ff=type(days[y]).find('float');
+        print(str(fi)+" "+str(ff))
         fff=ff+fi;
         if fff!=-2:
-           print((str(fff)); 
-        if type(days[y])=="<class 'int'>" or "<class 'float'>":
-           newCol.append(days[y]);
+           print((str(fff));
+                 newCol.append(0.0); 
+        #if type(days[y])=="<class 'int'>" or "<class 'float'>":
         else:
-           newCol.append(0.0); 
+                 newCol.append(days[y]);
+        #else:
+        #   newCol.append(0.0); 
         """
         print(str(count)+" in new function "+str(days[label]));
         print("----------------------") 
