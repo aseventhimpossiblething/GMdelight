@@ -23,6 +23,7 @@ import pandas
 
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
+    os.chdir('Sheets')
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
     mglob=str(os.listdir());
     ActivendqAdd=mglob.find("ActivendqAbbrev");
