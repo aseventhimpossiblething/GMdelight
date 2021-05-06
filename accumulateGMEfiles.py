@@ -129,7 +129,7 @@ def columnMaker(columndata,columnName):
     #print(len(x)); 
     #count=0;
     for days in x:
-        print(str(type(days[y]))+"-"+str(days[y])) ;
+        #print(str(type(days[y]))+"-"+str(days[y])) ;
         
         fi=str(type(days[y])).find('int');
         ff=str(type(days[y])).find('float');
@@ -176,8 +176,9 @@ def MonthTableMaker(chartData):
     #print(NewFrame)
     print("len of Frame "+str(len(NewFrame)));
     NewFrame=pandas.DataFrame(NewFrame[0], columns=[names[0]])
-    print(NewFrame)
-    print(names)
+    NewFrame[names[1]]=NewFrame[1];
+    print(NewFrame);
+    print(names);
 MonthTableMaker(workingChartData);    
     
      
