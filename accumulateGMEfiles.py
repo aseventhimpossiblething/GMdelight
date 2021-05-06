@@ -131,8 +131,8 @@ def columnMaker(columndata,columnName):
     for days in x:
         print(str(type(days[y]))+"-"+str(days[y])) ;
         
-        fi=type(days[y]).find('int');
-        ff=type(days[y]).find('float');
+        fi=str(type(days[y])).find('int');
+        ff=str(type(days[y])).find('float');
         print(str(fi)+" "+str(ff))
         fff=ff+fi;
         if fff!=-2:
