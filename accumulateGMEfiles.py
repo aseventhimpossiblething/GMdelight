@@ -124,8 +124,8 @@ def TableGen():
     #MonthTableMaker(workingChartData);
     runNasdaq();
     ready=MonthTableMaker(workingChartData).to_html
-    print("type(runNasdaq()) "+str(type(runNasdaq())));
-    print(os.getcwd())
+    #print("type(runNasdaq()) "+str(type(runNasdaq())));
+    #print(os.getcwd())
     #os.chdir('/GMDelight/GMDelight/Sheets')
     #ready=MonthTableMaker(workingChartData)
     #return return MonthTableMaker(workingChartData)[0];
