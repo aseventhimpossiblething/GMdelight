@@ -136,10 +136,10 @@ def columnMaker(columndata,columnName):
         print("----------------------")
         """
         #count=count+1;
-    newCol=pandas.DataFrame(newCol, columns=[y]);
+    #newCol=pandas.DataFrame(newCol, columns=[y]);
     print(y+" column done"); 
     
-    print(newCol);  
+    #print(newCol);  
     
     return newCol;                        
         
