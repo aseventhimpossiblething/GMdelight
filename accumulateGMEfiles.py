@@ -23,7 +23,7 @@ import pandas
 
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
-    os.system("cd GMDelight/GMDelight")
+    os.chdir("/GMDelight/GMDelight")
     print("_____________________________");
     print(os.getcwd());
     print(os.listdir());
@@ -125,11 +125,11 @@ def MonthTableMaker(chartData):
 def TableGen():
     print("TableGen Run")
     #MonthTableMaker(workingChartData);
-    #runNasdaq();
+    runNasdaq();
     ready=MonthTableMaker(workingChartData).to_html
     print("type(runNasdaq()) "+str(type(runNasdaq())));
     print(os.getcwd())
-    os.chdir('/GMDelight/GMDelight/Sheets')
+    #os.chdir('/GMDelight/GMDelight/Sheets')
     #ready=MonthTableMaker(workingChartData)
     #return return MonthTableMaker(workingChartData)[0];
     return ready
