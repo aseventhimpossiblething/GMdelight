@@ -23,11 +23,18 @@ import pandas
 
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
+    print("_____________________________");
     print(os.listdir());
+    print("_____________________________");
     os.chdir('Sheets');
     print(os.listdir());
+    print("_____________________________");
+    os.chdir('Sheets/rememberGME')
+    print(os.listdir());
+    print("_____________________________");
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
     mglob=str(os.listdir());
+    print("_____________________________");
     ActivendqAdd=mglob.find("ActivendqAbbrev");
     if ActivendqAdd>-1:
        os.system('rm ActivendqAbbrev');
