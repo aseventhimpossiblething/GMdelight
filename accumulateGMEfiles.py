@@ -54,7 +54,7 @@ def runNasdaq():
 
     print(NasdaqAbbreviations);
     print(NasdaqNativeAbbreviations);
-
+    return NasdaqNativeAbbreviations;
 
 
 
