@@ -23,7 +23,7 @@ import pandas
 
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
-    os.system(cd "GMDelight/GMDelight")
+    os.system("cd GMDelight/GMDelight")
     print("_____________________________");
     print(os.getcwd());
     print(os.listdir());
