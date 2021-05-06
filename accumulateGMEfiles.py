@@ -69,7 +69,7 @@ def runNasdaq():
         sze=len(NasdaqTesFrame)
         lineItem=0;
         while (lineItem < 10):
-            num=NasdaqAbbreviations['CQS Symbol'][lineItem];
+            nums=NasdaqAbbreviations['CQS Symbol'][lineItem];
         #for nums in NasdaqAbbreviations['CQS Symbol']:
            
             
