@@ -102,6 +102,7 @@ def MonthTableMaker(chartData):
     while cnt<len(PreFrame)-1:
         cnt=cnt+1;
         NewFrame[names[cnt]]=PreFrame[cnt];
+    NewFrame.drop([0]);   
     print(NewFrame);
  
 MonthTableMaker(workingChartData);    
