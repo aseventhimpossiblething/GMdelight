@@ -52,7 +52,7 @@ def runNasdaq():
     pullNasdaqAbbreves();
     NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
     NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
-    columnsOfNasdaqNativeAbbreviation=NasdaqNativeAbbreviation.columns
+    columnsOfNasdaqNativeAbbreviation=NasdaqNativeAbbreviations.columns
     
     
     print(NasdaqAbbreviations);
