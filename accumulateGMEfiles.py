@@ -137,10 +137,10 @@ def columnMaker(columndata,columnName):
         fff=ff+fi;
         if fff!=-2:
            print((str(fff));
-                 newCol.append(0.0); 
+           newCol.append(0.0); 
         #if type(days[y])=="<class 'int'>" or "<class 'float'>":
         else:
-                 newCol.append(days[y]);
+             newCol.append(days[y]);
         #else:
         #   newCol.append(0.0); 
         """
