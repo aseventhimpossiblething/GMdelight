@@ -125,7 +125,7 @@ def MonthTableMaker(chartData):
 def TableGen():
     print("TableGen Run")
     #MonthTableMaker(workingChartData);
-    runNasdaq();
+    #runNasdaq();
     ready=MonthTableMaker(workingChartData).to_html
     print("type(runNasdaq()) "+type(runNasdaq()));
     #ready=MonthTableMaker(workingChartData)
