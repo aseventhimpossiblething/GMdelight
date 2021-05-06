@@ -117,25 +117,25 @@ print(type(columnNames))
 print(columnNames)
 print(columnNames[0])
 """
-def columnMaker(columndata,columnNumber):
+def columnMaker(columndata,columnName):
     newCol=[];
     x=columndata;
-    y=columnNumber;
+    y=columnName;
     #labels=list(x[0].keys())
-    label=list(x[0].keys())[y];
-    newCol.append(label);
+    #label=list(x[0].keys())[y];
+    newCol.append(y);
     #print("New label")
     #print(label+" label")
     #print(len(x)); 
-    count=0;
+    #count=0;
     for days in x:
-        newCol.append(days[label])
+        newCol.append(days[y])
         """
         print(str(count)+" in new function "+str(days[label]));
         print("----------------------") 
         print("----------------------")
         """
-        count=count+1;
+        #count=count+1;
     print(label+" column done");    
     print(newCol);  
     
@@ -153,7 +153,7 @@ def MonthTableMaker(chartData):
         print(str(count)+" "+elements);
         count=count+1 
      
-    columnMaker(x,0);
+    columnMaker(x,elements);
 MonthTableMaker(workingChartData);    
     
      
