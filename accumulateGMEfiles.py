@@ -130,6 +130,11 @@ def columnMaker(columndata,columnName):
     #count=0;
     for days in x:
         print(str(type(days[y]))+"-"+str(days[y])) ;
+        fi=type(days[y]).find('int');
+        ff=type(days[y]).find('float');
+        fff=ff+fi;
+        if fff!=-2:
+           print((str(fff)); 
         if type(days[y])=="<class 'int'>" or "<class 'float'>":
            newCol.append(days[y]);
         else:
@@ -160,7 +165,7 @@ def MonthTableMaker(chartData):
         #print(str(count)+" "+columns);
         #count=count+1 
         NewFrame.append(columnMaker(x,columns));
-    NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
+    #NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
     print("------------------------------")
     print("------------------------------")
     #print(NewFrame); 
