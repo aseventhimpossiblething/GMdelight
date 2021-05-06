@@ -130,7 +130,10 @@ def columnMaker(columndata,columnName):
     #count=0;
     for days in x:
         print(str(type(days[y]))+"-"+str(days[y])) ;
-        newCol.append(days[y])
+        if type(days[y])='int' or 'float':
+           newCol.append(days[y]);
+        else:
+           newCol.append(0.0); 
         """
         print(str(count)+" in new function "+str(days[label]));
         print("----------------------") 
