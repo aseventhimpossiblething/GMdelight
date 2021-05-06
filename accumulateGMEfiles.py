@@ -27,15 +27,18 @@ def pullNasdaqAbbreves():
     print(os.getcwd());
     print(os.listdir());
     print("_____________________________");
+    #print(os.getcwd());
+    os.chdir('GMDelight/GMDelight');
     print(os.getcwd());
-    os.chdir('Sheets');
     print(os.listdir());
     print("_____________________________");
     print(os.getcwd());
-    os.chdir('Sheets/rememberGME')
+    #os.chdir('Sheets/rememberGME')
+    print(os.getcwd());
     print(os.listdir());
     print("_____________________________");
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
+     print(os.getcwd());
     mglob=str(os.listdir());
     print("_____________________________");
     ActivendqAdd=mglob.find("ActivendqAbbrev");
