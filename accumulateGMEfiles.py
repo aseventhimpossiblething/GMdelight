@@ -150,13 +150,13 @@ def MonthTableMaker(chartData):
     x=chartData;
     print("x[0] "+str(x[0]));
     print("len(x[0]) "+str(len(x[0])));
-    list(x[0]);
+    names=list(x[0].keys());
     #count=0;
     for columns in list(x[0]):
         #print(str(count)+" "+columns);
         #count=count+1 
         NewFrame.append(columnMaker(x,columns));
-    NewFrame=pandas.DataFrame(NewFrame); 
+    NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
     print("------------------------------")
     print("------------------------------")
     print(NewFrame);    
