@@ -133,7 +133,7 @@ def columnMaker(columndata,columnName):
         
         fi=str(type(days[y])).find('int');
         ff=str(type(days[y])).find('float');
-        print(str(fi)+" "+str(ff))
+        #print(str(fi)+" "+str(ff))
         fff=ff+fi;
         if fff<=-2:
            print(str(fff));
