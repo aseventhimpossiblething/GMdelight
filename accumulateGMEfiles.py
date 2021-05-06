@@ -69,7 +69,10 @@ def runNasdaq():
         sze=len(NasdaqTesFrame)
         lineItem=0;
         while (lineItem < 10):
+            num=NasdaqAbbreviations['CQS Symbol'][lineItem];
         #for nums in NasdaqAbbreviations['CQS Symbol']:
+           
+            
             test="https://cloud.iexapis.com/stable/stock/"+str(nums)+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
             rtest=requests.get(test);
             brokenlines.append(lineItem);
