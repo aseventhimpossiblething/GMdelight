@@ -111,7 +111,7 @@ def TableGen():
     print("TableGen Run")
     MonthTableMaker(workingChartData);
     #return return MonthTableMaker(workingChartData)[0];
-    return runNasdaq();
+    return runNasdaq()[0];
 #TableGen();
     
     
