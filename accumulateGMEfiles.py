@@ -14,7 +14,7 @@ https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=d
 #AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 
-
+import threading
 import requests
 import os
 from datetime import datetime
@@ -60,23 +60,28 @@ def runNasdaq():
         
     print("---------------------------------------------------------------------")
     print("---------------------------------------------------------------------")
-    brokenlines=[];
-    responseCode=[];
-    columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
-    NasdaqTesFrame=NasdaqAbbreviations['CQS Symbol'];
-    lineItem=0;
-    for nums in NasdaqAbbreviations['CQS Symbol']:
-        test=str("https://cloud.iexapis.com/stable/stock/"+nums+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad")
-        rtest=requests.get(test);
-        brokenlines.append(lineItem);
-        responseCode.append(rtest);
-        lineItem=lineItem+1;
-        print(str(rtest)+"   "+str(lineItem));
-    print("---------------------------------------------------------------------")
-    print("---------------------------------------------------------------------")
+    def nasdaqTester():
+        brokenlines=[];
+        responseCode=[];
+        columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
+        NasdaqTesFrame=NasdaqAbbreviations['CQS Symbol'];
+        lineItem=0;
+        for nums in NasdaqAbbreviations['CQS Symbol']:
+            test=str("https://cloud.iexapis.com/stable/stock/"+nums+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad")
+            rtest=requests.get(test);
+            brokenlines.append(lineItem);
+            responseCode.append(rtest);
+            lineItem=lineItem+1;
+            print(str(rtest)+"   "+str(lineItem));
     NasdaqTesFrame['broken line numbers']=brokenlines;
     NasdaqTesFrame['response Code']=responseCode;
-    print(NasdaqTestFrame)
+    print(NasdaqTestFrame)        
+            
+    print("---------------------------------------------------------------------")
+    print("---------------------------------------------------------------------")
+    #NasdaqTesFrame['broken line numbers']=brokenlines;
+    #NasdaqTesFrame['response Code']=responseCode;
+    #print(NasdaqTestFrame)
     
     
     #print(NasdaqAbbreviations);
