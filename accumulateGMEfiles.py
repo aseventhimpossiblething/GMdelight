@@ -136,7 +136,7 @@ def columnMaker(columndata,columnName):
         print("----------------------")
         """
         #count=count+1;
-    print(label+" column done");    
+    print(y+" column done");    
     print(newCol);  
     
     return newCol;                        
