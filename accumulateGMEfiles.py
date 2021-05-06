@@ -130,15 +130,25 @@ def columnMaker(columndata,columnNumber):
     count=0;
     for days in x:
         newCol.append(days[label])
+        """
         print(str(count)+" in new function "+str(days[label]));
         print("----------------------") 
         print("----------------------")
+        """
         count=count+1;
     print(newCol)  
     print("columnmaker done")
     return newCol;                        
         
-columnMaker(workingChartData,0);    
+
+
+def MonthTableMaker(chartData):
+    x=chartData;
+    x[0].keys();
+     
+    columnMaker(x,0);
+#MonthTableMaker(workingChartData);    
+    
      
      
 
