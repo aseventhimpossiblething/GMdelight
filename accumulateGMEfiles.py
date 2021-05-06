@@ -158,7 +158,7 @@ def MonthTableMaker(chartData):
     print("------------------------------")
     print("------------------------------")
     print(NewFrame);    
-MonthTNewFrameableMaker(workingChartData);    
+MonthTableMaker(workingChartData);    
     
      
      
