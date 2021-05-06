@@ -24,11 +24,14 @@ import pandas
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
     print("_____________________________");
+    print(os.getcwd());
     print(os.listdir());
     print("_____________________________");
+    print(os.getcwd());
     os.chdir('Sheets');
     print(os.listdir());
     print("_____________________________");
+    print(os.getcwd());
     os.chdir('Sheets/rememberGME')
     print(os.listdir());
     print("_____________________________");
