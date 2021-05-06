@@ -58,17 +58,22 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
     print("---------------------------------------------------------------------")
     print("---------------------------------------------------------------------")
+    brokenlines=[];
+    responseCode=[];
     columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
-    NasdaqAbbreviations['CQS Symbol'];
+    NasdaqTesFrame=NasdaqAbbreviations['CQS Symbol'];
     for nums in NasdaqAbbreviations['CQS Symbol']:
         test=str("https://cloud.iexapis.com/stable/stock/"+nums+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad")
         rtest=requests.get(test);
         print(rtest);
     print("---------------------------------------------------------------------")
     print("---------------------------------------------------------------------")
-    print(NasdaqAbbreviations);
+    NasdaqTesFrame['broken line numbers']=brokenlines;
+    NasdaqTesFrame['response Code']=responseCode;
+    print(NasdaqTestFrame)
+    #print(NasdaqAbbreviations);
     
-    print(NasdaqNativeAbbreviations);
+    #print(NasdaqNativeAbbreviations);
     #print(NasdaqAbbreviations['CQS Symbol'])
     #print("columnsOfNasdaqNativeAbbreviation "+str(columnsOfNasdaqNativeAbbreviation))
     
