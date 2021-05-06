@@ -31,7 +31,6 @@ def pullNasdaqAbbreves():
   
     print(os.getcwd());
     mglob=str(os.listdir());
-    print("_____________________________");
     ActivendqAdd=mglob.find("ActivendqAbbrev");
     if ActivendqAdd>-1:
        os.system('rm ActivendqAbbrev');
@@ -53,12 +52,13 @@ def pullNasdaqAbbreves():
     
   
 def runNasdaq():
-    #pullNasdaqAbbreves();
+    pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
     try:
        NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
        NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
     except:
+       print("Nasdaq Symbol Update Failed Archive in use") 
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
     
