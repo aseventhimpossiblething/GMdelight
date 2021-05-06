@@ -66,6 +66,7 @@ def runNasdaq():
         responseCode=[];
         columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
         NasdaqTesFrame=NasdaqAbbreviations['CQS Symbol'];
+        sze=len(NasdaqTesFrame)
         lineItem=0;
         for nums in NasdaqAbbreviations['CQS Symbol']:
             test=str("https://cloud.iexapis.com/stable/stock/"+nums+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad")
@@ -73,7 +74,7 @@ def runNasdaq():
             brokenlines.append(lineItem);
             responseCode.append(rtest);
             lineItem=lineItem+1;
-            print(str(rtest)+"   "+str(lineItem));
+            print(str(rtest)+"   "+str(lineItem)+" of "+str(sze));
         NasdaqTesFrame['broken line numbers']=brokenlines;
         NasdaqTesFrame['response Code']=responseCode;
         print(NasdaqTestFrame)        
