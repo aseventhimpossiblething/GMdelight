@@ -77,7 +77,7 @@ def runNasdaq():
             print(str(rtest)+"   "+str(lineItem)+" of "+str(sze));
         NasdaqTesFrame['broken line numbers']=brokenlines;
         NasdaqTesFrame['response Code']=responseCode;
-        print(NasdaqTestFrame)        
+        print(NasdaqTesFrame)        
         print("---------------------------------------------------------------------")
         print("---------------------------------------------------------------------")
     trd=threading.Thread(target=nasdaqTester);
