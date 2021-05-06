@@ -148,7 +148,7 @@ def MonthTableMaker(chartData):
     print("len(x[0]) "+str(len(x[0])));
     list(x[0]);
     count=0;
-    for elements in list(x[0]);
+    for elements in list(x[0]):
         print(str(count)+" "+elements);
         count=count+1 
      
