@@ -56,6 +56,8 @@ def runNasdaq():
        print("Nasdaq Symbol Update Failed - Archive in use") 
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
+        
+        
     print("---------------------------------------------------------------------")
     print("---------------------------------------------------------------------")
     brokenlines=[];
@@ -75,6 +77,8 @@ def runNasdaq():
     NasdaqTesFrame['broken line numbers']=brokenlines;
     NasdaqTesFrame['response Code']=responseCode;
     print(NasdaqTestFrame)
+    
+    
     #print(NasdaqAbbreviations);
     
     #print(NasdaqNativeAbbreviations);
@@ -131,7 +135,7 @@ def TableGen():
     #MonthTableMaker(workingChartData);
     runNasdaq();
     ready=MonthTableMaker(workingChartData).to_html
-    return ready
+    #return ready
 TableGen();
     
     
