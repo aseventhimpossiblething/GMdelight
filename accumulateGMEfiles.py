@@ -159,7 +159,7 @@ def columnMaker(columndata,columnName):
 
 
 def MonthTableMaker(chartData):
-    NewFrame=[]; 
+    PreFrame=[]; 
     x=chartData;
     #print("x[0] "+str(x[0]));
     #print("len(x[0]) "+str(len(x[0])));
@@ -168,15 +168,15 @@ def MonthTableMaker(chartData):
     for columns in list(x[0]):
         #print(str(count)+" "+columns);
         #count=count+1 
-        NewFrame.append(columnMaker(x,columns));
-    #NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
+        PreFrame.append(columnMaker(x,columns));
+    NewFrame=pandas.DataFrame(PreFrame,columns=[names]); 
     print("------------------------------")
     print("------------------------------")
     #print(NewFrame); 
     #print(NewFrame)
-    print("len of Frame "+str(len(NewFrame)));
-    NewFrame=pandas.DataFrame(NewFrame[0], columns=[names[0]])
-    NewFrame[names[1]]=NewFrame[1];
+    print("len of Frame "+str(len(PreFrame)));
+    #NewFrame=pandas.DataFrame(PreFrame[0], columns=[names[0]])
+    #NewFrame[names[1]]=PreFrame[1];
     print(NewFrame);
     print(names);
 MonthTableMaker(workingChartData);    
