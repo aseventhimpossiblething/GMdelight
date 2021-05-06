@@ -56,32 +56,30 @@ def runNasdaq():
        print("Nasdaq Symbol Update Failed - Archive in use") 
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
-    
+    print("---------------------------------------------------------------------")
+    print("---------------------------------------------------------------------")
     columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
-    NasdaqAbbreviations['CQS Symbol']
-    
-    
+    NasdaqAbbreviations['CQS Symbol'];
+    for nums in NasdaqAbbreviations['CQS Symbol']:
+        test=str("https://cloud.iexapis.com/stable/stock/"+nums+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad")
+        rtest=requests.get(test);
+        print(rtest);
+    print("---------------------------------------------------------------------")
+    print("---------------------------------------------------------------------")
     print(NasdaqAbbreviations);
+    
     print(NasdaqNativeAbbreviations);
-    print(NasdaqAbbreviations['CQS Symbol'])
-    print("columnsOfNasdaqNativeAbbreviation "+str(columnsOfNasdaqNativeAbbreviation))
+    #print(NasdaqAbbreviations['CQS Symbol'])
+    #print("columnsOfNasdaqNativeAbbreviation "+str(columnsOfNasdaqNativeAbbreviation))
     
     return NasdaqNativeAbbreviations;
-
-
-
-
-
 
 
 chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
 #chartIEXdata="https://cloud.iexapis.com/stable/stock/XOM/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
 #chartIEXdata="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 
-
-
 #https://sandbox.iexapis.com/stable/stock/AMD/dividends/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e
-
 #https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
 
 workingChartData=requests.get(chartIEXdata).json()
@@ -124,11 +122,6 @@ def TableGen():
     #MonthTableMaker(workingChartData);
     runNasdaq();
     ready=MonthTableMaker(workingChartData).to_html
-    #print("type(runNasdaq()) "+str(type(runNasdaq())));
-    #print(os.getcwd())
-    #os.chdir('/GMDelight/GMDelight/Sheets')
-    #ready=MonthTableMaker(workingChartData)
-    #return return MonthTableMaker(workingChartData)[0];
     return ready
 TableGen();
     
