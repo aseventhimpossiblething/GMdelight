@@ -136,7 +136,7 @@ def columnMaker(columndata,columnName):
         print(str(fi)+" "+str(ff))
         fff=ff+fi;
         if fff!=-2:
-           print((str(fff));
+           print(str(fff));
            newCol.append(0.0); 
         #if type(days[y])=="<class 'int'>" or "<class 'float'>":
         else:
