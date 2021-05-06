@@ -104,6 +104,7 @@ def MonthTableMaker(chartData):
         NewFrame[names[cnt]]=PreFrame[cnt];
     NewFrame=NewFrame.drop([0]);   
     print(NewFrame);
+    return NewFrame;
  
 MonthTableMaker(workingChartData);    
     
