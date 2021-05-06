@@ -68,7 +68,7 @@ def stonk():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return str(accumulateGMEfiles.TableGen());
+    return str(accumulateGMEfiles.TableGen()[0]);
 
 
 
