@@ -44,8 +44,8 @@ def pullNasdaqAbbreves():
     os.system(ndqAbbrecords)
     os.system(ActndqAbbrv)
     
-    print("accumilateGMEfiles ran")
-    print("accumilateGMEfiles ran")
+    #print("accumilateGMEfiles ran")
+    #print("accumilateGMEfiles ran")
     
 def runNasdaq():
     pullNasdaqAbbreves();
@@ -83,7 +83,6 @@ def columnMaker(columndata,columnName):
         ff=str(type(days[y])).find('float');
         fff=ff+fi;
         if fff<=-2:
-           #print(str(fff));
            newCol.append(0.0); 
         else:
            newCol.append(days[y]);
@@ -101,11 +100,10 @@ def MonthTableMaker(chartData):
     NewFrame=pandas.DataFrame(PreFrame[0], columns=[names[0]])
     cnt=0;
     while cnt<len(PreFrame)-1:
-        #print(NewFrame)
         cnt=cnt+1;
         NewFrame[names[cnt]]=PreFrame[cnt];
     print(NewFrame);
-    #print(names);
+ 
 MonthTableMaker(workingChartData);    
     
      
