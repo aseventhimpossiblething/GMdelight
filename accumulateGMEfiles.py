@@ -73,9 +73,9 @@ def runNasdaq():
             responseCode.append(rtest);
             lineItem=lineItem+1;
             print(str(rtest)+"   "+str(lineItem));
-    NasdaqTesFrame['broken line numbers']=brokenlines;
-    NasdaqTesFrame['response Code']=responseCode;
-    print(NasdaqTestFrame)        
+        NasdaqTesFrame['broken line numbers']=brokenlines;
+        NasdaqTesFrame['response Code']=responseCode;
+        print(NasdaqTestFrame)        
             
     print("---------------------------------------------------------------------")
     print("---------------------------------------------------------------------")
