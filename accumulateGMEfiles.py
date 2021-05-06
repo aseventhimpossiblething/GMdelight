@@ -66,6 +66,7 @@ def runNasdaq():
         responseCode=[];
         columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
         NasdaqTesFrame=NasdaqAbbreviations['CQS Symbol'];
+        print(NasdaqTesFrame)
         sze=len(NasdaqTesFrame)
         lineItem=0;
         """
