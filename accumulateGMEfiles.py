@@ -53,12 +53,12 @@ def runNasdaq():
     NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
     NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
     columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
-    NasdaqAbbreviations['CQS']
+    NasdaqAbbreviations['CQS Symbol']
     
     
     print(NasdaqAbbreviations);
     print(NasdaqNativeAbbreviations);
-    print(NasdaqAbbreviations['CQS'])
+    print(NasdaqAbbreviations['CQS Symbol'])
     print("columnsOfNasdaqNativeAbbreviation "+str(columnsOfNasdaqNativeAbbreviation))
     
     return NasdaqNativeAbbreviations;
