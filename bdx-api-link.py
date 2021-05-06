@@ -1,4 +1,4 @@
-import accumulateGMEfiles
+
 #delete above after experiment
 
 
@@ -22,6 +22,7 @@ import scipy
 import pandas
 import BidOpAssist
 import fileHandler
+import accumulateGMEfiles
 import os
 from flask import Flask, Markup, render_template, request, make_response
 from flask import send_file
@@ -67,7 +68,7 @@ def stonk():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return render_template('BidOpForm.html')
+    return accumulateGMEfiles.TableGen();
 
 
 
