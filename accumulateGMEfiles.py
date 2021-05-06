@@ -159,7 +159,8 @@ def MonthTableMaker(chartData):
     #NewFrame=pandas.DataFrame(NewFrame,columns=[names]); 
     print("------------------------------")
     print("------------------------------")
-    print(NewFrame);    
+    print(NewFrame); 
+    print(len(NewFrame));
 MonthTableMaker(workingChartData);    
     
      
