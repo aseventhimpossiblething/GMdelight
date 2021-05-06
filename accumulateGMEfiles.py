@@ -81,6 +81,7 @@ def runNasdaq():
             lineItem=lineItem+1;
         NasdaqTesFrame['broken line numbers']=brokenlines;
         NasdaqTesFrame['response Code']=responseCode;
+        print(type(NasdaqTesFrame)) 
         print(NasdaqTesFrame.columns)
         print(NasdaqTesFrame)        
         print("---------------------------------------------------------------------")
