@@ -24,20 +24,6 @@ import pandas
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
     os.chdir("/GMDelight/GMDelight")
-    print("_____________________________");
-    print(os.getcwd());
-    print(os.listdir());
-    print("_____________________________");
-    #print(os.getcwd());
-    #os.chdir('GMDelight/GMDelight');
-    print(os.getcwd());
-    print(os.listdir());
-    print("_____________________________");
-    print(os.getcwd());
-    #os.chdir('Sheets/rememberGME')
-    print(os.getcwd());
-    print(os.listdir());
-    print("_____________________________");
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
     print(os.getcwd());
     mglob=str(os.listdir());
