@@ -88,39 +88,17 @@ def columnMaker(columndata,columnName):
     newCol=[];
     x=columndata;
     y=columnName;
-    #labels=list(x[0].keys())
-    #label=list(x[0].keys())[y];
     newCol.append(y);
-    #print("New label")
-    #print(label+" label")
-    #print(len(x)); 
-    #count=0;
     for days in x:
-        #print(str(type(days[y]))+"-"+str(days[y])) ;
-        
         fi=str(type(days[y])).find('int');
         ff=str(type(days[y])).find('float');
-        #print(str(fi)+" "+str(ff))
         fff=ff+fi;
         if fff<=-2:
            print(str(fff));
            newCol.append(0.0); 
-        #if type(days[y])=="<class 'int'>" or "<class 'float'>":
         else:
-             newCol.append(days[y]);
-        #else:
-        #   newCol.append(0.0); 
-        """
-        print(str(count)+" in new function "+str(days[label]));
-        print("----------------------") 
-        print("----------------------")
-        """
-        #count=count+1;
+           newCol.append(days[y]);
     newCol=pandas.DataFrame(newCol, columns=[y]);
-    #print(y+" column done"); 
-    
-    #print(newCol);  
-    
     return newCol;                        
         
 
@@ -128,32 +106,15 @@ def columnMaker(columndata,columnName):
 def MonthTableMaker(chartData):
     PreFrame=[]; 
     x=chartData;
-    #print("x[0] "+str(x[0]));
-    #print("len(x[0]) "+str(len(x[0])));
     names=list(x[0].keys());
-    #count=0;
     for columns in list(x[0]):
-        #print(str(count)+" "+columns);
-        #count=count+1 
         PreFrame.append(columnMaker(x,columns));
-    #NewFrame=pandas.DataFrame(PreFrame,columns=[names]); 
-    print("------------------------------")
-    print("------------------------------")
-    #print(NewFrame); 
-    #print(NewFrame)
-    print("len of PreFrame --- "+str(len(PreFrame)));
     NewFrame=pandas.DataFrame(PreFrame[0], columns=[names[0]])
-    #NewFrame[names[1]]=PreFrame[1];
     cnt=0;
     while cnt<len(PreFrame)-1:
-           
-    #for bits in PreFrame:
         print(NewFrame)
-        #bits 
         cnt=cnt+1;
         NewFrame[names[cnt]]=PreFrame[cnt];
-    #NewFrame=pandas.DataFrame(PreFrame[0], columns=[names[0]])
-    #NewFrame[names[1]]=PreFrame[1];
     print(NewFrame);
     print(names);
 MonthTableMaker(workingChartData);    
@@ -164,8 +125,5 @@ MonthTableMaker(workingChartData);
 
 
 
-
-#https://sandbox.iexapis.com/v1/stock/ market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y%20&token=pk_2a5af8857a7940d4b361bc2b4a14d0ad
-#chartIEXdata="https://cloud.iexapis.com/stable/stock/market/market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y%20&token=pk_2a5af8857a7940d4b361bc2b4a14d0ad
 
 
