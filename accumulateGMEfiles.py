@@ -25,7 +25,7 @@ import pandas
 def pullNasdaqAbbreves():
     print(os.listdir());
     os.chdir('Sheets');
-     print(os.listdir());
+    print(os.listdir());
     os.chdir('Sheets/rememberGME/NasdaqAbbreviations');
     mglob=str(os.listdir());
     ActivendqAdd=mglob.find("ActivendqAbbrev");
