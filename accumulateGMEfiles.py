@@ -58,9 +58,10 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
         
         
-    print("---------------------------------------------------------------------")
-    print("---------------------------------------------------------------------")
+    
     def nasdaqTester():
+        print("---------------------------------------------------------------------")
+        print("---------------------------------------------------------------------")
         brokenlines=[];
         responseCode=[];
         columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
@@ -76,9 +77,10 @@ def runNasdaq():
         NasdaqTesFrame['broken line numbers']=brokenlines;
         NasdaqTesFrame['response Code']=responseCode;
         print(NasdaqTestFrame)        
-            
-    print("---------------------------------------------------------------------")
-    print("---------------------------------------------------------------------")
+        print("---------------------------------------------------------------------")
+        print("---------------------------------------------------------------------")
+    trd=threading.Thread(target=nasdaqTester);
+    trd.start();
     #NasdaqTesFrame['broken line numbers']=brokenlines;
     #NasdaqTesFrame['response Code']=responseCode;
     #print(NasdaqTestFrame)
