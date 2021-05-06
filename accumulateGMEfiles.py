@@ -137,7 +137,7 @@ def columnMaker(columndata,columnName):
         """
         #count=count+1;
     newCol=pandas.DataFrame(newCol, columns=[y]);
-    print(y+" column done"); 
+    #print(y+" column done"); 
     
     #print(newCol);  
     
@@ -148,8 +148,8 @@ def columnMaker(columndata,columnName):
 def MonthTableMaker(chartData):
     NewFrame=[]; 
     x=chartData;
-    print("x[0] "+str(x[0]));
-    print("len(x[0]) "+str(len(x[0])));
+    #print("x[0] "+str(x[0]));
+    #print("len(x[0]) "+str(len(x[0])));
     names=list(x[0].keys());
     #count=0;
     for columns in list(x[0]):
@@ -160,7 +160,10 @@ def MonthTableMaker(chartData):
     print("------------------------------")
     print("------------------------------")
     #print(NewFrame); 
+    print(NewFrame[0])
     print("len of Frame "+str(len(NewFrame)));
+    pandas.DataFrame(NewFrame, columns=[names][0])
+    print(NewFrame)
 MonthTableMaker(workingChartData);    
     
      
