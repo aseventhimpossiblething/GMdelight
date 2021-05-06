@@ -136,7 +136,9 @@ def columnMaker(columndata,columnName):
         print("----------------------")
         """
         #count=count+1;
-    print(y+" column done");    
+    newCol=pandas.DataFrame(newCol);
+    print(y+" column done"); 
+    
     print(newCol);  
     
     return newCol;                        
