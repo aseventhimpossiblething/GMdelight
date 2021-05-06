@@ -60,6 +60,18 @@ import psycopg2
 app = Flask(__name__,"/static/")
 
 
+
+
+@app.route('/stonks')
+def stonk():
+    if chckbdxcred().find("NULL")==-1:
+        print(str(chckbdxcred()));
+        return str(chckbdxcred());
+    return render_template('BidOpForm.html')
+
+
+
+
 login_page="/login"
 def setCnam():
     return "hyo123"
