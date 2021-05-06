@@ -49,7 +49,7 @@ def runNasdaq():
     pullNasdaqAbbreves();
     NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
     NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
-
+    
     print(NasdaqAbbreviations);
     print(NasdaqNativeAbbreviations);
     return NasdaqNativeAbbreviations;
@@ -110,6 +110,7 @@ def TableGen():
     #MonthTableMaker(workingChartData);
     runNasdaq();
     ready=MonthTableMaker(workingChartData).to_html
+    print("type(runNasdaq()) "+type(runNasdaq()));
     #ready=MonthTableMaker(workingChartData)
     #return return MonthTableMaker(workingChartData)[0];
     return ready
