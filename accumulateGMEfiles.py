@@ -83,7 +83,7 @@ def runNasdaq():
    #ACTIVATE FOR REAL DATA0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000         
             #test="https://cloud.iexapis.com/stable/stock/"+str(nums)+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
             rtest=requests.get(test);
-            print(str(rtest).find("20"));
+            print(str(rtest).find("200"));
             #brokenlines.append(lineItem);
             responseCode.append(rtest);
             print(str(rtest)+"   "+str(lineItem)+" of "+str(sze));
