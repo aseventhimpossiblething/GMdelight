@@ -62,7 +62,7 @@ def runNasdaq():
     def nasdaqTester():
         print("---------------------------------------------------------------------")
         print("---------------------------------------------------------------------")
-        brokenlines=[];
+        #brokenlines=[];
         responseCode=[];
         columnsOfNasdaqNativeAbbreviation=NasdaqAbbreviations.columns
         NasdaqTesFrame=NasdaqAbbreviations['CQS Symbol'];
@@ -70,6 +70,7 @@ def runNasdaq():
         print(NasdaqTesFrame)
         sze=len(NasdaqTesFrame)
         lineItem=0;
+        errCount=0;
         """
         while (lineItem < 10):
             nums=NasdaqAbbreviations['CQS Symbol'][lineItem];
@@ -80,14 +81,15 @@ def runNasdaq():
             
             test="https://cloud.iexapis.com/stable/stock/"+str(nums)+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
             rtest=requests.get(test);
-            brokenlines.append(lineItem);
+            print("find 404  - "+str(rtest).find("404"));
+            #brokenlines.append(lineItem);
             responseCode.append(rtest);
             print(str(rtest)+"   "+str(lineItem)+" of "+str(sze));
             lineItem=lineItem+1;
         NasdaqTesFrame=pandas.DataFrame(NasdaqTesFrame,columns=['CQS Symbol']);  
         print("NasdaqTesFrame")
         print(NasdaqTesFrame)
-        NasdaqTesFrame['broken line numbers']=brokenlines;
+        #NasdaqTesFrame['broken line numbers']=brokenlines;
         NasdaqTesFrame['response Code']=responseCode;
         print(type(NasdaqTesFrame)) 
         print(NasdaqTesFrame.columns)
