@@ -77,9 +77,11 @@ def runNasdaq():
             #print(NasdaqTesFrame)
         """
         for nums in NasdaqAbbreviations['CQS Symbol']:
-           
-            
-            test="https://cloud.iexapis.com/stable/stock/"+str(nums)+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
+          
+            test=https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e
+                     
+   #ACTIVATE FOR REAL DATA0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000         
+            #test="https://cloud.iexapis.com/stable/stock/"+str(nums)+"/chart/1m?token=pk_2a5af8857a7940d4b361bc2b4a14d0ad"
             rtest=requests.get(test);
             print("find 404  - "+str(rtest).find("404"));
             #brokenlines.append(lineItem);
