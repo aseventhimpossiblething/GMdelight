@@ -104,6 +104,8 @@ def runNasdaq():
         print(os.getcwd())
         os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/GMEouts")
         print(os.getcwd())
+        print(os.listdir())
+        
         print("---------------------------------------------------------------------")
         print("---------------------------------------------------------------------")
     trd=threading.Thread(target=nasdaqTester);
