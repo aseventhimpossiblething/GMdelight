@@ -187,6 +187,9 @@ def BasisN3():
 
 
 
+@app.route('/GMEout0')
+def GME0():
+ return send_file('/Sheets/rememberGME/gmetemplate.xlsx', attachment_filename='GMEout.xlsx')
 
 
 
