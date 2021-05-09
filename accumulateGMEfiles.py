@@ -102,6 +102,7 @@ def runNasdaq():
         print(NasdaqTesFrame) 
         print("errCount = "+str(errCount))
         print(os.getcwd())
+        os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/GMEouts")
         print("---------------------------------------------------------------------")
         print("---------------------------------------------------------------------")
     trd=threading.Thread(target=nasdaqTester);
