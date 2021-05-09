@@ -105,7 +105,7 @@ def runNasdaq():
         os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/GMEouts")
         print(os.getcwd())
         print(os.listdir())
-        #NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
+        NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
         print(NasdaqExp)
         NasdaqTesFrame.to_excel(r'gmetemplate.xlsx',index=False)
         NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
