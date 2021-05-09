@@ -91,7 +91,8 @@ def runNasdaq():
             responseCode.append(rtest);
             print(str(rtest)+"   "+str(lineItem)+" of "+str(sze));
             lineItem=lineItem+1;
-        NasdaqTesFrame=pandas.DataFrame(NasdaqTesFrame,columns=['CQS Symbol']);  
+        NasdaqTesFrame=pandas.DataFrame(NasdaqTesFrame,columns=['CQS Symbol']); 
+        
         print("NasdaqTesFrame")
         print(NasdaqTesFrame)
         #NasdaqTesFrame['broken line numbers']=brokenlines;
@@ -100,6 +101,7 @@ def runNasdaq():
         print(NasdaqTesFrame.columns)
         print(NasdaqTesFrame) 
         print("errCount = "+str(errCount))
+        print(os.getcwd())
         print("---------------------------------------------------------------------")
         print("---------------------------------------------------------------------")
     trd=threading.Thread(target=nasdaqTester);
