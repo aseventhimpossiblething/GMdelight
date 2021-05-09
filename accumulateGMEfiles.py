@@ -13,7 +13,7 @@ https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=d
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
-
+importopenpyexcel
 import threading
 import requests
 import os
@@ -106,6 +106,7 @@ def runNasdaq():
         print(os.getcwd())
         print(os.listdir())
         NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
+        NasdaqExp.to_excel('gmetemplate.xlsx')
         print(NasdaqExp)
         
         print("---------------------------------------------------------------------")
