@@ -107,8 +107,8 @@ def runNasdaq():
         print(os.listdir())
         NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
         print(NasdaqExp)
-        NasdaqExp.to_excel('gmetemplate.xlsx')
-        NasdaqExp=pandas.read_excel(r'gmetemplate.xlsx')
+        NasdaqExp.to_excel(r'gmetemplate.xlsx')
+        NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
         print(NasdaqExp)
         print(NasdaqExp.columns)
         
