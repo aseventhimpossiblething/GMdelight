@@ -195,7 +195,7 @@ def GME0():
 def GME0():
  print(os.getcwd())  
  print(os.listdir())
- return send_file('/a', attachment_filename='a')
+ return send_file('/gmetemplate.xlsx', attachment_filename='a')
 
 
 
