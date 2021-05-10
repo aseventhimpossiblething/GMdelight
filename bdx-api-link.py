@@ -186,10 +186,14 @@ def BasisN3():
  return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/featuresheet.xlsx', attachment_filename='CTROut5heet2.xlsx')
 
 
-
+"""
 @app.route('/GMEout0')
 def GME0():
  return send_file('/Sheets/rememberGME/GMEouts/gmetemplate.xlsx', attachment_filename='GMEout.xlsx')
+"""
+@app.route('/GMEout0')
+def GME0():
+ return send_file('/a', attachment_filename='a')
 
 
 
