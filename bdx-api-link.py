@@ -193,6 +193,7 @@ def GME0():
 """
 @app.route('/GMEout0')
 def GME0():
+ print(os.getcwd())   
  return send_file('/a', attachment_filename='a')
 
 
