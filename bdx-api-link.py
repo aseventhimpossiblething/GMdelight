@@ -189,7 +189,7 @@ def BasisN3():
 
 @app.route('/GMEout0')
 def GME0():
- return send_file('GMdelight/Sheets/rememberGME/GMEouts/gmetemplate.xlsx', attachment_filename='GMEout.xlsx')
+ return send_file('/Sheets/rememberGME/GMEouts/gmetemplate.xlsx', attachment_filename='GMEout.xlsx')
 
 
 
