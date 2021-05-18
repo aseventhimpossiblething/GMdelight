@@ -108,8 +108,9 @@ def runNasdaq():
         NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
         print(NasdaqExp)
         NasdaqTesFrame.to_excel(r'gmetemplate.xlsx',index=False)
-        NasdaqExp=pandas.read_excel('gmetemplate.xlsx')
+        NasdaqExp=pandas.reprint("NasdaqExp.columns")ad_excel('gmetemplate.xlsx')
         print(NasdaqExp)
+        print("NasdaqExp.columns")
         print(NasdaqExp.columns)
         
         print("---------------------------------------------------------------------")
