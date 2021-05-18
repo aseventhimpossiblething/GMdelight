@@ -22,7 +22,7 @@ import scipy
 import pandas
 import BidOpAssist
 import fileHandler
-import accumulateGMEfiles
+#import accumulateGMEfiles
 import os
 from flask import Flask, Markup, render_template, request, make_response
 from flask import send_file
