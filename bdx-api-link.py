@@ -99,7 +99,7 @@ def chckbdxcred():
        print(x==bdxcred(),"*") 
        a="<meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'><meta http-equiv='refresh' content='0;URL="
        b=login_page
-       c="'><html>did not forward</html>"
+       c="'><html>did not forward - GMDelight</html>"
        abc=a+b+c
        return abc 
        #return logontrue();
