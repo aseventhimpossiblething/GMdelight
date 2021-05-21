@@ -1,6 +1,7 @@
 #https://pypi.org/project/tbselenium/
 #"/path/to/TorBrowserBundle/"
 #apt install tor
+#sudo apt install torbrowser-launcher
 """
 from argparse import ArgumentParser
 from tbselenium.tbdriver import TorBrowserDriver 
