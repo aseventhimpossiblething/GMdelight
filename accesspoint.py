@@ -2,6 +2,7 @@
 #"/path/to/TorBrowserBundle/"
 #apt install tor
 #sudo apt install torbrowser-launcher
+#sudo apt remove torbrowser-launcher
 """
 from argparse import ArgumentParser
 from tbselenium.tbdriver import TorBrowserDriver 
