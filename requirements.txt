@@ -1,3 +1,4 @@
+tbselenium
 kombu
 gunicorn
 Flask
