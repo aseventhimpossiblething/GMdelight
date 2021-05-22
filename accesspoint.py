@@ -11,7 +11,7 @@ from tbselenium.tbdriver import TorBrowserDriver
 from tbselenium.utils import start_xvfb, stop_xvfb
 from os.path import join, dirname, realpath
 """
-
+from argparse import ArgumentParser
 from tbselenium.utils import start_xvfb, stop_xvfb
 from tbselenium.tbdriver import TorBrowserDriver
 from os.path import join, dirname, realpath
@@ -45,6 +45,10 @@ with TorBrowserDriver('/etc/tor') as driver:
     print("Screenshot is saved as %s" % out_img)
 """
 xvfb_display = start_xvfb()
+print("after with xfvb display command")
 with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver:
+    print("after with Tor Command command")
     driver.load_url("https://check.torproject.org")
+    print("after driver load command")
+    
 stop_xvfb(xvfb_display)    
