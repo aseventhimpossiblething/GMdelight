@@ -1,4 +1,3 @@
-requirements-dev.txt
 xvfbwrapper
 pyvirtualdisplay
 geckodriver-autoinstaller
