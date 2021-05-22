@@ -15,6 +15,18 @@ from tbselenium.utils import start_xvfb, stop_xvfb
 from tbselenium.tbdriver import TorBrowserDriver
 from os.path import join, dirname, realpath
 
+from selenium import webdriver
+import geckodriver_autoinstaller
+
+
+geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
+                                     # and if it doesn't exist, download it automatically,
+                                     # then add geckodriver to path
+
+driver = webdriver.Firefox()
+driver.get("http://www.python.org")
+assert "Python" in driver.title
+
 """
 out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
 xvfb_display = start_xvfb()
