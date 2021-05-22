@@ -23,10 +23,11 @@ import geckodriver_autoinstaller
 geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
-
+xvfb_display = start_xvfb()
 driver = webdriver.Firefox()
 driver.get("http://www.python.org")
 assert "Python" in driver.title
+stop_xvfb(xvfb_display)
 
 """
 out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
