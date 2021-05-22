@@ -48,7 +48,8 @@ xvfb_display = start_xvfb()
 print("after with xfvb display command")
 with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver:
     print("after with Tor Command command")
-    driver.load_url("https://check.torproject.org")
+    #driver.load_url("https://check.torproject.org")
+    driver.load_url("https://ww.google.com")
     print("after driver load command")
     
 stop_xvfb(xvfb_display)    
