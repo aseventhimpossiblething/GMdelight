@@ -4,6 +4,7 @@
 #sudo apt install torbrowser-launcher
 #sudo apt remove torbrowser-launcher
 #https://tor.stackexchange.com/questions/17308/how-to-install-tor-browser-through-command-line
+
 """
 from argparse import ArgumentParser
 from tbselenium.tbdriver import TorBrowserDriver 
