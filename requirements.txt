@@ -1,3 +1,4 @@
+xvfbwrapper
 pyvirtualdisplay
 geckodriver-autoinstaller
 tbselenium
