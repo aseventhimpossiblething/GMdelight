@@ -44,5 +44,7 @@ with TorBrowserDriver('/etc/tor') as driver:
     driver.get_screenshot_as_file(out_img)
     print("Screenshot is saved as %s" % out_img)
 """
+xvfb_display = start_xvfb()
 with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver:
     driver.load_url("https://check.torproject.org")
+stop_xvfb(xvfb_display)    
