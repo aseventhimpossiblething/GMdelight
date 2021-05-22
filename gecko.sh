@@ -7,7 +7,7 @@ INSTALL_DIR="/usr/local/bin"
 #url==$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("linux64"))')
 #curl -s -L "$url" | tar -xz
 curl -s https://www.mozilla.org/en-US/firefox/download/thanks/
-curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest 
+#curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest 
 #chmod +x firefox
 #chmod +x geckodriver
 #sudo mv firefox "$INSTALL_DIR"
