@@ -20,14 +20,14 @@ from selenium import webdriver
 import geckodriver_autoinstaller
 
 
-#geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
+geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
-"""
+
 driver = webdriver.Firefox()
 driver.get("http://www.python.org")
 assert "Python" in driver.title
-"""
+
 """
 out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
 xvfb_display = start_xvfb()
@@ -44,6 +44,7 @@ with TorBrowserDriver('/etc/tor') as driver:
     driver.get_screenshot_as_file(out_img)
     print("Screenshot is saved as %s" % out_img)
 """
+"""
 xvfb_display = start_xvfb()
 print("after with xfvb display command")
 with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver:
@@ -54,3 +55,4 @@ with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver
     print("after driver load command")
     
 stop_xvfb(xvfb_display)    
+"""
