@@ -48,7 +48,7 @@ with TorBrowserDriver('/etc/tor') as driver:
     driver.get_screenshot_as_file(out_img)
     print("Screenshot is saved as %s" % out_img)
 """
-
+"""
 xvfb_display = start_xvfb()
 print("after with xfvb display command")
 with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver:
@@ -59,4 +59,20 @@ with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver
     print("after driver load command")
     
 stop_xvfb(xvfb_display)    
+"""
+
+
+xvfb_display = start_xvfb()
+#driver = webdriver.Firefox()
+driver=TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US')
+driver.get("http://www.python.org")
+print("page_source")
+print(driver.page_source)
+assert "Python" in driver.title
+stop_xvfb(xvfb_display)
+
+
+
+
+
 
