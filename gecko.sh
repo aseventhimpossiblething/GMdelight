@@ -2,9 +2,11 @@
 
 INSTALL_DIR="/usr/local/bin"
 
-json=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest)
-url=$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("linux64"))')
-curl -s -L "$url" | tar -xz
+#json=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest)
+#url=$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("linux64"))')
+#url==$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("linux64"))')
+#curl -s -L "$url" | tar -xz
+curl https://api.github.com/repos/mozilla/geckodriver/releases/latest 
 chmod +x geckodriver
 sudo mv geckodriver "$INSTALL_DIR"
 echo "installed geckodriver binary in $INSTALL_DIR"
