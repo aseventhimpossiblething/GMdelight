@@ -91,6 +91,8 @@ driver.implicitly_wait(10)
 driver.get(news);
 print(driver.page_source)
 #stop_xvfb(xvfb_display)
+driver.quit()
+stop_xvfb(xvfb_display)
 
 
 
