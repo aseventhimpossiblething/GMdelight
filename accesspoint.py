@@ -73,8 +73,9 @@ driver.get("http://www.python.org")
 print("page_source")
 #print(driver.page_source)
 assert "Python" in driver.title
+driver.close()
 stop_xvfb(xvfb_display)
-
+driver.close()
 
 xvfb_display = start_xvfb()
 news="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
