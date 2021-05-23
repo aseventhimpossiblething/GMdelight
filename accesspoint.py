@@ -28,7 +28,7 @@ xvfb_display = start_xvfb()
 driver = webdriver.Firefox()
 #driver.get("http://www.python.org")
 bh="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
-driver.get(bh).implicit_wait(15)
+driver.get(bh).implicitly_wait(15)
 print("page_source")
 print(driver.page_source)
 #assert "Python" in driver.title
