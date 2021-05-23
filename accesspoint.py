@@ -77,7 +77,7 @@ xvfb_display = start_xvfb()
 news="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
 print("page_source")
 print(driver.get(news));
-stop_xvfb(xvfb_display)
+#stop_xvfb(xvfb_display)
 
 
 
