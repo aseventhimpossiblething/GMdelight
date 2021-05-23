@@ -71,12 +71,15 @@ xvfb_display = start_xvfb()
 driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 driver.get("http://www.python.org")
 print("page_source")
+print("after print page source")
 #print(driver.page_source)
 assert "Python" in driver.title
 driver.close()
+print("after close 1")
 stop_xvfb(xvfb_display)
 driver.close()
 
+print("after close 2")
 xvfb_display = start_xvfb()
 news="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
 news="https://www.bulq.com/"
