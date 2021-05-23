@@ -70,7 +70,7 @@ driver.get("http://www.python.org")
 print("page_source")
 print(driver.page_source)
 assert "Python" in driver.title
-stop_xvfb(xvfb_display)
+#stop_xvfb(xvfb_display)
 
 """
 xvfb_display = start_xvfb()
