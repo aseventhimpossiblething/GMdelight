@@ -25,10 +25,10 @@ geckodriver_autoinstaller.install()  # Check if the current version of geckodriv
                                      # then add geckodriver to path
 
 xvfb_display = start_xvfb()
-driver = webdriver.Firefox()
+driver = webdriver.Firefox().implicitly_wait(10)
 #driver.get("http://www.python.org")
 bh="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
-driver.get(bh).implicitly_wait(15)
+driver.get(bh)
 print("page_source")
 print(driver.page_source)
 #assert "Python" in driver.title
