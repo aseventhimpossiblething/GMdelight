@@ -69,6 +69,7 @@ xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
 #driver=TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US')
 driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+"""
 driver.get("http://www.python.org")
 print("page_source")
 print("after print page source")
@@ -78,6 +79,7 @@ assert "Python" in driver.title
 #print("after close 1")
 stop_xvfb(xvfb_display)
 #driver.close()
+"""
 
 #print("after close 2")
 xvfb_display = start_xvfb()
