@@ -64,19 +64,21 @@ stop_xvfb(xvfb_display)
 
 xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
-driver=TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US')
+#driver=TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US')
+driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 driver.get("http://www.python.org")
 print("page_source")
-#print(driver.page_source)
+print(driver.page_source)
 assert "Python" in driver.title
 stop_xvfb(xvfb_display)
 
+"""
 xvfb_display = start_xvfb()
 news="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
 print("page_source")
 print(driver.get(news));
 stop_xvfb(xvfb_display)
-
+"""
 
 
 
