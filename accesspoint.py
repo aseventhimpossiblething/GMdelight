@@ -23,15 +23,17 @@ import geckodriver_autoinstaller
 geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
-"""
+
 xvfb_display = start_xvfb()
 driver = webdriver.Firefox()
-driver.get("http://www.python.org")
+#driver.get("http://www.python.org")
+bh="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
+driver.get(bh)
 print("page_source")
 print(driver.page_source)
 assert "Python" in driver.title
 stop_xvfb(xvfb_display)
-"""
+
 """
 out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
 xvfb_display = start_xvfb()
@@ -61,7 +63,7 @@ with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver
 stop_xvfb(xvfb_display)    
 """
 
-
+"""
 xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
 #driver=TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US')
@@ -79,7 +81,7 @@ print("page_source")
 driver.get(news).implicit_wait(15);
 #stop_xvfb(xvfb_display)
 
-
+"""
 
 
 
