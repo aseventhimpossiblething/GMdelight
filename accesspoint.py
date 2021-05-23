@@ -31,7 +31,7 @@ bh="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z
 driver.get(bh)
 print("page_source")
 print(driver.page_source)
-assert "Python" in driver.title
+#assert "Python" in driver.title
 stop_xvfb(xvfb_display)
 
 """
