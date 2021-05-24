@@ -87,7 +87,7 @@ stop_xvfb(xvfb_display)
 news="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
 news="https://www.bulq.com/"
 print("page_source")
-driver.implicitly_wait(10)
+driver.implicitly_wait(1800)
 driver.get(news);
 print(driver.page_source)
 #stop_xvfb(xvfb_display)
