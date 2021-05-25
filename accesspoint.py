@@ -96,7 +96,7 @@ driver.get(news);
 
 print("1-------------------------------")
 time.sleep(200)
-driver.refresh()
+#driver.refresh()
 print("2-------------------------------")
 #print(driver.page_source)
 print("end-------------------------------")
