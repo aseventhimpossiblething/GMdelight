@@ -101,8 +101,8 @@ print("2-------------------------------")
 print(driver.page_source)
 print("end-------------------------------")
 #stop_xvfb(xvfb_display)
-driver.quit()
-stop_xvfb(xvfb_display)
+#driver.quit()
+#stop_xvfb(xvfb_display)
 
 
 
