@@ -106,7 +106,7 @@ def printloop():
     while cnt<10:
           time.sleep(200)
           driver.refresh()
-          print(driver.page_source)
+          #print(driver.page_source)
           ut=str(cnt+2)
           print(ut+"-------------------------------")
           cnt=cnt+1; 
