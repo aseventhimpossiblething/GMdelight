@@ -110,7 +110,7 @@ def printloop():
           ut=str(cnt+2)
           print(ut+"-------------------------------")
           cnt=cnt+1; 
-printloop();          
+#printloop();          
 #driver.quit()
 #stop_xvfb(xvfb_display)
 
