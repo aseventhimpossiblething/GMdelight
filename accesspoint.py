@@ -1,3 +1,4 @@
+import os
 #https://pypi.org/project/tbselenium/
 #"/path/to/TorBrowserBundle/"
 #apt install tor
