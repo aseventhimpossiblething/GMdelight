@@ -69,8 +69,16 @@ stop_xvfb(xvfb_display)
 
 xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
-#driver=TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US')
 driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+news="https://www.bulq.com/"
+#print("page_source")
+#driver.implicitly_wait(1800)
+driver.get(news);
+driver.refresh()
+driver.quit()
+stop_xvfb(xvfb_display)
+print(news)
+
 
 """
 driver.get("http://www.python.org")
@@ -87,19 +95,19 @@ stop_xvfb(xvfb_display)
 #print("after close 2")
 #xvfb_display = start_xvfb()
 #news="https://www.bulq.com/lots/search/?last_activated_at=2021-05-22T23:40:37.275Z&page=1"
-news="https://www.bulq.com/"
-print("page_source")
+#news="https://www.bulq.com/"
+#print("page_source")
 #driver.implicitly_wait(1800)
-driver.get(news);
+#driver.get(news);
 #print(driver.page_source)
 #os.system("sleep 1800")
 
-print("1-------------------------------")
-time.sleep(200)
+#print("1-------------------------------")
+#time.sleep(200)
 #driver.refresh()
-print("2-------------------------------")
+#print("2-------------------------------")
 #print(driver.page_source)
-print("end-------------------------------")
+#print("end-------------------------------")
 #stop_xvfb(xvfb_display)
 def printloop():
     cnt=0;
@@ -110,7 +118,7 @@ def printloop():
           ut=str(cnt+2)
           print(ut+"-------------------------------")
           cnt=cnt+1; 
-printloop();          
+#printloop();          
 #driver.quit()
 #stop_xvfb(xvfb_display)
 
