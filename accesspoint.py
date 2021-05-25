@@ -98,7 +98,7 @@ print("1-------------------------------")
 time.sleep(200)
 driver.refresh()
 print("2-------------------------------")
-print(driver.page_source)
+#print(driver.page_source)
 print("end-------------------------------")
 #stop_xvfb(xvfb_display)
 def printloop():
@@ -110,7 +110,7 @@ def printloop():
           ut=str(cnt+2)
           print(ut+"-------------------------------")
           cnt=cnt+1; 
-#printloop();          
+printloop();          
 #driver.quit()
 #stop_xvfb(xvfb_display)
 
