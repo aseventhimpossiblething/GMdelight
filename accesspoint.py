@@ -111,8 +111,8 @@ def printloop():
           print(ut+"-------------------------------")
           cnt=cnt+1; 
 printloop();          
-driver.quit()
-stop_xvfb(xvfb_display)
+#driver.quit()
+#stop_xvfb(xvfb_display)
 
 
 
