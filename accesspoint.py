@@ -101,8 +101,17 @@ print("2-------------------------------")
 print(driver.page_source)
 print("end-------------------------------")
 #stop_xvfb(xvfb_display)
+def printloop(x):
+    cnt=0;
+    while cnt<10:
+          time.sleep(200)
+          driver.refresh()
+          print(driver.page_source)
+          ut=str(cnt+2)
+          print(ut+"-------------------------------")
+          cnt=cnt+1; 
 driver.quit()
-#stop_xvfb(xvfb_display)
+stop_xvfb(xvfb_display)
 
 
 
