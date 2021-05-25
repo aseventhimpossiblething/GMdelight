@@ -95,7 +95,7 @@ print(driver.page_source)
 #os.system("sleep 1800")
 
 print("1-------------------------------")
-time.sleep(600)
+time.sleep(200)
 driver.refresh()
 print("2-------------------------------")
 print(driver.page_source)
