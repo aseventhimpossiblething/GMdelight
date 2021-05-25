@@ -1,4 +1,5 @@
 import os
+import time
 #https://pypi.org/project/tbselenium/
 #"/path/to/TorBrowserBundle/"
 #apt install tor
@@ -91,8 +92,10 @@ print("page_source")
 driver.implicitly_wait(1800)
 driver.get(news);
 print(driver.page_source)
-os.system("sleep 1800")
+#os.system("sleep 1800")
+print("1-------------------------------")
 driver.refresh()
+print("2-------------------------------")
 #stop_xvfb(xvfb_display)
 driver.quit()
 stop_xvfb(xvfb_display)
