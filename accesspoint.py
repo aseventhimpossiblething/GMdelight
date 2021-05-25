@@ -93,8 +93,10 @@ print("page_source")
 driver.get(news);
 print(driver.page_source)
 #os.system("sleep 1800")
+
 print("1-------------------------------")
-#driver.refresh()
+time.sleep(60)
+driver.refresh()
 print("2-------------------------------")
 #stop_xvfb(xvfb_display)
 driver.quit()
