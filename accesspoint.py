@@ -90,7 +90,7 @@ print("page_source")
 driver.implicitly_wait(1800)
 driver.get(news);
 print(driver.page_source)
-os.system(sleep 1800)
+os.system("sleep 1800")
 driver.refresh()
 #stop_xvfb(xvfb_display)
 driver.quit()
