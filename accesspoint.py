@@ -91,7 +91,7 @@ news="https://www.bulq.com/"
 print("page_source")
 #driver.implicitly_wait(1800)
 driver.get(news);
-print(driver.page_source)
+#print(driver.page_source)
 #os.system("sleep 1800")
 
 print("1-------------------------------")
