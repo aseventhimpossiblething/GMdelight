@@ -26,17 +26,25 @@ geckodriver_autoinstaller.install()  # Check if the current version of geckodriv
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
 
-"""    
+   
 xvfb_display = start_xvfb()
+
+
+ipadd='https://whatismyipaddress.com/'
+bulq="https://www.bulq.com/"
+
 #driver = webdriver.Firefox()
 driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
-news="https://www.bulq.com/"
-driver.get(news);
+driver.get(bulq);
 driver.refresh()
-#print(driver.page_source)
+print(driver.page_source)
+driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
+
 driver.quit()
 stop_xvfb(xvfb_display)
-"""
+#driver.get('https://whatismyipaddress.com/')
+#driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
+
     
     
 print("----------------------------------------------------------------------------------------------")  
@@ -46,7 +54,7 @@ from tbselenium.tbdriver import TorBrowserDriver
 from tbselenium.utils import start_xvfb, stop_xvfb
 from os.path import join, dirname, realpath
 """
-
+"""
 def headless_visit(tbb_dir):
     #out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
     # start a virtual display
@@ -64,7 +72,7 @@ def headless_visit(tbb_dir):
     stop_xvfb(xvfb_display)
 headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 #headless_visit('/GMDelight/GMDelight/')
-
+"""
 
 
 print("--------------------------------------------------------------------------------------------------------------------")
@@ -74,7 +82,7 @@ print(out_img)
 print(os.getcwd())
 os.chdir("/GMDelight/GMDelight");
 oscommand="mv headless_screenshot.png static"
-os.system(oscommand)
+#os.system(oscommand)
 """
 def main():
     desc = "Headless visit and screenshot of check.torproject.org using XVFB"
