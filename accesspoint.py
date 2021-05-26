@@ -66,7 +66,7 @@ print("-------------------------------------------------------------------------
 print("--------------------------------------------------------------------------------------------------------------------")
 print(os.getcwd())
 os.chdir("/GMDelight/GMDelight");
-oscommand="mv headless_screenshot.png static"
+#oscommand="mv headless_screenshot.png static"
 os.system(oscommand)
 """
 def main():
