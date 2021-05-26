@@ -69,6 +69,8 @@ headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 
 print("--------------------------------------------------------------------------------------------------------------------")
 print("--------------------------------------------------------------------------------------------------------------------")
+out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
+print(out_img)
 print(os.getcwd())
 os.chdir("/GMDelight/GMDelight");
 oscommand="mv headless_screenshot.png static"
