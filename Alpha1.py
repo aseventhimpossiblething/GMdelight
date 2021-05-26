@@ -58,7 +58,9 @@ os.system('sudo chmod -R 777 templates')
 
 
 import psycopg2
-#app = Flask(__name__,"/static/")
+
+
+app = Flask(__name__,"/static/")
 
 @app.route('/proxy')
 def prox():
