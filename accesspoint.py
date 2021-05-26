@@ -75,6 +75,7 @@ news="https://www.bulq.com/"
 #driver.implicitly_wait(1800)
 driver.get(news);
 driver.refresh()
+print(driver.page_source)
 driver.quit()
 stop_xvfb(xvfb_display)
 print(news)
