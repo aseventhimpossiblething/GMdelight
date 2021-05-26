@@ -25,6 +25,19 @@ import geckodriver_autoinstaller
 geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
+
+    
+xvfb_display = start_xvfb()
+#driver = webdriver.Firefox()
+driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+news="https://www.bulq.com/"
+driver.get(news);
+driver.refresh()
+driver.quit()
+stop_xvfb(xvfb_display)
+    
+    
+    
 """
 xvfb_display = start_xvfb()
 driver = webdriver.Firefox()
@@ -66,20 +79,17 @@ with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver
 stop_xvfb(xvfb_display)    
 """
 
-
+"""
 xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
 driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 news="https://www.bulq.com/"
-#print("page_source")
-#driver.implicitly_wait(1800)
 driver.get(news);
 driver.refresh()
-print(driver.page_source)
 driver.quit()
 stop_xvfb(xvfb_display)
-print(news)
-
+#print(news)
+"""
 
 """
 driver.get("http://www.python.org")
