@@ -52,7 +52,8 @@ def headless_visit(tbb_dir):
     # start a virtual display
     xvfb_display = start_xvfb()
     with TorBrowserDriver(tbb_dir) as driver:
-        driver.load_url("https://check.torproject.org")
+        #driver.load_url("https://check.torproject.org")
+        driver.load_url('https://whatismyipaddress.com/')
         driver.get_screenshot_as_file(out_img)
         print("Screenshot is saved as %s" % out_img)
 
