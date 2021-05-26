@@ -58,7 +58,7 @@ def headless_visit(tbb_dir):
         #driver.load_url('https://www.bulq.com')
         driver.get('https://whatismyipaddress.com/')
         #driver.get_screenshot_as_file(out_img)
-        driver.get_screenshot_as_file('/static')
+        driver.get_screenshot_as_file('/GMDelight/GMDelight/static')
         #print("Screenshot is saved as %s" % out_img)
 
     stop_xvfb(xvfb_display)
