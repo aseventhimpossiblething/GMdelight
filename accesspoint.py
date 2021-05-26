@@ -56,7 +56,7 @@ def headless_visit(tbb_dir):
         #driver.load_url('https://whatismyipaddress.com/')
         
         #driver.load_url('https://www.bulq.com')
-        driver.get('https://www.bulq.com')
+        driver.get('https://whatismyipaddress.com/')
         driver.get_screenshot_as_file(out_img)
         print("Screenshot is saved as %s" % out_img)
 
