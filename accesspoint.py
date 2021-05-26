@@ -67,7 +67,7 @@ print("-------------------------------------------------------------------------
 print(os.getcwd())
 os.chdir("/GMDelight/GMDelight");
 oscommand="mv headless_screenshot.png static"
-#os.system(oscommand)
+os.system(oscommand)
 """
 def main():
     desc = "Headless visit and screenshot of check.torproject.org using XVFB"
