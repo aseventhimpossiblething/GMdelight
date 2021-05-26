@@ -59,6 +59,10 @@ def headless_visit(tbb_dir):
     stop_xvfb(xvfb_display)
 headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 
+
+
+print("--------------------------------------------------------------------------------------------------------------------")
+print("--------------------------------------------------------------------------------------------------------------------")
 print(os.getcwd())
 oscommand="mv headless_screenshot.png static"
 os.system(oscommand)
