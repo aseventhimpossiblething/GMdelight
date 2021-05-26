@@ -26,7 +26,7 @@ geckodriver_autoinstaller.install()  # Check if the current version of geckodriv
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
 
-    
+"""    
 xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
 driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
@@ -35,7 +35,7 @@ driver.get(news);
 driver.refresh()
 driver.quit()
 stop_xvfb(xvfb_display)
-    
+"""    
     
 print("----------------------------------------------------------------------------------------------")  
 """
@@ -55,6 +55,7 @@ def headless_visit(tbb_dir):
         print("Screenshot is saved as %s" % out_img)
 
     stop_xvfb(xvfb_display)
+headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 
 """
 def main():
