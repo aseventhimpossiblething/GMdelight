@@ -37,7 +37,7 @@ driver.quit()
 stop_xvfb(xvfb_display)
     
     
-    
+print("----------------------------------------------------------------------------------------------")    
 """
 xvfb_display = start_xvfb()
 driver = webdriver.Firefox()
