@@ -48,7 +48,7 @@ from os.path import join, dirname, realpath
 """
 
 def headless_visit(tbb_dir):
-    out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
+    #out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
     # start a virtual display
     xvfb_display = start_xvfb()
     with TorBrowserDriver(tbb_dir) as driver:
@@ -57,12 +57,13 @@ def headless_visit(tbb_dir):
         
         #driver.load_url('https://www.bulq.com')
         driver.get('https://whatismyipaddress.com/')
-        driver.get_screenshot_as_file(out_img)
+        #driver.get_screenshot_as_file(out_img)
+        driver.get_screenshot_as_file('static')
         print("Screenshot is saved as %s" % out_img)
 
     stop_xvfb(xvfb_display)
-#headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
-headless_visit('/GMDelight/GMDelight/')
+headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+#headless_visit('/GMDelight/GMDelight/')
 
 
 
