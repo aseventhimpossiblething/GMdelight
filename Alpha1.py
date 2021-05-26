@@ -59,6 +59,12 @@ os.system('sudo chmod -R 777 templates')
 
 import psycopg2
 app = Flask(__name__,"/static/")
+@app.route('/proxy')
+def prox():
+    if chckbdxcred().find("NULL")==-1:
+        print(str(chckbdxcred()));
+        return str(chckbdxcred());
+    return render_template('proxy.html')
 
 
 
