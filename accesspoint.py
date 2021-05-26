@@ -33,6 +33,7 @@ driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 news="https://www.bulq.com/"
 driver.get(news);
 driver.refresh()
+print(driver.page_source)
 driver.quit()
 stop_xvfb(xvfb_display)
     
