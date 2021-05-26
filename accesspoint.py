@@ -59,7 +59,7 @@ def headless_visit(tbb_dir):
         driver.get('https://whatismyipaddress.com/')
         #driver.get_screenshot_as_file(out_img)
         driver.get_screenshot_as_file('static')
-        print("Screenshot is saved as %s" % out_img)
+        #print("Screenshot is saved as %s" % out_img)
 
     stop_xvfb(xvfb_display)
 headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
