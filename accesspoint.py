@@ -61,7 +61,8 @@ def headless_visit(tbb_dir):
         print("Screenshot is saved as %s" % out_img)
 
     stop_xvfb(xvfb_display)
-headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+#headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+headless_visit('/GMDelight/GMDelight/')
 
 
 
