@@ -62,12 +62,20 @@ import psycopg2
 
 app = Flask(__name__,"/static/")
 
-@app.route('/proxy')
+@app.route('/proxy1')
 def prox():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return render_template('proxy.html')
+    return render_template('proxy1.html')
+
+@app.route('/proxy2')
+def prox():
+    if chckbdxcred().find("NULL")==-1:
+        print(str(chckbdxcred()));
+        return str(chckbdxcred());
+    return render_template('proxy2.html')
+
 
 
 
