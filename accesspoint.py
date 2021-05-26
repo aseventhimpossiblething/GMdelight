@@ -54,7 +54,9 @@ def headless_visit(tbb_dir):
     with TorBrowserDriver(tbb_dir) as driver:
         #driver.load_url("https://check.torproject.org")
         #driver.load_url('https://whatismyipaddress.com/')
-        driver.load_url('https://www.bulq.com')
+        
+        #driver.load_url('https://www.bulq.com')
+        driver.get('https://www.bulq.com')
         driver.get_screenshot_as_file(out_img)
         print("Screenshot is saved as %s" % out_img)
 
