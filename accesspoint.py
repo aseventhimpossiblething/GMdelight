@@ -26,22 +26,23 @@ geckodriver_autoinstaller.install()  # Check if the current version of geckodriv
                                      # and if it doesn't exist, download it automatically,
                                      # then add geckodriver to path
 
-   
-xvfb_display = start_xvfb()
+def pullpage():   
+    xvfb_display = start_xvfb()
 
 
-ipadd='https://whatismyipaddress.com/'
-bulq="https://www.bulq.com/"
+    ipadd='https://whatismyipaddress.com/'
+    bulq="https://www.bulq.com/"
 
-#driver = webdriver.Firefox()
-driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
-driver.get(bulq);
-driver.refresh()
-print(driver.page_source)
-driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
+    #driver = webdriver.Firefox()
+    driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+    driver.get(bulq);
+    driver.refresh()
+    #print(driver.page_source)
+    driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
 
-driver.quit()
-stop_xvfb(xvfb_display)
+    driver.quit()
+    stop_xvfb(xvfb_display)
+    return driver.page_source
 #driver.get('https://whatismyipaddress.com/')
 #driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
 
