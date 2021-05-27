@@ -44,7 +44,7 @@ def pullpage():
 
     driver.quit()
     stop_xvfb(xvfb_display)
-    return driver.page_source
+    #return driver.page_source
 #driver.get('https://whatismyipaddress.com/')
 #driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
 
