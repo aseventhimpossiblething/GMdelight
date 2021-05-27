@@ -41,7 +41,7 @@ def pullpage():
     driver.refresh()
     #print(driver.page_source)
     driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
-
+    pgsource=driver.page_source
     driver.quit()
     stop_xvfb(xvfb_display)
     #return driver.page_source
