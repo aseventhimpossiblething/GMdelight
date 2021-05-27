@@ -1,4 +1,5 @@
 import accesspoint
+accesspoint.pullpage();
 #delete above after experiment
 
 
