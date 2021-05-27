@@ -63,7 +63,7 @@ import psycopg2
 app = Flask(__name__,"/static/")
 
 @app.route('/proxy1')
-def prox():
+def prox1():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
@@ -72,7 +72,7 @@ def prox():
 
 
 @app.route('/proxy2')
-def prox():
+def prox2():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
