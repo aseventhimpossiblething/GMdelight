@@ -35,17 +35,10 @@ geckodriver_autoinstaller.install()  # Check if the current version of geckodriv
                                      # then add geckodriver to path
 
 
-
 def pullpage():
-  
-    
-
     xvfb_display = start_xvfb()
-
-
     ipadd='https://whatismyipaddress.com/'
     bulq="https://www.bulq.com/"
-
     #driver = webdriver.Firefox()
     driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
     driver.get(bulq);
@@ -58,9 +51,7 @@ def pullpage():
     return pgsource
 #driver.get('https://whatismyipaddress.com/')
 #driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
-
-    
-    
+   
 print("----------------------------------------------------------------------------------------------")  
 """
 from argparse import ArgumentParser
@@ -88,7 +79,6 @@ headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 #headless_visit('/GMDelight/GMDelight/')
 """
 
-
 print("--------------------------------------------------------------------------------------------------------------------")
 print("--------------------------------------------------------------------------------------------------------------------")
 out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
@@ -110,13 +100,6 @@ def main():
 if __name__ == '__main__':
     main()
 """
-
-
-
-
-
-
-
 
 """
 xvfb_display = start_xvfb()
