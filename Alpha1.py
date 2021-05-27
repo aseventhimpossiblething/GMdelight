@@ -68,7 +68,7 @@ def prox1():
         print(str(chckbdxcred()));
         return str(chckbdxcred());
     #return render_template('proxy1.html')
-    return accesspoint.pagepull();  
+    return accesspoint.pullpage();  
 
 
 @app.route('/proxy2')
