@@ -21,13 +21,15 @@ from os.path import join, dirname, realpath
 from selenium import webdriver
 import geckodriver_autoinstaller
 
+geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
+                                     # and if it doesn't exist, download it automatically,
+                                     # then add geckodriver to path
+
 
 
 def pullpage():
   
-    geckodriver_autoinstaller.install()  # Check if the current version of geckodriver exists
-                                     # and if it doesn't exist, download it automatically,
-                                     # then add geckodriver to path
+    
 
     xvfb_display = start_xvfb()
 
