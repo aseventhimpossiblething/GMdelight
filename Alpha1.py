@@ -67,7 +67,9 @@ def prox():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return render_template('proxy1.html')
+    #return render_template('proxy1.html')
+    return accesspoint.pagepull();  
+
 
 @app.route('/proxy2')
 def prox():
