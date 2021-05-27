@@ -41,10 +41,10 @@ def pullpage():
     driver.refresh()
     #print(driver.page_source)
     driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
-    pgsource=driver.page_source
+    pgsource=str(driver.page_source)
     driver.quit()
     stop_xvfb(xvfb_display)
-    #return driver.page_source
+    return pgsource
 #driver.get('https://whatismyipaddress.com/')
 #driver.get_screenshot_as_file('/GMDelight/GMDelight/static/headless_screenshot.png')
 
