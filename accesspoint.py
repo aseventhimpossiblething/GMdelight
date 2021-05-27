@@ -40,7 +40,10 @@ def pullpage():
     ipadd='https://whatismyipaddress.com/'
     bulq="https://www.bulq.com/"
     #driver = webdriver.Firefox()
+    TorBrowserDriver.FirefoxProfile();
     driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+    
+    
     driver.get(bulq);
     driver.refresh()
     #print(driver.page_source)
@@ -78,7 +81,6 @@ def headless_visit(tbb_dir):
 headless_visit('/GMDelight/GMDelight/webtools/tor-browser_en-US')
 #headless_visit('/GMDelight/GMDelight/')
 """
-
 print("--------------------------------------------------------------------------------------------------------------------")
 print("--------------------------------------------------------------------------------------------------------------------")
 out_img = join(dirname(realpath(__file__)), "headless_screenshot.png")
@@ -141,7 +143,6 @@ with TorBrowserDriver('/GMDelight/dependancies/akt/tor-browser_en-US') as driver
     
 stop_xvfb(xvfb_display)    
 """
-
 """
 xvfb_display = start_xvfb()
 #driver = webdriver.Firefox()
@@ -153,7 +154,6 @@ driver.quit()
 stop_xvfb(xvfb_display)
 #print(news)
 """
-
 """
 driver.get("http://www.python.org")
 print("page_source")
