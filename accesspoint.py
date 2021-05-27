@@ -1,10 +1,11 @@
-
+"""
 <div class="rc-anchor-center-container"><div class="rc-anchor-center-item rc-anchor-checkbox-holder">
 <span class="recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox" role="checkbox" aria-checked="false" id="recaptcha-anchor" dir="ltr" aria-labelledby="recaptcha-anchor-label" aria-disabled="false" tabindex="0">
 <div class="recaptcha-checkbox-border" role="presentation" style=""></div><div class="recaptcha-checkbox-borderAnimation" role="presentation" style="">
 </div><div class="recaptcha-checkbox-spinner" role="presentation" style="display: none; animation-play-state: running; opacity: 0; transform: scale(0);">
 <div class="recaptcha-checkbox-spinner-overlay" style="animation-play-state: running;"></div></div>
 <div class="recaptcha-checkbox-checkmark" role="presentation"></div></span></div></div>
+"""
 
 import os
 import time
