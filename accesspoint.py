@@ -40,7 +40,7 @@ def pullpage():
     xvfb_display = start_xvfb()
     ipadd='https://whatismyipaddress.com/'
     bulq="https://www.bulq.com/"
-    target=ipadd
+    target=bulq
     
     #driver = webdriver.Firefox()
     #TorBrowserDriver.FirefoxProfile();
