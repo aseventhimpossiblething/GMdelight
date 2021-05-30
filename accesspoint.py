@@ -38,16 +38,16 @@ geckodriver_autoinstaller.install()  # Check if the current version of geckodriv
 def pullpage():
     
     xvfb_display = start_xvfb()
-    ipadd='https://whatismyipaddress.com/'
-    bulq="https://www.bulq.com/"
-    aleppo='https://cultofrick.com'
-    target=aleppo
+    t1='https://whatismyipaddress.com/'
+    t2="https://www.bulq.com/"
+    t3='https://cultofrick.com'
+    target=t1;
     
-    #driver = webdriver.Firefox()
+    driver = webdriver.Firefox();
     #TorBrowserDriver.FirefoxProfile();
     
     
-    driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
+    #driver=TorBrowserDriver('/GMDelight/GMDelight/webtools/tor-browser_en-US')
     driver.get(target);
     driver.refresh()
     #print(driver.page_source)
