@@ -13,6 +13,8 @@ https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=d
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
+
+print("accumulateGMEfiles.py internal run");
 import openpyxl
 import threading
 import requests
