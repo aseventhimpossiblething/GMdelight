@@ -1,5 +1,5 @@
 NUM_WOKERS=20
-timeout=300
+timeout=9000
 #accesslog="/var/log/gunicorn/access.log"
 #errorlog="/var/log/gunicorn/error.log"
 #accesslog="/var/www/workPortal/Sheets/access.log"
