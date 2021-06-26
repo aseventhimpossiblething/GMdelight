@@ -60,7 +60,7 @@ def runNasdaq():
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
         
-    print("NasdaqNativeAbbreviations - ",NasdaqNativeAbbreviations)
+    #print("NasdaqNativeAbbreviations - ",NasdaqNativeAbbreviations)
     TopSymbols=NasdaqNativeAbbreviations["Symbol"];
     BottomSymbols=NasdaqAbbreviations["ACT Symbol"];
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
