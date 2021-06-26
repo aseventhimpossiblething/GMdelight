@@ -42,10 +42,13 @@ def pullNasdaqAbbreves():
     ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
     ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
     
+    print("before os track")
     os.system(ndqNativeAbbrecords)
     os.system(ActNativendqAbbrv)
     os.system(ndqAbbrecords)
     os.system(ActndqAbbrv)
+    print("after os track")
+    print(os.getcwd())
     
 pullNasdaqAbbreves();  
 def runNasdaq():
