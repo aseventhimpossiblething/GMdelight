@@ -54,7 +54,7 @@ def pullNasdaqAbbreves():
 #pullNasdaqAbbreves();  
 def runNasdaq():
     print("runNasdaq Running......") 
-    print(os.gwtcwd())
+    print(os.getcwd())
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
     print(os.gwtcwd())
