@@ -59,7 +59,10 @@ def runNasdaq():
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
         
-        
+    
+       TopSymbols=NasdaqNativeAbbreviations["Symbol"];
+       BottomSymbols=NasdaqAbbreviations["ACT"];
+    
     
     def nasdaqTester():
         print("---------------------------------------------------------------------")
