@@ -80,9 +80,11 @@ def runNasdaq():
         lineItem=0;
         errCount=0;
         """
+        """
         while (lineItem < 10):
             nums=NasdaqAbbreviations['CQS Symbol'][lineItem];
             #print(NasdaqTesFrame)
+        """
         """
         for nums in NasdaqAbbreviations['CQS Symbol']:
           
