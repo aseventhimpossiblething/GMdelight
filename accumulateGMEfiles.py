@@ -51,11 +51,13 @@ def pullNasdaqAbbreves():
     print(os.getcwd())
     print(os.listdir())
     
-pullNasdaqAbbreves();  
+#pullNasdaqAbbreves();  
 def runNasdaq():
     print("runNasdaq Running......") 
+    print(os.gwtcwd())
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
+    print(os.gwtcwd())
     try:
        NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
        NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
@@ -71,7 +73,7 @@ def runNasdaq():
        #print(BottomSymbols) 
        print("runNasdaq Ended......")  
         
-#runNasdaq()         
+runNasdaq()         
 #---------------------------------------------------------------------------------------------------------------
 """
     
