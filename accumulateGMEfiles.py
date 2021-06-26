@@ -59,20 +59,22 @@ def runNasdaq():
        print("Nasdaq Symbol Update Failed - Archive in use") 
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
-        
-    #print("NasdaqNativeAbbreviations - ",NasdaqNativeAbbreviations)
+      
     TopSymbols=NasdaqNativeAbbreviations["Symbol"];
     BottomSymbols=NasdaqAbbreviations["ACT Symbol"];
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
+    
     print(TopSymbols)
     print(BottomSymbols) 
     print(STKsymbols)
     print(STKsymbols)
+    
     print("0 ",STKsymbols.iloc[0])
     print("4780 ",STKsymbols.iloc[4780])
     print("4781 ",STKsymbols.iloc[4781])
     print("10831 ",STKsymbols.iloc[10831])
+    print(STKsymbols.columns)
     
     print("runNasdaq Ended......")  
         
