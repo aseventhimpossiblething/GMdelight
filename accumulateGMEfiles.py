@@ -69,9 +69,9 @@ def runNasdaq():
     
        TopSymbols=NasdaqNativeAbbreviations["Symbol"];
        BottomSymbols=NasdaqAbbreviations["ACT"];
-       #print(TopSymbols)
-       #print(BottomSymbols) 
-       print("runNasdaq Ended......")  
+    print(TopSymbols)
+    print(BottomSymbols) 
+    print("runNasdaq Ended......")  
         
 runNasdaq()         
 #---------------------------------------------------------------------------------------------------------------
