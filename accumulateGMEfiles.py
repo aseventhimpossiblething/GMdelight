@@ -79,13 +79,11 @@ def runNasdaq():
         sze=len(NasdaqTesFrame)
         lineItem=0;
         errCount=0;
-        """
-        """
-        while (lineItem < 10):
-            nums=NasdaqAbbreviations['CQS Symbol'][lineItem];
-            #print(NasdaqTesFrame)
-        """
-        """
+       
+       #while (lineItem < 10):
+        #    nums=NasdaqAbbreviations['CQS Symbol'][lineItem];
+        #print(NasdaqTesFrame)
+      
         for nums in NasdaqAbbreviations['CQS Symbol']:
           
             test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
