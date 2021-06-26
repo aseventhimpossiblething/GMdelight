@@ -67,8 +67,8 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
         
     
-       TopSymbols=NasdaqNativeAbbreviations["Symbol"];
-       BottomSymbols=NasdaqAbbreviations["ACT"];
+    TopSymbols=NasdaqNativeAbbreviations["Symbol"];
+    BottomSymbols=NasdaqAbbreviations["ACT"];
     print(TopSymbols)
     print(BottomSymbols) 
     print("runNasdaq Ended......")  
