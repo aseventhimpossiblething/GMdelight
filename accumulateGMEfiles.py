@@ -49,6 +49,7 @@ def pullNasdaqAbbreves():
     
   
 def runNasdaq():
+    print("runNasdaq Running......") 
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
     try:
