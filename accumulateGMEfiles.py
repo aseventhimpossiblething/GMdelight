@@ -42,22 +42,16 @@ def pullNasdaqAbbreves():
     ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
     ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
     
-    print("before os track")
+  
     os.system(ndqNativeAbbrecords)
     os.system(ActNativendqAbbrv)
     os.system(ndqAbbrecords)
     os.system(ActndqAbbrv)
-    print("after os track")
-    print(os.getcwd())
-    print(os.listdir())
-    
-#pullNasdaqAbbreves();  
+      
+  
 def runNasdaq():
-    print("runNasdaq Running......") 
-    print(os.getcwd())
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
-    print(os.getcwd())
     try:
        NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
        NasdaqAbbreviations=pandas.read_csv('ActivendqAbbrev','|');
@@ -66,7 +60,7 @@ def runNasdaq():
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
         
-    
+    print("NasdaqNativeAbbreviations - ",NasdaqNativeAbbreviations)
     TopSymbols=NasdaqNativeAbbreviations["Symbol"];
     BottomSymbols=NasdaqAbbreviations["ACT Symbol"];
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
