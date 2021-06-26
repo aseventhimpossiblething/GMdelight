@@ -49,6 +49,7 @@ def pullNasdaqAbbreves():
     os.system(ActndqAbbrv)
     print("after os track")
     print(os.getcwd())
+    print(os.listdir())
     
 pullNasdaqAbbreves();  
 def runNasdaq():
