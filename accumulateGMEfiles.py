@@ -47,7 +47,7 @@ def pullNasdaqAbbreves():
     os.system(ndqAbbrecords)
     os.system(ActndqAbbrv)
     
-  
+pullNasdaqAbbreves();  
 def runNasdaq():
     print("runNasdaq Running......") 
     pullNasdaqAbbreves();
