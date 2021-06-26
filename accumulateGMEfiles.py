@@ -62,7 +62,10 @@ def runNasdaq():
     
        TopSymbols=NasdaqNativeAbbreviations["Symbol"];
        BottomSymbols=NasdaqAbbreviations["ACT"];
-    
+        
+         
+#---------------------------------------------------------------------------------------------------------------
+"""
     
     def nasdaqTester():
         print("---------------------------------------------------------------------")
@@ -186,7 +189,7 @@ def TableGen():
     ready=MonthTableMaker(workingChartData).to_html
     #return ready
 TableGen();
-    
+"""    
     
      
      
