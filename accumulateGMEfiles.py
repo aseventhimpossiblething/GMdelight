@@ -74,7 +74,7 @@ def runNasdaq():
     print("4780 ",STKsymbols.iloc[4780])
     print("4781 ",STKsymbols.iloc[4781])
     print("10831 ",STKsymbols.iloc[10831])
-    print(STKsymbols.columns)
+    print("STKsymbols.columns---- ",STKsymbols.columns)
     
     print("runNasdaq Ended......")  
         
