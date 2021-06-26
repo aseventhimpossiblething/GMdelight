@@ -67,7 +67,7 @@ def runNasdaq():
        #print(BottomSymbols) 
        print("runNasdaq Ended......")  
         
-runNasdaq()         
+#runNasdaq()         
 #---------------------------------------------------------------------------------------------------------------
 """
     
