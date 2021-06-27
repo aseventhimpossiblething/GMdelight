@@ -130,7 +130,9 @@ def runNasdaq():
     print(iexdata);
     
     print("----------------------");
-    print(iexdata[1]["fOpen"]) 
+    print(iexdata[0]["fOpen"]);
+    print("len(iexdata) ",len(iexdata));
+    print("iexdata[0].columns ",iexdata[0].columns)
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
