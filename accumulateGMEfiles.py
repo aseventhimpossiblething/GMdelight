@@ -43,8 +43,10 @@ def Char2Num(col):
        count=count+1;
      #arr.append(member);  
      #count=count+1;
- print(arr);    
+ print(arr); 
+ print(arrout.len);
  print("Char2Num Ran---");
+ return arrout
       
   
 #Nasdaq Symbols
