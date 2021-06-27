@@ -28,8 +28,11 @@ def Char2Num(col):
  for member in col:
      print(member);
      print(str(arr).find(str(member)));
-     print("Char2Num Ran---");
-     count=count+1; 
+     if str(arr).find(str(;member))>-1:
+        arr.append(member);  
+     count=count+1;
+ print("Char2Num Ran---");
+      
   
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
