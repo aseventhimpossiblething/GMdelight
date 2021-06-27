@@ -31,8 +31,9 @@ def Char2Num(col):
      #if str(arr).find(str(member))>-1:
      if member in arr:
        #print("in dict..");
+       arr[member]=count;
      else:
-       arr[member]=count
+       arr[member]=count;
        count=count+1;
      #arr.append(member);  
      #count=count+1;
