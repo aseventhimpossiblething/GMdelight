@@ -21,6 +21,7 @@ import requests
 import os
 from datetime import datetime
 import pandas
+import json
 
 def Char2Num(col):
  arr={};
@@ -125,11 +126,11 @@ def runNasdaq():
     test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
     print(test);
     iexpull=requests.get(test);
-    print(iexpull.content);
+    iexdata=json.loads(iexpull.text);
+    print(iexdata);
+    
     print("----------------------");
-    print(iexpull.content[1]);
-    print(iexpull.content[2]);
-    print(iexpull.content[3]);
+    print(iexdata["fOpen"]) 
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
