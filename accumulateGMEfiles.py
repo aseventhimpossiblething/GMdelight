@@ -37,10 +37,10 @@ def Char2Num(col):
        #arr[member]=count;
        arrout.append(arr[member]);
      else:
-       count=count+1;
+       #count=count+1;
        arr[member]=count;
        arrout.append(arr[member]);
-       #count=count+1;
+       count=count+1;
      #arr.append(member);  
      #count=count+1;
  print(arr);    
