@@ -109,7 +109,7 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
       
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
-    TopSymbols["MKT"]=NasdaqIndicator0(TopSymbols);
+    TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
     
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
@@ -139,8 +139,8 @@ def runNasdaq():
     print("-------------------------------")
     print("runNasdaq Ended......")
     #NasdaqIndicator0(STKsymbols["Symbols"]);
-    NasdaqIndicator0(STKsymbols);
-    NONnasdaqMKTIndicator(STKsymbols);
+    #NasdaqIndicator0(STKsymbols);
+    #NONnasdaqMKTIndicator(STKsymbols);
     #Char2Num(STKsymbols["ETF"])
         
 runNasdaq()         
