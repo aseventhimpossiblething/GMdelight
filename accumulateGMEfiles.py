@@ -90,13 +90,12 @@ def runNasdaq():
         arrout=[];
         count=0;
         for member in col:
-        if member in arr:
-           arrout.append(arr[member]);
-        else:
-           count=count+1
-           arr[member]=count;
-           arrout.append(arr[member]);
-           count=count+1;
+            if member in arr:
+               arrout.append(arr[member]);
+            else:
+               count=count+1
+               arr[member]=count;
+               arrout.append(arr[member]);
         return arrout;   
         #Char2Num(x);
         """ 
