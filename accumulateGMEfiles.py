@@ -23,7 +23,8 @@ from datetime import datetime
 import pandas
 
 def Char2Num(col):
- arr={}; 
+ arr={};
+ arrout=[];
  count=0;
  for member in col:
      #arr[member]=count;
@@ -31,8 +32,10 @@ def Char2Num(col):
      #print(arr.find(str(member)));
      #if str(arr).find(str(member))>-1:
      if member in arr:
-       print("in dict..");
+       print(arr(member))
+       #print("in dict..");
        #arr[member]=count;
+       #arrout.append();
      else:
        arr[member]=count;
        count=count+1;
