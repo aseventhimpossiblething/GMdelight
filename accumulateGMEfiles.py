@@ -27,7 +27,7 @@ def Char2Num(col):
  count=0;
  for member in col:
      print(member);
-     print(str(arr).find(str(member)));
+     print(arr.find(str(member)));
      if str(arr).find(str(member))>-1:
         arr.append(member);  
      count=count+1;
