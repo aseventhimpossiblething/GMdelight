@@ -85,7 +85,7 @@ def runNasdaq():
               count=count+1;
         return arr;
     
-    def NONnasdaqMKTIndicator(x):
+    def NONnasdaqMKTIndicator(col):
         arr={};
         arrout=[];
         count=0;
