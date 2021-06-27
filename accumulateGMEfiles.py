@@ -128,6 +128,8 @@ def runNasdaq():
     print(iexpull.content);
     print("----------------------");
     print(iexpull.content[1]);
+    print(iexpull.content[2]);
+    print(iexpull.content[3]);
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
