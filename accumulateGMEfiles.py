@@ -62,9 +62,10 @@ def runNasdaq():
       
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name"]];
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name"]];
+    BottomSymbols["Symbols"]=BottomSymbols[["ACT Symbol"]];
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
-    STKsymbols.columns=["index","Symbols","Security Name"]
+    STKsymbols.columns=["Symbols","Security Name"]
     
     print(TopSymbols)
     print(BottomSymbols) 
