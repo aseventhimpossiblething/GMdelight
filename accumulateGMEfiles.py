@@ -77,6 +77,10 @@ def pullNasdaqAbbreves():
       
   
 def runNasdaq():
+    def NasdaqIndicator0(x):
+        len(x);
+        print(len(x)); 
+        
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
     try:
@@ -112,7 +116,9 @@ def runNasdaq():
     print("-------------------------------")
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
-    print("runNasdaq Ended......")  
+    print("runNasdaq Ended......")
+    NasdaqIndicator0(STKsymbols["Symbols"]);
+    NasdaqIndicator0(STKsymbols);
     #Char2Num(STKsymbols["ETF"])
         
 runNasdaq()         
