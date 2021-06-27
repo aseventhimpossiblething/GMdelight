@@ -26,12 +26,13 @@ def Char2Num(col):
  arr={}; 
  count=0;
  for member in col:
+     #arr[member]=count;
      #print(member);
      #print(arr.find(str(member)));
      #if str(arr).find(str(member))>-1:
      if member in arr:
-       #print("in dict..");
-       arr[member]=count;
+       print("in dict..");
+       #arr[member]=count;
      else:
        arr[member]=count;
        count=count+1;
