@@ -44,7 +44,7 @@ def Char2Num(col):
      #arr.append(member);  
      #count=count+1;
  print(arr); 
- print(arrout.length);
+ print(len(arrout));
  print("Char2Num Ran---");
  return arrout
       
