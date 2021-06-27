@@ -77,9 +77,26 @@ def pullNasdaqAbbreves():
       
   
 def runNasdaq():
-    def NasdaqIndicator0(x):
-        len(x);
-        print(len(x)); 
+    def NasdaqMKTIndicator0(x):
+        arr=[];
+        count=0; 
+        while count<len(x):
+              arr.append(0);
+              count=count+1;
+        return arr;
+    
+   def NONnasdaqMKTIndicator(x):
+        arr=[];
+        count=1; 
+        while count<len(x):
+              arr.append(count);
+              count=count+1;
+        return arr;   
+     
+              
+      
+        
+        #print(len(x)); 
         
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
@@ -92,12 +109,16 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
       
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
+    TopSymbols["MKT"]=NasdaqIndicator0(TopSymbols);
+    
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
     BottomSymbols=BottomSymbols.drop(["ACT Symbol"], axis=1);
+    BottomSymbols["MKT"]=NONnasdaqMKTIndicator(STKsymbols);
+    
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
-    STKsymbols.columns=["Symbols","Security Name","ETF"];
+    STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
     
     print(TopSymbols)
@@ -117,8 +138,9 @@ def runNasdaq():
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
     print("runNasdaq Ended......")
-    NasdaqIndicator0(STKsymbols["Symbols"]);
+    #NasdaqIndicator0(STKsymbols["Symbols"]);
     NasdaqIndicator0(STKsymbols);
+    NONnasdaqMKTIndicator(STKsymbols);
     #Char2Num(STKsymbols["ETF"])
         
 runNasdaq()         
