@@ -22,7 +22,14 @@ import os
 from datetime import datetime
 import pandas
 
-
+Char2Num(col):
+ arr=[];  
+ for member in col:
+     print(member);
+     print(arr.find(member));
+     print("Char2Num Ran---");
+ 
+  
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
   
@@ -47,6 +54,7 @@ def pullNasdaqAbbreves():
     os.system(ActNativendqAbbrv)
     os.system(ndqAbbrecords)
     os.system(ActndqAbbrv)
+    
       
   
 def runNasdaq():
@@ -85,6 +93,7 @@ def runNasdaq():
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
     print("runNasdaq Ended......")  
+    Char2Num(STKsymbols["ETF"])
         
 runNasdaq()         
 #---------------------------------------------------------------------------------------------------------------
