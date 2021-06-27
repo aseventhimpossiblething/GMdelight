@@ -87,10 +87,11 @@ def runNasdaq():
     
     def NONnasdaqMKTIndicator(x):
         arr=[];
-        count=1; 
+        count=0; 
         while count<len(x):
+              count=count+1; 
               arr.append(count);
-              count=count+1;
+              
         return arr;   
      
               
