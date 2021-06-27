@@ -27,10 +27,15 @@ def Char2Num(col):
  count=0;
  for member in col:
      print(member);
-     print(arr.find(str(member)));
-     if str(arr).find(str(member))>-1:
-        arr.append(member);  
-     count=count+1;
+     #print(arr.find(str(member)));
+     #if str(arr).find(str(member))>-1:
+     if member in arr:
+       print("in dict..");
+     else:
+       arr[member]=count
+       count=count+1;
+     #arr.append(member);  
+     #count=count+1;
  print("Char2Num Ran---");
       
   
