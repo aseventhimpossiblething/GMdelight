@@ -22,7 +22,7 @@ import os
 from datetime import datetime
 import pandas
 
-Char2Num(col):
+def Char2Num(col):
  arr=[];  
  for member in col:
      print(member);
