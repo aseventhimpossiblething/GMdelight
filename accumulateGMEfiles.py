@@ -93,7 +93,8 @@ def runNasdaq():
     BottomSymbols=BottomSymbols.drop(["ACT Symbol"], axis=1);
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
-    STKsymbols.columns=["Symbols","Security Name","ETF"]
+    STKsymbols.columns=["Symbols","Security Name","ETF"];
+    STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
     
     print(TopSymbols)
     print(BottomSymbols) 
@@ -112,7 +113,7 @@ def runNasdaq():
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
     print("runNasdaq Ended......")  
-    Char2Num(STKsymbols["ETF"])
+    #Char2Num(STKsymbols["ETF"])
         
 runNasdaq()         
 #---------------------------------------------------------------------------------------------------------------
