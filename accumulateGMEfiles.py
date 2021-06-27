@@ -35,7 +35,7 @@ def Char2Num(col):
        print(arr[member])
        #print("in dict..");
        #arr[member]=count;
-       #arrout.append();
+       arrout.append(arr[member]);
      else:
        arr[member]=count;
        count=count+1;
