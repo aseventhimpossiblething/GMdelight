@@ -114,7 +114,7 @@ def runNasdaq():
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
     BottomSymbols=BottomSymbols.drop(["ACT Symbol"], axis=1);
-    BottomSymbols["MKT"]=NONnasdaqMKTIndicator(STKsymbols);
+    BottomSymbols["MKT"]=NONnasdaqMKTIndicator(BottomSymbols);
     
     STKsymbols=TopSymbols.append(BottomSymbols).reset_index();
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
