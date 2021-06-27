@@ -23,12 +23,13 @@ from datetime import datetime
 import pandas
 
 def Char2Num(col):
- arr=[];  
+ arr=[]; 
+ count=0;
  for member in col:
      print(member);
-     print(arr.index(member));
+     print(arr.find(member));
      print("Char2Num Ran---");
- 
+     count=count+1; 
   
 #Nasdaq Symbols
 def pullNasdaqAbbreves():
