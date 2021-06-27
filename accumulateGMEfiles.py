@@ -26,7 +26,7 @@ def Char2Num(col):
  arr={}; 
  count=0;
  for member in col:
-     print(member);
+     #print(member);
      #print(arr.find(str(member)));
      #if str(arr).find(str(member))>-1:
      if member in arr:
