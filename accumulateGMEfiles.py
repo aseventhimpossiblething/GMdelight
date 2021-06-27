@@ -127,7 +127,7 @@ def runNasdaq():
     iexpull=requests.get(test);
     print(iexpull.content);
     print("----------------------");
-    print(iexpull.content["fOpen"]);
+    print(iexpull.content[1]);
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
