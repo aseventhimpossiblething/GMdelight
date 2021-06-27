@@ -26,7 +26,7 @@ def Char2Num(col):
  arr=[];  
  for member in col:
      print(member);
-     print(arr.find(member));
+     print(arr.index(member));
      print("Char2Num Ran---");
  
   
