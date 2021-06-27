@@ -27,29 +27,14 @@ def Char2Num(col):
  arrout=[];
  count=0;
  for member in col:
-     #arr[member]=count;
-     #print(member);
-     #print(arr.find(str(member)));
-     #if str(arr).find(str(member))>-1:
      if member in arr:
-       #print(arr[member])
-       #print("in dict..");
-       #arr[member]=count;
-       arrout.append(arr[member]);
+        arrout.append(arr[member]);
      else:
-       #count=count+1;
-       arr[member]=count;
-       arrout.append(arr[member]);
-       count=count+1;
-     #arr.append(member);  
-     #count=count+1;
- #print(arr); 
- #print(len(arrout));
- #print("Char2Num Ran---");
- return arrout;
-      
+        arr[member]=count;
+        arrout.append(arr[member]);
+        count=count+1;
+ return arrout;      
   
-#Nasdaq Symbols
 def pullNasdaqAbbreves():
   
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations")
@@ -67,8 +52,7 @@ def pullNasdaqAbbreves():
     
     ndqAbbrecords=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
     ActndqAbbrv=str('curl '+nasdaqAbbreviations+' -o ActivendqAbbrev')
-    
-  
+   
     os.system(ndqNativeAbbrecords)
     os.system(ActNativendqAbbrv)
     os.system(ndqAbbrecords)
@@ -97,22 +81,6 @@ def runNasdaq():
                arr[member]=count;
                arrout.append(arr[member]);
         return arrout;   
-        #Char2Num(x);
-        """ 
-        dict={};
-        arr=[];
-        count=0; 
-        while count<len(x):
-              
-              count=count+1; 
-              arr.append(count);
-              
-        return arr;   
-        """
-              
-      
-        
-        #print(len(x)); 
         
     pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
@@ -154,11 +122,7 @@ def runNasdaq():
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
     print("runNasdaq Ended......")
-    #NasdaqIndicator0(STKsymbols["Symbols"]);
-    #NasdaqIndicator0(STKsymbols);
-    #NONnasdaqMKTIndicator(STKsymbols);
-    #Char2Num(STKsymbols["ETF"])
-        
+           
 runNasdaq()         
 #---------------------------------------------------------------------------------------------------------------
 """
