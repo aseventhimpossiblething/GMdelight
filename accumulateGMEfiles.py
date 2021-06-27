@@ -125,9 +125,9 @@ def runNasdaq():
     test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
     print(test);
     iexpull=requests.get(test);
-    print(iexpull);
+    print(iexpull.text);
            
-runNasdaq()         
+runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
 """
     
