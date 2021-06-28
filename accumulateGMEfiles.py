@@ -132,7 +132,8 @@ def runNasdaq():
     print("----------------------");
     print(iexdata[0]["fOpen"]);
     print("len(iexdata) ",len(iexdata));
-    print("iexdata[0].keys() ",iexdata[0].keys())
+    print("iexdata[0].keys() ",iexdata[0].keys());
+    print("iexdata[0].keys()[0] ",iexdata[0].keys()[0]);
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
