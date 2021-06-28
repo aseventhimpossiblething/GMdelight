@@ -137,7 +137,7 @@ def runNasdaq():
     print("list(iexdata[0].keys()) ",list(iexdata[0].keys()))
     print("list(iexdata[0].keys()[0]) ",list(iexdata[0].keys())[0])
     print(iexdata[0]);
-    print('iexdata[0]["Open"] ',iexdata[0]["Open"]);
+    print('iexdata[0]["open"] ',iexdata[0]["open"]);
     print('iexdata[0]["fOpen"] ',iexdata[0]["fOpen"]);
     print('iexdata[0]["uOpen"] ',iexdata[0]["uOpen"]);
     
