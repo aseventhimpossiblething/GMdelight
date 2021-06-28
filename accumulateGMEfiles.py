@@ -134,6 +134,8 @@ def runNasdaq():
     print("len(iexdata) ",len(iexdata));
     print("iexdata[0].keys() ",iexdata[0].keys());
     print("type(iexdata[0].keys()) ",type(iexdata[0].keys()))
+    print("list(iexdata[0].keys()) ",list(iexdata[0].keys()))
+    print("type(iexdata[0].keys()) ",type(iexdata[0].keys()))
     #print("iexdata[0].keys()[0] ",iexdata[0].keys()[0]);
            
 runNasdaq();         
