@@ -13,7 +13,14 @@ https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=d
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageAbbreviations="https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=70YMNXM4BZWGEGOA"
 #AlphaVantageEndPoint="https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbol=AMD&apikey=70YMNXM4BZWGEGOA"
-
+print("accumulateGMEfiles.py internal run");
+import openpyxl
+import threading
+import requests
+import os
+from datetime import datetime
+import pandas
+import json
 
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
@@ -56,14 +63,8 @@ def IEXColmaker(x):
 IEXColmaker(iexdata);  
          
 
-print("accumulateGMEfiles.py internal run");
-import openpyxl
-import threading
-import requests
-import os
-from datetime import datetime
-import pandas
-import json
+
+        
 
 def Char2Num(col):
  arr={};
