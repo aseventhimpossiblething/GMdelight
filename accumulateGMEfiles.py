@@ -171,9 +171,9 @@ def runNasdaq():
         while count<len(keys): 
               arr.append(SinglestockIEXdict(x,keys[count]));
               count=count+1;
-        arr1=pandas.DataFrame(arr); 
-        print(arr1);
-        return arr1;  
+        #arr1=pandas.DataFrame(arr); 
+        print(arr);
+        return arr;  
     IEXColmaker(iexdata);  
          
         
