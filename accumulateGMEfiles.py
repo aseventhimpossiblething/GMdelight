@@ -44,6 +44,7 @@ def SinglestockIEXdict(x,y):
         #print(keys);    
     
 def IEXColmaker(x):
+        print("IEXColmaker------------------")
         arr=[];
         keys=list(x[0].keys());
         count=0;
@@ -231,7 +232,7 @@ def runNasdaq():
 """      
         
            
-runNasdaq();         
+#runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
 """
     
