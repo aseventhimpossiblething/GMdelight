@@ -173,7 +173,7 @@ def runNasdaq():
               count=count+1;
         arr1=pandas.DataFrame(arr); 
         #print(arr[0]);
-        print(arr);
+        print(arr1);
         return arr;  
     IEXColmaker(iexdata);  
          
