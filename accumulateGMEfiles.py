@@ -150,6 +150,7 @@ def runNasdaq():
     def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
+        arr.append(y);  
         while count<len(x):
               push=x[count][y];
               print("symbol ",y," - ",push)
@@ -162,8 +163,13 @@ def runNasdaq():
         #print(keys);    
     
     def IEXColmaker(x):
+        arr=[];
         keys=list(x[0].keys());
-        SinglestockIEXdict(x,keys[0]);
+        count=0;
+        while count<len(keys): 
+              SinglestockIEXdict(x,keys[count]);
+              count=count+1;
+         return arr;  
     IEXColmaker(iexdata);  
          
         
