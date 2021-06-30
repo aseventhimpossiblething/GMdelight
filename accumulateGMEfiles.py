@@ -139,8 +139,8 @@ def runNasdaq():
       
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
     print("is 141 the issue???????")
-    #TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
-    print(NasdaqMKTIndicator0(TopSymbols))
+    TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
+    #print(NasdaqMKTIndicator0(TopSymbols))
     
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
@@ -233,7 +233,7 @@ def runNasdaq():
     IEXColmaker(iexdata);  
 """      
         
-           
+print("runs to the end")           
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
 """
