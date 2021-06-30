@@ -154,7 +154,7 @@ def runNasdaq():
               print(x[count]);
               print("--xxx-xxx-xxx");
               count=count+1;
-    
+    SinglestockIEXtable(iexdata);
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
