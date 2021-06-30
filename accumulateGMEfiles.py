@@ -147,7 +147,7 @@ def runNasdaq():
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
-   """
+"""
     print(TopSymbols)
     print(BottomSymbols) 
     print(STKsymbols)
@@ -165,8 +165,8 @@ def runNasdaq():
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
     print("runNasdaq Ended......")
-   """
-   """
+"""
+"""
     
     
     test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
@@ -174,8 +174,8 @@ def runNasdaq():
     iexpull=requests.get(test);
     iexdata=json.loads(iexpull.text);
     #print(iexdata);
-   """
-   """
+"""
+"""
     print("----------------------");
     print(iexdata[0]["fOpen"]);
     print("len(iexdata) ",len(iexdata));
@@ -187,11 +187,11 @@ def runNasdaq():
     print('iexdata[0]["open"] ',iexdata[0]["open"]);
     print('iexdata[0]["fOpen"] ',iexdata[0]["fOpen"]);
     print('iexdata[0]["uOpen"] ',iexdata[0]["uOpen"]);
-   """
+"""
     #print("type(iexdata[0].keys()) ",type(iexdata[0].keys()))
     #print("iexdata[0].keys()[0] ",iexdata[0].keys()[0]);
     #print("new exp")
-   """
+"""
    def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
@@ -227,7 +227,7 @@ def runNasdaq():
         print(arr1);
         return arr;  
     IEXColmaker(iexdata);  
-   """      
+"""      
         
            
 runNasdaq();         
