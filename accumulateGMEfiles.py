@@ -150,7 +150,7 @@ def runNasdaq():
     def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
-        arr.append(y);  
+        #arr.append(y);  
         while count<len(x):
               push=x[count][y];
               #print("symbol ",y," - ",push)
