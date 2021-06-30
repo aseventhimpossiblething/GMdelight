@@ -150,7 +150,7 @@ def runNasdaq():
     def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
-        #arr.append(y);  
+        arr.append(y);  
         while count<len(x):
               push=x[count][y];
               #print("symbol ",y," - ",push)
@@ -171,7 +171,7 @@ def runNasdaq():
         while count<len(keys): 
               arr.append(SinglestockIEXdict(x,keys[count]));
               count=count+1;
-        #arr1=pandas.DataFrame(arr); 
+        arr1=pandas.DataFrame(arr); 
         #print(arr[0]);
         print(arr);
         return arr;  
