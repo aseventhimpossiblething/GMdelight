@@ -232,7 +232,6 @@ def runNasdaq():
         return arr;  
     IEXColmaker(iexdata);  
 """      
-        
     print("runs to the end")           
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
