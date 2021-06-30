@@ -138,6 +138,7 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
       
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
+    print("is 141 the issue???????")
     TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
     
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
