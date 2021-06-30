@@ -150,7 +150,7 @@ def runNasdaq():
     def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
-        arr.append(y);  
+        #arr.append(y);  
         while count<len(x):
               push=x[count][y];
               #print("symbol ",y," - ",push)
@@ -159,9 +159,9 @@ def runNasdaq():
               arr.append(push); 
               count=count+1;
         #print(arr);
-        out=pandas.DataFrame(arr);
-        print(out);
-        return arr;      
+        out=pandas.DataFrame(arr, column=y);
+        #print(out);
+        return out;      
         #print(keys);    
     
     def IEXColmaker(x):
@@ -169,7 +169,7 @@ def runNasdaq():
         keys=list(x[0].keys());
         count=0;
         while count<len(keys): 
-              SinglestockIEXdict(x,keys[count]);
+              arr.append(SinglestockIEXdict(x,keys[count]));
               count=count+1;
         arr1=pandas.DataFrame(arr); 
         print(arr1);
