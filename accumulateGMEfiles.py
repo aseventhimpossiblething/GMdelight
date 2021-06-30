@@ -161,7 +161,7 @@ def runNasdaq():
         #print(arr);
         out=pandas.DataFrame(arr, columns=[y]);
         #print(out);
-        return out;      
+        return arr;      
         #print(keys);    
     
     def IEXColmaker(x):
