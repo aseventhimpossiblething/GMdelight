@@ -123,6 +123,9 @@ def runNasdaq():
     print("STKsymbols.columns---- ",STKsymbols.columns)
     print("-------------------------------")
     print("runNasdaq Ended......")
+    
+    
+    
     test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
     print(test);
     iexpull=requests.get(test);
@@ -143,6 +146,15 @@ def runNasdaq():
     
     #print("type(iexdata[0].keys()) ",type(iexdata[0].keys()))
     #print("iexdata[0].keys()[0] ",iexdata[0].keys()[0]);
+    
+    def SinglestockIEXtable(x):
+        len(x);
+        count=0;
+        while count>len(x):
+              print(x[count]);
+              print("--xxx-xxx-xxx");
+              count=count+1;
+    
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
