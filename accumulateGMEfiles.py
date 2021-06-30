@@ -24,8 +24,8 @@ import json
 
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
-iexpull=requests.get(test);
-iexdata=json.loads(iexpull.text);
+#iexpull=requests.get(test);
+#iexdata=json.loads(iexpull.text);
 def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
@@ -43,7 +43,10 @@ def SinglestockIEXdict(x,y):
         return arr;      
         #print(keys);    
     
-def IEXColmaker(x):
+def IEXColmaker(x,y):
+        iexpull=requests.get(test);
+        iexdata=json.loads(iexpull.text);
+        
         print("IEXColmaker------------------")
         arr=[];
         keys=list(x[0].keys());
@@ -61,7 +64,7 @@ def IEXColmaker(x):
         #print(arr[0]);
         print(arr1);
         return arr;  
-IEXColmaker(iexdata);  
+IEXColmaker(iexdata,test);  
          
 
 
