@@ -161,7 +161,7 @@ def runNasdaq():
         return arr;      
         #print(keys);    
     
-    def IEXColmaker(x);
+    def IEXColmaker(x):
         keys=list(x[0].keys());
         SinglestockIEXdict(x);
     IEXColmaker(iexdata);  
