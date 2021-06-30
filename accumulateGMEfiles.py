@@ -146,10 +146,10 @@ def runNasdaq():
     
     #print("type(iexdata[0].keys()) ",type(iexdata[0].keys()))
     #print("iexdata[0].keys()[0] ",iexdata[0].keys()[0]);
-    print("ne exp")
+    print("new exp")
     def SinglestockIEXtable(x):
         print("SinglestockIEXtable(x)")
-        len(x);
+        print("print len ",len(x))
         count=0;
         while count>len(x):
               print(x[count]);
