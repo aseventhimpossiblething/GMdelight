@@ -159,7 +159,7 @@ def runNasdaq():
               arr.append(push); 
               count=count+1;
         #print(arr);
-        out=pandas.DataFrame(arr, column=y);
+        out=pandas.DataFrame(arr, columns=y);
         #print(out);
         return out;      
         #print(keys);    
