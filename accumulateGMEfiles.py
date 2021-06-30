@@ -153,12 +153,12 @@ def runNasdaq():
         arr.append(y);  
         while count<len(x):
               push=x[count][y];
-              print("symbol ",y," - ",push)
+              #print("symbol ",y," - ",push)
               #while count2<len(keys):   
               #print("--xxx-xxx-xxx");
               arr.append(push); 
               count=count+1;
-        print(arr);      
+        #print(arr);      
         return arr;      
         #print(keys);    
     
@@ -169,7 +169,9 @@ def runNasdaq():
         while count<len(keys): 
               SinglestockIEXdict(x,keys[count]);
               count=count+1;
-        return arr;  
+        arr1=pandas.Dataframe(arr); 
+        print(arr1);
+        return arr1;  
     IEXColmaker(iexdata);  
          
         
