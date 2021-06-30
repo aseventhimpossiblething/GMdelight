@@ -172,7 +172,8 @@ def runNasdaq():
               arr.append(SinglestockIEXdict(x,keys[count]));
               count=count+1;
         #arr1=pandas.DataFrame(arr); 
-        print(arr);
+        print(arr[0]);
+        print(arr[2]);
         return arr;  
     IEXColmaker(iexdata);  
          
