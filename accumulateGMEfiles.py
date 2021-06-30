@@ -147,15 +147,26 @@ def runNasdaq():
     #print("type(iexdata[0].keys()) ",type(iexdata[0].keys()))
     #print("iexdata[0].keys()[0] ",iexdata[0].keys()[0]);
     #print("new exp")
-    def SinglestockIEXtable(x):
-        keys=list(x[0].keys());
+    def SinglestockIEXdict(x,y):
+        arr=[];
         count=0;
         while count<len(x):
-              print(x[count]);
-              print("--xxx-xxx-xxx");
+              push=x[count][y];
+              print("symbol ",y," - ",push)
+              #while count2<len(keys):   
+              #print("--xxx-xxx-xxx");
+              arr.append(push); 
               count=count+1;
-        print(keys);    
-    SinglestockIEXtable(iexdata);
+        print(arr);      
+        return arr;      
+        #print(keys);    
+    
+    def IEXColmaker(x);
+        keys=list(x[0].keys());
+        SinglestockIEXdict(x);
+    IEXColmaker(iexdata);  
+         
+        
            
 runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
