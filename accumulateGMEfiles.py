@@ -158,7 +158,9 @@ def runNasdaq():
               #print("--xxx-xxx-xxx");
               arr.append(push); 
               count=count+1;
-        #print(arr);      
+        #print(arr);
+        out=pandas.DataFrame(arr);
+        print(out);
         return arr;      
         #print(keys);    
     
