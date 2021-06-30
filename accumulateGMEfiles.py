@@ -174,6 +174,8 @@ def runNasdaq():
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
         arr1=arr1.rename(columns=arr1.iloc[0])
+        arr1=arr1.drop(iloc[0]);
+        arr1=arr1.reset_index();
         #print(arr[0]);
         print(arr1);
         return arr;  
