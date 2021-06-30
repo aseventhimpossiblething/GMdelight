@@ -177,7 +177,7 @@ def runNasdaq():
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
         arr1["date1"]=arr1.label;
-        arr1.drop["label", axis=1];
+        arr1.drop(["label"], axis=1);
         #print(arr[0]);
         print(arr1);
         return arr;  
