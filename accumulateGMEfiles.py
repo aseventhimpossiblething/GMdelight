@@ -169,7 +169,7 @@ def runNasdaq():
         while count<len(keys): 
               SinglestockIEXdict(x,keys[count]);
               count=count+1;
-         return arr;  
+        return arr;  
     IEXColmaker(iexdata);  
          
         
