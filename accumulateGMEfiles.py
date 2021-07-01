@@ -149,6 +149,11 @@ def runNasdaq():
  'key', 'subkey', 'date', 'updated', 'changeOverTime','marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow', 'uVolume',\
  'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'label', 'change','changePercent', 'date1']    
 """
+"""
+['Symbols', 'Security Name', 'ETF', 'MKT', 'ETF Num','index', 'close', 'high', 'low', 'open', 'volume', 'id',\
+ 'key', 'subkey', 'date', 'updated', 'changeOverTime','marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow', 'uVolume',\
+ 'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'label', 'change','changePercent', 'date1']    
+"""
 pullNasdaqAbbreves();
 runNasdaq();
 IEXColmaker();
