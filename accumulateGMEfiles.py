@@ -23,16 +23,18 @@ import pandas
 import json
 #print("1")
 def Date2UTC(col):
+ print(col);
  #print("type(col) ",type(col))
  #colnames=str(col.columns);
  #arr={};
  arrout=[];
  count=0;
+ """
  for member in col:
      print(count);
      print(member);
      count=count+1;
-     
+ """    
  #print("colnames ",colnames)   
  return arrout;  
 #print("2")
