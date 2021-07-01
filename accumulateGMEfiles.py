@@ -23,20 +23,20 @@ import pandas
 import json
 #print("1")
 def Date2UTC(col):
- #print(col);
- #print("type(col) ",type(col))
- #colnames=str(col.columns);
+ print(col);
+ print("type(col) ",type(col))
+ colnames=str(col.columns);
  #arr={};
  #arrout=[];
- #count=0;
- """
+ count=0;
+ 
  for member in col:
      print(count);
      print(member);
      count=count+1;
- """    
+     
  #print("colnames ",colnames)   
- # return arrout;  
+ return arrout;  
 #print("2")
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y):
