@@ -41,11 +41,12 @@ def SinglestockIEXdict(x,y):
         out=pandas.DataFrame(arr, columns=[y]);
         #print(out);
         return arr;      
-        #print(keys);    
-    
-def IEXColmaker(x,y):
-        #iexpull=requests.get(test);
-        #iexdata=json.loads(iexpull.text);
+        #print(keys); 
+        
+def IEXColmaker():    
+#def IEXColmaker(x,y):
+        iexpull=requests.get(test);
+        iexdata=json.loads(iexpull.text);
         
         print("IEXColmaker------------------")
         arr=[];
@@ -64,7 +65,8 @@ def IEXColmaker(x,y):
         #print(arr[0]);
         print(arr1);
         return arr;  
-IEXColmaker(iexdata,test);  
+#IEXColmaker(iexdata,test);  
+IEXColmaker();
          
 
 
