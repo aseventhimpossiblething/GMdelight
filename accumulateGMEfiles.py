@@ -74,7 +74,7 @@ def IEXColmaker():
         #print("type(arr1) ",type(arr1));
         #Date2UTC(arr1['date1']);
         return arr1;  
-IEXColmaker();
+
          
 
 
@@ -140,7 +140,6 @@ def runNasdaq():
                arrout.append(arr[member]);
         return arrout;   
         
-    #pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
     try:
        NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
@@ -164,8 +163,11 @@ def runNasdaq():
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
-    print(STKsymbols)           
-runNasdaq();         
+    print(STKsymbols) 
+    
+pullNasdaqAbbreves();
+runNasdaq();
+IEXColmaker();
 #---------------------------------------------------------------------------------------------------------------
 """
     
