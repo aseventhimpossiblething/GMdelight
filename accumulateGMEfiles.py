@@ -21,11 +21,12 @@ import os
 from datetime import datetime
 import pandas
 import json
-#print("1")
+
+"""
 def Date2UTC(col):
  print(col);
  print("type(col) ",type(col))
- colnames=str(col.columns);
+ #colnames=str(col.columns);
  #arr={};
  #arrout=[];
  count=0;
@@ -37,7 +38,7 @@ def Date2UTC(col):
      
  #print("colnames ",colnames)   
  return arrout;  
-#print("2")
+"""
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y):
         arr=[];
@@ -71,7 +72,7 @@ def IEXColmaker():
         arr1.drop(["label"], axis=1);
         print(arr1);
         #print("type(arr1) ",type(arr1));
-        Date2UTC(arr1['date1']);
+        #Date2UTC(arr1['date1']);
         return arr1;  
 IEXColmaker();
          
