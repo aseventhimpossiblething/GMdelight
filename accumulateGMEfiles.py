@@ -70,7 +70,7 @@ def IEXColmaker():
         arr1=arr1.reset_index();
         arr1["date1"]=arr1.label;
         arr1.drop(["label"], axis=1);
-        print(arr1);
+        print(arr1.columns);
         #print("type(arr1) ",type(arr1));
         #Date2UTC(arr1['date1']);
         return arr1;  
@@ -165,8 +165,10 @@ def runNasdaq():
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
     
     print(STKsymbols) 
-    print(STKsymbols.columns)
     
+    
+
+#['Symbols', 'Security Name', 'ETF', 'MKT', 'ETF Num']    
 pullNasdaqAbbreves();
 runNasdaq();
 IEXColmaker();
