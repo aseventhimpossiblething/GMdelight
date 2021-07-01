@@ -29,8 +29,10 @@ def Date2UTC(col):
  arrout=[];
  count=0;
  for member in col:
+     print(count);
      print(member);
      count=count+1;
+     
  #print("colnames ",colnames)   
  return arrout;  
 #print("2")
@@ -67,7 +69,7 @@ def IEXColmaker():
         arr1.drop(["label"], axis=1);
         print(arr1);
         #print("type(arr1) ",type(arr1));
-        #Date2UTC(IEXColmaker()['date1']);
+        Date2UTC(IEXColmaker()['date1']);
         return arr1;  
 IEXColmaker();
          
