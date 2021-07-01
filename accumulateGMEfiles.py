@@ -52,7 +52,7 @@ def IEXColmaker():
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
         #arr1["date1"]=arr1.label;
-        arr1=arr1.drop(["label","symbol","id","key","subkey"], axis=1);
+        arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
         print(arr1);
         #print(arr1.columns);
         return arr1;  
@@ -151,7 +151,7 @@ def runNasdaq():
  'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'label', 'change','changePercent', 'date1']    
 """
 """
-['Symbols', 'Security Name', 'ETF', 'MKT', 'ETF Num','index', 'close', 'high', 'low', 'open', 'volume',\
+['Symbols', 'Security Name', 'ETF', 'MKT', 'ETF Num', 'close', 'high', 'low', 'open', 'volume',\
   'date', 'updated', 'changeOverTime','marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow', 'uVolume',\
  'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'change','changePercent']    
 """
