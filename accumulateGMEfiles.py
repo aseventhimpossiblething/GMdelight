@@ -22,33 +22,33 @@ from datetime import datetime
 import pandas
 import json
 
+def Date2UTC(col):
+ #arr={};
+ arrout=[];
+ count=0;
+ for member in col:
+     print(member);
+     count=count+1;
+ return arrout;  
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
-#iexpull=requests.get(test);
-#iexdata=json.loads(iexpull.text);
 def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
         arr.append(y);  
         while count<len(x):
               push=x[count][y];
-              #print("symbol ",y," - ",push)
-              #while count2<len(keys):   
-              #print("--xxx-xxx-xxx");
               arr.append(push); 
               count=count+1;
-        #print(arr);
         out=pandas.DataFrame(arr, columns=[y]);
-        #print(out);
         return arr;      
-        #print(keys); 
+        
         
 def IEXColmaker():    
-#def IEXColmaker(x,y):
         iexpull=requests.get(test);
         iexdata=json.loads(iexpull.text);
         
-        print("IEXColmaker------------------")
+        #print("IEXColmaker------------------")
         arr=[];
         keys=list(iexdata[0].keys());
         count=0;
@@ -62,13 +62,11 @@ def IEXColmaker():
         arr1=arr1.reset_index();
         arr1["date1"]=arr1.label;
         arr1.drop(["label"], axis=1);
-        #print(arr[0]);
         print(arr1);
         return arr;  
-#IEXColmaker(iexdata,test);  
-IEXColmaker();
+#IEXColmaker();
          
-
+Date2UTC(IEXColmaker());
 
         
 
@@ -157,7 +155,7 @@ def runNasdaq():
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
     print("runs to the end")           
-runNasdaq();         
+#runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
 """
     
