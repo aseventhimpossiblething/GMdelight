@@ -23,6 +23,7 @@ import pandas
 import json
 
 def Date2UTC(col):
+ print("type(col) ",type(col))
  colnames=str(col.columns);
  #arr={};
  arrout=[];
@@ -65,7 +66,7 @@ def IEXColmaker():
         arr1["date1"]=arr1.label;
         arr1.drop(["label"], axis=1);
         print(arr1);
-        print("type(arr1) ",type(arr1));
+        #print("type(arr1) ",type(arr1));
         return arr1;  
 #IEXColmaker();
          
