@@ -163,7 +163,9 @@ def runNasdaq():
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
+    
     print(STKsymbols) 
+    print(STKsymbols.columns)
     
 pullNasdaqAbbreves();
 runNasdaq();
