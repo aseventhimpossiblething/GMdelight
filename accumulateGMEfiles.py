@@ -23,12 +23,14 @@ import pandas
 import json
 
 def Date2UTC(col):
+ colnames=str(col.columns);
  #arr={};
  arrout=[];
  count=0;
  for member in col:
      print(member);
      count=count+1;
+ print("colnames ",colnames)   
  return arrout;  
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
@@ -66,7 +68,7 @@ def IEXColmaker():
         return arr;  
 #IEXColmaker();
          
-Date2UTC(IEXColmaker()[1]);
+Date2UTC(IEXColmaker());
 
         
 
