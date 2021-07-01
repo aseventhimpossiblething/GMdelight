@@ -165,7 +165,7 @@ def runNasdaq():
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
     print("runs to the end")           
-#runNasdaq();         
+runNasdaq();         
 #---------------------------------------------------------------------------------------------------------------
 """
     
