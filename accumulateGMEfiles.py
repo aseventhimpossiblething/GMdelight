@@ -156,7 +156,7 @@ def runNasdaq():
  'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'change','changePercent']    
 """
 """
-(Symbols,Security Name,ETF,MKT,ETF Num,close,high,low,open,volume,\
+(Symbols text,SecurityName text,ETF  text,MKT,ETF Num,close,high,low,open,volume,\
  date,updated,changeOverTime,marketChangeOverTime,uOpen,uClose,uHigh,uLow,uVolume,\
  fOpen,fClose,fHigh,fLow,fVolume,change,changePercent)   
 """
