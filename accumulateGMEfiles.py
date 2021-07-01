@@ -66,10 +66,10 @@ def IEXColmaker():
         arr1.drop(["label"], axis=1);
         print(arr1);
         print("type(arr1) ",type(arr1));
-        return arr;  
+        return arr1;  
 #IEXColmaker();
          
-Date2UTC(IEXColmaker());
+Date2UTC(IEXColmaker()['date1']);
 
         
 
