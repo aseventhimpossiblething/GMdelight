@@ -66,7 +66,7 @@ def IEXColmaker():
         return arr;  
 #IEXColmaker();
          
-Date2UTC(IEXColmaker()['date1']);
+Date2UTC(IEXColmaker()[1]);
 
         
 
