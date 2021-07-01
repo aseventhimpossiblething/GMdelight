@@ -140,7 +140,7 @@ def runNasdaq():
                arrout.append(arr[member]);
         return arrout;   
         
-    pullNasdaqAbbreves();
+    #pullNasdaqAbbreves();
     os.chdir("/GMDelight/GMDelight/Sheets/rememberGME/NasdaqAbbreviations");
     try:
        NasdaqNativeAbbreviations=pandas.read_csv('ActiveNativendqAbbrev','|');
