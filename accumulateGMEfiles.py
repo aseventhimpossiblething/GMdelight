@@ -157,8 +157,8 @@ def runNasdaq():
 """
 
 sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
-os.systems(sqlTableCreate);
-#os.systems(.exit);
+os.system(sqlTableCreate);
+#os.system(.exit);
 
 
 pullNasdaqAbbreves();
