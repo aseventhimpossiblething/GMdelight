@@ -156,9 +156,8 @@ def runNasdaq():
  'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'change','changePercent']    
 """
 """
-(Symbols text,SecurityName text,ETF  text,MKT,ETF Num,close,high,low,open,volume,\
- date,updated,changeOverTime,marketChangeOverTime,uOpen,uClose,uHigh,uLow,uVolume,\
- fOpen,fClose,fHigh,fLow,fVolume,change,changePercent)   
+(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)   
+
 """
 
 pullNasdaqAbbreves();
