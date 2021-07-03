@@ -23,7 +23,7 @@ import pandas
 import json
 
 
-test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1m?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
+test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y):
         arr=[];
         count=0;
