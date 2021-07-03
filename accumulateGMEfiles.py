@@ -79,6 +79,10 @@ def IEXColmaker():
               if count==len(w):
                  #print("fork occured")       
                  #print(len(w)) 
+                 print("col ",len(shiftCol));
+                 print("dates ",len(shiftColDate))
+                 print("last col ",len(shiftCol)[252]);
+                 print("last dates ",len(shiftColDate)[252])           
                 
                  return;       
               shiftCol.append(w[count]);
