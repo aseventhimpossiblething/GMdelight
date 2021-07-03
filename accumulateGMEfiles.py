@@ -36,7 +36,7 @@ def SinglestockIEXdict(x,y):
         return arr;      
         
         
-def IEXColmaker(x):   
+def IEXColmaker():   
         #x=symbol will manipulate url str;
         #print("IEXColmaker running")
         #print(x[0])
@@ -162,7 +162,7 @@ def runNasdaq():
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
 
-    IEXColmaker(STKsymbols.iloc[0])    
+    print(IEXColmaker())    
     #print(STKsymbols) 
     
     
