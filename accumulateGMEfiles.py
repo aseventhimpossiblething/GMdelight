@@ -86,7 +86,7 @@ def IEXColmaker():
                  print("last col ",len(shiftCol)[252]);
                  print("last dates ",len(shiftColDate)[252])           
                  """
-                 return;       
+                 return shiftCol;       
               shiftCol.append(w[count]);
               #print(date[count]);
             """    
