@@ -53,7 +53,8 @@ def IEXColmaker():
         arr1=arr1.reset_index();
         #arr1["date1"]=arr1.label;
         arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
-        print(arr1);
+        #print(arr1);
+        
         #print(arr1.columns);
         return arr1;  
                
@@ -160,7 +161,7 @@ def runNasdaq():
 
 pullNasdaqAbbreves();
 runNasdaq();
-IEXColmaker();
+print(IEXColmaker()['date']);
 
 sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
 #os.system("sqlite3");
