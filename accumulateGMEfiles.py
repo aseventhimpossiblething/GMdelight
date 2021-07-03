@@ -170,8 +170,8 @@ def runNasdaq():
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
 
-    print(IEXColmaker())    
-    #print(STKsymbols) 
+    #print(IEXColmaker())    
+    print(STKsymbols) 
     
     
     
@@ -188,9 +188,9 @@ def runNasdaq():
 
 
 
-pullNasdaqAbbreves();
+#pullNasdaqAbbreves();
 runNasdaq();
-#print(IEXColmaker());
+print(IEXColmaker());
 
 sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
 #os.system("sqlite3");
