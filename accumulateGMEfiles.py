@@ -98,8 +98,10 @@ def IEXColmaker():
             #shiftCol.append(w[count]);
             #shiftColDate.append(date[count])
             """
+              
             return shiftCol;
-        metricshift(arr1,'close');
+        tester=metricshift(arr1,'close');
+        arr1.drop([len(metrichift)])
         return arr1;  
                
 
