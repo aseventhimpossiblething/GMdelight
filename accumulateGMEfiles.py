@@ -66,7 +66,7 @@ def IEXColmaker():
             #z=
             date=arr1['date'];
             count=0;
-            while count<len(x);
+            while count<len(x):
               shiftCol.append(w[count]);
               shiftColDate.append(date[count]);  
               #date[count]; 
