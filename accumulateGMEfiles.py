@@ -86,8 +86,8 @@ def IEXColmaker():
             print("col ",len(shiftCol));
             print("dates ",len(shiftColDate))
             #print(len(w)) 
-         shiftCol.append(w[count]);
-              shiftColDate.append(date[count])
+            #shiftCol.append(w[count]);
+            #shiftColDate.append(date[count])
             return;
         metricshift(arr1,'close',1);
         return arr1;  
