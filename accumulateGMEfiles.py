@@ -56,7 +56,7 @@ def IEXColmaker():
         #print(arr1);
         
         #print(arr1.columns);
-        def metricshift(w,x,y):
+        def metricshift(w,x):
             print("metric shift running-------------")    
             shiftCol=[];
             shiftColDate=[];
@@ -73,21 +73,23 @@ def IEXColmaker():
               #shiftCol.append(w[count]);
               shiftColDate.append(date[count]);  
               #date[count]; 
-              count=count+y;
+              count=count+1;
               #print("count ",count)
               #print("len w ",len(w))  
               if count==len(w):
                  #print("fork occured")       
                  #print(len(w)) 
+                 """       
                  print("col ",len(shiftCol));
                  print("dates ",len(shiftColDate))
                  print(shiftCol)       
                  print("last col ",len(shiftCol)[252]);
                  print("last dates ",len(shiftColDate)[252])           
-                
+                 """
                  return;       
               shiftCol.append(w[count]);
               #print(date[count]);
+            """    
             print("col ",len(shiftCol));
             print("dates ",len(shiftColDate))
             print("last col ",len(shiftCol)[252]);
@@ -95,8 +97,9 @@ def IEXColmaker():
             #print(len(w)) 
             #shiftCol.append(w[count]);
             #shiftColDate.append(date[count])
-            return;
-        metricshift(arr1,'close',1);
+            """
+           return shiftCol;
+        metricshift(arr1,'close');
         return arr1;  
                
 
