@@ -36,7 +36,10 @@ def SinglestockIEXdict(x,y):
         return arr;      
         
         
-def IEXColmaker():    
+def IEXColmaker(x):   
+        #x=symbol will manipulate url str;
+        print("IEXColmaker running")
+        print(x)
         iexpull=requests.get(test);
         iexdata=json.loads(iexpull.text);
                 
@@ -51,11 +54,7 @@ def IEXColmaker():
         arr1=arr1.rename(columns=arr1.iloc[0])
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
-        #arr1["date1"]=arr1.label;
-        arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
-        #print(arr1);
-        
-        #print(arr1.columns);
+        arr1=arr1.drop(["label","id","key","subkey","index"], axis=1);
         def metricshift(w,x):
             print("metric shift running-------------")    
             shiftCol=[];
@@ -65,43 +64,16 @@ def IEXColmaker():
             #w=frame (arr1);    
             #x=basis columns
             #y=projection timeframe in days
-            #z=
             date=arr1['date'];
             count=0;
             while count<len(w):
-              #print("while loop")          
-              #shiftCol.append(w[count]);
               shiftColDate.append(date[count]);  
-              #date[count]; 
               count=count+1;
-              #print("count ",count)
-              #print("len w ",len(w))  
               if count==len(w):
-                 #print("fork occured")       
-                 #print(len(w)) 
-                 """       
-                 print("col ",len(shiftCol));
-                 print("dates ",len(shiftColDate))
-                 print(shiftCol)       
-                 print("last col ",len(shiftCol)[252]);
-                 print("last dates ",len(shiftColDate)[252])           
-                 """
                  return shiftCol;       
               shiftCol.append(w[count]);
-              #print(date[count]);
-            """    
-            print("col ",len(shiftCol));
-            print("dates ",len(shiftColDate))
-            print("last col ",len(shiftCol)[252]);
-            print("last dates ",len(shiftColDate)[252])    
-            #print(len(w)) 
-            #shiftCol.append(w[count]);
-            #shiftColDate.append(date[count])
-            """
-              
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
-        #print(len(tester))
         arr1=arr1.drop([len(dayshiftedclose)]);
         arr1['dayshiftedclose']=dayshiftedclose;
         return arr1;  
@@ -189,8 +161,9 @@ def runNasdaq():
     STKsymbols=STKsymbols.drop(["index"], axis = 1);
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
-    
-    print(STKsymbols) 
+
+    print(IEXColmaker(STKsymbols[0]))    
+    #print(STKsymbols) 
     
     
 """
@@ -208,7 +181,7 @@ def runNasdaq():
 
 pullNasdaqAbbreves();
 runNasdaq();
-print(IEXColmaker());
+#print(IEXColmaker());
 
 sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
 #os.system("sqlite3");
