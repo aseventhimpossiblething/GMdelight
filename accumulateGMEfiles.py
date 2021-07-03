@@ -73,7 +73,10 @@ def IEXColmaker():
               shiftCol.append(w[count]);
               shiftColDate.append(date[count]);  
               #date[count]; 
-              count=count+y; 
+              count=count+y;
+              if count>len(w):
+                 print(len(w))       
+                 return;       
               shiftCol.append(w[count]);
               #print(date[count]);
               #print(shiftCol);
