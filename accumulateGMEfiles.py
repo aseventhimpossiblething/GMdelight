@@ -71,9 +71,10 @@ def IEXColmaker():
               shiftColDate.append(date[count]);  
               #date[count]; 
               count=count+y; 
-              print(date[count]); 
+              print(date[count]);
+              
               return;
-        
+        #metricshift(arr1,);
         return arr1;  
                
 
@@ -147,9 +148,8 @@ def runNasdaq():
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
       
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
-    print("is 141 the issue???????")
     TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
-    #print(NasdaqMKTIndicator0(TopSymbols))
+    
     
     BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
@@ -179,7 +179,7 @@ def runNasdaq():
 
 pullNasdaqAbbreves();
 runNasdaq();
-print(IEXColmaker()['date']);
+print(IEXColmaker());
 
 sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
 #os.system("sqlite3");
