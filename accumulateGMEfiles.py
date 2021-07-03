@@ -77,15 +77,17 @@ def IEXColmaker():
               print("count ",count)
               print("len w ",len(w))  
               if count==len(w):
-                 print("fork occured")       
-                 print(len(w)) 
+                 #print("fork occured")       
+                 #print(len(w)) 
                 
                  return;       
               shiftCol.append(w[count]);
               #print(date[count]);
-              #print(shiftCol);
-              #print(shiftColDate)
-            print(len(w))  
+            print("col ",len(shiftCol));
+            print("dates ",len(shiftColDate))
+            #print(len(w)) 
+         shiftCol.append(w[count]);
+              shiftColDate.append(date[count])
             return;
         metricshift(arr1,'close',1);
         return arr1;  
