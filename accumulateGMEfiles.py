@@ -100,9 +100,10 @@ def IEXColmaker():
             """
               
             return shiftCol;
-        tester=metricshift(arr1,'close');
-        print(len(tester))
-        arr1.drop([len(metricshift(arr1,'close'))])
+        dayshiftedclose=metricshift(arr1,'close');
+        #print(len(tester))
+        arr1=arr1.drop([len(dayshiftedclose)]);
+        arr1['dayshiftedclose']=dayshiftedclose;
         return arr1;  
                
 
