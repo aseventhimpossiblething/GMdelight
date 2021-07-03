@@ -89,16 +89,16 @@ def IEXColmaker():
                  return;       
               shiftCol.append(w[count]);
               #print(date[count]);
-            """    
-            print("col ",len(shiftCol));
-            print("dates ",len(shiftColDate))
-            print("last col ",len(shiftCol)[252]);
-            print("last dates ",len(shiftColDate)[252])    
-            #print(len(w)) 
-            #shiftCol.append(w[count]);
-            #shiftColDate.append(date[count])
-            """
-           return shiftCol;
+             """    
+             print("col ",len(shiftCol));
+             print("dates ",len(shiftColDate))
+             print("last col ",len(shiftCol)[252]);
+             print("last dates ",len(shiftColDate)[252])    
+             #print(len(w)) 
+             #shiftCol.append(w[count]);
+             #shiftColDate.append(date[count])
+             """
+            return shiftCol;
         metricshift(arr1,'close');
         return arr1;  
                
