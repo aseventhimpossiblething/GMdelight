@@ -74,10 +74,10 @@ def IEXColmaker():
               shiftColDate.append(date[count]);  
               #date[count]; 
               count=count+y; 
-              print(date[count]);
-              print(shiftCol);
-              print(shiftColDate)
-              
+              #print(date[count]);
+              #print(shiftCol);
+              #print(shiftColDate)
+            print(len(w))  
             return;
         metricshift(arr1,'close',1);
         return arr1;  
