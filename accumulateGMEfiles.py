@@ -76,7 +76,7 @@ def IEXColmaker():
               count=count+y;
               print("count ",count)
               print("len w ",len(w))  
-              if count=len(w):
+              if count==len(w):
                  print("fork occured")       
                  print(len(w)) 
                 
