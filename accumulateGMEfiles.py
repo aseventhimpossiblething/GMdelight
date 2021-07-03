@@ -101,6 +101,7 @@ def IEXColmaker():
               
             return shiftCol;
         tester=metricshift(arr1,'close');
+        print(len(tester))
         arr1.drop([len(metricshift(arr1,'close'))])
         return arr1;  
                
