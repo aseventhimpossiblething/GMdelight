@@ -22,6 +22,12 @@ from datetime import datetime
 import pandas
 import json
 
+from sklearn.ensemble import RandomForestRegressor
+regressor = RandomForestRegressor(n_estimators = 10)
+
+from sklearn import linear_model
+ols = linear_model.LinearRegression()
+
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y):
@@ -164,6 +170,7 @@ def runNasdaq():
 
     print(IEXColmaker())    
     #print(STKsymbols) 
+    
     
     
 """
