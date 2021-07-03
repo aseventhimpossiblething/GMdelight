@@ -57,6 +57,7 @@ def IEXColmaker():
         
         #print(arr1.columns);
         def metricshift(w,x,y):
+            print("metric shift running-------------")    
             shiftCol=[];
             shiftColDate=[];
             w=w[x];    
