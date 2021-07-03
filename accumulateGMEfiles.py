@@ -101,7 +101,7 @@ def IEXColmaker():
               
             return shiftCol;
         tester=metricshift(arr1,'close');
-        arr1.drop([len(metrichift)])
+        arr1.drop([len(metrishift)])
         return arr1;  
                
 
