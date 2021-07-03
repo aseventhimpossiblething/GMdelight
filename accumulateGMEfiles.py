@@ -56,6 +56,24 @@ def IEXColmaker():
         #print(arr1);
         
         #print(arr1.columns);
+        def metricshift(w,x,y,z):
+            shiftCol=[];
+            shiftColDate=[];
+            w=w[x];    
+            #w=frame (arr1);    
+            #x=basis columns
+            #y=projection timeframe in days
+            #z=
+            date=arr1['date'];
+            count=0;
+            while count<len(x);
+              shiftCol.append(w[count]);
+              shiftColDate.append(date[count]);  
+              #date[count]; 
+              count=count+y; 
+              print(date[count]); 
+              return;
+        
         return arr1;  
                
 
