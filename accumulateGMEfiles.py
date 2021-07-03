@@ -39,7 +39,7 @@ def SinglestockIEXdict(x,y):
 def IEXColmaker(x):   
         #x=symbol will manipulate url str;
         print("IEXColmaker running")
-        print(x)
+        print(x[0])
         iexpull=requests.get(test);
         iexdata=json.loads(iexpull.text);
                 
