@@ -74,7 +74,7 @@ def IEXColmaker():
               print(date[count]);
               
               return;
-        #metricshift(arr1,'close',1);
+        metricshift(arr1,'close',1);
         return arr1;  
                
 
