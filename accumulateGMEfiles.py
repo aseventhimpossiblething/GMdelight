@@ -162,7 +162,7 @@ def runNasdaq():
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
 
-    print(IEXColmaker(STKsymbols[0]))    
+    print(IEXColmaker(STKsymbols))    
     #print(STKsymbols) 
     
     
