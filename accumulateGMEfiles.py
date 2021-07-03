@@ -56,7 +56,7 @@ def IEXColmaker():
         #print(arr1);
         
         #print(arr1.columns);
-        def metricshift(w,x,y,z):
+        def metricshift(w,x,y):
             shiftCol=[];
             shiftColDate=[];
             w=w[x];    
@@ -74,7 +74,7 @@ def IEXColmaker():
               print(date[count]);
               
               return;
-        #metricshift(arr1,);
+        #metricshift(arr1,'close',1);
         return arr1;  
                
 
