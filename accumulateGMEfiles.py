@@ -61,14 +61,14 @@ def IEXColmaker():
             shiftCol=[];
             shiftColDate=[];
             w=w[x];
-            print(w)    
+            #print(w)    
             #w=frame (arr1);    
             #x=basis columns
             #y=projection timeframe in days
             #z=
             date=arr1['date'];
             count=0;
-            while count<len(x):
+            while count<len(w):
               shiftCol.append(w[count]);
               shiftColDate.append(date[count]);  
               #date[count]; 
