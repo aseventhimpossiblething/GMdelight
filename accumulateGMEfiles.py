@@ -74,6 +74,8 @@ def IEXColmaker():
               shiftColDate.append(date[count]);  
               #date[count]; 
               count=count+y;
+              print("count ",count)
+              print("len w ",len(w))  
               if count>len(w):
                  print(len(w))       
                  return;       
