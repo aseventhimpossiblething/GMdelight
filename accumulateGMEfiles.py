@@ -81,6 +81,7 @@ def IEXColmaker():
                  #print(len(w)) 
                  print("col ",len(shiftCol));
                  print("dates ",len(shiftColDate))
+                 print(shiftCol)       
                  print("last col ",len(shiftCol)[252]);
                  print("last dates ",len(shiftColDate)[252])           
                 
