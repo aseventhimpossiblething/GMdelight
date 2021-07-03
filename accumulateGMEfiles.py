@@ -38,8 +38,8 @@ def SinglestockIEXdict(x,y):
         
 def IEXColmaker(x):   
         #x=symbol will manipulate url str;
-        print("IEXColmaker running")
-        print(x[0])
+        #print("IEXColmaker running")
+        #print(x[0])
         iexpull=requests.get(test);
         iexdata=json.loads(iexpull.text);
                 
@@ -54,7 +54,7 @@ def IEXColmaker(x):
         arr1=arr1.rename(columns=arr1.iloc[0])
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
-        arr1=arr1.drop(["label","id","key","subkey","index"], axis=1);
+        arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
         def metricshift(w,x):
             print("metric shift running-------------")    
             shiftCol=[];
