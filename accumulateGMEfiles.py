@@ -60,7 +60,8 @@ def IEXColmaker():
             print("metric shift running-------------")    
             shiftCol=[];
             shiftColDate=[];
-            w=w[x];    
+            w=w[x];
+            print(w)    
             #w=frame (arr1);    
             #x=basis columns
             #y=projection timeframe in days
