@@ -108,7 +108,7 @@ def IEXColmaker():
         
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
-        reviewFrame['close']=y_train);
+        reviewFrame['close']=y_train;
         #reclose=list(arr1['close'])
         #print('sizes')
         #print(len(reviewFrame['Shifted close']))
