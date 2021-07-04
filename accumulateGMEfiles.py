@@ -99,7 +99,7 @@ def IEXColmaker():
         LinearPredictMod=LinearMod.predict(x_test);
         
         print(y_test);
-        reviewFrame=pandas.DataFrame(y_test);
+        reviewFrame=pandas.DataFrame(y_test, columns=['Shifted close']);
         
         return arr1;  
                
@@ -109,7 +109,7 @@ def Char2Num(col):
  arrout=[];
  count=0;
  for member in col:
-     if member in arr:
+     if member in arrc
         arrout.append(arr[member]);
      else:
         arr[member]=count;
