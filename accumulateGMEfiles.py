@@ -65,8 +65,8 @@ def IEXColmaker():
         def colPrefix(x):
             prefixedelems=[];
             for elems in x:
-                elem="vx"+elem;
-                prefixedelems.append(elem);
+                elems="vx"+elem;
+                prefixedelems.append(elems);
         colPrefix(vixkeys);               
         
         print("vixkeys");
