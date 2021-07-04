@@ -43,6 +43,7 @@ def SinglestockIEXdict(x,y):
               arr.append(push); 
               count=count+1;
         out=pandas.DataFrame(arr, columns=[y]);
+        print("end cycle SinglestockIEXdict(x,y) end cycle")
         return arr;      
         
         
