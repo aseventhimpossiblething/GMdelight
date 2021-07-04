@@ -37,10 +37,10 @@ def SinglestockIEXdict(x,y):
         print(" start SinglestockIEXdict(x,y) y= ",y)
         innerarr=[];
         count=0;
-        arr.append(y);  
+        innerarr.append(y);  
         while count<len(x):
               push=x[count][y];
-              arr.append(push); 
+              innerarr.append(push); 
               #print(arr[0])
               #print(arr[1]) 
               count=count+1;
