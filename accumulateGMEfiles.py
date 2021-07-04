@@ -21,6 +21,7 @@ import os
 from datetime import datetime
 import pandas
 import json
+import numpy
 
 from sklearn.ensemble import RandomForestRegressor
 regressor = RandomForestRegressor(n_estimators = 10)
