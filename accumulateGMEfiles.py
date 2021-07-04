@@ -89,10 +89,12 @@ def IEXColmaker():
         #print(x);
         #print(y);
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
-        mod=regressor.fit(x_train,y_train)
-        modPredict=mod.predict(x_test);
+        
+        TreeMod=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
+        #mod=regressor.fit(x_train,y_train);
+        TreeModPredict=TreeMod.predict(x_test);
         print(y_test);
-        print(modPredict);
+        print(TreeModPredict);
         
         return arr1;  
                
