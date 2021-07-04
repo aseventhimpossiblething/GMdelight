@@ -106,6 +106,7 @@ def IEXColmaker():
         LinearPredictMod=LinearMod.predict(x_test);
         
         reviewFrame=[arr1['close'],y_test];
+        pandas.DataFrame(reviewFrame);
         #reviewFrame['close']=arr1['close'];
         #reviewFrame=pandas.DataFrame(arr1['close']);
         #reviewFrame.columns=['Shifted close'];
