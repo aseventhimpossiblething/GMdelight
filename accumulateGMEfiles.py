@@ -62,6 +62,12 @@ def IEXColmaker():
         
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
+        def colPrefix(x):
+            prefixedelems=[];
+            for elems in x:
+                elem="vx"+elem;
+                prefixedelems.append(elem);
+        colPrefix(vixkeys);               
         
         print("vixkeys");
         print(vixkeys);
@@ -140,8 +146,8 @@ def IEXColmaker():
         print("exp============")
         print(vixPull);
         
-        print("arr",arr);
-        print("vixarr",vixarr);
+        #print("arr",arr);
+        #print("vixarr",vixarr);
              
         return arr1;
               
