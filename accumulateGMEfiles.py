@@ -90,10 +90,16 @@ def IEXColmaker():
         #print(y);
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
         
-        TreeMod=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
-        TreeModPredict=TreeMod.predict(x_test);
+        TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
+        TreeModPredict10=TreeMod.predict(x_test);
         #print(y_test);
         #print(TreeModPredict);
+        
+        TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
+        TreeModPredict100=TreeMod.predict(x_test);
+        #print(y_test);
+        #print(TreeModPredict);
+        
         
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
@@ -102,7 +108,8 @@ def IEXColmaker():
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
         
-        reviewFrame['Tree Prediction']=TreeModPredict;
+        reviewFrame['Tree Prediction 10']=TreeModPredict10;
+        reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Linear Prediction']=LinearPredictMod;
         print(reviewFrame);
         
