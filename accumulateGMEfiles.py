@@ -60,7 +60,7 @@ def IEXColmaker():
         vixarr=[];
         
         keys=list(iexdata[0].keys());
-        vixkeys=list(vixPull[0].keys());
+        vixkeys=list(vixdata[0].keys());
         
         count=0;
         while count<len(keys): 
@@ -73,6 +73,12 @@ def IEXColmaker():
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
         arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
+        vixarr1=pandas.DataFrame(vixarr); 
+        vixarr1=vixarr1.transpose();
+        vixarr1=vixarr1.rename(columns=arr1.iloc[0])
+        vixarr1=vixarr1.drop([0]);
+        vixarr1=vixarr1.reset_index();
+        vixarr1=vixarr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
         def metricshift(w,q):
             #print("metric shift running-------------")    
             shiftCol=[];
@@ -93,7 +99,9 @@ def IEXColmaker():
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
+        vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         arr1['dayshiftedclose']=dayshiftedclose;
+        
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
              
