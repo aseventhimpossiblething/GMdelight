@@ -110,8 +110,9 @@ def IEXColmaker():
         reviewFrame.columns=['Shifted close'];
         #reviewFrame['close']=list(arr1['close']);
         reclose=list(arr1['close'])
-        
-        #print(reclose)
+        print('sizes')
+        print(len(reviewFrame['Shifted close']))
+        print(len(reclose))
         #reviewFrame['close']=arr1['close'];
         #reviewFrame['Shifted close']=y_test;
         #reviewFrame['Tree Prediction 10']=TreeModPredict10;
