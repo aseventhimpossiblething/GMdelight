@@ -100,7 +100,7 @@ def IEXColmaker():
         
         
         reviewFrame=pandas.DataFrame(y_test);
-        reviewFrame.columns='Shifted close';
+        reviewFrame.columns=['Shifted close'];
         print(reviewFrame);
         
         return arr1;  
