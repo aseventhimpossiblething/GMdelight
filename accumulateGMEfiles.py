@@ -35,7 +35,7 @@ from sklearn.model_selection import train_test_split
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y):
         print(" start SinglestockIEXdict(x,y) y= ",y)
-        arr=[];
+        innerarr=[];
         count=0;
         arr.append(y);  
         while count<len(x):
@@ -46,7 +46,7 @@ def SinglestockIEXdict(x,y):
               count=count+1;
         out=pandas.DataFrame(arr, columns=[y]);
         print("end cycle SinglestockIEXdict(x,y) end cycle")
-        return arr;      
+        return innerarr;      
         
         
 def IEXColmaker(): 
@@ -83,24 +83,24 @@ def IEXColmaker():
         print(vixkeys);
         
         def subtable(data,keys):
-            arr=[];    
+            iarr=[];    
             count=0;
             print(keys) 
             print(len(keys))
             while count<len(keys): 
               # print("start while")  
-              arr.append(SinglestockIEXdict(data,keys[count]));  
+              iarr.append(SinglestockIEXdict(data,keys[count]));  
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
             
               #print("end while")  
               #print(count)  
-            return arr;
+            return iarr;
         
         arr=subtable(iexdata,keys);
        
-        vixarr=subtable(vixdata,vixkeys);
+        #vixarr=subtable(vixdata,vixkeys);
         print("len(keys)")  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
