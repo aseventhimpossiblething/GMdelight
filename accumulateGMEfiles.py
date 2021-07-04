@@ -112,7 +112,7 @@ def IEXColmaker():
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Linear Prediction']=LinearPredictMod;
         
-        np.std(reviewFrame);
+        numpy.std(reviewFrame);
         print(reviewFrame);
         
         return arr1;  
