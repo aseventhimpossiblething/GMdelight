@@ -45,18 +45,25 @@ def SinglestockIEXdict(x,y):
         return arr;      
         
         
-def IEXColmaker():   
+def IEXColmaker(): 
+        URLPull=test;
+        vixPull=URLPull.replace("AMD","VIX");
         #x=symbol will manipulate url str;
-        #print("IEXColmaker running")
-        #print(x[0])
-        iexpull=requests.get(test);
+        iexpull=requests.get(URLPull);
+        vixPull=requests.get(vixPull);
         iexdata=json.loads(iexpull.text);
-                
+        vixdata=json.loads(vixPull.text); 
+        
         arr=[];
+        vixarr=[];
+        
         keys=list(iexdata[0].keys());
+        vixkeys=list(vixPull[0].keys());
+        
         count=0;
         while count<len(keys): 
               arr.append(SinglestockIEXdict(iexdata,keys[count]));
+              vixarr.append(SinglestockIEXdict(vixdata,keys[count])); 
               count=count+1;
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
@@ -65,7 +72,7 @@ def IEXColmaker():
         arr1=arr1.reset_index();
         arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
         def metricshift(w,q):
-            print("metric shift running-------------")    
+            #print("metric shift running-------------")    
             shiftCol=[];
             shiftColDate=[];
             w=w[q];
@@ -87,68 +94,41 @@ def IEXColmaker():
         arr1['dayshiftedclose']=dayshiftedclose;
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
-        #print(x);
-        #print(y);
+             
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
         
         TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
         TreeModPredict10=TreeMod10.predict(x_test);
-        #print(y_test);
-        #print(TreeModPredict);
-        
+               
         TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
         TreeModPredict100=TreeMod100.predict(x_test);
-        #print(y_test);
-        #print(TreeModPredict);
-        
-        
+            
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
-        
-        
+              
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
         reviewFrame['close']=list(x_test['close']);
-        print("x_test[close]")
-        #print(x_test['close'])
-        print(len(x_test['close']))
-        print(len(y_test))
-        #reclose=list(arr1['close'])
-        #print('sizes')
-        #print(len(reviewFrame['Shifted close']))
-        #print(len(reclose))
-        #reviewFrame['close']=arr1['close'];
-        #reviewFrame['Shifted close']=y_test;
+           
         reviewFrame['Tree Prediction 10']=TreeModPredict10;
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Linear Prediction']=LinearPredictMod;
-        #reviewFrame['close']=arr1['close'];
-        
-        #reviewFrame['close']=arr1['close'];
-        #reviewFrame=pandas.DataFrame(arr1['close']);
-        #reviewFrame.columns=['Shifted close'];
-        #reviewFrame['close']=arr1['close'];
-        #reviewFrame['Shifted close']=y_test;
-        #reviewFrame['Tree Prediction 10']=TreeModPredict10;
-        #reviewFrame['Tree Prediction 100']=TreeModPredict100;
-        #reviewFrame['Linear Prediction']=LinearPredictMod;
-        #reviewFrame['close']=arr1['close'];
-        
-        #STD=reviewFrame['Shifted close'].std;
-        #STD.columns=['Shifted close'];
+     
+       
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
         print("std")
         STD=numpy.std(reviewFrame);
         
-        #STD['Tree Prediction 10']=numpy.std(reviewFrame['Tree Prediction 10']);
-        #STD['Tree Prediction 100']=numpy.std(reviewFrame['Tree Prediction 100']);
-        #STD['Linear Prediction']=numpy.std(reviewFrame['Linear Prediction']);
         print(STD);
-        #print(reviewFrame);
+        print("exp============")
+        print(vixPull);
         
+        print("arr",arr);
+        print("vixarr",vixarr);
+             
         return arr1;
-               
+            1   
 
 def Char2Num(col):
  arr={};
