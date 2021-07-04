@@ -109,7 +109,7 @@ def Char2Num(col):
  arrout=[];
  count=0;
  for member in col:
-     if member in arrc
+     if member in arr
         arrout.append(arr[member]);
      else:
         arr[member]=count;
