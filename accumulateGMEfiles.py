@@ -115,6 +115,9 @@ def IEXColmaker():
         
         STD=pandas.DataFrame(numpy.std(reviewFrame));
         #STD.columns=['Shifted close'];
+        print(review.corr());
+        
+        
         
         #STD['Tree Prediction 10']=numpy.std(reviewFrame['Tree Prediction 10']);
         #STD['Tree Prediction 100']=numpy.std(reviewFrame['Tree Prediction 100']);
