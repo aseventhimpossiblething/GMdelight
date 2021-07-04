@@ -63,14 +63,14 @@ def IEXColmaker():
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
         arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
-        def metricshift(w,x):
+        def metricshift(w,q):
             print("metric shift running-------------")    
             shiftCol=[];
             shiftColDate=[];
-            w=w[x];
+            w=w[q];
             #print(w)    
             #w=frame (arr1);    
-            #x=basis columns
+            #q=basis columns
             #y=projection timeframe in days
             date=arr1['date'];
             count=0;
@@ -84,6 +84,7 @@ def IEXColmaker():
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
         arr1['dayshiftedclose']=dayshiftedclose;
+        #x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
         return arr1;  
                
 
