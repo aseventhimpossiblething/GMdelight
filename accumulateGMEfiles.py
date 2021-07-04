@@ -99,7 +99,7 @@ def IEXColmaker():
         LinearPredictMod=LinearMod.predict(x_test);
         
         print(y_test);
-        reviewFrame=pandas.DataFrame([y_test], column='original shifted close');
+        reviewFrame=pandas.DataFrame(y_test, column='original shifted close');
         
         return arr1;  
                
