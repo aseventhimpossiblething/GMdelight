@@ -91,7 +91,7 @@ def IEXColmaker():
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
-              if count=26;
+              if count==26;
                 return arr;
               print("end while")  
               print(count)  
