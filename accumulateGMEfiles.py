@@ -47,7 +47,7 @@ def SinglestockIEXdict(x,y):
         
 def IEXColmaker(): 
         URLPull=test;
-        vixPull=URLPull.replace("AMD","VIX");
+        vixPull=URLPull.replace("AMD","VXX");
         print(URLPull);
         print(vixPull);
         #x=symbol will manipulate url str;
