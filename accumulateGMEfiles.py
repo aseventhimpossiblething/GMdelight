@@ -91,14 +91,13 @@ def IEXColmaker():
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
-              if count==25:
-                 print("diverted")        
-                 return arr;
+            
               print("end while")  
               print(count)  
             return arr;
         
         arr=subtable(iexdata,keys);
+        arr=subtable(vixdata,vixkeys);
         print("len(keys)")  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
