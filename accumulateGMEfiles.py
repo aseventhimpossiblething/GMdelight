@@ -115,7 +115,7 @@ def IEXColmaker():
         
         STD=reviewFrame.std;
         #STD.columns=['Shifted close'];
-        print(reviewFrame.corr());
+        #print(reviewFrame.corr());
         
         
         
@@ -123,9 +123,9 @@ def IEXColmaker():
         #STD['Tree Prediction 100']=numpy.std(reviewFrame['Tree Prediction 100']);
         #STD['Linear Prediction']=numpy.std(reviewFrame['Linear Prediction']);
         print(STD);
-        print(reviewFrame);
+        #print(reviewFrame);
         
-        return arr1;
+        #return arr1;
                
 
 def Char2Num(col):
