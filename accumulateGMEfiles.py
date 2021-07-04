@@ -84,7 +84,7 @@ def IEXColmaker():
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
         arr1['dayshiftedclose']=dayshiftedclose;
-        x=arr1.drop(['dayshiftedclose'], axis=1);
+        x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
         print(x);
         #print(y);
