@@ -85,7 +85,7 @@ def IEXColmaker():
             count=0;
             print(keys) 
             print(len(keys))
-            while count<len(keys): 
+            while count<len(keys)-1: 
               print("start while")  
               arr.append(SinglestockIEXdict(data,keys[count]));  
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
@@ -94,7 +94,9 @@ def IEXColmaker():
               print("end while")  
               print(count)  
             return arr;
+        
         arr=subtable(iexdata,keys);
+        print("len(keys)")  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
         arr1=arr1.rename(columns=arr1.iloc[0])
