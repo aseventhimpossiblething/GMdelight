@@ -132,6 +132,7 @@ def IEXColmaker():
         
         #STD=reviewFrame['Shifted close'].std;
         #STD.columns=['Shifted close'];
+        print("reviewFrame.corr()");
         print(reviewFrame.corr());
         
         
