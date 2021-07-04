@@ -108,16 +108,16 @@ def IEXColmaker():
         
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
-        #reviewFrame['close']=list(arr1['close']);
-        reclose=list(arr1['close'])
-        print('sizes')
-        print(len(reviewFrame['Shifted close']))
-        print(len(reclose))
+        reviewFrame['close']=y_train);
+        #reclose=list(arr1['close'])
+        #print('sizes')
+        #print(len(reviewFrame['Shifted close']))
+        #print(len(reclose))
         #reviewFrame['close']=arr1['close'];
         #reviewFrame['Shifted close']=y_test;
-        #reviewFrame['Tree Prediction 10']=TreeModPredict10;
-        #reviewFrame['Tree Prediction 100']=TreeModPredict100;
-        #reviewFrame['Linear Prediction']=LinearPredictMod;
+        reviewFrame['Tree Prediction 10']=TreeModPredict10;
+        reviewFrame['Tree Prediction 100']=TreeModPredict100;
+        reviewFrame['Linear Prediction']=LinearPredictMod;
         #reviewFrame['close']=arr1['close'];
         
         #reviewFrame['close']=arr1['close'];
@@ -134,13 +134,13 @@ def IEXColmaker():
         #STD.columns=['Shifted close'];
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
-        
-        
+        print(std)
+        STD=numpy.std(reviewFrame);
         
         #STD['Tree Prediction 10']=numpy.std(reviewFrame['Tree Prediction 10']);
         #STD['Tree Prediction 100']=numpy.std(reviewFrame['Tree Prediction 100']);
         #STD['Linear Prediction']=numpy.std(reviewFrame['Linear Prediction']);
-        #print(STD);
+        print(STD);
         #print(reviewFrame);
         
         return arr1;
