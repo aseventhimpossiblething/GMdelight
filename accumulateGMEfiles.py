@@ -113,7 +113,7 @@ def IEXColmaker():
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Linear Prediction']=LinearPredictMod;
         
-        STD=reviewFrame.std;
+        STD=reviewFrame['Shifted close'].std;
         #STD.columns=['Shifted close'];
         #print(reviewFrame.corr());
         
