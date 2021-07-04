@@ -59,8 +59,12 @@ def IEXColmaker():
         arr=[];
         vixarr=[];
         
+        
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
+        
+        print("vixkeys");
+        print(vixkeys);
         
         count=0;
         while count<len(keys): 
