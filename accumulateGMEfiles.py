@@ -41,8 +41,8 @@ def SinglestockIEXdict(x,y):
         while count<len(x):
               push=x[count][y];
               arr.append(push); 
-              print(arr[0])
-              print(arr[1]) 
+              #print(arr[0])
+              #print(arr[1]) 
               count=count+1;
         out=pandas.DataFrame(arr, columns=[y]);
         print("end cycle SinglestockIEXdict(x,y) end cycle")
@@ -99,6 +99,7 @@ def IEXColmaker():
             return arr;
         
         arr=subtable(iexdata,keys);
+        print(arr)
         #vixarr=subtable(vixdata,vixkeys);
         print("len(keys)")  
         arr1=pandas.DataFrame(arr); 
