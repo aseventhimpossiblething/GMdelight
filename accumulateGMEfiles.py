@@ -115,7 +115,7 @@ def IEXColmaker():
         
         STD=pandas.DataFrame(numpy.std(reviewFrame));
         #STD.columns=['Shifted close'];
-        print(review.corr());
+        print(reviewFrame.corr());
         
         
         
