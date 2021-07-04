@@ -79,11 +79,16 @@ def IEXColmaker():
         print("vixkeys");
         print(vixkeys);
         
-        count=0;
-        while count<len(keys): 
-              arr.append(SinglestockIEXdict(iexdata,keys[count]));
-              vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
+        def subtable(data,keys):
+            arr=[];    
+            count=0;
+            while count<len(keys): 
+              arr.append(SinglestockIEXdict(data,keys[count]));  
+              #arr.append(SinglestockIEXdict(iexdata,keys[count]));
+              #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
+            return arr;
+        arr=subtable(iexdata,keys);
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
         arr1=arr1.rename(columns=arr1.iloc[0])
