@@ -108,8 +108,8 @@ def IEXColmaker():
         
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
-        list(arr['close'])
-        print(arr['close'])
+        reclose=list(arr1['close'])
+        print(reclose)
         #reviewFrame['close']=arr1['close'];
         #reviewFrame['Shifted close']=y_test;
         #reviewFrame['Tree Prediction 10']=TreeModPredict10;
