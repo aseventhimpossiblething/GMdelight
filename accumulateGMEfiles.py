@@ -63,13 +63,13 @@ def IEXColmaker():
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         def colPrefix(x):
-            print("in prefixedelems")  
-            print("in prefixedelems start vixkeys",x) 
+            #print("in prefixedelems")  
+            #print("in prefixedelems start vixkeys",x) 
             prefixedelems=[];
             for elems in x:
-                print(elems);        
+                #print(elems);        
                 elems="vx"+elems;
-                print(elems); 
+                #print(elems); 
                 prefixedelems.append(elems);
                 prefixedelems;
             return prefixedelems;    
@@ -81,7 +81,7 @@ def IEXColmaker():
         count=0;
         while count<len(keys): 
               arr.append(SinglestockIEXdict(iexdata,keys[count]));
-              vixarr.append(SinglestockIEXdict(vixdata,keys[count])); 
+              vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
