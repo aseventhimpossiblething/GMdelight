@@ -82,7 +82,7 @@ def IEXColmaker():
         def subtable(data,keys):
             arr=[];    
             count=0;
-            while count<len(keys): 
+            while count<len(keys)-1: 
               arr.append(SinglestockIEXdict(data,keys[count]));  
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
