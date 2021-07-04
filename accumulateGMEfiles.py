@@ -113,19 +113,19 @@ def IEXColmaker():
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Linear Prediction']=LinearPredictMod;
         
-        STD=reviewFrame['Shifted close'].std;
+        #STD=reviewFrame['Shifted close'].std;
         #STD.columns=['Shifted close'];
-        #print(reviewFrame.corr());
+        print(reviewFrame.corr());
         
         
         
         #STD['Tree Prediction 10']=numpy.std(reviewFrame['Tree Prediction 10']);
         #STD['Tree Prediction 100']=numpy.std(reviewFrame['Tree Prediction 100']);
         #STD['Linear Prediction']=numpy.std(reviewFrame['Linear Prediction']);
-        print(STD);
+        #print(STD);
         #print(reviewFrame);
         
-        #return arr1;
+        return arr1;
                
 
 def Char2Num(col):
