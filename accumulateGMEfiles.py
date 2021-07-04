@@ -93,7 +93,7 @@ def IEXColmaker():
               count=count+1;
               if count==25:
                  print("diverted")        
-                return arr;
+                 return arr;
               print("end while")  
               print(count)  
             return arr;
