@@ -106,14 +106,14 @@ def IEXColmaker():
         LinearPredictMod=LinearMod.predict(x_test);
         
         
-        reviewFrame=pandas.DataFrame(arr1['close']);
-        reviewFrame['Shifted close']=y_test;
-        reviewFrame['Original close']=arr1['close'];
+        reviewFrame=pandas.DataFrame(y_test);
+        #reviewFrame['Shifted close']=y_test;
+        #reviewFrame['Original close']=arr1['close'];
         #reviewFrame=arr1['close'];
-        #reviewFrame=pandas.DataFrame(reviewFrame);
+        #reviewFrame=pandas.DataFrame(r);
         #reviewFrame['close']=arr1['close'];
         #reviewFrame=pandas.DataFrame(arr1['close']);
-        #reviewFrame.columns=['Shifted close'];
+        reviewFrame.columns=['Shifted close'];
         #reviewFrame['close']=arr1['close'];
         #reviewFrame['Shifted close']=y_test;
         #reviewFrame['Tree Prediction 10']=TreeModPredict10;
