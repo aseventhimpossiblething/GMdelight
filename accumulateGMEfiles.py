@@ -128,7 +128,7 @@ def IEXColmaker():
         print("vixarr",vixarr);
              
         return arr1;
-            1   
+              
 
 def Char2Num(col):
  arr={};
