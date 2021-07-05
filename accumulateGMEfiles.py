@@ -126,7 +126,7 @@ def IEXColmaker():
         
         print("arr1[1]")
         print(arr1[1])
-        arr1.merge(vixarr1);
+        arr1.merge(vixarr1, on="index");
         
         
         
