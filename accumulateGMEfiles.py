@@ -45,15 +45,15 @@ def SinglestockIEXdict(x,y,z):
               innerarr.append(push); 
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
-        print("out ",out)
+        #print("out ",out)
         return innerarr;      
         
         
 def IEXColmaker(): 
         URLPull=test;
         vixPull=URLPull.replace("AMD","VXX");
-        print(URLPull);
-        print(vixPull);
+        #print(URLPull);
+        #print(vixPull);
         #x=symbol will manipulate url str;
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
