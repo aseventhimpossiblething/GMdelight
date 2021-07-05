@@ -80,27 +80,8 @@ def IEXColmaker():
                 prefixedelems;
             return prefixedelems;    
         vixkeys=colPrefix(vixkeys);               
-        """
-        print("vixdata");
-        print(vixdata);
-        print("oooooooooooo");
-        print("mmmmmmmmmmmmm");
-        print("iexdata");
-        print(iexdata);
-        
-        print("444444444");
-        print("44444444444");
-        
-        print("type iexdata");
-        print(type(iexdata));
-        
-        print("vxdata type");
-        print("44444444444");
-        
-        print("type iexdata");
-        print(type(vixdata));
-        """
-        def subtable(data,key):
+
+        def subtable(data,key,z):
             iarr=[];    
             count=0;
             print("keys = ",key) 
@@ -108,15 +89,15 @@ def IEXColmaker():
             print("key type = ",type(key))    
             while count<len(key): 
               # print("start while")  
-              iarr.append(SinglestockIEXdict(data,key[count],0));  
+              iarr.append(SinglestockIEXdict(data,key[count],z));  
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
             return iarr;
         
-        arr=subtable(iexdata,keys);
+        arr=subtable(iexdata,keys,0);
        
-        vixarr=subtable(vixdata,keys);
+        vixarr=subtable(vixdata,keys,"vx");
         # print("vixarr ",vixar)  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
