@@ -72,7 +72,7 @@ def IEXColmaker():
             prefixedelems=[];
             for elems in x:
                 #print(elems);        
-                elems="vx"+elems;
+                elems="v"+elems;
                 #print(elems); 
                 prefixedelems.append(elems);
                 prefixedelems;
