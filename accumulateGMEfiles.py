@@ -79,14 +79,15 @@ def IEXColmaker():
             return prefixedelems;    
         vixkeys=colPrefix(vixkeys);               
         
-        print("vixkeys");
-        print(vixkeys);
+        #print("vixkeys");
+        #print(vixkeys);
         
         def subtable(data,keys):
             iarr=[];    
             count=0;
-            print(keys) 
-            print(len(keys))
+            print("keys = ",keys) 
+            print("key length = ",len(keys))
+            print("key type = ",type(keys))    
             while count<len(keys): 
               # print("start while")  
               iarr.append(SinglestockIEXdict(data,keys[count]));  
