@@ -172,6 +172,7 @@ def IEXColmaker():
            
         vreviewFrame['Tree Prediction 10']=vTreeModPredict10;
         vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
+        vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
      
      
