@@ -62,19 +62,13 @@ def IEXColmaker():
         
         arr=[];
         vixarr=[];
-        
-        
+                
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         def colPrefix(x):
-            #print("in prefixedelems")  
-            #print("in prefixedelems start vixkeys",x) 
             prefixedelems=[];
             for elems in x:
-                #print(elems);
-                #print(type(elems))
                 elems="vx"+elems;
-                print(type(elems)); 
                 prefixedelems.append(elems);
                 prefixedelems;
             return prefixedelems;    
@@ -83,21 +77,13 @@ def IEXColmaker():
         def subtable(data,key,z):
             iarr=[];    
             count=0;
-            print("keys = ",key) 
-            print("key length = ",len(key))
-            print("key type = ",type(key))    
             while count<len(key): 
-              # print("start while")  
               iarr.append(SinglestockIEXdict(data,key[count],z));  
-              #arr.append(SinglestockIEXdict(iexdata,keys[count]));
-              #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
             return iarr;
         
         arr=subtable(iexdata,keys,0);
-       
         vixarr=subtable(vixdata,keys,"vx");
-        # print("vixarr ",vixar)  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
         arr1=arr1.rename(columns=arr1.iloc[0])
@@ -106,12 +92,12 @@ def IEXColmaker():
         arr1=arr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
         vixarr1=pandas.DataFrame(vixarr); 
         vixarr1=vixarr1.transpose();
-        #vixarr1=vixarr1.rename(columns=vixarr1.iloc[0])
-        #vixarr1=vixarr1.drop([0]);
-        #vixarr1=vixarr1.reset_index();
-        #print("vixarr1");
-        #print(vixarr1);
-        #vixarr1=vixarr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
+        vixarr1=vixarr1.rename(columns=vixarr1.iloc[0])
+        vixarr1=vixarr1.drop([0]);
+        vixarr1=vixarr1.reset_index();
+        print("vixarr1");
+        print(vixarr1);
+        vixarr1=vixarr1.drop(["label","symbol","id","key","subkey","index"], axis=1);
         def metricshift(w,q):
             #print("metric shift running-------------")    
             shiftCol=[];
@@ -132,7 +118,7 @@ def IEXColmaker():
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
-        #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
+        vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         arr1['dayshiftedclose']=dayshiftedclose;
         
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
