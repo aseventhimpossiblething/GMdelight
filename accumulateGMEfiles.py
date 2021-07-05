@@ -126,12 +126,12 @@ def IEXColmaker():
         
         #print("arr1[1]")
         #print(arr1[1])
-        arr1.merge(vixarr1, on="index");
+        arrvix=arr1.merge(vixarr1, on="index");
         
         
-        
-        print("vixarr1");
-        print(vixarr1);
+        print(arrvix)
+        #print("vixarr1");
+        #print(vixarr1);
         
         
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
