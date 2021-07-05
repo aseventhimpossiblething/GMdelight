@@ -97,7 +97,7 @@ def IEXColmaker():
         vixarr1=vixarr1.reset_index();
         print("vixarr1");
         print(vixarr1);
-        vixarr1=vixarr1.drop(["vxlabel","vxsymbol","vxid","vxkey","vxsubkey","vxindex"], axis=1);
+        vixarr1=vixarr1.drop(["vxlabel","vxsymbol","vxid","vxkey","vxsubkey","index"], axis=1);
         def metricshift(w,q):
             #print("metric shift running-------------")    
             shiftCol=[];
