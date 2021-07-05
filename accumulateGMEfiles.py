@@ -72,16 +72,20 @@ def IEXColmaker():
             prefixedelems=[];
             for elems in x:
                 #print(elems);
-                print(type(elems))
-                elems="jhy";
+                #print(type(elems))
+                elems="vx"+elems;
                 print(type(elems)); 
                 prefixedelems.append(elems);
                 prefixedelems;
             return prefixedelems;    
         vixkeys=colPrefix(vixkeys);               
         
-        #print("vixkeys");
-        #print(vixkeys);
+        print("vixdata");
+        print(vixdata);
+        print("oooooooooooo");
+        print("mmmmmmmmmmmmm");
+        print("iexdata");
+        print(iexxdata);
         
         def subtable(data,key):
             iarr=[];    
