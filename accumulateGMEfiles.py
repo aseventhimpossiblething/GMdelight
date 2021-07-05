@@ -123,21 +123,11 @@ def IEXColmaker():
         
         arrvix=arr1.merge(vixarr1, on="index");
  
-        #x=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
-        #y=arrvix['dayshiftedclose'];
+        x=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
+        y=arrvix['dayshiftedclose'];
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
-        
-        #print("arr1[1]")
-        #print(arr1[1])
-        
-        
-        
-        #print(arrvix)
-        #print("vixarr1");
-        #print(vixarr1);
-        
-        
+                  
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
         
         TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
@@ -156,6 +146,27 @@ def IEXColmaker():
         reviewFrame['Tree Prediction 10']=TreeModPredict10;
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Linear Prediction']=LinearPredictMod;
+        
+        
+        vx_train,vx_test,vy_train,vy_test=train_test_split(vx,vy,test_size=0.2);
+        
+        vTreeMod10=RandomForestRegressor(n_estimators = 10).fit(vx_train,vy_train);
+        vTreeModPredict10=vTreeMod10.predict(vx_test);
+               
+        vTreeMod100=RandomForestRegressor(n_estimators = 100).fit(vx_train,vy_train);
+        vTreeModPredict100=vTreeMod100.predict(vx_test);
+            
+        vLinearMod=linear_model.LinearRegression().fit(vx_train,vy_train);
+        vLinearPredictMod=vLinearMod.predict(vx_test);
+              
+        vreviewFrame=pandas.DataFrame(vy_test);
+        vreviewFrame.columns=['Shifted close'];
+        vreviewFrame['close']=list(vx_test['close']);
+           
+        vreviewFrame['Tree Prediction 10']=vTreeModPredict10;
+        vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
+        vreviewFrame['Linear Prediction']v=LinearPredictMod;
+     
      
        
         print("reviewFrame.corr()");
@@ -163,14 +174,17 @@ def IEXColmaker():
         print("std")
         STD=numpy.std(reviewFrame);
         
-        print(STD);
-        print("reviewFrame ")
-        print(reviewFrame);
+        #print(STD);
+        #print("reviewFrame ")
+        #print(reviewFrame);
         print("exp============")
-        #print(vixPull);
+        print("vreviewFrame.corr()");
+        print(vreviewFrame.corr());
+        print("vstd")
+        vSTD=numpy.std(reviewFrame);
+     
         
-        #print("arr",arr);
-        #print("vixarr",vixarr);
+        
              
         return arr1;
               
