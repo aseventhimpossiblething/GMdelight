@@ -45,6 +45,7 @@ def SinglestockIEXdict(x,y):
               #print(arr[1]) 
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
+        print("out ",out)
         #print("end cycle SinglestockIEXdict(x,y) end cycle")
         return innerarr;      
         
@@ -79,7 +80,7 @@ def IEXColmaker():
                 prefixedelems;
             return prefixedelems;    
         vixkeys=colPrefix(vixkeys);               
-        
+        """
         print("vixdata");
         print(vixdata);
         print("oooooooooooo");
@@ -98,7 +99,7 @@ def IEXColmaker():
         
         print("type iexdata");
         print(type(vixdata));
-        
+        """
         def subtable(data,key):
             iarr=[];    
             count=0;
@@ -111,15 +112,12 @@ def IEXColmaker():
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
-            
-              #print("end while")  
-              #print(count)  
             return iarr;
         
         arr=subtable(iexdata,keys);
        
         vixarr=subtable(vixdata,keys);
-        print("vixarr ",vixar)  
+        # print("vixarr ",vixar)  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
         arr1=arr1.rename(columns=arr1.iloc[0])
