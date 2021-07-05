@@ -93,7 +93,7 @@ def IEXColmaker():
         print("type iexdata");
         print(type(iexdata));
         
-         print("vxdata type");
+        print("vxdata type");
         print("44444444444");
         
         print("type iexdata");
