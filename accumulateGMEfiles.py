@@ -142,7 +142,7 @@ def IEXColmaker():
         TreeModPredict10=TreeMod10.predict(x_test);
                
         TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
-        TreeModPredict100=TreeMod100.predict(x_test));
+        TreeModPredict100=TreeMod100.predict(x_test);
             
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
