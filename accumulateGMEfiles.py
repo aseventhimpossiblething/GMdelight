@@ -123,8 +123,8 @@ def IEXColmaker():
         
         arrvix=arr1.merge(vixarr1, on="index");
  
-        x=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
-        y=arrvix['dayshiftedclose'];
+        vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
+        vy=arrvix['dayshiftedclose'];
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
                   
