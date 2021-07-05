@@ -52,19 +52,27 @@ def SinglestockIEXdict(x,y,z):
 def IEXColmaker(): 
         URLPull=test;
         vixPull=URLPull.replace("AMD","VXX");
+        xlfPull=URLPull.replace("AMD","xlf");
         #print(URLPull);
         #print(vixPull);
         #x=symbol will manipulate url str;
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
+        xlfPull=requests.get(xlfPull);
+        
         iexdata=json.loads(iexpull.text);
-        vixdata=json.loads(vixPull.text); 
+        vixdata=json.loads(vixPull.text);
+        xlfdata=json.loads(xlfPull.text);
+        
         
         arr=[];
         vixarr=[];
+        xlfarr=[];
                 
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
+        xlfkeys=list(xlfdata[0].keys());
+        
         def colPrefix(x):
             prefixedelems=[];
             for elems in x:
@@ -84,12 +92,24 @@ def IEXColmaker():
         
         arr=subtable(iexdata,keys,0);
         vixarr=subtable(vixdata,keys,"vx");
+        xlfarr=subtable(xlfdata,keys,"vx");
+        
+        def dframemaker(x):
+            Newarr=pandas.DataFrame(x).transpose().rename(columns=arr1.iloc[0]); 
+            Newarr=Newarr.drop([0]).reset_index().drop(["label","symbol","id","key","subkey"], axis=1);
+        arr1=dframemaker(arr);
+        vixarr1=dframemaker(vixarr);
+        iexarr1=dframemaker(iexarr);
+                
+                            
+        """        
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
         arr1=arr1.rename(columns=arr1.iloc[0])
         arr1=arr1.drop([0]);
         arr1=arr1.reset_index();
         arr1=arr1.drop(["label","symbol","id","key","subkey"], axis=1);
+        
         vixarr1=pandas.DataFrame(vixarr); 
         vixarr1=vixarr1.transpose();
         vixarr1=vixarr1.rename(columns=vixarr1.iloc[0])
@@ -97,6 +117,7 @@ def IEXColmaker():
         vixarr1=vixarr1.reset_index();
         
         vixarr1=vixarr1.drop(["vxlabel","vxsymbol","vxid","vxkey","vxsubkey"], axis=1);
+        """
         
         def metricshift(w,q):
             #print("metric shift running-------------")    
