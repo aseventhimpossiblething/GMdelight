@@ -71,9 +71,10 @@ def IEXColmaker():
             #print("in prefixedelems start vixkeys",x) 
             prefixedelems=[];
             for elems in x:
-                #print(elems);        
-                elems=elems;
-                #print(elems); 
+                #print(elems);
+                print(type(elems))
+                elems="w"+elems;
+                print(type(elems)); 
                 prefixedelems.append(elems);
                 prefixedelems;
             return prefixedelems;    
