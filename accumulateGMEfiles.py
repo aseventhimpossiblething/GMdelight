@@ -85,7 +85,19 @@ def IEXColmaker():
         print("oooooooooooo");
         print("mmmmmmmmmmmmm");
         print("iexdata");
-        print(iexxdata);
+        print(iexdata);
+        
+        print("444444444");
+        print("44444444444");
+        
+        print("type iexdata");
+        print(type(iexdata));
+        
+         print("vxdata type");
+        print("44444444444");
+        
+        print("type iexdata");
+        print(type(vixdata));
         
         def subtable(data,key):
             iarr=[];    
