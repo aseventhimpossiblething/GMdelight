@@ -101,7 +101,7 @@ def IEXColmaker():
         
         arr=subtable(iexdata,keys);
        
-        #vixarr=subtable(vixdata,vixkeys);
+        vixarr=subtable(vixdata,vixkeys);
         print("len(keys)")  
         arr1=pandas.DataFrame(arr); 
         arr1=arr1.transpose();
