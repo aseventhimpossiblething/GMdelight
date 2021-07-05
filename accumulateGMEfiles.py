@@ -121,12 +121,14 @@ def IEXColmaker():
         vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         arr1['dayshiftedclose']=dayshiftedclose;
         
-        x=arr1.drop(['dayshiftedclose','date'], axis=1);
-        y=arr1['dayshiftedclose'];
+        arrvix=arr1.merge(vixarr1, on="index");
+        
+        x=arrvix.drop(['dayshiftedclose','date'], axis=1);
+        y=arrvix['dayshiftedclose'];
         
         #print("arr1[1]")
         #print(arr1[1])
-        arrvix=arr1.merge(vixarr1, on="index");
+        
         
         
         print(arrvix)
