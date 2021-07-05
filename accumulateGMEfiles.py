@@ -173,6 +173,7 @@ def IEXColmaker():
         print(reviewFrame.corr());
         print("std")
         STD=numpy.std(reviewFrame);
+        print(STD)
         
         #print(STD);
         #print("reviewFrame ")
@@ -182,6 +183,7 @@ def IEXColmaker():
         print(vreviewFrame.corr());
         print("vstd")
         vSTD=numpy.std(reviewFrame);
+        print(vSTD)
      
         
         
