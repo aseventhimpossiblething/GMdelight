@@ -83,15 +83,15 @@ def IEXColmaker():
         #print("vixkeys");
         #print(vixkeys);
         
-        def subtable(data,keys):
+        def subtable(data,key):
             iarr=[];    
             count=0;
-            print("keys = ",keys) 
-            print("key length = ",len(keys))
-            print("key type = ",type(keys))    
-            while count<len(keys): 
+            print("keys = ",key) 
+            print("key length = ",len(key))
+            print("key type = ",type(key))    
+            while count<len(key): 
               # print("start while")  
-              iarr.append(SinglestockIEXdict(data,keys[count]));  
+              iarr.append(SinglestockIEXdict(data,key[count]));  
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
