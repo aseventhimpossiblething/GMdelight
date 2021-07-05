@@ -34,7 +34,7 @@ from sklearn.model_selection import train_test_split
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y):
-        print(" start SinglestockIEXdict(x,y) y= ",y)
+        #print(" start SinglestockIEXdict(x,y) y= ",y)
         innerarr=[];
         count=0;
         innerarr.append(y);  
@@ -45,7 +45,7 @@ def SinglestockIEXdict(x,y):
               #print(arr[1]) 
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
-        print("end cycle SinglestockIEXdict(x,y) end cycle")
+        #print("end cycle SinglestockIEXdict(x,y) end cycle")
         return innerarr;      
         
         
