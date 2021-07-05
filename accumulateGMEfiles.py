@@ -153,7 +153,7 @@ def IEXColmaker():
         
         print(STD);
         print("exp============")
-        print(vixPull);
+        #print(vixPull);
         
         #print("arr",arr);
         #print("vixarr",vixarr);
