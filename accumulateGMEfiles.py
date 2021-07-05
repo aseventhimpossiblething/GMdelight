@@ -123,9 +123,9 @@ def IEXColmaker():
         
         arrvix=arr1.merge(vixarr1, on="index");
  
-        vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
+        vx=arrvix.drop(['dayshiftedclose','date','vxdate','close'], axis=1);
         vy=arrvix['dayshiftedclose'];
-        x=arr1.drop(['dayshiftedclose','date'], axis=1);
+        x=arr1.drop(['dayshiftedclose','date','close'], axis=1);
         y=arr1['dayshiftedclose'];
                   
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
@@ -141,7 +141,7 @@ def IEXColmaker():
               
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
-        reviewFrame['close']=list(x_test['close']);
+        #reviewFrame['close']=list(x_test['close']);
            
         reviewFrame['Tree Prediction 10']=TreeModPredict10;
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
@@ -161,7 +161,7 @@ def IEXColmaker():
               
         vreviewFrame=pandas.DataFrame(vy_test);
         vreviewFrame.columns=['Shifted close'];
-        vreviewFrame['close']=list(vx_test['close']);
+        #vreviewFrame['close']=list(vx_test['close']);
            
         vreviewFrame['Tree Prediction 10']=vTreeModPredict10;
         vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
