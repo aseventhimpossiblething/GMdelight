@@ -147,7 +147,7 @@ def IEXColmaker():
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
               
-        reviewFrame=pandas.DataFrame(y_test));
+        reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
         reviewFrame['close']=list(x_test['close']);
            
