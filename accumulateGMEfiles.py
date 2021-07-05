@@ -162,7 +162,7 @@ def IEXColmaker():
         STD=numpy.std(reviewFrame);
         
         print(STD);
-        print("reviewFrame "reviewFrame);
+        print("reviewFrame ",reviewFrame);
         print("exp============")
         #print(vixPull);
         
