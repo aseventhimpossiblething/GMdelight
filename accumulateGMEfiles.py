@@ -138,13 +138,13 @@ def IEXColmaker():
         
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
         
-        TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train),y_train));
+        TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
         TreeModPredict10=TreeMod10.predict(x_test);
                
         TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
         TreeModPredict100=TreeMod100.predict(x_test));
             
-        LinearMod=linear_model.LinearRegression().fit(x_train),y_train));
+        LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
               
         reviewFrame=pandas.DataFrame(y_test));
