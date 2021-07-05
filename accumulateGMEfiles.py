@@ -98,8 +98,6 @@ def IEXColmaker():
         
         vixarr1=vixarr1.drop(["vxlabel","vxsymbol","vxid","vxkey","vxsubkey","index"], axis=1);
         
-        print("vixarr1");
-        print(vixarr1);
         def metricshift(w,q):
             #print("metric shift running-------------")    
             shiftCol=[];
@@ -125,7 +123,12 @@ def IEXColmaker():
         
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
-             
+        
+        
+        print("vixarr1");
+        print(vixarr1);
+        
+        
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
         
         TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
