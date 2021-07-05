@@ -37,13 +37,12 @@ def SinglestockIEXdict(x,y,z):
         innerarr=[];
         count=0;
         if z!=0:
-          y=z+y;      
-        innerarr.append(y);  
+           innerarr.append(z+y);
+        else:
+           innerarr.append(y);  
         while count<len(x):
               push=x[count][y];
               innerarr.append(push); 
-              #print(arr[0])
-              #print(arr[1]) 
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
         print("out ",out)
