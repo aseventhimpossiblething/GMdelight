@@ -135,6 +135,9 @@ def IEXColmaker():
                
         TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
         TreeModPredict100=TreeMod100.predict(x_test);
+        
+        TreeMod200=RandomForestRegressor(n_estimators = 200).fit(x_train,y_train);
+        TreeModPredict200=TreeMod200.predict(x_test);
             
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
@@ -145,6 +148,7 @@ def IEXColmaker():
            
         reviewFrame['Tree Prediction 10']=TreeModPredict10;
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
+        reviewFrame['Tree Prediction 200']=TreeModPredict200;
         reviewFrame['Linear Prediction']=LinearPredictMod;
         
         
@@ -155,6 +159,9 @@ def IEXColmaker():
                
         vTreeMod100=RandomForestRegressor(n_estimators = 100).fit(vx_train,vy_train);
         vTreeModPredict100=vTreeMod100.predict(vx_test);
+        
+        vTreeMod200=RandomForestRegressor(n_estimators = 200).fit(vx_train,vy_train);
+        vTreeModPredict200=vTreeMod200.predict(vx_test);
             
         vLinearMod=linear_model.LinearRegression().fit(vx_train,vy_train);
         vLinearPredictMod=vLinearMod.predict(vx_test);
