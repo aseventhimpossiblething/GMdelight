@@ -33,10 +33,11 @@ from sklearn.model_selection import train_test_split
 
 
 test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
-def SinglestockIEXdict(x,y):
-        #print(" start SinglestockIEXdict(x,y) y= ",y)
+def SinglestockIEXdict(x,y,z):
         innerarr=[];
         count=0;
+        if z!=0:
+          y=z+y;      
         innerarr.append(y);  
         while count<len(x):
               push=x[count][y];
@@ -46,7 +47,6 @@ def SinglestockIEXdict(x,y):
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
         print("out ",out)
-        #print("end cycle SinglestockIEXdict(x,y) end cycle")
         return innerarr;      
         
         
@@ -108,7 +108,7 @@ def IEXColmaker():
             print("key type = ",type(key))    
             while count<len(key): 
               # print("start while")  
-              iarr.append(SinglestockIEXdict(data,key[count]));  
+              iarr.append(SinglestockIEXdict(data,key[count],0));  
               #arr.append(SinglestockIEXdict(iexdata,keys[count]));
               #vixarr.append(SinglestockIEXdict(vixdata,vixkeys[count])); 
               count=count+1;
