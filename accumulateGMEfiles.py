@@ -100,7 +100,7 @@ def IEXColmaker():
               #print(count)  
             return iarr;
         
-        arr=subtable(iexdata,keys);
+        #arr=subtable(iexdata,keys);
        
         vixarr=subtable(vixdata,vixkeys);
         print("len(keys)")  
