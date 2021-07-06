@@ -59,8 +59,8 @@ def IEXColmaker():
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
-        print("vixPull")
-        print(vixPull)
+        #print("vixPull")
+        #print(vixPull)
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         #print("xlfPull")
