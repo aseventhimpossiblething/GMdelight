@@ -55,8 +55,8 @@ def IEXColmaker():
         xlfPull=URLPull.replace("AMD","SQQQ");
         #print(URLPull);
         #print(vixPull);
-        print("xlfPull")
-        print(xlfPull)
+        #print("xlfPull")
+        #print(xlfPull)
         #x=symbol will manipulate url str;
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
@@ -72,6 +72,8 @@ def IEXColmaker():
         vixdata=json.loads(vixPull.text);
         
         xlfdata=json.loads(xlfPull.text);
+        print("xlfPull")
+        print(xlfPull)
         
         
         arr=[];
