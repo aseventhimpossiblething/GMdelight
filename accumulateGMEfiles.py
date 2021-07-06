@@ -95,7 +95,7 @@ def IEXColmaker():
         def dframemaker(x):
             drops=["label","symbol","id","key","subkey"];
             altdrops=[];
-            for elem in drop:
+            for elem in drops:
                 elem=y+elem;
                 altdrops.append(elem);
             Newarr=pandas.DataFrame(x).transpose();
