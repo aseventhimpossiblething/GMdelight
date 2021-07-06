@@ -90,7 +90,7 @@ def IEXColmaker():
         
         arr=subtable(iexdata,keys,0);
         vixarr=subtable(vixdata,keys,"vx");
-        xlfarr=subtable(xlfdata,keys,"xlf");
+        xlfarr=subtable(xlfdata,keys,"xl");
         
         def dframemaker(x,y):
             drops=["label","symbol","id","key","subkey"];
