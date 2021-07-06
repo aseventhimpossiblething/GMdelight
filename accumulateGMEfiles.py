@@ -98,7 +98,7 @@ def IEXColmaker():
             Newarr=Newarr.drop([0]).reset_index().drop(["label","symbol","id","key","subkey"], axis=1);
             return Newarr;    
         arr1=dframemaker(arr);
-        print(vixarr)
+        print(arr)
         vixarr1=dframemaker(vixarr);
         #print(xlfarr)
         xlfxarr1=dframemaker(xlfarr);
