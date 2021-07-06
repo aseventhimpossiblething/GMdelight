@@ -63,6 +63,8 @@ def IEXColmaker():
         print(vixPull)
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
+        print("xlfPull")
+        print(xlfPull)
         xlfdata=json.loads(xlfPull.text);
         
         
