@@ -92,7 +92,7 @@ def IEXColmaker():
         vixarr=subtable(vixdata,keys,"vx");
         xlfarr=subtable(xlfdata,keys,"xlf");
         
-        def dframemaker(x):
+        def dframemaker(x,y):
             drops=["label","symbol","id","key","subkey"];
             altdrops=[];
             for elem in drops:
@@ -103,11 +103,11 @@ def IEXColmaker():
             Newarr=Newarr.drop([0]).reset_index().drop(altdrops, axis=1);    
             #Newarr=Newarr.drop([0]).reset_index().drop(["label","symbol","id","key","subkey"], axis=1);
             return Newarr;    
-        arr1=dframemaker(arr);
+        arr1=dframemaker(arr,"");
         #print(vixarr)
-        vixarr1=dframemaker(vixarr);
+        vixarr1=dframemaker(vixarr,"vx");
         #print(xlfarr)
-        xlfxarr1=dframemaker(xlfarr);
+        xlfxarr1=dframemaker(xlfarr,"xlf");
                 
                             
         """        
