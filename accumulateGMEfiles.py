@@ -110,6 +110,7 @@ def IEXColmaker():
             return Newarr;    
         arr1=dframemaker(arr);
         vixarr1=dframemaker(vixarr);
+        print(xlfarr)
         xlfxarr1=dframemaker(xlfarr);
                 
                             
