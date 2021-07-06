@@ -55,7 +55,8 @@ def IEXColmaker():
         xlfPull=URLPull.replace("AMD","XLF");
         #print(URLPull);
         #print(vixPull);
-        #print(xlfPull)
+        print("xlfPull")
+        print(xlfPull)
         #x=symbol will manipulate url str;
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
