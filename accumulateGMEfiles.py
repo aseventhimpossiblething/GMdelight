@@ -45,7 +45,6 @@ def SinglestockIEXdict(x,y,z):
               innerarr.append(push); 
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
-        #print("out ",out)
         return innerarr;      
         
         
@@ -53,27 +52,15 @@ def IEXColmaker():
         URLPull=test;
         vixPull=URLPull.replace("AMD","VXX");
         xlfPull=URLPull.replace("AMD","SQQQ");
-        #print(URLPull);
-        #print(vixPull);
-        #print("xlfPull")
-        #print(xlfPull)
-        #x=symbol will manipulate url str;
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
-        print("iexpull")
-        print(iexpull)
-        #print("vixPull")
-        #print(vixPull)
-        print("xlfPull ")
-        print(xlfPull)
-        
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         
         xlfdata=json.loads(xlfPull.text);
-        print("xlfdata ")
-        print(xlfdata)
+        #print("xlfdata ")
+        #print(xlfdata)
         
         
         arr=[];
@@ -124,7 +111,7 @@ def IEXColmaker():
         arr1=arr1.reset_index();
         arr1=arr1.drop(["label","symbol","id","key","subkey"], axis=1);
         
-        vixarr1=pandas.DataFrame(vixarr); 
+        #vixarr1=pandas.DataFrame(vixarr); 
         vixarr1=vixarr1.transpose();
         vixarr1=vixarr1.rename(columns=vixarr1.iloc[0])
         vixarr1=vixarr1.drop([0]);
