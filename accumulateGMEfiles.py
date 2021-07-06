@@ -65,15 +65,15 @@ def IEXColmaker():
         print(iexpull)
         #print("vixPull")
         #print(vixPull)
-        print("xlfPull")
+        print("xlfPull ")
         print(xlfPull)
         
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         
         xlfdata=json.loads(xlfPull.text);
-        print("xlfPull")
-        print(xlfPull)
+        print("xlfdata ")
+        print(xlfdata)
         
         
         arr=[];
