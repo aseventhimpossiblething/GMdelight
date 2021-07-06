@@ -104,10 +104,8 @@ def IEXColmaker():
             #Newarr=Newarr.drop([0]).reset_index().drop(["label","symbol","id","key","subkey"], axis=1);
             return Newarr;    
         arr1=dframemaker(arr,"");
-        #print(vixarr)
         vixarr1=dframemaker(vixarr,"vx");
-        #print(xlfarr)
-        xlfxarr1=dframemaker(xlfarr,"xlf");
+        xlfxarr1=dframemaker(xlfarr,"xl");
                 
                             
         """        
@@ -148,10 +146,14 @@ def IEXColmaker():
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=vixarr1.drop([len(dayshiftedclose)]);
-        arr1['dayshiftedclose']=dayshiftedclose;
+        xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         
+        arr1['dayshiftedclose']=dayshiftedclose;
         arrvix=arr1.merge(vixarr1, on="index");
- 
+        xlfarrvix=arrvix.merge(xlfxarr1, on="index");
+        
+        xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        xy=xlfarrvix['dayshiftedclose'];
         vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
         vy=arrvix['dayshiftedclose'];
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
