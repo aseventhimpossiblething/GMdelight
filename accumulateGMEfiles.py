@@ -59,12 +59,12 @@ def IEXColmaker():
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
-        print("vixPull")
-        print(vixPull)
+        #print("vixPull")
+        #print(vixPull)
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
-        print("xlfPull")
-        print(xlfPull)
+        #print("xlfPull")
+        #print(xlfPull)
         xlfdata=json.loads(xlfPull.text);
         
         
@@ -94,15 +94,15 @@ def IEXColmaker():
             return iarr;
         
         arr=subtable(iexdata,keys,0);
-        vixarr=subtable(vixdata,keys,"vx");
-        xlfarr=subtable(xlfdata,keys,"vx");
+        vixarr=subtable(vixdata,keys,"vxx");
+        xlfarr=subtable(xlfdata,keys,"xlf");
         
         def dframemaker(x):
             Newarr=pandas.DataFrame(x).transpose().rename(columns=arr1.iloc[0]); 
             Newarr=Newarr.drop([0]).reset_index().drop(["label","symbol","id","key","subkey"], axis=1);
         arr1=dframemaker(arr);
         vixarr1=dframemaker(vixarr);
-        iexarr1=dframemaker(iexarr);
+        xlfxarr1=dframemaker(xlfarr);
                 
                             
         """        
