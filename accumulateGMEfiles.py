@@ -49,10 +49,13 @@ def SinglestockIEXdict(x,y,z):
         
         
 def IEXColmaker():
-        print("11")
+        print("1")
         URLPull=test;
+        print("2")
         vixPull=URLPull.replace("AMD","VXX");
+        print("3")
         xlfPull=URLPull.replace("AMD","SQQQ");
+        print("4")
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
@@ -62,7 +65,7 @@ def IEXColmaker():
         vixdata=json.loads(vixPull.text);
         
         xlfdata=json.loads(xlfPull.text);
-        print("1 ")
+        #print("1 ")
         #print(xlfdata)
         
         
