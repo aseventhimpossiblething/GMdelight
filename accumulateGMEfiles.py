@@ -57,7 +57,9 @@ def IEXColmaker():
         xlfPull=URLPull.replace("AMD","SQQQ");
         print("4")
         iexpull=requests.get(URLPull);
+        print("5")
         vixPull=requests.get(vixPull);
+        print("6")
         xlfPull=requests.get(xlfPull);
         print("iexpull")
         print(iexpull)
