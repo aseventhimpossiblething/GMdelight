@@ -48,7 +48,8 @@ def SinglestockIEXdict(x,y,z):
         return innerarr;      
         
         
-def IEXColmaker(): 
+def IEXColmaker():
+        print("11")
         URLPull=test;
         vixPull=URLPull.replace("AMD","VXX");
         xlfPull=URLPull.replace("AMD","SQQQ");
