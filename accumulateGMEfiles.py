@@ -103,32 +103,13 @@ def IEXColmaker():
             Newarr=pandas.DataFrame(x).transpose();
             Newarr=Newarr.rename(columns=Newarr.iloc[0]);
             Newarr=Newarr.drop([0]).reset_index().drop(altdrops, axis=1);    
-            #Newarr=Newarr.drop([0]).reset_index().drop(["label","symbol","id","key","subkey"], axis=1);
             return Newarr;    
         arr1=dframemaker(arr,"");
         vixarr1=dframemaker(vixarr,"vx");
         xlfxarr1=dframemaker(xlfarr,"xl");
-                
-                            
-        """        
-        arr1=pandas.DataFrame(arr); 
-        arr1=arr1.transpose();
-        arr1=arr1.rename(columns=arr1.iloc[0])
-        arr1=arr1.drop([0]);
-        arr1=arr1.reset_index();
-        arr1=arr1.drop(["label","symbol","id","key","subkey"], axis=1);
-        
-        #vixarr1=pandas.DataFrame(vixarr); 
-        vixarr1=vixarr1.transpose();
-        vixarr1=vixarr1.rename(columns=vixarr1.iloc[0])
-        vixarr1=vixarr1.drop([0]);
-        vixarr1=vixarr1.reset_index();
-        
-        vixarr1=vixarr1.drop(["vxlabel","vxsymbol","vxid","vxkey","vxsubkey"], axis=1);
-        """
+                          
         
         def metricshift(w,q):
-            #print("metric shift running-------------")    
             shiftCol=[];
             shiftColDate=[];
             w=w[q];
@@ -337,7 +318,7 @@ def runNasdaq():
 
 #pullNasdaqAbbreves();
 runNasdaq();
-print(IEXColmaker());
+#print(IEXColmaker());
 
 sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
 #os.system("sqlite3");
