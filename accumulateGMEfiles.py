@@ -146,7 +146,7 @@ def IEXColmaker():
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=vixarr1.drop([len(dayshiftedclose)]);
-        #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
+        xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         print(vixarr1)
         print(xlfxarr1)
         
