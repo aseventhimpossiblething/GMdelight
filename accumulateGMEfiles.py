@@ -59,7 +59,7 @@ def IEXColmaker():
         vixdata=json.loads(vixPull.text);
         
         xlfdata=json.loads(xlfPull.text);
-        #print("xlfdata ")
+        print("1 ")
         #print(xlfdata)
         
         
@@ -91,6 +91,8 @@ def IEXColmaker():
         arr=subtable(iexdata,keys,0);
         vixarr=subtable(vixdata,keys,"vx");
         xlfarr=subtable(xlfdata,keys,"xl");
+        
+        print("2 ")
         
         def dframemaker(x,y):
             drops=["label","symbol","id","key","subkey"];
@@ -208,7 +210,7 @@ def IEXColmaker():
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
      
-     
+        print("3 ")
        
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
