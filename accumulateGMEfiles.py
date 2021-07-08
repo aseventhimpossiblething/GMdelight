@@ -159,10 +159,12 @@ def IEXColmaker():
             arr=[];    
             count=0;    
             while len(x):
-                  if x[count]!=y[count]: 
-                     arr.append(count);
+                  if x[count]==y[count]: 
+                     #arr.append(count);
                      #count=count+1;
+                     print("running ",count)   
                   else:
+                     arr.append(count);   
                      print("running ",count)
                   count=count+1;
             return arr;            
