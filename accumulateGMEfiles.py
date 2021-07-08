@@ -157,15 +157,17 @@ def IEXColmaker():
         def compare(x,y):
             print("compare running")    
             arr=[];    
-            count=0;    
+            count=0;  
+            print("len(x) ",len(x))
+            print("len(y) ",len(y))    
             while len(x):
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
-                     print("running ",count)   
+                     #print("running ",count)   
                   else:
                      arr.append(count);   
-                     print("running ",count)
+                     #print("running ",count)
                   count=count+1;
             return arr;            
              
