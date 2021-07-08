@@ -141,17 +141,17 @@ def IEXColmaker():
         #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         
         #print(arr1.columns)
-        print(arr1['date'])
+        #print(arr1['date'])
         
         #print(vixarr1.columns)
-        print(vixarr1['vxdate'])
+        #print(vixarr1['vxdate'])
         
-        print(xlfxarr1['xldate'])
+        #print(xlfxarr1['xldate'])
         
         #print(vixarr1)
         #print(xlfxarr1)
         #print(vixarr1)
-        #print(xlfxarr1)
+        print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate'])
         
         arr1['dayshiftedclose']=dayshiftedclose;
         arrvix=arr1.merge(vixarr1, on="index");
