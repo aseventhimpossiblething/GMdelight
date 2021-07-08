@@ -163,8 +163,8 @@ def IEXColmaker():
                      count=count+1;
             return arr;            
              
-        comp=compare(arr1['date'],xlfxarr1['xldate']); 
-        print("first divergence ",comp);
+        #comp=compare(arr1['date'],xlfxarr1['xldate']); 
+        #print("first divergence ",comp);
         
         arr1['dayshiftedclose']=dayshiftedclose;
         arrvix=arr1.merge(vixarr1, on="index");
