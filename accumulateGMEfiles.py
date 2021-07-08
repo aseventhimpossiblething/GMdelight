@@ -101,7 +101,7 @@ def IEXColmaker():
         vixarr=subtable(vixdata,keys,"vx");
         xlfarr=subtable(xlfdata,keys,"xl");
         
-        print("2 ")
+        #print("2 ")
         
         def dframemaker(x,y):
             drops=["label","symbol","id","key","subkey"];
@@ -139,8 +139,8 @@ def IEXColmaker():
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
-        #print(vixarr1)
-        #print(xlfxarr1)
+        print(vixarr1)
+        print(xlfxarr1)
         
         #print(vixarr1)
         #print(xlfxarr1)
