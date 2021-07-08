@@ -162,6 +162,8 @@ def IEXColmaker():
                   if x[count]!=y[count]: 
                      arr.append(count);
                      count=count+1;
+                  else:
+                     print("running ",count)   
             return arr;            
              
         compare(arr1['date'],xlfxarr1['xldate']); 
