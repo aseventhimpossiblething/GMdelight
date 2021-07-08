@@ -158,7 +158,7 @@ def IEXColmaker():
             arr=[];    
             count=0;    
             while len(x):
-                  if x[count]!=ycount: 
+                  if x[count]!=y[count]: 
                      arr.append(count);
                      count=count+1;
             return arr;            
