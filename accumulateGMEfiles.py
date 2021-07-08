@@ -155,6 +155,7 @@ def IEXColmaker():
         
         print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate'])
         def compare(x,y):
+            print("compare running")    
             arr=[];    
             count=0;    
             while len(x):
@@ -163,7 +164,7 @@ def IEXColmaker():
                      count=count+1;
             return arr;            
              
-        #comp=compare(arr1['date'],xlfxarr1['xldate']); 
+        compare(arr1['date'],xlfxarr1['xldate']); 
         #print("first divergence ",comp);
         
         arr1['dayshiftedclose']=dayshiftedclose;
