@@ -146,7 +146,7 @@ def IEXColmaker():
         #print(vixarr1.columns)
         print(vixarr1['vxdate'])
         
-        print(xlfxarr1['xlfdate'])
+        print(xlfxarr1['xldate'])
         
         #print(vixarr1)
         #print(xlfxarr1)
