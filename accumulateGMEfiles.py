@@ -56,6 +56,7 @@ def IEXColmaker():
         print("3")
         xlfPull=URLPull.replace("AMD","SQQQ");
         print("4")
+        
         iexpull=requests.get(URLPull);
         print("5")
         vixPull=requests.get(vixPull);
@@ -137,7 +138,12 @@ def IEXColmaker():
         dayshiftedclose=metricshift(arr1,'close');
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=vixarr1.drop([len(dayshiftedclose)]);
-        xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
+        #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
+        #print(vixarr1)
+        #print(xlfxarr1)
+        
+        #print(vixarr1)
+        #print(xlfxarr1)
         #print(vixarr1)
         #print(xlfxarr1)
         
@@ -199,7 +205,7 @@ def IEXColmaker():
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
      
-        print("3 ")
+        #print("3 ")
        
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
