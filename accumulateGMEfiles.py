@@ -142,9 +142,9 @@ def IEXColmaker():
         
         print(arr1.columns)
                 
-        print(arr1[date])
-        print(vixarr1[date])
-        print(xlfxarr1[date])
+        print(arr1['date'])
+        print(vixarr1['date'])
+        print(xlfxarr1['date'])
         
         #print(vixarr1)
         #print(xlfxarr1)
