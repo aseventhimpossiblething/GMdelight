@@ -161,6 +161,7 @@ def IEXColmaker():
             print("len(x) ",len(x))
             print("len(y) ",len(y))    
             while len(x):
+                  print(x[count],y[count])      
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
