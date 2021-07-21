@@ -161,15 +161,16 @@ def IEXColmaker():
             print("len(x) ",len(x))
             print("len(y) ",len(y))    
             while len(x):
-                  print(count," ",x[count],y[count])      
+                  print(len(x),"---",count," ",x[count],y[count])      
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
-                     print("Diff....")   
-                     #w=1+1;   
+                     #print("Diff....")   
+                     w=1+1;   
                      #print("running ",count)   
                   else:
-                     arr.append(count);   
+                     arr.append(count); 
+                     #print("Diff....")
                      #print("running ",count)
                   count=count+1;
             return arr;            
