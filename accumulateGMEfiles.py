@@ -179,7 +179,7 @@ def IEXColmaker():
                   count=count+1;
             return arr;            
              
-        compare(arr1['date'],xlfxarr1['xldate']); 
+        #compare(arr1['date'],xlfxarr1['xldate']); 
         #print("first divergence ",comp);
         
         arr1['dayshiftedclose']=dayshiftedclose;
