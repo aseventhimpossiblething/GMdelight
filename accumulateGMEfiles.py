@@ -161,8 +161,8 @@ def IEXColmaker():
             print("len(x) ",len(x))
             print("len(y) ",len(y))    
             while count < len(x):
-                  print("Open")      
-                  print(len(x),"---",count," ",x[count],y[count]) 
+                  #print("Open")      
+                  #print(len(x),"---",count," ",x[count],y[count]) 
                   #print("x[count+1] ",x[count+1])
                   #print("y[count+1] ",y[count+1]) 
                   print("Close")      
@@ -260,7 +260,7 @@ def IEXColmaker():
      
         
         
-             
+        compare(arr1['date'],xlfxarr1['xldate']);      
         return arr1;
               
 
