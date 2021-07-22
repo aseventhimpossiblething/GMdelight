@@ -163,8 +163,8 @@ def IEXColmaker():
             while len(x):
                   print("Open")      
                   print(len(x),"---",count," ",x[count],y[count]) 
-                  print("x[count+1] ",x[count+1])
-                  print("y[count+1] ",y[count+1]) 
+                  #print("x[count+1] ",x[count+1])
+                  #print("y[count+1] ",y[count+1]) 
                   print("Close")      
                   if x[count]==y[count]: 
                      #arr.append(count);
