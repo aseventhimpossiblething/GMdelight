@@ -159,7 +159,8 @@ def IEXColmaker():
             arr=[];    
             count=0;  
             print("len(x) ",len(x))
-            print("len(y) ",len(y)) 
+            print("len(y) ",len(y))
+            print("type(len(y)) ",type(len(y))) 
             print("x len pos --",x[len(x)])#,y[len(x)])
             while count < len(x):
                   #print("Open")      
