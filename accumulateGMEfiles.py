@@ -161,6 +161,7 @@ def IEXColmaker():
             print("len(x) ",len(x))
             print("len(y) ",len(y))
             print("type(len(y))-- ",type(len(y))) 
+            x[len(x)];    
             #print("x len pos --",x[len(x)])#,y[len(x)])
             while count < len(x):
                   #print("Open")      
