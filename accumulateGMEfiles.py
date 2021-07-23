@@ -170,12 +170,13 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
-                     arr.append(count); 
+                     print(count)           
+                     #arr.append(count); 
                      #print("Diff....")
                      #print("running ",count)
                   count=count+1;
                print("-subset-");         
-               print(y1[1:100]);    
+               print(y1[:100]);    
                print("-subset-")  
             return arr;            
              
