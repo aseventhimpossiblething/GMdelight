@@ -168,9 +168,9 @@ def IEXColmaker():
             #print("x len pos --",x[0][9:],"---",y[0][9:])
             print("x len pos --",x[len(x)-1],"---",y[len(x)-1])
             print("x len pos --",x[len(x)-1][9:],"---",y[len(x)-1][9:])
-            xdesignator=int(x[len(x)-1][9:]);
-            ydesignator=int(y[len(y)-1][9:]);
-            if xdesignator>ydesignator:  
+            xdesignator=int(x[len(x)-1][8:]);
+            ydesignator=int(y[len(y)-1][8:]);
+            if xdesignator<ydesignator:  
                while count < len(x):
                   #print("Open")      
                   #print(len(x),"---",count," ",x[count],y[count]) 
