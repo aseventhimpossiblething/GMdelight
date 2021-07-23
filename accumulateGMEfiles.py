@@ -49,29 +49,18 @@ def SinglestockIEXdict(x,y,z):
         
         
 def IEXColmaker():
-        print("1")
+        print("IEXColmaker(): running");
         URLPull=test;
-        print("2")
         vixPull=URLPull.replace("AMD","VXX");
-        print("3")
         xlfPull=URLPull.replace("AMD","SQQQ");
-        print("4")
-        
         iexpull=requests.get(URLPull);
-        print("5")
         vixPull=requests.get(vixPull);
-        print("6")
         xlfPull=requests.get(xlfPull);
-        print("iexpull")
         print(iexpull)
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
-        
         xlfdata=json.loads(xlfPull.text);
-        #print("1 ")
-        #print(xlfdata)
-        
-        
+       
         arr=[];
         vixarr=[];
         xlfarr=[];
@@ -81,6 +70,7 @@ def IEXColmaker():
         xlfkeys=list(xlfdata[0].keys());
         
         def colPrefix(x):
+            print("colPrefix running")    
             prefixedelems=[];
             for elems in x:
                 elems="vx"+elems;
@@ -88,7 +78,6 @@ def IEXColmaker():
                 prefixedelems;
             return prefixedelems;    
         vixkeys=colPrefix(vixkeys);               
-
         def subtable(data,key,z):
             iarr=[];    
             count=0;
@@ -96,13 +85,10 @@ def IEXColmaker():
               iarr.append(SinglestockIEXdict(data,key[count],z));  
               count=count+1;
             return iarr;
-        
         arr=subtable(iexdata,keys,0);
         vixarr=subtable(vixdata,keys,"vx");
         xlfarr=subtable(xlfdata,keys,"xl");
-        
-        #print("2 ")
-        
+                       
         def dframemaker(x,y):
             drops=["label","symbol","id","key","subkey"];
             altdrops=[];
@@ -116,8 +102,7 @@ def IEXColmaker():
         arr1=dframemaker(arr,"");
         vixarr1=dframemaker(vixarr,"vx");
         xlfxarr1=dframemaker(xlfarr,"xl");
-                          
-        
+              
         def metricshift(w,q):
             shiftCol=[];
             shiftColDate=[];
@@ -188,7 +173,9 @@ def IEXColmaker():
                      #print("Diff....")
                      #print("running ",count)
                   count=count+1;
-               y[:10];         
+               print("-subset-");         
+               print(y[:10]);    
+               print("-subset-")  
             return arr;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
