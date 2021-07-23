@@ -174,7 +174,7 @@ def IEXColmaker():
                      #print("running ",count)
                   count=count+1;
                print("-subset-");         
-               print(y[:10]);    
+               print(y1);    
                print("-subset-")  
             return arr;            
              
@@ -239,7 +239,7 @@ def IEXColmaker():
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
      
-        #print("3 ")
+        print("pause? ")
        
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
