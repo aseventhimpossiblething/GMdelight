@@ -152,8 +152,8 @@ def IEXColmaker():
             #print("type(len(y))-- ",type(len(y))) 
             #print(x[(len(x))-1]); 
             #print("x len pos --",x[0][9:],"---",y[0][9:])
-            print("x len pos --",x[len(x)-1],"---",y[len(x)-1])
-            print("x len pos --",x[len(x)-1][8:],"---",y[len(x)-1][8:])
+            #print("x len pos --",x[len(x)-1],"---",y[len(x)-1])
+            #print("x len pos --",x[len(x)-1][8:],"---",y[len(x)-1][8:])
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
             alty=y1;
@@ -167,11 +167,12 @@ def IEXColmaker():
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
-                     print(x[count],"==",y[count]);   
+                     #print(x[count],"==",y[count]);   
                      w=1+1;   
                      #print("running ",count)   
                   else:
-                     print(count) 
+                     print(count,"---alty  ",alty[count])
+                     
                      alty[:count];
                      alty[count:];   
                      #arr.append(count); 
