@@ -161,13 +161,16 @@ def IEXColmaker():
             print("compare running")    
             arr=[];    
             count=0;  
-            print("len(x) ",len(x))
-            print("len(y) ",len(y))
-            print("type(len(y))-- ",type(len(y))) 
+            #print("len(x) ",len(x))
+            #print("len(y) ",len(y))
+            #print("type(len(y))-- ",type(len(y))) 
             #print(x[(len(x))-1]); 
-            print("x len pos --",x[0][9:],"---",y[0][9:])
+            #print("x len pos --",x[0][9:],"---",y[0][9:])
             print("x len pos --",x[len(x)-1][9:],"---",y[len(x)-1][9:])
-            while count < len(x):
+            xdesignator=int(x[len(x)-1][9:]);
+            ydesignator=int(y[len(y)-1][9:]);
+            if xdesignator>ydesignator:  
+               while count < len(x):
                   #print("Open")      
                   #print(len(x),"---",count," ",x[count],y[count]) 
                   #print("x[count+1] ",x[count+1])
