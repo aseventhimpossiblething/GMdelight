@@ -154,7 +154,10 @@ def IEXColmaker():
         
         
         print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate'])
-        def compare(x,y):
+        def compare(x1,y1,):
+            #daten=    
+            x=x1['date']; 
+            y=y1['xldate']; 
             print("compare running")    
             arr=[];    
             count=0;  
@@ -264,7 +267,7 @@ def IEXColmaker():
      
         
         
-        compare(arr1['date'],xlfxarr1['xldate']);      
+        compare(arr1,xlfxarr1);      
         return arr1;
               
 
