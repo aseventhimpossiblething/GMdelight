@@ -175,14 +175,17 @@ def IEXColmaker():
                      
                      alty[:count];
                      alty[count:]; 
-                     print(alty[count:count]);   
+                     #print(alty[count:count]);   
                      #arr.append(count); 
                      #print("Diff....")
                      #print("running ",count)
                   count=count+1;
                print("-subset-");         
                print(y1[:100]);    
-               print("-subset-")  
+               print("-subset-")
+               print(alty[1:1]);  
+               print(alty[2:2]);
+               print(alty[18:18]);  
             return arr;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
