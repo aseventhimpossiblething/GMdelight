@@ -166,7 +166,7 @@ def IEXColmaker():
             print("x len pos --",x[len(x)-1],"---",y[len(x)-1])
             while count < len(x):
                   #print("Open")      
-                  #print(len(x),"---",count," ",x[count],y[count]) 
+                  print(len(x),"---",count," ",x[count],y[count]) 
                   #print("x[count+1] ",x[count+1])
                   #print("y[count+1] ",y[count+1]) 
                   #print("Close")      
