@@ -175,7 +175,7 @@ def IEXColmaker():
                      
                      alty[:count];
                      alty[count:]; 
-                     alty[count];   
+                     alty[count:count];   
                      #arr.append(count); 
                      #print("Diff....")
                      #print("running ",count)
