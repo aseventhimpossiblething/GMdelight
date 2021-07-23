@@ -138,7 +138,8 @@ def IEXColmaker():
         #print(vixarr1)
         
         
-        print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate'])
+        print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
+        print("pause before?")
         def compare(x1,y1,):
             #daten=    
             x=x1['date']; 
@@ -239,7 +240,7 @@ def IEXColmaker():
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
      
-        print("pause? ")
+        print("after pause ")
        
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
