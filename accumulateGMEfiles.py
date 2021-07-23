@@ -175,7 +175,7 @@ def IEXColmaker():
                      #print("running ",count)
                   count=count+1;
                print("-subset-");         
-               print(y1);    
+               print(y1[1:100]);    
                print("-subset-")  
             return arr;            
              
