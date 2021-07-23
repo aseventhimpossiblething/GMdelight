@@ -188,6 +188,7 @@ def IEXColmaker():
                      #print("Diff....")
                      #print("running ",count)
                   count=count+1;
+               y[:10];         
             return arr;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
