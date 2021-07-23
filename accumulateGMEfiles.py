@@ -145,7 +145,7 @@ def IEXColmaker():
             x=x1['date']; 
             y=y1['xldate']; 
             print("compare running")    
-            arr=[];    
+            #arr=[];    
             count=0;  
             #print("len(x) ",len(x))
             #print("len(y) ",len(y))
@@ -156,6 +156,7 @@ def IEXColmaker():
             print("x len pos --",x[len(x)-1][8:],"---",y[len(x)-1][8:])
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
+            alty=y1;
             if xdesignator<ydesignator:  
                while count < len(x):
                   #print("Open")      
@@ -170,7 +171,9 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
-                     print(count)           
+                     print(count) 
+                     alty1[:count];
+                     alty1[count:];   
                      #arr.append(count); 
                      #print("Diff....")
                      #print("running ",count)
