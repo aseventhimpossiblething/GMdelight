@@ -171,22 +171,23 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
-                     print(count-1,"---alty  ",alty.iloc[count-1])           
-                     print(count,"---alty  ",alty.iloc[count])
-                     print(alty.columns)
-                     len(alty.columns)
+                     #print(count-1,"---alty  ",alty.iloc[count-1])           
+                     #print(count,"---alty  ",alty.iloc[count])
+                     #print(alty.columns)
+                     #len(alty.columns)
                         
                      for elem in alty.columns:
                          arr.append(0);
-                     print(arr)
-                     print("type ",type(alty.columns))
+                     #print(arr)
+                     #print("type ",type(alty.columns))
                      narr=pandas.DataFrame(arr);
                      narr=narr.transpose();
                      altyCols=list(alty.columns).remove('index');
-                     print("narr - ",narr)   
-                     print("narr.columns - ",narr.columns)   
+                     #print("narr - ",narr)   
+                     #print("narr.columns - ",narr.columns)   
                      narr.columns=alty.columns; 
-                     print("narr.columns - ",narr.columns)    
+                     #print("narr.columns - ",narr.columns) 
+                     print("narr - ",narr) 
                      #narr.columns=altyCols;   
                      #alty.iloc[count]; 
                      alty[:count-1];
