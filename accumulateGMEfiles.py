@@ -140,7 +140,8 @@ def IEXColmaker():
         
         print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
-        def compare(x1,y1,):
+        def compare(x1,y1):
+            y1.columns.find('date')    
             #daten=    
             x=x1['date']; 
             y=y1['xldate']; 
@@ -187,7 +188,7 @@ def IEXColmaker():
                      #print("narr.columns - ",narr.columns)   
                      narr.columns=alty.columns; 
                      #print("narr.columns - ",narr.columns) 
-                     print("narr - ",narr) 
+                     #print("narr - ",narr) 
                      #narr.columns=altyCols;   
                      #alty.iloc[count]; 
                      topcan=alty[:count-1];
