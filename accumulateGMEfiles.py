@@ -140,7 +140,7 @@ def IEXColmaker():
         
         print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
-        def compare(x1,y1,'z'):
+        def compare(x1,y1,z):
             list(y1.columns).find('date')    
             daten=z+'date'    
             x=x1['date']; 
