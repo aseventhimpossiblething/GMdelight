@@ -190,8 +190,10 @@ def IEXColmaker():
                      print("narr - ",narr) 
                      #narr.columns=altyCols;   
                      #alty.iloc[count]; 
-                     alty[:count-1];
-                     alty[count-1:];
+                     topcan=alty[:count-1];
+                     midcan=narr;
+                     bottoncan=alty[count-1:];
+                     topcan=topcan.append(midcan);
                      return;   
                      #print(alty[count:count]);   
                      #arr.append(count); 
