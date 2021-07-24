@@ -174,7 +174,9 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
-                     y1           
+                     print("y[count]-----")           
+                     print(y[count]); 
+                     print(y[count][:8]);   
                      #print(count-1,"---alty  ",alty.iloc[count-1])           
                      #print(count,"---alty  ",alty.iloc[count])
                      #print(alty.columns)
@@ -198,16 +200,16 @@ def IEXColmaker():
                      midcan=narr;
                      bottoncan=alty[count-1:];
                      topcan=topcan.append(midcan);
-                     print(topcan)   
+                     #print(topcan)   
                      return;   
                      #print(alty[count:count]);   
                      #arr.append(count); 
                      #print("Diff....")
                      #print("running ",count)
                   count=count+1;
-               print("-subset-");         
-               print(alty);    
-               print("-subset-")
+               #print("-subset-");         
+               #print(alty);    
+               #print("-subset-")
                #print(alty.iloc[16]); 
                #print(alty.iloc[17]);  
                #print(alty.iloc[18]);  
