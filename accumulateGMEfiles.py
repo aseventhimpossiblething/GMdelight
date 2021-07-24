@@ -145,7 +145,7 @@ def IEXColmaker():
             x=x1['date']; 
             y=y1['xldate']; 
             print("compare running")    
-            #arr=[];    
+            arr=[];    
             count=0;  
             #print("len(x) ",len(x))
             #print("len(y) ",len(y))
@@ -173,8 +173,14 @@ def IEXColmaker():
                   else:
                      print(count-1,"---alty  ",alty.iloc[count-1])           
                      print(count,"---alty  ",alty.iloc[count])
-                     print(alty.columns) 
+                     print(alty.columns)
                      len(alty.columns)
+                        
+                     for elem in alty.columns:
+                         arr.append(0);
+                     print(arr)           
+                          
+                        
                      #alty.iloc[count]; 
                      alty[:count-1];
                      alty[count-1:];
