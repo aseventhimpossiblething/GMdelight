@@ -180,7 +180,8 @@ def IEXColmaker():
                          arr.append(0);
                      print(arr)
                      print("type ",type(alty.columns))
-                     narr=pandas.DataFrame(data=arr.transpose(), columns=alty.columns);
+                     narr=pandas.DataFrame(arr);
+                     narr=narr.transpose();
                      altyCols=list(alty.columns).remove('index');
                      print("narr - ",narr)   
                      print("narr.columns - ",narr.columns)   
