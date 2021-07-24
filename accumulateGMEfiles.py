@@ -183,7 +183,7 @@ def IEXColmaker():
                print("-subset-");         
                print(y1[:100]);    
                print("-subset-")
-               print(alty[1:1]);  
+               print(alty.iloc([18]));  
                print(alty[2:2]);
                print(alty[18:18]);  
             return arr;            
