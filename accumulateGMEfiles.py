@@ -178,7 +178,11 @@ def IEXColmaker():
                      print(y[count]); 
                      print(y[count][:8]);  
                      print(y[count][8:]);
-                     print(int(y[count][8:])-1);    
+                     print(int(y[count][8:])-1);
+                     yrmo=y[count][:8];
+                     newday=str(int(y[count][8:])-1);
+                     newday=yrmo+newday;
+                     print(newday)   
                      #print(count-1,"---alty  ",alty.iloc[count-1])           
                      #print(count,"---alty  ",alty.iloc[count])
                      #print(alty.columns)
