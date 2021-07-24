@@ -140,11 +140,13 @@ def IEXColmaker():
         
         print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
-        def compare(x1,y1):
+        def compare(x1,y1,'z'):
             list(y1.columns).find('date')    
-            #daten=    
+            daten=z+'date'    
             x=x1['date']; 
-            y=y1['xldate']; 
+            #y=y1['xldate'];
+            y=y1[daten];    
+                
             print("compare running")    
             arr=[];    
             count=0;  
@@ -172,6 +174,7 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
+                     y1           
                      #print(count-1,"---alty  ",alty.iloc[count-1])           
                      #print(count,"---alty  ",alty.iloc[count])
                      #print(alty.columns)
@@ -203,13 +206,13 @@ def IEXColmaker():
                      #print("running ",count)
                   count=count+1;
                print("-subset-");         
-               print(y1[:100]);    
+               print(alty);    
                print("-subset-")
-               print(alty.iloc[16]); 
-               print(alty.iloc[17]);  
-               print(alty.iloc[18]);  
-               print(alty[2:2]);
-               print(alty[18:18]);  
+               #print(alty.iloc[16]); 
+               #print(alty.iloc[17]);  
+               #print(alty.iloc[18]);  
+               #print(alty[2:2]);
+               #print(alty[18:18]);  
             return arr;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
@@ -293,7 +296,7 @@ def IEXColmaker():
      
         
         
-        compare(arr1,xlfxarr1);      
+        compare(arr1,xlfxarr1,'xl');      
         return arr1;
               
 
