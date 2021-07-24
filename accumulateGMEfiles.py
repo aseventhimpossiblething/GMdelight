@@ -173,9 +173,10 @@ def IEXColmaker():
                   else:
                      print(count-1,"---alty  ",alty.iloc[count-1])           
                      print(count,"---alty  ",alty.iloc[count])
+                     alty.columns   
                      #alty.iloc[count]; 
-                     alty[:count];
-                     alty[count:];
+                     alty[:count-1];
+                     alty[count-1:];
                      return;   
                      #print(alty[count:count]);   
                      #arr.append(count); 
