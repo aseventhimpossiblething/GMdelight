@@ -194,6 +194,7 @@ def IEXColmaker():
                      midcan=narr;
                      bottoncan=alty[count-1:];
                      topcan=topcan.append(midcan);
+                     print(topcan)   
                      return;   
                      #print(alty[count:count]);   
                      #arr.append(count); 
