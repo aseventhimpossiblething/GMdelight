@@ -185,7 +185,8 @@ def IEXColmaker():
                      altyCols=list(alty.columns).remove('index');
                      print("narr - ",narr)   
                      print("narr.columns - ",narr.columns)   
-                     narr.columns=alty.columns;   
+                     narr.columns=alty.columns; 
+                     print("narr.columns - ",narr.columns)    
                      #narr.columns=altyCols;   
                      #alty.iloc[count]; 
                      alty[:count-1];
