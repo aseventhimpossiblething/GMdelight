@@ -171,8 +171,8 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
-                     print(count,"---alty  ",alty[count])
-                     alty.iloc[count]; 
+                     print(count,"---alty  ",alty.iloc[count])
+                     #alty.iloc[count]; 
                      alty[:count];
                      alty[count:];
                      return;   
