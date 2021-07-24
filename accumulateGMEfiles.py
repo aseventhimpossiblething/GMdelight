@@ -179,7 +179,7 @@ def IEXColmaker():
                      for elem in alty.columns:
                          arr.append(0);
                      print(arr)
-                     print("type ",type(alty.column))
+                     print("type ",type(alty.columns))
                      narr=pandas.DataFrame(arr);
                      narr.columns=alty.columns;   
                         
