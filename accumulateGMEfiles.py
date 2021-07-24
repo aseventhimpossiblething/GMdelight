@@ -180,7 +180,7 @@ def IEXColmaker():
                          arr.append(0);
                      print(arr)           
                      narr=pandas.DataFrame(arr);
-                     narr.columns=alty.columns.pop('index');   
+                     narr.columns=alty.columns.remove('index');   
                         
                      #alty.iloc[count]; 
                      alty[:count-1];
