@@ -178,9 +178,10 @@ def IEXColmaker():
                         
                      for elem in alty.columns:
                          arr.append(0);
-                     print(arr)           
+                     print(arr)
+                     print("type ",type(alty.column))
                      narr=pandas.DataFrame(arr);
-                     narr.columns=alty.columns.remove('index');   
+                     narr.columns=alty.columns;   
                         
                      #alty.iloc[count]; 
                      alty[:count-1];
