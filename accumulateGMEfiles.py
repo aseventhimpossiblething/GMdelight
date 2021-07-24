@@ -194,10 +194,12 @@ def IEXColmaker():
                      #print("type ",type(alty.columns))
                      narr=pandas.DataFrame(arr);
                      narr=narr.transpose();
+                        
                      altyCols=list(alty.columns).remove('index');
-                     #print("narr - ",narr)   
-                     #print("narr.columns - ",narr.columns)   
                      narr.columns=alty.columns; 
+                     narr[daten];
+                     print(narr[daten])
+                     nar.drop([daten])   
                      #print("narr.columns - ",narr.columns) 
                      #print("narr - ",narr) 
                      #narr.columns=altyCols;   
