@@ -159,7 +159,7 @@ def IEXColmaker():
             print(len(y1));    
             print(y1.iloc[len(y1)-1])    
             """
-            return;    
+            #return;    
             #print(len(y1));     
             #list(y1.columns).find('date')    
             daten=z+'date'    
