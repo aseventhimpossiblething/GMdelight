@@ -142,13 +142,14 @@ def IEXColmaker():
         print("pause before?")
         def compare(x1,y1,z):
             #y1=9    
-            print(len(y1));
+            print("len 1------------------------------",len(y1));
             print("last row? ",y1.iloc[len(y1)-1])
             if len(y1)>len(x1):
                #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(y1)-1]);
-            print(len(y1));    
+            print("len 2------------------------------",len(y1));    
             print(y1.iloc[len(y1)-1])
+                
             """    
             if len(y1)>len(x1):
                #y1=y1.drop([len(dayshiftedclose)]); 
@@ -163,7 +164,7 @@ def IEXColmaker():
             x=x1['date']; 
             y=y1[daten];    
                 
-            print("compare running")    
+            #print("compare running")    
             arr=[]; 
             count=0;  
             xdesignator=int(x[len(x)-1][8:]);
