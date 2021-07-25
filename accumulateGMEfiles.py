@@ -212,7 +212,7 @@ def IEXColmaker():
                      bottomcan=alty[count:];
                      topcan=topcan.append(midcan);
                      topcan=topcan.append(bottomcan);
-                     #topcan=topcan.drop(columns=['index'])   
+                     topcan=topcan.drop(columns=['index'])   
                      topcan=topcan.reset_index();
                      print(topcan)
                      
