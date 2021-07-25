@@ -148,7 +148,8 @@ def IEXColmaker():
             y=y1[daten];    
                 
             print("compare running")    
-            arr=[];    
+            arr=[]; 
+            arr2=[];    
             count=0;  
             #print("len(x) ",len(x))
             #print("len(y) ",len(y))
@@ -181,8 +182,8 @@ def IEXColmaker():
                      print(int(y[count][8:])-1);
                      yrmo=y[count][:8];
                      newday=str(int(y[count][8:])-1);
-                     newday=yrmo+newday;
-                     print(newday)   
+                     newday=pandas.Dataframe([yrmo+newday], columns=[daten]);
+                     print("newday-",newday)   
                      #print(count-1,"---alty  ",alty.iloc[count-1])           
                      #print(count,"---alty  ",alty.iloc[count])
                      #print(alty.columns)
@@ -201,7 +202,8 @@ def IEXColmaker():
                      print("narr[daten]")  
                      print(narr[daten])
                      print("daten - ",daten)
-                     narr=narr.drop(columns=[daten]);   
+                     narr=narr.drop(columns=[daten]);
+                     
                      #print("columns - ",narr.columns) 
                      #print("narr - ",narr) 
                      #narr.columns=altyCols;   
