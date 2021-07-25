@@ -153,6 +153,11 @@ def IEXColmaker():
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
             alty=y1;
+            #arr1=arr1.drop([len(dayshiftedclose)])
+            if xdesignator==ydesignator:
+               return y1;           
+            if xdesignator>ydesignator:
+               y1=y1.drop([len(dayshiftedclose)]);
             if xdesignator<ydesignator:  
                while count < len(x):
                   if x[count]==y[count]: 
