@@ -214,9 +214,9 @@ def IEXColmaker():
                      #print("narr - ",narr) 
                      #narr.columns=altyCols;   
                      #alty.iloc[count]; 
-                     topcan=alty[:count-1];
+                     topcan=alty[:count];
                      midcan=narr;
-                     bottoncan=alty[count-1:];
+                     bottoncan=alty[count:];
                      topcan=topcan.append(midcan);
                      print(topcan)   
                      return;   
