@@ -171,13 +171,14 @@ def IEXColmaker():
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
-                     print(count,"--",x[count],"==",y[count]," yindex ",y["index"]);   
+                     print(count,"--",x[count],"==",y[count]);   
                      w=1+1;   
                      #print("running ",count)   
                   else:
                      print("break")           
-                     print(count,"--",x[count],"==",y[count]," yindex ",y["index"]); 
-                     print(count,"--",y1.iloc[count]);    
+                     print(count,"--",x[count],"==",y[count]); 
+                     print("0","--",y1.iloc[0]);
+                     print(count,"--",y1.iloc[count]);
                      print("y[count]-----")           
                      print(y[count]); 
                      print(y[count][:8]);  
