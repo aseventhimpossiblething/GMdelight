@@ -177,7 +177,7 @@ def IEXColmaker():
                   else:
                      print("break")           
                      print(count,"--",x[count],"==",y[count]); 
-                     print(count,"--",y1[count]);    
+                     print(count,"--",y1.iloc[count]);    
                      print("y[count]-----")           
                      print(y[count]); 
                      print(y[count][:8]);  
