@@ -175,6 +175,8 @@ def IEXColmaker():
                      w=1+1;   
                      #print("running ",count)   
                   else:
+                     print("break")           
+                     print(x[count],"==",y[count]);           
                      print("y[count]-----")           
                      print(y[count]); 
                      print(y[count][:8]);  
