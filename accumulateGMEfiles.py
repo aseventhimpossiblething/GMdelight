@@ -182,7 +182,7 @@ def IEXColmaker():
                      print(int(y[count][8:])-1);
                      yrmo=y[count][:8];
                      newday=str(int(y[count][8:])-1);
-                     newday=pandas.Dataframe([yrmo+newday], columns=[daten]);
+                     newday=pandas.DataFrame([yrmo+newday], columns=[daten]);
                      print("newday-",newday)   
                      #print(count-1,"---alty  ",alty.iloc[count-1])           
                      #print(count,"---alty  ",alty.iloc[count])
