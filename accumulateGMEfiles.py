@@ -216,8 +216,9 @@ def IEXColmaker():
                      #alty.iloc[count]; 
                      topcan=alty[:count];
                      midcan=narr;
-                     bottoncan=alty[count:];
+                     bottomcan=alty[count:];
                      topcan=topcan.append(midcan);
+                     topcan=topcan.append(bottomcan);
                      print(topcan)   
                      return;   
                      #print(alty[count:count]);   
