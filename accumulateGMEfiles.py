@@ -183,7 +183,7 @@ def IEXColmaker():
                      yrmo=y[count][:8];
                      newday=str(int(y[count][8:])-1);
                      newday=pandas.DataFrame([yrmo+newday], columns=[daten]);
-                     print("newday-",newday)   
+                     #print("newday-",newday)   
                      #print(count-1,"---alty  ",alty.iloc[count-1])           
                      #print(count,"---alty  ",alty.iloc[count])
                      #print(alty.columns)
@@ -213,7 +213,7 @@ def IEXColmaker():
                      midcan=narr;
                      bottoncan=alty[count-1:];
                      topcan=topcan.append(midcan);
-                     #print(topcan)   
+                     print(topcan)   
                      return;   
                      #print(alty[count:count]);   
                      #arr.append(count); 
