@@ -200,7 +200,7 @@ def IEXColmaker():
                      narr[daten];
                      print("narr[daten]")  
                      print(narr[daten])
-                     narr.drop([daten])   
+                     narr.drop([[daten]])   
                      #print("narr.columns - ",narr.columns) 
                      #print("narr - ",narr) 
                      #narr.columns=altyCols;   
