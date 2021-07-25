@@ -156,10 +156,12 @@ def IEXColmaker():
             #arr1=arr1.drop([len(dayshiftedclose)])
             print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
             if xdesignator==ydesignator:
-               print("xdesignator==ydesignator ",xdesignator==ydesignator)         
+               print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                return y1;           
             if xdesignator>ydesignator:
-               y1=y1.drop([len(dayshiftedclose)]);
+               y1=y1.drop([len(dayshiftedclose)]);         
+               print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
+               #return y1=y1.drop([len(dayshiftedclose)]);
             if xdesignator<ydesignator:  
                while count < len(x):
                   if x[count]==y[count]: 
