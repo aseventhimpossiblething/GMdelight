@@ -146,7 +146,7 @@ def IEXColmaker():
                #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(y1)-1]);
             print(len(y1));    
-            return;    
+            #return;    
             #print(len(y1));     
             #list(y1.columns).find('date')    
             daten=z+'date'    
