@@ -149,7 +149,7 @@ def IEXColmaker():
                 
             print("compare running")    
             arr=[]; 
-            arr2=[];    
+            #arr2=[];    
             count=0;  
             #print("len(x) ",len(x))
             #print("len(y) ",len(y))
@@ -171,12 +171,13 @@ def IEXColmaker():
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
-                     print(x[count],"==",y[count]);   
+                     print(count,"--",x[count],"==",y[count]);   
                      w=1+1;   
                      #print("running ",count)   
                   else:
                      print("break")           
-                     print(x[count],"==",y[count]);           
+                     print(count,"--",x[count],"==",y[count]); 
+                     print(count,"--",y1[count]);    
                      print("y[count]-----")           
                      print(y[count]); 
                      print(y[count][:8]);  
