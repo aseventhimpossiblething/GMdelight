@@ -141,6 +141,7 @@ def IEXColmaker():
         #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
+               
             #list(y1.columns).find('date')    
             daten=z+'date'    
             x=x1['date']; 
@@ -220,7 +221,7 @@ def IEXColmaker():
                      topcan=topcan.append(midcan);
                      topcan=topcan.append(bottomcan);
                      print(topcan)   
-                     return;   
+                     return topcan;   
                      #print(alty[count:count]);   
                      #arr.append(count); 
                      #print("Diff....")
@@ -234,12 +235,12 @@ def IEXColmaker():
                #print(alty.iloc[18]);  
                #print(alty[2:2]);
                #print(alty[18:18]);  
-            return arr;            
+            return y1;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
         #print("first divergence ",comp);
         arr1=arr1.drop([len(dayshiftedclose)]);
-        compare(arr1,vixarr1,'vx'); 
+        vixarr1=compare(arr1,vixarr1,'vx'); 
         #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         
