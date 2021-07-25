@@ -203,7 +203,8 @@ def IEXColmaker():
                         print("xdesignator=tdesignator ",xdesignator,"==",tdesignator)        
                         return topcan        
                      else:
-                        print("compare() looping");
+                        print("lens() ",len(x1),"--",len(topcan));        
+                        print("compare() ,looping");
                         print("because xdesignator=tdesignator ",xdesignator,"==",tdesignator,"--",xdesignator==tdesignator)   
                         compare(x1,y1,z);
                      #return topcan;   
