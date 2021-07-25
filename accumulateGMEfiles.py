@@ -142,8 +142,8 @@ def IEXColmaker():
         print("pause before?")
         def compare(x1,y1,z):
             print(len(y1));    
-            y1=y1.drop([len(dayshiftedclose)]);    
-            print(len(y1));     
+            #y1=y1.drop([len(dayshiftedclose)]);    
+            #print(len(y1));     
             #list(y1.columns).find('date')    
             daten=z+'date'    
             x=x1['date']; 
@@ -159,7 +159,8 @@ def IEXColmaker():
             print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
             if xdesignator==ydesignator:
                print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
-               return y1;           
+               return y1;
+            """
             if xdesignator>ydesignator:
                y1=y1.drop([len(dayshiftedclose)]);
                y=y1[daten];
@@ -167,6 +168,7 @@ def IEXColmaker():
                #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                #return y1=y1.drop([len(dayshiftedclose)]);
                return y1
+            """
             if xdesignator<ydesignator:  
                while count < len(x):
                   if x[count]==y[count]: 
