@@ -181,7 +181,7 @@ def IEXColmaker():
                      #print(topcan)
                      tdesignator=topcan[daten]; 
                      tdesignator=int(tdesignator[len(tdesignator)-1][8:]); 
-                     if xdesignator=tdesignator:
+                     if xdesignator==tdesignator:
                         print("xdesignator=tdesignator ",xdesignator,==,tdesignator)        
                         return topcan        
                      else:
