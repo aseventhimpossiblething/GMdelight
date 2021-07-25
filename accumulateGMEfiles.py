@@ -203,6 +203,7 @@ def IEXColmaker():
                      print(narr[daten])
                      print("daten - ",daten)
                      narr=narr.drop(columns=[daten]);
+                     narr[daten]=newday;
                      
                      #print("columns - ",narr.columns) 
                      #print("narr - ",narr) 
