@@ -171,7 +171,7 @@ def IEXColmaker():
                   if x[count]==y[count]: 
                      #arr.append(count);
                      #count=count+1;
-                     #print(x[count],"==",y[count]);   
+                     print(x[count],"==",y[count]);   
                      w=1+1;   
                      #print("running ",count)   
                   else:
