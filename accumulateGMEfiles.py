@@ -145,96 +145,52 @@ def IEXColmaker():
             #list(y1.columns).find('date')    
             daten=z+'date'    
             x=x1['date']; 
-            #y=y1['xldate'];
             y=y1[daten];    
                 
             print("compare running")    
             arr=[]; 
-            #arr2=[];    
             count=0;  
-            #print("len(x) ",len(x))
-            #print("len(y) ",len(y))
-            #print("type(len(y))-- ",type(len(y))) 
-            #print(x[(len(x))-1]); 
-            #print("x len pos --",x[0][9:],"---",y[0][9:])
-            #print("x len pos --",x[len(x)-1],"---",y[len(x)-1])
-            #print("x len pos --",x[len(x)-1][8:],"---",y[len(x)-1][8:])
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
             alty=y1;
             if xdesignator<ydesignator:  
                while count < len(x):
-                  #print("Open")      
-                  #print(len(x),"---",count," ",x[count],y[count]) 
-                  #print("x[count+1] ",x[count+1])
-                  #print("y[count+1] ",y[count+1]) 
-                  #print("Close")      
                   if x[count]==y[count]: 
-                     #arr.append(count);
-                     #count=count+1;
                      print(count,"--",x[count],"==",y[count]);   
-                     w=1+1;   
-                     #print("running ",count)   
+                        
                   else:
                      print("break")           
                      print(count,"--",x[count],"==",y[count]); 
-                     print("0","--",y1.iloc[0]);
-                     print(count,"--",y1.iloc[count]);
-                     print("y[count]-----")           
-                     print(y[count]); 
-                     print(y[count][:8]);  
-                     print(y[count][8:]);
-                     print(int(y[count][8:])-1);
                      yrmo=y[count][:8];
-                     #newday=str(int(y[count][8:])-1);
                      newday=x[count];
                      newday=pandas.DataFrame([newday], columns=[daten]);
-                     #print("newday-",newday)   
-                     #print(count-1,"---alty  ",alty.iloc[count-1])           
-                     #print(count,"---alty  ",alty.iloc[cunt])
-                     #print(alty.columns)
-                     #len(alty.columns)
-                        
                      for elem in alty.columns:
                          arr.append(0);
-                     #print(arr)
-                     #print("type ",type(alty.columns))
                      narr=pandas.DataFrame(arr);
                      narr=narr.transpose();
-                        
                      altyCols=list(alty.columns).remove('index');
                      narr.columns=alty.columns; 
-                     narr[daten];
-                     print("narr[daten]")  
-                     print(narr[daten])
-                     print("daten - ",daten)
+                     #narr[daten];
                      narr=narr.drop(columns=[daten]);
                      narr[daten]=newday;
-                     
-                     #print("columns - ",narr.columns) 
-                     #print("narr - ",narr) 
-                     #narr.columns=altyCols;   
-                     #alty.iloc[count]; 
                      topcan=alty[:count];
                      midcan=narr;
                      bottomcan=alty[count:];
                      topcan=topcan.append(midcan);
                      topcan=topcan.append(bottomcan);
-                     print(topcan)   
-                     return topcan;   
-                     #print(alty[count:count]);   
-                     #arr.append(count); 
-                     #print("Diff....")
-                     #print("running ",count)
+                     #print(topcan)
+                     tdesignator=topcan[daten]; 
+                     tdesignator=int(tdesignator[len(tdesignator)-1][8:]); 
+                     if xdesignator=tdesignator:
+                        print("xdesignator=tdesignator ",xdesignator,==,tdesignator)        
+                        return topcan        
+                     else:
+                        print("compare() looping");
+                        compare(x1,y1,z);
+                     #return topcan;   
+                     
                   count=count+1;
-               #print("-subset-");         
-               #print(alty);    
-               #print("-subset-")
-               #print(alty.iloc[16]); 
-               #print(alty.iloc[17]);  
-               #print(alty.iloc[18]);  
-               #print(alty[2:2]);
-               #print(alty[18:18]);  
+                  
             return y1;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
