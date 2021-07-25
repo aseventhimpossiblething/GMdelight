@@ -145,6 +145,7 @@ def IEXColmaker():
             print("len 1------------------------------",len(y1));
             print(len(x1),"==",len(y1))    
             print("last row? ",y1[f:])
+            print(yi.columns)    
             if len(y1)>len(x1):
                #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(x1)]);
