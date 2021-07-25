@@ -121,8 +121,8 @@ def IEXColmaker():
               shiftCol.append(w[count]);
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
-        arr1=arr1.drop([len(dayshiftedclose)]);
-        vixarr1=vixarr1.drop([len(dayshiftedclose)]);
+        #arr1=arr1.drop([len(dayshiftedclose)]);
+        #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         
         #print(arr1.columns)
@@ -138,7 +138,7 @@ def IEXColmaker():
         #print(vixarr1)
         
         
-        print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
+        #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
             #list(y1.columns).find('date')    
@@ -238,6 +238,10 @@ def IEXColmaker():
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
         #print("first divergence ",comp);
+        arr1=arr1.drop([len(dayshiftedclose)]);
+        compare(arr1,vixarr1,'vx'); 
+        #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
+        #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         
         arr1['dayshiftedclose']=dayshiftedclose;
         arrvix=arr1.merge(vixarr1, on="index");
@@ -317,7 +321,7 @@ def IEXColmaker():
      
         
         
-        compare(arr1,xlfxarr1,'xl');      
+        #compare(arr1,xlfxarr1,'xl');      
         return arr1;
               
 
