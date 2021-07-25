@@ -141,7 +141,7 @@ def IEXColmaker():
         #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
-            f=251  
+            f=250  
             print("len 1------------------------------",len(y1));
             print("last row? ",y1[f:])
             if len(y1)>len(x1):
