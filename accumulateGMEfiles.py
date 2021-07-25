@@ -5,7 +5,7 @@ Please record this API key at a safe place for future data access.
 https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMD&apikey=demo
 """
 # all IEX supported symbols https://cloud.iexapis.com/beta/ref-data/symbols?token=pk_2a5af8857a7940d4b361bc2b4a14d0adf
-# working example 1 quote current price https://cloud.iexapis.com/stable/stock/XOM/quote?token=pk_2a5af8857a7940d4b361bc2b4a14d0adf
+# workin0g example 1 quote current price https://cloud.iexapis.com/stable/stock/XOM/quote?token=pk_2a5af8857a7940d4b361bc2b4a14d0adf
 #zetapk_2a5af8857a7940d4b361bc2b4a14d0adf 
 #zetask_20d88bd4d61b4e92b2ae7b22d8f8f0aef
 
@@ -159,9 +159,12 @@ def IEXColmaker():
                print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                return y1;           
             if xdesignator>ydesignator:
-               y1=y1.drop([len(dayshiftedclose)]);         
+               y1=y1.drop([len(dayshiftedclose)]);
+               y=y1[daten];
+               ydesignator=int(y[len(y)-1][8:]); 
                print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                #return y1=y1.drop([len(dayshiftedclose)]);
+               return y1
             if xdesignator<ydesignator:  
                while count < len(x):
                   if x[count]==y[count]: 
