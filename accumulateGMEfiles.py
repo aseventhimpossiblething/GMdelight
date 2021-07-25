@@ -211,7 +211,7 @@ def IEXColmaker():
         #print("first divergence ",comp);
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=compare(arr1,vixarr1,'vx'); 
-        xlfxarr1=compare(arr1,xlfarrvix,'xl'); 
+        xlfxarr1=compare(arr1,xlfxarr1,'xl'); 
         #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
         #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
         
