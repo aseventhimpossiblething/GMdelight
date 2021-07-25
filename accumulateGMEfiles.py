@@ -212,7 +212,8 @@ def IEXColmaker():
                      bottomcan=alty[count:];
                      topcan=topcan.append(midcan);
                      topcan=topcan.append(bottomcan);
-                     #print(topcan)
+                     topcan=topcan.drop(columns=['index'])   
+                     print(topcan)
                      
                      tdesignator=topcan[daten].iloc[len(topcan)-1]; 
                      print((tdesignator[8:]))   
