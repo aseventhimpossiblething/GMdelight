@@ -196,7 +196,7 @@ def IEXColmaker():
                      topcan=topcan.append(bottomcan);
                      #print(topcan)
                      
-                     tdesignator=topcan[daten].iloc[len(topcan)]; 
+                     tdesignator=topcan[daten].iloc[len(topcan-1)]; 
                      print((tdesignator[8:]))   
                      tdesignator=int(tdesignator[8:]); 
                      if xdesignator==tdesignator:
