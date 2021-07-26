@@ -187,7 +187,9 @@ def IEXColmaker():
                #return y1=y1.drop([len(dayshiftedclose)]);
                return y1
             """
-            if xdesignator<ydesignator:  
+            if xdesignator<ydesignator:
+               print(xdesignator,"<",ydesignator)  
+                
                while count < len(x):
                   if x[count]==y[count]: 
                      print(count,"--",x[count],"==",y[count]);   
