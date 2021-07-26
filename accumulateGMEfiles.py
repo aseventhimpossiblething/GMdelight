@@ -222,6 +222,7 @@ def IEXColmaker():
                      print((tdesignator[8:]))   
                      tdesignator=int(tdesignator[8:]); 
                      if xdesignator==tdesignator:
+                        print("final")        
                         print("xdesignator=tdesignator ",xdesignator,"==",tdesignator)        
                         return topcan        
                      else:
