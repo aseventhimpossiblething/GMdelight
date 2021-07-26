@@ -229,7 +229,7 @@ def IEXColmaker():
                         print("compare() ,looping");
                         print("because xdesignator=tdesignator ",xdesignator,"==",tdesignator,"--",xdesignator==tdesignator)   
                         if len(topcan)>len(x1):
-                           topcan=topcan.drop([len(topcan)]);     
+                           topcan=topcan.drop([len(topcan)-1]);     
                         compare(x1,topcan,z);
                      #return topcan;   
                      
