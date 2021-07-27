@@ -168,7 +168,7 @@ def IEXColmaker():
             y=y1[daten];    
                 
             #print("compare running")    
-            arr=[]; 
+            #arr=[]; 
             count=0;  
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
@@ -195,6 +195,7 @@ def IEXColmaker():
                      print(count,"--",x[count],"==",y[count]);   
                         
                   else:
+                     arr=[];   
                      print("break")           
                      print(count,"--",x[count],"==",y[count]); 
                      yrmo=y[count][:8];
@@ -236,7 +237,7 @@ def IEXColmaker():
                      #return topcan;   
                      
                   count=count+1;
-                  
+                  #compare(x1,topcan,z);
             return y1;            
              
         #compare(arr1['date'],xlfxarr1['xldate']); 
