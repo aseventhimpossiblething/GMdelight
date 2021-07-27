@@ -234,7 +234,7 @@ def IEXColmaker():
                            #topcan=topcan.drop([len(topcan)-1]);  
                            compare(x1,topcan,z); 
                            #return topcan;
-                        compare(x1,topcan,z);
+                        #compare(x1,topcan,z);
                      #return topcan;   
                      
                   count=count+1;
