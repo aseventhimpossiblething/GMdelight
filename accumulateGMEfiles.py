@@ -158,9 +158,13 @@ def IEXColmaker():
                print("Inner--------")
                print("len 2------------------------------",len(y1)); 
                print(len(x1),"==",len(y1))
+               print("Inner 2.2 --------") 
                print(y1[f:])
+               print("Inner 2.3 --------") 
                return;
+               print("Inner 2.4 --------")
                return y1; 
+               print("Inner 2.5 --------") 
         
                
             print("-----Out again") 
