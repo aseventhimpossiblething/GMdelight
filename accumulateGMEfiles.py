@@ -141,6 +141,11 @@ def IEXColmaker():
         #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
+                
+            
+            
+            
+                
             f=248 
             print("len 1------------------------------",len(y1));
             print(len(x1),"==",len(y1))    
@@ -149,6 +154,14 @@ def IEXColmaker():
             if len(y1)>len(x1):
                #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(x1)]);
+                
+               print("len 2------------------------------",len(y1)); 
+               print(len(x1),"==",len(y1))
+               print(y1[f:])
+               #return compare(x1,y1,z):
+               return y1; 
+               
+        
             print("len 2------------------------------",len(y1)); 
             print(len(x1),"==",len(y1))
             print(y1[f:])
@@ -160,6 +173,7 @@ def IEXColmaker():
             print(len(y1));    
             print(y1.iloc[len(y1)-1])    
             """
+            
             #return;    
             #print(len(y1));     
             #list(y1.columns).find('date')    
@@ -253,10 +267,6 @@ def IEXColmaker():
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         
-        #print("77777777777777777777777777777777777777777000000000000000000000000000000000000000")
-        #print(arrvix)
-        #print("77777777777777777777777777777777777777777000000000000000000000000000000000000000")
-        
         xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         xy=xlfarrvix['dayshiftedclose'];
         vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
@@ -286,7 +296,6 @@ def IEXColmaker():
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Tree Prediction 200']=TreeModPredict200;
         reviewFrame['Linear Prediction']=LinearPredictMod;
-        
         
         vx_train,vx_test,vy_train,vy_test=train_test_split(vx,vy,test_size=0.2);
         
