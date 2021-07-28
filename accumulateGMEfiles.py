@@ -154,7 +154,8 @@ def IEXColmaker():
             if len(y1)>len(x1):
                #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(x1)]);
-                
+               
+               print("Inner--------")
                print("len 2------------------------------",len(y1)); 
                print(len(x1),"==",len(y1))
                print(y1[f:])
