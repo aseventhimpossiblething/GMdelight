@@ -141,7 +141,10 @@ def IEXColmaker():
         #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
-                
+            print("fail.....................")    
+            print("fail.....................")     
+            print("fail.....................")    
+            print("fail.....................")     
             
             
             
@@ -156,7 +159,7 @@ def IEXColmaker():
                y1=y1.drop([len(x1)]);
                
                print("Inner--------")
-               return  
+               #return  
                print("len 2------------------------------",len(y1)); 
                print(len(x1),"==",len(y1))
                print("Inner 2.2 --------") 
