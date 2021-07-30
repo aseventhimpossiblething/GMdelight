@@ -155,20 +155,20 @@ def IEXColmaker():
             print("last row? ",y1[f:])
             print(y1.columns)    
             if len(y1)>len(x1):
-               return;         
+               #return;         
                #y1=y1.drop([len(dayshiftedclose)]); 
-               y1=y1.drop([len(x1)]);
+               #y1=y1.drop([len(x1)]);
                
                print("Inner--------")
-               return;  
+               #return y1=y1.drop([len(x1)]);
                print("len 2------------------------------",len(y1)); 
                print(len(x1),"==",len(y1))
                print("Inner 2.2 --------") 
                print(y1[f:])
                print("Inner 2.3 --------") 
-               return ;
+               #return ;
                print("Inner 2.4 --------")
-               return y1; 
+               return y1=y1.drop([len(x1)]); 
                print("Inner 2.5 --------") 
         
                
