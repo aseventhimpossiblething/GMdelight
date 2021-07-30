@@ -157,7 +157,7 @@ def IEXColmaker():
             if len(y1)>len(x1):
                #return;         
                #y1=y1.drop([len(dayshiftedclose)]); 
-               #y1=y1.drop([len(x1)]);
+               y1=y1.drop([len(x1)]);
                
                print("Inner--------")
                #return y1=y1.drop([len(x1)]);
@@ -168,7 +168,7 @@ def IEXColmaker():
                print("Inner 2.3 --------") 
                #return ;
                print("Inner 2.4 --------")
-               return y1=y1.drop([len(x1)]); 
+               return y1; 
                print("Inner 2.5 --------") 
         
                
