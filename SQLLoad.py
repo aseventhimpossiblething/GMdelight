@@ -3,9 +3,16 @@ import sqlite3
 import pandas
 
 def MakeDailyTable(x):
+    x=x.columns;
     print("Make Data Input")
     print(x) 
     print("end Make Daily")
+    
+    SQLite3conn=sqlite3.connect("DailyBD");
+    cursor=SQLite3conn.cursor();
+    queryP1="create table DailyTable("+x+")"
+    #cursor.execute("create table DailyTable()");
+    
     
 """
 SQLite3conn=sqlite3.connect("DailyBD")
