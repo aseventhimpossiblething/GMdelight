@@ -30,9 +30,9 @@ def MakeDailyTable(x):
           while littlecount<len(x.iloc[rowcount]):
                 littleArray.append(x.iloc[rowcount][littlecount]) 
                 littlecount=littlecount+1;
-                print("littleArray ",littleArray)
+                print(littlecount,"-littleArray ",littleArray)
              
-          #print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
+          print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
           
           print("end cycle-------------");  
           #print(z.iloc([1])); 
