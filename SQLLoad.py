@@ -3,12 +3,11 @@ import sqlite3
 import pandas
 
 def MakeDailyTable(x):
+    
     novelXstr="";
-    x=x.columns;
+    y=x.columns;
     print("Make Data Input")
-    #print(x) 
-    #print(len(x))
-    for elem in x:
+    for elem in y:
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
         #novelXarr.append(elem)
@@ -28,6 +27,7 @@ def MakeDailyTable(x):
     cursor.execute(query);
     
     results=cursor.fetchall();
+    print("results",results)
     
     print("end Make Daily")
     
