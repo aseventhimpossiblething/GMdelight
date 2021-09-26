@@ -1,6 +1,7 @@
 print("pre import sql")
 import sqlite3
 SQLcolsnames="select names from PRAGMA_TABLE_INFO('TB11')"
+SQLcolsnames="PRAGMA"
 SQLite3conn=sqlite3.connect("TB1")
 cursor=SQLite3conn.cursor();
 a=cursor.execute(SQLcolsnames)
