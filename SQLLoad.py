@@ -22,7 +22,7 @@ def MakeDailyTable(x):
     print(novelXstr)
     
     query="select*from DailyTable"
-    SQLite3conn=sqlite3.connect("DailyBD")
+    SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     cursor.execute(novelXstr);
     cursor.execute(query);
