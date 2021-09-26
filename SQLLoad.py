@@ -8,7 +8,7 @@ def MakeDailyTable(x):
     print("Make Data Input")
     print(x) 
     print(x.length())
-    for elem of x:
+    for elem in x:
         elem+" REAL";
     print("length of x");
     print(x.length());
