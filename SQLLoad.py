@@ -13,12 +13,15 @@ def MakeDailyTable(x):
         #novelXarr.append(elem)
     novelXstr=novelXstr[:len(novelXstr)-1]     
     novelXstr="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
-    novelXstr=novelXstr.replace("index REAL,","")
+    novelXstr=novelXstr#.replace("index REAL,","")
     #print("length of x");
     #print(len(x));
     #print("length of new arr");
     #print(len(novelXarr))
     print(novelXstr)
+    
+    for elemen in x:
+        print(elemen);
     
     insert="insert into DailyTable() Values()"
     query="select*from DailyTable"
