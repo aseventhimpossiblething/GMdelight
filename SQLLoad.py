@@ -15,23 +15,24 @@ def MakeDailyTable(x):
     novelXstr=novelXstr[:len(novelXstr)-1]     
     novelXstr="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr=novelXstr.replace("index REAL,","")
-    print("length of x");
-    print(len(x));
+    #print("length of x");
+    #print(len(x));
     #print("length of new arr");
     #print(len(novelXarr))
     print(novelXstr)
     
-    
+    query="select*from DailyTable"
     SQLite3conn=sqlite3.connect("DailyBD")
     cursor=SQLite3conn.cursor();
     cursor.execute(novelXstr);
+    cursor.execute(query);
+    
+    results=cursor.fetchall();
+    
     print("end Make Daily")
     
     
-    SQLite3conn=sqlite3.connect("DailyBD");
-    cursor=SQLite3conn.cursor();
-    queryP1="create table DailyTable("+x+")"
-    #cursor.execute("create table DailyTable()");
+
     
     
 """
