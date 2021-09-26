@@ -22,7 +22,7 @@ def MakeDailyTable(x):
     #print(len(novelXarr))
     print(novelXstr)
     
-    rowcount=;
+    rowcount=0;
     while rowcount<len(x):
     #for elemen in x:
           print(x[rowcount]);
