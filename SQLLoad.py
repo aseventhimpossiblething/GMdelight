@@ -9,10 +9,10 @@ def MakeDailyTable(x):
     #print(x) 
     #print(len(x))
     for elem in x:
-        elem=elem+" REAL,";
+        elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
         #novelXarr.append(elem)
-    novelXstr="create table DailyTable("+novelXstr[:len(novelXstr)-1]+")"    
+    novelXstr="create table DailyTable ("+novelXstr[:len(novelXstr)-1]+")"    
     print("length of x");
     print(len(x));
     #print("length of new arr");
