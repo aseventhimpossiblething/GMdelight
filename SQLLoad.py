@@ -12,7 +12,7 @@ def MakeDailyTable(x):
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
         #novelXarr.append(elem)
-    novelXstr="create table DailyTable ( "+novelXstr[:len(novelXstr)-1]+")"    
+    novelXstr="create table DailyTable ( "+novelXstr[:len(novelXstr)-1]+");"    
     print("length of x");
     print(len(x));
     #print("length of new arr");
