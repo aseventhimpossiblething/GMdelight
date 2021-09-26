@@ -9,7 +9,7 @@ def MakeDailyTable(x):
 
 SQLite3conn=sqlite3.connect("DailyBD")
 cursor=SQLite3conn.cursor();
-cursor.execute("create table DailyTable()")
+cursor.execute("create table DailyTable")
 
 b=cursor.execute("select*from DailyTable limit 1;")
 c=ColNames=pandas.DataFrame(cursor.description)
