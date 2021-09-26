@@ -23,12 +23,13 @@ def MakeDailyTable(z):
     print(novelXstr)
     
     rowcount=0;
-    #while rowcount<len(z):
+    while rowcount<len(z):
     #for elemen in x:
+          print(z.iloc[rowcount]);
           #print(z.iloc([0]));  
           #print(z.iloc([1])); 
           #print(x[rowcount]);
-          #rowcount=rowcount+1;
+          rowcount=rowcount+1;
     
     insert="insert into DailyTable() Values()"
     query="select*from DailyTable"
@@ -40,7 +41,7 @@ def MakeDailyTable(z):
     results=cursor.fetchall();
     print("results",results)
     print(x)
-    print(z.iloc[0])
+    #print(z.iloc[0])
     
     print("end Make Daily")
     
