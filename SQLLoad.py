@@ -39,7 +39,8 @@ def MakeDailyTable(z):
     
     results=cursor.fetchall();
     print("results",results)
-    print(x.iloc([0]))
+    print(x)
+    print(z)
     
     print("end Make Daily")
     
