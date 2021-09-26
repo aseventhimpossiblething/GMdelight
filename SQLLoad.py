@@ -16,8 +16,7 @@ def MakeDailyTable(x):
     print("length of x");
     print(len(x));
     #print("length of new arr");
-    #print(len(novelXa
-    rr))
+    #print(len(novelXarr))
     print(novelXstr)
     
     
