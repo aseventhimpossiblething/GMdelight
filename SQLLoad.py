@@ -13,7 +13,7 @@ def MakeDailyTable(x):
     print("length of x");
     print(len(x));
     print("length of new arr");
-    print(novelXarr.length())
+    print(len(novelXarr))
     print("end Make Daily")
     
     
