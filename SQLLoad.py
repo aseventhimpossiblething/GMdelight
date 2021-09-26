@@ -3,7 +3,9 @@ import sqlite3
 import pandas
 
 def MakeDailyTable(x):
+    print(x)
     x=x.drop(columns=['index'])
+    print(x)
     novelXstr="";
     y=x.columns;
     print("Make Data Input")
