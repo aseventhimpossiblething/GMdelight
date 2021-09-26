@@ -25,7 +25,7 @@ def MakeDailyTable(x):
     rowcount=0;
     while rowcount<len(x):
     #for elemen in x:
-          print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
+          print(type(x.iloc[rowcount][0]),"-",x.iloc[rowcount][0]);
           #print(z.iloc([0]));  
           #print(z.iloc([1])); 
           #print(x[rowcount]);
