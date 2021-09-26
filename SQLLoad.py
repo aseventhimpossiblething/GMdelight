@@ -25,8 +25,8 @@ def MakeDailyTable(z):
     rowcount=0;
     while rowcount<len(x):
     #for elemen in x:
-          print(x[0]); 
-          print(x[rowcount]);
+          print(x[1]); 
+          #print(x[rowcount]);
           rowcount=rowcount+1;
     
     insert="insert into DailyTable() Values()"
