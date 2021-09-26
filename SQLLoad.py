@@ -23,10 +23,10 @@ def MakeDailyTable(z):
     print(novelXstr)
     
     rowcount=0;
-    while rowcount<len(x):
+    while rowcount<len(z):
     #for elemen in x:
-          print(x.iloc([0]));  
-          print(x.iloc([1])); 
+          print(z.iloc([0]));  
+          print(z.iloc([1])); 
           #print(x[rowcount]);
           rowcount=rowcount+1;
     
