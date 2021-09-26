@@ -22,6 +22,7 @@ def MakeDailyTable(x):
     #print(len(novelXarr))
     print(novelXstr)
     
+    """
     rowcount=0;
     while rowcount<len(x):
           print("start cycle-------------");
@@ -38,6 +39,11 @@ def MakeDailyTable(x):
           #print(z.iloc([1])); 
           #print(x[rowcount]);
           rowcount=rowcount+1;
+    
+    """
+    
+    
+    
     
     insert="insert into DailyTable() Values()"
     query="select*from DailyTable"
