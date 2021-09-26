@@ -2,9 +2,9 @@ print("pre import sql")
 import sqlite3
 import pandas
 
-def MakeDailyTable(z):
+def MakeDailyTable(x):
     #print(x)
-    x=z.drop(columns=['index'])
+    x=x.drop(columns=['index'])
     #print(x)
     novelXstr="";
     y=x.columns;
@@ -25,7 +25,7 @@ def MakeDailyTable(z):
     rowcount=0;
     while rowcount<len(z):
     #for elemen in x:
-          print(z.iloc[rowcount]);
+          print(x.iloc[rowcount]);
           #print(z.iloc([0]));  
           #print(z.iloc([1])); 
           #print(x[rowcount]);
