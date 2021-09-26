@@ -50,7 +50,7 @@ def MakeDailyTable(x):
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     cursor.execute(novelXstr2);
-    cursor.executemany();
+    #cursor.executemany();
     cursor.execute(query);
     
     results=cursor.fetchall();
