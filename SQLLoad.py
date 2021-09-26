@@ -22,8 +22,11 @@ def MakeDailyTable(x):
     #print(len(novelXarr))
     print(novelXstr)
     
-    for elemen in x:
-        print(len(x));
+    rowcount=;
+    while rowcount<len(x):
+    #for elemen in x:
+          print(x[rowcount]);
+          rowcount=rowcount+1;
     
     insert="insert into DailyTable() Values()"
     query="select*from DailyTable"
