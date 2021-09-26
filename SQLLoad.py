@@ -16,6 +16,7 @@ def MakeDailyTable(x):
     novelXstr=novelXstr[:len(novelXstr)-1]     
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
+    novelXstr3=novelXstr3[:len(novelXstr3)-1];
     #novelXstr=novelXstr#.replace("index REAL,","")
     #print("length of x");
     #print(len(x));
