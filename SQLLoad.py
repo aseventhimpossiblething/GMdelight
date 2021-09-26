@@ -12,12 +12,18 @@ def MakeDailyTable(x):
         elem=elem+" REAL,";
         novelXstr=novelXstr+elem;
         #novelXarr.append(elem)
-    novelXstr=novelXstr[:len(novelXstr)-1]    
+    novelXstr="create table DailyTable("+novelXstr[:len(novelXstr)-1]+")"    
     print("length of x");
     print(len(x));
     #print("length of new arr");
-    #print(len(novelXarr))
+    #print(len(novelXa
+    rr))
     print(novelXstr)
+    
+    
+    SQLite3conn=sqlite3.connect("DailyBD")
+    cursor=SQLite3conn.cursor();
+    cursor.execute(novelXstr);
     print("end Make Daily")
     
     
