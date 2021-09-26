@@ -15,12 +15,13 @@ def MakeDailyTable(x):
         #novelXarr.append(elem)
     novelXstr=novelXstr[:len(novelXstr)-1]     
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
+    novelXstr3=novelXstr.replace(" REAL","");
     #novelXstr=novelXstr#.replace("index REAL,","")
     #print("length of x");
     #print(len(x));
     #print("length of new arr");
     #print(len(novelXarr))
-    print(novelXstr2)
+    #print(novelXstr2)
     
     """
     rowcount=0;
@@ -58,6 +59,7 @@ def MakeDailyTable(x):
     print(x)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
+    print("novelXstr3",novelXstr3)
    
     
     print("end Make Daily")
