@@ -344,7 +344,8 @@ def IEXColmaker():
         print(vSTD)
      
         
-        
+        print("This is arr1");
+        SQLLoad.MakeDailyTable(arr1);
         #compare(arr1,xlfxarr1,'xl');      
         return arr1;
               
