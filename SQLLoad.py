@@ -12,6 +12,7 @@ def MakeDailyTable(x):
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
         #novelXarr.append(elem)
+    novelXstr=novelXstr[:len(novelXstr)-1]     
     novelXstr="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr=novelXstr.replace("index REAL,","")
     print("length of x");
