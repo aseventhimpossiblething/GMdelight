@@ -10,12 +10,12 @@ b=cursor.execute("select*from TB11 limit 1;")
 c=ColNames=pandas.DataFrame(cursor.description)
 c=c[[0]];
 
-#p=cursor.fetchall();
+a=cursor.fetchall();
 
 print(cursor)
 #print(cursor.description)
 #print(SQLcolsnames)
-#print(a)
-print(b)
+print(a)
+#print(b)
 print(c)
 print("post connect")
