@@ -5,8 +5,9 @@ import pandas
 def MakeDailyTable(x):
     print("Make Data Input")
     print(x) 
+    print("end Make Daily")
     
-
+"""
 SQLite3conn=sqlite3.connect("DailyBD")
 cursor=SQLite3conn.cursor();
 cursor.execute("create table DailyTable")
@@ -24,3 +25,4 @@ print(a)
 #print(b)
 print(c)
 print("post connect")
+"""
