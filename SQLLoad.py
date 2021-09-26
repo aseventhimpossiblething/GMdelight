@@ -7,11 +7,11 @@ def MakeDailyTable(x):
     x=x.columns;
     print("Make Data Input")
     print(x) 
-    print(x.length())
+    print(len(x))
     for elem in x:
         elem+" REAL";
     print("length of x");
-    print(x.length());
+    print(len(x));
     print("length of new arr");
     print(novelXarr.length())
     print("end Make Daily")
