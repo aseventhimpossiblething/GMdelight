@@ -3,19 +3,19 @@ import sqlite3
 import pandas
 
 def MakeDailyTable(x):
-    novelXarr=[];
+    novelXstr="";
     x=x.columns;
     print("Make Data Input")
     #print(x) 
     #print(len(x))
     for elem in x:
-        elem=elem+" REAL";
+        elem=elem+" REAL,";
         novelXarr.append(elem)
     print("length of x");
     print(len(x));
-    print("length of new arr");
-    print(len(novelXarr))
-    print(novelXarr)
+    #print("length of new arr");
+    #print(len(novelXarr))
+    print(novelXstr)
     print("end Make Daily")
     
     
