@@ -6,8 +6,8 @@ def MakeDailyTable(x):
     novelXarr=[];
     x=x.columns;
     print("Make Data Input")
-    print(x) 
-    print(len(x))
+    #print(x) 
+    #print(len(x))
     for elem in x:
         elem=elem+" REAL";
         novelXarr.append(elem)
@@ -15,6 +15,7 @@ def MakeDailyTable(x):
     print(len(x));
     print("length of new arr");
     print(len(novelXarr))
+    print(novelXarr)
     print("end Make Daily")
     
     
