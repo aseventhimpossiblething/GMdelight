@@ -10,6 +10,7 @@ def MakeDailyTable(x):
     #print(len(x))
     for elem in x:
         elem=elem+" REAL,";
+        novelXstr=novelXstr+elem;
         novelXarr.append(elem)
     print("length of x");
     print(len(x));
