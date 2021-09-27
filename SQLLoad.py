@@ -11,13 +11,16 @@ def addToTable(x):
     
 
 def MakeDailyTable(z,a):
-    #ltots=len(z['index'])
-    #print(ltots,"----",a)
+   
     a='"'+a+'"';
+    CurrentDate=[];
     symbolCol=[];
     for symb in z['index']:
         symbolCol.append(a);
-    z[['Symbol']]=symbolCol    
+    z[['Symbol']]=symbolCol;
+    z[['Prediction Day']]=CurrentDate;
+    
+    
         
     
     x=z.drop(columns=['index'])
