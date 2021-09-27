@@ -101,7 +101,7 @@ def MakeDailyTable(z,a):
     #results.columns=x.columns;
     #print(results.columns);
     results=results.to_html()
-    print(results);
+    #print(results);
     #NewFrameTitles
     #print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
     #print(len(novelXstr)," novelXstr - ",novelXstr)
@@ -110,7 +110,7 @@ def MakeDailyTable(z,a):
        
     #print("end Make Daily")
     SQLite3conn.close();
-    
+    return results;
 
     
     
