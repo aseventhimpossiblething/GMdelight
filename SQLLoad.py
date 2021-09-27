@@ -18,7 +18,7 @@ def MakeDailyTable(x,a):
     digcounter=0;
     for elem in y:
         while digcounter<len(y):
-              dig=x[elem][digcounter];
+              dig=x[elem];
               print(dig,"-",dig,"! - !",type(dig));  
               digcounter=digcounter+1;
         print(elem,"! - !",type(elem))
