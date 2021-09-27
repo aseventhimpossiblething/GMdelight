@@ -29,7 +29,19 @@ def MakeDailyTable(z,a):
     
         
     
-    x=z.drop(columns=['index'])
+    x=z.drop(columns=['index','date'])
+    NewdateCol1=[];
+    acount=0;
+    while acount<len(z['date']):
+          NewDateEntry='"'+z['drop'][acount]+'"';
+          NewdateCol1.append(NewDateEntry)  
+          acount=acount+1;
+    x['date']=NewdateCol1;        
+        
+    
+    
+    
+    
     novelXstr="";
     y=x.columns;
     #print("Make Data Input")
