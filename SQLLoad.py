@@ -66,8 +66,8 @@ def MakeDailyTable(z,a):
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
                 ent=x.iloc[rowcount][littlecount]
-                if ent.find("-")>-1:
-                    ent="'"+ent+"'";
+                if str(ent).find("-")>-1:
+                    ent="'"+str(ent)+"'";
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
                 
