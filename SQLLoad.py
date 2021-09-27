@@ -81,7 +81,7 @@ def MakeDailyTable(z,a):
     results=pandas.DataFrame(results);
     print(type," -- ",type(results))
     
-    results.columns;
+    print(results.columns);
     #results=results.columns=[novelXstr3];
     print("results",results)
     print("novelXstr",novelXstr)
