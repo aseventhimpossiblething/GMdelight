@@ -17,7 +17,7 @@ def MakeDailyTable(x,a):
     print("Make Data Input")
     digcounter=0;
     for elem in y:
-        while digcounter<3:
+        while digcounter<len(y):
               dig=x[elem][digcounter];
               print(dig,"-",dig,"! - !",type(dig));  
               digcounter=digcounter+1;
