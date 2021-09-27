@@ -34,6 +34,7 @@ def MakeDailyTable(x,a):
         #print(strtest.find('str'),'-',strtest)
         #print(strtest.find('str'))
         if strtest.find('str')==-1:
+            print(strtest.find('str'),"-",strtest)
             elem=elem+" TEXT, ";
         else:
             elem=elem+" REAL, ";
