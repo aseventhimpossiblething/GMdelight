@@ -108,6 +108,7 @@ def MakeDailyTable(z,a):
     #print(type," -- ",type(results))
     
     
+    results.columns=titles;
     #results.columns=x.columns;
     #print(results.columns);
     print(results);
