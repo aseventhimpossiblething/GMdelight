@@ -39,20 +39,14 @@ def MakeDailyTable(x):
      
     rowcount=0;
     while rowcount<len(x):
-          print("start cycle-------------");
           littleStr="";       
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
-                            
-          #print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
           littleStr=littleStr[:len(littleStr)-1]
-          #print("littleStr-",littleStr)
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
-          #insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"    
           cursor.execute(insertionOrder);
-          print("end cycle-------------");  
           rowcount=rowcount+1;
     
     
