@@ -33,7 +33,7 @@ ols = linear_model.LinearRegression()
 from sklearn.model_selection import train_test_split
 
 
-test="https://sandbox.iexapis.com/stable/stock/AMD/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
+test="https://sandbox.iexapis.com/stable/stock/xTargetSymbolx/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y,z):
         innerarr=[];
         count=0;
@@ -49,11 +49,13 @@ def SinglestockIEXdict(x,y,z):
         return innerarr;      
         
         
-def IEXColmaker():
+def IEXColmaker(TargetSymbol):
+        #TargetSymbol="AMD"
         print("IEXColmaker(): running");
         URLPull=test;
-        vixPull=URLPull.replace("AMD","VXX");
-        xlfPull=URLPull.replace("AMD","SQQQ");
+        URLPull=URLPull.replace("xTargetSymbolx",TargetSymbol)
+        vixPull=URLPull.replace(TargetSymbol,"VXX");
+        xlfPull=URLPull.replace(TargetSymbol,"SQQQ");
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
@@ -346,7 +348,7 @@ def IEXColmaker():
      
         
         print("This is arr1");
-        SQLLoad.MakeDailyTable(arr1);
+        SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         #compare(arr1,xlfxarr1,'xl');      
         return arr1;
               
@@ -434,7 +436,7 @@ def runNasdaq():
     STKsymbols.columns=["Symbols","Security Name","ETF","MKT"];
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
 
-    #print(IEXColmaker())    
+    #print(IEXColmaker("AMD"))    
     print(STKsymbols) 
     
     
