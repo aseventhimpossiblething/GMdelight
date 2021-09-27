@@ -17,11 +17,18 @@ def MakeDailyTable(x,a):
     print("Make Data Input")
     digcounter=0;
     for elem in y:
+        x[elem][1]
+        """
         while digcounter<len(y):
               dig=x[elem];
               print(dig,"-",dig,"! - !",type(dig));  
               digcounter=digcounter+1;
+        """
+        
         print(elem,"! - !",type(elem))
+        print("--------",x[elem][1],"",type(x[elem][1))
+        print("--------",x[elem][2],"",type(x[elem][2))
+        print("--------",x[elem][3],"",type(x[elem][3))                                            
         
         #if type(elem)==
         elem=elem+" REAL, ";
