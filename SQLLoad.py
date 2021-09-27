@@ -11,8 +11,9 @@ def addToTable(x):
     
 
 def MakeDailyTable(z,a):
-    ltots=len(z['index'])
-    print(ltots,"----",a)
+    #ltots=len(z['index'])
+    #print(ltots,"----",a)
+    a=25
     symbolCol=[];
     for symb in z['index']:
         symbolCol.append(a);
