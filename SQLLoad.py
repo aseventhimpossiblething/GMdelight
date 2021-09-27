@@ -17,11 +17,12 @@ def addToTable(x):
 def MakeDailyTable(z,a):
    
     a='"'+a+'"';
+    curDate='"'+str(date.today())+'"'
     CurrentDate=[];
     symbolCol=[];
     for symb in z['index']:
         symbolCol.append(a);
-        CurrentDate.append(str(date.today()));
+        CurrentDate.append(curDate);
     z[['Symbol']]=symbolCol;
     z[['Prediction Day']]=CurrentDate;
     
