@@ -72,7 +72,7 @@ def MakeDailyTable(z,a):
                 
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
-          print(insertionOrder)  
+          #print(insertionOrder)  
           #print(novelXstr)
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
@@ -82,6 +82,7 @@ def MakeDailyTable(z,a):
     #cursor.execute(novelXstr2);
     cursor.execute(query);
     results=cursor.fetchall();
+    results=pandas.DataFrame(results);
     print("results",results)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
