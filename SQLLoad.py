@@ -45,7 +45,7 @@ def MakeDailyTable(z,a):
     novelXstr="";
     y=x.columns;
     #print("Make Data Input")
-    NewFrameTitles=[];
+    #NewFrameTitles=[];
     for elem in y:
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         if strtest.find('str')>-1:
@@ -100,12 +100,13 @@ def MakeDailyTable(z,a):
     results.columns=titles;
     #results.columns=x.columns;
     #print(results.columns);
+    results=results.to_html()
     print(results);
-    NewFrameTitles
-    print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
-    print(len(novelXstr)," novelXstr - ",novelXstr)
-    print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
-    print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
+    #NewFrameTitles
+    #print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
+    #print(len(novelXstr)," novelXstr - ",novelXstr)
+    #print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
+    #print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
        
     #print("end Make Daily")
     SQLite3conn.close();
