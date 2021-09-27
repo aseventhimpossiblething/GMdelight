@@ -82,7 +82,7 @@ def MakeDailyTable(z,a):
     #cursor.execute(novelXstr2);
     cursor.execute(query);
     results=cursor.fetchall();
-    results=pandas.DataFrame(results);
+    results=pandas.DataFrame(results, columns=[novelXstr3]);
     print("results",results)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
