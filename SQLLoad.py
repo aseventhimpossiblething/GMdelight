@@ -60,8 +60,7 @@ def MakeDailyTable(z,a):
      print("Table 'DailyTable' Created"); 
     except:
       print("Table 'DailyTable' already exists");    
-         
-     
+        
     rowcount=0;
     while rowcount<len(x):
           littleStr="";       
@@ -77,23 +76,17 @@ def MakeDailyTable(z,a):
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
     
-    
-    
-    #cursor.execute(novelXstr2);
     cursor.execute(query);
-    #titletable=pandas.DataFrame(cursor.description)
-    
     results=cursor.fetchall();
-    #print(cursor.description)
     results=pandas.DataFrame(results);
-   
+    
+    #results.columns=[];
     #results=results.columns[novelXstr3];
     print("results",results)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
     print("novelXstr3",novelXstr3)
-   
-    
+       
     print("end Make Daily")
     SQLite3conn.close();
     
