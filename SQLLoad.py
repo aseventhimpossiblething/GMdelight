@@ -2,6 +2,14 @@ print("pre import sql")
 import sqlite3
 import pandas
 
+
+
+def addToTable(x):
+    SQLite3conn=sqlite3.connect("DailyDB");
+    cursor=SQLite3conn.cursor();
+    cursor.execute();
+    
+
 def MakeDailyTable(x):
     x=x.drop(columns=['index'])
     novelXstr="";
@@ -10,17 +18,19 @@ def MakeDailyTable(x):
     for elem in y:
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
-    novelXstr=novelXstr[:len(novelXstr)-1]     
+    novelXstr=novelXstr[:len(novelXstr)-1];
+    
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
+    #novelXstr4="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
     
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
     query="select*from DailyTable"
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
-    cursor.execute(novelXstr2);
+    #cursor.execute(novelXstr2);
      
     rowcount=0;
     while rowcount<len(x):
@@ -35,13 +45,14 @@ def MakeDailyTable(x):
           littleStr=littleStr[:len(littleStr)-1]
           #print("littleStr-",littleStr)
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
+          #insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"    
           cursor.execute(insertionOrder);
           print("end cycle-------------");  
           rowcount=rowcount+1;
     
     
     
-   
+    cursor.execute(novelXstr2);
     cursor.execute(query);
     results=cursor.fetchall();
     print("results",results)
