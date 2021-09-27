@@ -41,7 +41,8 @@ def MakeDailyTable(x):
              
           print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
           print("littleStr-",littleStr)
-          #cursor.execute()  
+          insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
+          cursor.execute(insertionOrder);
           print("end cycle-------------");  
           #print(z.iloc([1])); 
           #print(x[rowcount]);
