@@ -40,7 +40,7 @@ def MakeDailyTable(x):
                 #print(littlecount,"-littleArray ",littleArray)
              
           print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
-          littleStr=littleStr[:len(littleStr)]
+          littleStr=littleStr[:len(littleStr)-1]
           print("littleStr-",littleStr)
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
           cursor.execute(insertionOrder);
