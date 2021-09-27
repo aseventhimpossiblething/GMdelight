@@ -100,7 +100,8 @@ def MakeDailyTable(z,a):
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
-    print("info ",info)
+    titles=info[0]
+    print("len -",len(titles)," ",type(titles),"-titles-",titles)
     
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
