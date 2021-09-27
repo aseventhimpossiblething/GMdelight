@@ -15,8 +15,14 @@ def MakeDailyTable(x,a):
     novelXstr="";
     y=x.columns;
     print("Make Data Input")
+    digcounter=0;
     for elem in y:
+        while digcounter<3:
+              dig=x[elem][digcounter];
+              print(dig,"-",dig,"! - !",type(dig));  
+              digcounter=digcounter+1;
         print(elem,"! - !",type(elem))
+        
         #if type(elem)==
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
