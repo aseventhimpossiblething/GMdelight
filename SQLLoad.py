@@ -38,7 +38,7 @@ def MakeDailyTable(z,a):
         x[elem][1]
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         if strtest.find('str')>-1:
-           elem=elem+" TEXT, ";
+           elem="'"+elem+"'"+" TEXT, ";
         else:
            elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
@@ -82,7 +82,7 @@ def MakeDailyTable(z,a):
     #cursor.execute(novelXstr2);
     cursor.execute(query);
     results=cursor.fetchall();
-    results=pandas.DataFrame(results, columns=[novelXstr3]);
+    results=pandas.DataFrame(results);
     print("results",results)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
