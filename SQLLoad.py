@@ -13,6 +13,12 @@ def addToTable(x):
 def MakeDailyTable(z,a):
     ltots=len(z['index'])
     print(ltots,"----",a)
+    symbolCol=[];
+    for symb in z['index']:
+        symbolCol.append(a);
+    z['Symbol']=symbolCol    
+        
+    
     x=z.drop(columns=['index'])
     novelXstr="";
     y=x.columns;
@@ -22,10 +28,9 @@ def MakeDailyTable(z,a):
         x[elem][1]
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         if strtest.find('str')>-1:
-            print(strtest.find('str'),"-",strtest)
-            elem=elem+" TEXT, ";
+           elem=elem+" TEXT, ";
         else:
-            elem=elem+" REAL, ";
+           elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
