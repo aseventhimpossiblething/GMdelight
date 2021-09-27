@@ -9,7 +9,7 @@ print(date.today())
 
 
 def CallFromSQL():
-    print("CallFromSQL()")
+    print(" start CallFromSQL()")
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select*from DailyTable"
     cursor=SQLite3conn.cursor();
@@ -22,10 +22,10 @@ def CallFromSQL():
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
     
-    results.columns=titles;
+    #results.columns=titles;
     results=results.to_html()
     cursor.close();
-    print("CallFromSQL()")
+    print(" end CallFromSQL()")
     return results;
 
 def MakeDailyTable(z,a):
