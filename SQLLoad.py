@@ -67,7 +67,8 @@ def MakeDailyTable(x,a):
                 littlecount=littlecount+1;
                 #print(littleStr)
           littleStr=littleStr[:len(littleStr)-1]
-          insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
+          insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
+          print(insertionOrder)  
           cursor.execute(insertionOrder);
           #print(x.iloc[rowcount])
           rowcount=rowcount+1;
