@@ -1,9 +1,9 @@
 print("pre import sql")
 import sqlite3
 import pandas
-import datetime
+from datetime import date
 
-datetime.today();
+date.today();
 
 
 
