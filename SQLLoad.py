@@ -84,9 +84,10 @@ def MakeDailyTable(z,a):
     results=pandas.DataFrame(results);
     print(type," -- ",type(results))
     
+    
+    results.columns=z.columns;
     print(results.columns);
-    results=results.columns=z.columns;
-    print("results",results)
+    print("results",results);
     NewFrameTitles
     print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
     print(len(novelXstr)," novelXstr - ",novelXstr)
