@@ -43,7 +43,7 @@ def MakeDailyTable(x,a):
     print('novelXstr - ',novelXstr)
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
-    novelXstr3=novelXstr.replace(" TEXT","");
+    novelXstr3=novelXstr3.replace(" TEXT","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
     #novelXstr4="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
     
