@@ -85,7 +85,7 @@ def MakeDailyTable(z,a):
     print(type," -- ",type(results))
     
     
-    results.columns=z.columns;
+    results.columns=x.columns;
     print(results.columns);
     print("results",results);
     NewFrameTitles
