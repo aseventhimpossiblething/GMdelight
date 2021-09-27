@@ -65,15 +65,16 @@ def MakeDailyTable(z,a):
           littleStr="";       
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
+                """
                 if str(x.iloc[rowcount]).find('date'):
                    print(x.iloc[rowcount]) 
-                    
+                """    
                 ent=x.iloc[rowcount][littlecount]
-                
+                """
                 if str(ent).find("-")>=0:
                     #ent="'"+str(ent).replace("-","$")+"'";
                     print(str(ent).find("-")," ent = ",ent);
-                   
+                """   
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
                 
