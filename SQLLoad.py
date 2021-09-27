@@ -8,11 +8,25 @@ print(date.today())
 
 
 
-def addToTable(x):
+def CallFromSQL():
+    print("CallFromSQL()")
     SQLite3conn=sqlite3.connect("DailyDB");
+    query="select*from DailyTable"
     cursor=SQLite3conn.cursor();
-    cursor.execute();
+        
+    cursor.execute(query);
+    info=cursor.description;
+    info=pandas.DataFrame(info);
+    titles=info[0]
     
+    results=cursor.fetchall();
+    results=pandas.DataFrame(results);
+    
+    results.columns=titles;
+    results=results.to_html()
+    cursor.close();
+    print("CallFromSQL()")
+    return results;
 
 def MakeDailyTable(z,a):
    
@@ -110,6 +124,7 @@ def MakeDailyTable(z,a):
        
     #print("end Make Daily")
     SQLite3conn.close();
+    CallFromSQL();
     return results;
 
     
