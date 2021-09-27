@@ -84,9 +84,9 @@ def MakeDailyTable(z,a):
     print(results.columns);
     #results=results.columns=[novelXstr3];
     print("results",results)
-    print("novelXstr",novelXstr)
-    print("novelXstr2",novelXstr2)
-    print("novelXstr3",novelXstr3)
+    print(len(novelXstr)," novelXstr - ",novelXstr)
+    print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
+    print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
        
     print("end Make Daily")
     SQLite3conn.close();
