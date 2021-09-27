@@ -77,23 +77,12 @@ def MakeDailyTable(z,a):
           littleStr="";       
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
-                """
-                if str(x.iloc[rowcount]).find('date'):
-                   print(x.iloc[rowcount]) 
-                """    
                 ent=x.iloc[rowcount][littlecount]
-                """
-                if str(ent).find("-")>=0:
-                    #ent="'"+str(ent).replace("-","$")+"'";
-                    print(str(ent).find("-")," ent = ",ent);
-                """   
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
                 
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
-          #print(insertionOrder)  
-          #print(novelXstr)
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
     
@@ -101,7 +90,7 @@ def MakeDailyTable(z,a):
     info=cursor.description;
     info=pandas.DataFrame(info);
     titles=info[0]
-    print("len -",len(titles)," ",type(titles),"-titles-",titles)
+    #print("len -",len(titles)," ",type(titles),"-titles-",titles)
     
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
