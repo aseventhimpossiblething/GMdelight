@@ -10,29 +10,17 @@ def addToTable(x):
     cursor.execute();
     
 
-def MakeDailyTable(x,a):
-    x=x.drop(columns=['index'])
+def MakeDailyTable(z,a):
+    ltots=len(z[index])
+    print(ltots,"----",a)
+    x=z.drop(columns=['index'])
     novelXstr="";
     y=x.columns;
     print("Make Data Input")
     digcounter=0;
     for elem in y:
         x[elem][1]
-        """
-        while digcounter<len(y):
-              dig=x[elem];
-              print(dig,"-",dig,"! - !",type(dig));  
-              digcounter=digcounter+1;
-        """
-        """
-        print(elem,"! - !",type(elem))
-        print("--------",x[elem][1],"--",type(x[elem][1]))
-        print("--------",x[elem][2],"--",type(x[elem][2]))
-        print("--------",x[elem][3],"--",type(x[elem][3]))
-        """
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
-        #print(strtest.find('str'),'-',strtest)
-        #print(strtest.find('str'))
         if strtest.find('str')>-1:
             print(strtest.find('str'),"-",strtest)
             elem=elem+" TEXT, ";
@@ -40,12 +28,11 @@ def MakeDailyTable(x,a):
             elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
-    print('novelXstr - ',novelXstr)
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
     novelXstr3=novelXstr3.replace(" TEXT","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
-    #novelXstr4="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
+  
     
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
@@ -66,12 +53,11 @@ def MakeDailyTable(x,a):
           while littlecount<len(x.iloc[rowcount]):
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
-                #print(littleStr)
+                
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
-          print(insertionOrder)  
+          #print(insertionOrder)  
           cursor.execute(insertionOrder);
-          #print(x.iloc[rowcount])
           rowcount=rowcount+1;
     
     
@@ -80,7 +66,6 @@ def MakeDailyTable(x,a):
     cursor.execute(query);
     results=cursor.fetchall();
     print("results",results)
-    #print(x)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
     print("novelXstr3",novelXstr3)
