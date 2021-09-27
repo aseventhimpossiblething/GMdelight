@@ -17,14 +17,17 @@ def MakeDailyTable(x):
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
-    #novelXstr=novelXstr#.replace("index REAL,","")
-    #print("length of x");
-    #print(len(x));
-    #print("length of new arr");
-    #print(len(novelXarr))
-    #print(novelXstr2)
     
-    """
+    insertionCols=novelXstr
+    insert="insert into DailyTable() Values()"
+    query="select*from DailyTable"
+    SQLite3conn=sqlite3.connect("DailyDB")
+    cursor=SQLite3conn.cursor();
+    cursor.execute(novelXstr2);
+    #cursor.executemany(novelXstr3,);
+    #cursor.execute(query);
+    
+    
     rowcount=0;
     while rowcount<len(x):
           print("start cycle-------------");
@@ -33,7 +36,7 @@ def MakeDailyTable(x):
           while littlecount<len(x.iloc[rowcount]):
                 littleArray.append(x.iloc[rowcount][littlecount]) 
                 littlecount=littlecount+1;
-                print(littlecount,"-littleArray ",littleArray)
+                #print(littlecount,"-littleArray ",littleArray)
              
           print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
           
@@ -42,19 +45,10 @@ def MakeDailyTable(x):
           #print(x[rowcount]);
           rowcount=rowcount+1;
     
-    """
-    
-    insertionCols=novelXstr
     
     
-    insert="insert into DailyTable() Values()"
-    query="select*from DailyTable"
-    SQLite3conn=sqlite3.connect("DailyDB")
-    cursor=SQLite3conn.cursor();
-    cursor.execute(novelXstr2);
-    #cursor.executemany(novelXstr3,);
+   
     cursor.execute(query);
-    
     results=cursor.fetchall();
     print("results",results)
     print(x)
