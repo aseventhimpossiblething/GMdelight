@@ -40,7 +40,7 @@ def MakeDailyTable(z,a):
         if strtest.find('str')>-1:
            elem="'"+elem+"'"+" TEXT, ";
         else:
-           elem=elem+" REAL, ";
+           elem="'"+elem+"'"+" REAL, ";
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
