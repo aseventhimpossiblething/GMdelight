@@ -16,6 +16,8 @@ def MakeDailyTable(x,a):
     y=x.columns;
     print("Make Data Input")
     for elem in y:
+        print(elem,! - !,type(elem))
+        #if type(elem)==
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
@@ -44,11 +46,11 @@ def MakeDailyTable(x,a):
           while littlecount<len(x.iloc[rowcount]):
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
-                print(littleStr)
+                #print(littleStr)
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
           cursor.execute(insertionOrder);
-          print(x.iloc[rowcount])
+          #print(x.iloc[rowcount])
           rowcount=rowcount+1;
     
     
@@ -57,7 +59,7 @@ def MakeDailyTable(x,a):
     cursor.execute(query);
     results=cursor.fetchall();
     print("results",results)
-    print(x)
+    #print(x)
     print("novelXstr",novelXstr)
     print("novelXstr2",novelXstr2)
     print("novelXstr3",novelXstr3)
