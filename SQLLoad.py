@@ -39,7 +39,7 @@ def MakeDailyTable(x):
                 #print(littlecount,"-littleArray ",littleArray)
              
           print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
-          
+          print("littleArray-",littleArray)
           print("end cycle-------------");  
           #print(z.iloc([1])); 
           #print(x[rowcount]);
