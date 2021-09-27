@@ -33,7 +33,8 @@ def MakeDailyTable(z,a):
     novelXstr="";
     y=x.columns;
     print("Make Data Input")
-    digcounter=0;
+    NewFrameTitles=[];
+    #digcounter=0;
     for elem in y:
         x[elem][1]
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
@@ -41,6 +42,7 @@ def MakeDailyTable(z,a):
            elem="'"+elem+"'"+" TEXT, ";
         else:
            elem="'"+elem+"'"+" REAL, ";
+        NewFrameTitles.append(elem);
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
@@ -82,8 +84,10 @@ def MakeDailyTable(z,a):
     print(type," -- ",type(results))
     
     print(results.columns);
-    #results=results.columns=[novelXstr3];
+    #results=results.columns=[NewFrameTitles];
     print("results",results)
+    NewFrameTitles
+    print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
     print(len(novelXstr)," novelXstr - ",novelXstr)
     print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
     print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
