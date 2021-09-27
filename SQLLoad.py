@@ -24,7 +24,7 @@ def MakeDailyTable(z,a):
         symbolCol.append(a);
         CurrentDate.append(curDate);
     z[['Symbol']]=symbolCol;
-    z[['Prediction Day']]=CurrentDate;
+    z[['PredictionDay']]=CurrentDate;
     
     
         
@@ -73,7 +73,7 @@ def MakeDailyTable(z,a):
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
           print(insertionOrder)  
-          print(novelXstr)
+          #print(novelXstr)
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
     
