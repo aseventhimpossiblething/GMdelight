@@ -11,7 +11,7 @@ def addToTable(x):
     
 
 def MakeDailyTable(z,a):
-    ltots=len(z[index])
+    ltots=len(z['index'])
     print(ltots,"----",a)
     x=z.drop(columns=['index'])
     novelXstr="";
