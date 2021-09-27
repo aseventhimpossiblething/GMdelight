@@ -32,12 +32,9 @@ def MakeDailyTable(z,a):
     x=z.drop(columns=['index'])
     novelXstr="";
     y=x.columns;
-    print("Make Data Input")
+    #print("Make Data Input")
     NewFrameTitles=[];
-    #digcounter=0;
     for elem in y:
-        #NewFrameTitles.append(elem);
-        #x[elem][1]
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         if strtest.find('str')>-1:
            elem="'"+elem+"'"+" TEXT, ";
@@ -82,19 +79,19 @@ def MakeDailyTable(z,a):
     cursor.execute(query);
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
-    print(type," -- ",type(results))
+    #print(type," -- ",type(results))
     
     
     results.columns=x.columns;
-    print(results.columns);
-    print("results",results);
+    #print(results.columns);
+    print(results);
     NewFrameTitles
     print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
     print(len(novelXstr)," novelXstr - ",novelXstr)
     print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
     print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
        
-    print("end Make Daily")
+    #print("end Make Daily")
     SQLite3conn.close();
     
 
