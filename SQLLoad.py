@@ -23,7 +23,7 @@ def CallFromSQL():
     results=pandas.DataFrame(results);
     
     #results.columns=titles;
-    results=results.to_html()
+    #results=results.to_html()
     print(results);
     cursor.close();
     print(" end CallFromSQL()")
@@ -116,7 +116,7 @@ def MakeDailyTable(z,a):
     #results.columns=x.columns;
     #print(results.columns);
     results=results.to_html()
-    #print(results);
+    print(results);
     #NewFrameTitles
     #print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
     #print(len(novelXstr)," novelXstr - ",novelXstr)
