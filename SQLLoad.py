@@ -33,7 +33,7 @@ def MakeDailyTable(x,a):
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         #print(strtest.find('str'),'-',strtest)
         #print(strtest.find('str'))
-        if strtest.find('str'):
+        if strtest.find('str')<0:
             elem=elem+" TEXT, ";
         else:
             elem=elem+" REAL, ";
