@@ -3,16 +3,13 @@ import sqlite3
 import pandas
 
 def MakeDailyTable(x):
-    #print(x)
     x=x.drop(columns=['index'])
-    #print(x)
     novelXstr="";
     y=x.columns;
     print("Make Data Input")
     for elem in y:
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
-        #novelXarr.append(elem)
     novelXstr=novelXstr[:len(novelXstr)-1]     
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
@@ -24,10 +21,7 @@ def MakeDailyTable(x):
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     cursor.execute(novelXstr2);
-    #cursor.executemany(novelXstr3,);
-    #cursor.execute(query);
-    
-    
+     
     rowcount=0;
     while rowcount<len(x):
           print("start cycle-------------");
@@ -35,18 +29,14 @@ def MakeDailyTable(x):
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
-                #littleArray.append(x.iloc[rowcount][littlecount]) 
                 littlecount=littlecount+1;
-                #print(littlecount,"-littleArray ",littleArray)
-             
+                            
           print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
           littleStr=littleStr[:len(littleStr)-1]
           print("littleStr-",littleStr)
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"  
           cursor.execute(insertionOrder);
           print("end cycle-------------");  
-          #print(z.iloc([1])); 
-          #print(x[rowcount]);
           rowcount=rowcount+1;
     
     
@@ -67,22 +57,4 @@ def MakeDailyTable(x):
 
     
     
-"""
-SQLite3conn=sqlite3.connect("DailyBD")
-cursor=SQLite3conn.cursor();
-cursor.execute("create table DailyTable")
 
-b=cursor.execute("select*from DailyTable limit 1;")
-c=ColNames=pandas.DataFrame(cursor.description)
-c=c[[0]];
-
-a=cursor.fetchall();
-
-#print(cursor)
-#print(cursor.description)
-#print(SQLcolsnames)
-print(a)
-#print(b)
-print(c)
-print("post connect")
-"""
