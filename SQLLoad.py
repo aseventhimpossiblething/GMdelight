@@ -33,7 +33,7 @@ def MakeDailyTable(z,a):
     NewdateCol1=[];
     acount=0;
     while acount<len(z['date']):
-          NewDateEntry='"'+z['drop'][acount]+'"';
+          NewDateEntry='"'+z['date'][acount]+'"';
           NewdateCol1.append(NewDateEntry)  
           acount=acount+1;
     x['date']=NewdateCol1;        
