@@ -69,7 +69,7 @@ def MakeDailyTable(z,a):
                     
                 ent=x.iloc[rowcount][littlecount]
                 
-                if str(ent).find("-")>=0:
+                if str(ent).find("-")>=5:
                     #ent="'"+str(ent).replace("-","$")+"'";
                     print(str(ent).find("-")," ent = ",ent);
                    
