@@ -10,7 +10,7 @@ def addToTable(x):
     cursor.execute();
     
 
-def MakeDailyTable(x):
+def MakeDailyTable(x,a):
     x=x.drop(columns=['index'])
     novelXstr="";
     y=x.columns;
