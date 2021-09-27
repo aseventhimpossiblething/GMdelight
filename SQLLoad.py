@@ -24,21 +24,25 @@ def MakeDailyTable(x,a):
               print(dig,"-",dig,"! - !",type(dig));  
               digcounter=digcounter+1;
         """
-        
+        """
         print(elem,"! - !",type(elem))
         print("--------",x[elem][1],"--",type(x[elem][1]))
         print("--------",x[elem][2],"--",type(x[elem][2]))
         print("--------",x[elem][3],"--",type(x[elem][3]))
+        """
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
-        print(strtest.find('str'),'-',strtest)
+        #print(strtest.find('str'),'-',strtest)
         #print(strtest.find('str'))
-        #if type(elem)==
-        elem=elem+" REAL, ";
+        if strtest.find('str'):
+            elem=elem+" TEXT, ";
+        else:
+            elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
     
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
+    novelXstr3=novelXstr.replace(" TEXT","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
     #novelXstr4="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
     
