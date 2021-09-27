@@ -52,7 +52,7 @@ def MakeDailyTable(x):
    
     
     print("end Make Daily")
-    
+    SQLite3conn.close();
     
 
     
