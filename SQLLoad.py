@@ -40,7 +40,6 @@ def MakeDailyTable(z,a):
            elem="'"+elem+"'"+" TEXT, ";
         else:
            elem="'"+elem+"'"+" REAL, ";
-        
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
@@ -71,7 +70,7 @@ def MakeDailyTable(z,a):
                 
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
-          #print(insertionOrder)  
+          print(insertionOrder)  
           #print(novelXstr)
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
