@@ -66,14 +66,15 @@ def MakeDailyTable(z,a):
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
                 ent=x.iloc[rowcount][littlecount]
-                if str(ent).find("-")>-1:
+                if str(ent).find("-")>=0:
                     ent="'"+str(ent)+"'";
+                    print("ent = ",ent);
                 littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
                 littlecount=littlecount+1;
                 
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
-          print(insertionOrder)  
+          #print(insertionOrder)  
           #print(novelXstr)
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
