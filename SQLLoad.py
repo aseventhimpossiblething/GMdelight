@@ -28,8 +28,9 @@ def MakeDailyTable(x,a):
         print(elem,"! - !",type(elem))
         print("--------",x[elem][1],"--",type(x[elem][1]))
         print("--------",x[elem][2],"--",type(x[elem][2]))
-        print("--------",x[elem][3],"--",type(x[elem][3]))                                            
-        
+        print("--------",x[elem][3],"--",type(x[elem][3]))
+        strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]))
+        print(strtest)
         #if type(elem)==
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
