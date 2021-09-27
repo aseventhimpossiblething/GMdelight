@@ -4,7 +4,7 @@ import pandas
 import datetime
 #from datetime import date
 
-print(date.today();)
+print(date.today())
 
 
 
@@ -21,6 +21,7 @@ def MakeDailyTable(z,a):
     symbolCol=[];
     for symb in z['index']:
         symbolCol.append(a);
+        CurrentDate.append(str(date.today()));
     z[['Symbol']]=symbolCol;
     z[['Prediction Day']]=CurrentDate;
     
