@@ -16,7 +16,7 @@ def MakeDailyTable(x,a):
     y=x.columns;
     print("Make Data Input")
     for elem in y:
-        print(elem,! - !,type(elem))
+        print(elem,"! - !",type(elem))
         #if type(elem)==
         elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
