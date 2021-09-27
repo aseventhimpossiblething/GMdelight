@@ -98,12 +98,16 @@ def MakeDailyTable(z,a):
           rowcount=rowcount+1;
     
     cursor.execute(query);
+    info=cursor.description;
+    info=pandas.DataFrame(info);
+    print("info ",info)
+    
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
     #print(type," -- ",type(results))
     
     
-    results.columns=x.columns;
+    #results.columns=x.columns;
     #print(results.columns);
     print(results);
     NewFrameTitles
