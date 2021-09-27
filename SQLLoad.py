@@ -29,7 +29,7 @@ def MakeDailyTable(z,a):
         x[elem][1]
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         if strtest.find('str')>-1:
-           elem=elem+" TEXT, ";
+           elem=elem+" BLOB, ";
         else:
            elem=elem+" REAL, ";
         novelXstr=novelXstr+elem;
@@ -37,6 +37,7 @@ def MakeDailyTable(z,a):
     novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
     novelXstr3=novelXstr.replace(" REAL","");
     novelXstr3=novelXstr3.replace(" TEXT","");
+    novelXstr3=novelXstr3.replace(" BLOB","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
   
     
