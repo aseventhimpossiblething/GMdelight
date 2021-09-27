@@ -52,7 +52,7 @@ def MakeDailyTable(x):
     
     
     
-    cursor.execute(novelXstr2);
+    #cursor.execute(novelXstr2);
     cursor.execute(query);
     results=cursor.fetchall();
     print("results",results)
