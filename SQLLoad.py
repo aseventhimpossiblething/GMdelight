@@ -30,7 +30,12 @@ def MakeDailyTable(x):
     query="select*from DailyTable"
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
-    #cursor.execute(novelXstr2);
+    try:
+     cursor.execute(novelXstr2);
+     print("Table 'DailyTable' Created"); 
+    except:
+      print("Table 'DailyTable' already exists");    
+         
      
     rowcount=0;
     while rowcount<len(x):
