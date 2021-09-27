@@ -26,9 +26,9 @@ def MakeDailyTable(x,a):
         """
         
         print(elem,"! - !",type(elem))
-        print("--------",x[elem][1],"",type(x[elem][1))
-        print("--------",x[elem][2],"",type(x[elem][2))
-        print("--------",x[elem][3],"",type(x[elem][3))                                            
+        print("--------",x[elem][1],"--",type(x[elem][1]))
+        print("--------",x[elem][2],"--",type(x[elem][2]))
+        print("--------",x[elem][3],"--",type(x[elem][3]))                                            
         
         #if type(elem)==
         elem=elem+" REAL, ";
