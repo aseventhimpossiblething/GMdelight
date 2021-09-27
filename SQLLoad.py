@@ -24,6 +24,7 @@ def CallFromSQL():
     
     #results.columns=titles;
     results=results.to_html()
+    print(results);
     cursor.close();
     print(" end CallFromSQL()")
     return results;
