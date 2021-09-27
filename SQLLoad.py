@@ -79,9 +79,9 @@ def MakeDailyTable(z,a):
     cursor.execute(query);
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
-    print(type,"--",type(results))
+    print(type," -- ",type(results))
     
-    #results.columns=[];
+    results.columns;
     #results=results.columns=[novelXstr3];
     print("results",results)
     print("novelXstr",novelXstr)
