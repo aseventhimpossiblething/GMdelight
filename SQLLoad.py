@@ -31,15 +31,17 @@ def MakeDailyTable(x):
     rowcount=0;
     while rowcount<len(x):
           print("start cycle-------------");
-          littleArray=[];       
+          littleStr="";       
           littlecount=0;
           while littlecount<len(x.iloc[rowcount]):
-                littleArray.append(x.iloc[rowcount][littlecount]) 
+                littleStr=littleStr+str(x.iloc[rowcount][littlecount])+","
+                #littleArray.append(x.iloc[rowcount][littlecount]) 
                 littlecount=littlecount+1;
                 #print(littlecount,"-littleArray ",littleArray)
              
           print(type(x.iloc[rowcount]),"-",x.iloc[rowcount]);
-          print("littleArray-",littleArray)
+          print("littleStr-",littleStr)
+          #cursor.execute()  
           print("end cycle-------------");  
           #print(z.iloc([1])); 
           #print(x[rowcount]);
