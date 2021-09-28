@@ -180,11 +180,9 @@ def IEXColmaker(TargetSymbol):
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=compare(arr1,vixarr1,'vx'); 
         xlfxarr1=compare(arr1,xlfxarr1,'xl');
-        print(xlfxarr1.columns)
-        Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
-        #SqlCall=SQLLoad.CallFromSQL();
-        return xlfxarr1;
-        """       
+        #print(xlfxarr1.columns)
+        
+               
         arr1['dayshiftedclose']=dayshiftedclose;
         print("Last arr1 vix xlf change est no predictions =====")
         
@@ -198,7 +196,11 @@ def IEXColmaker(TargetSymbol):
         print("Creation of xlfarrvix-------------------")
         print(xlfarrvix)
         
-       
+        Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
+        #SqlCall=SQLLoad.CallFromSQL();
+        return xlfarrvix;
+        
+        """
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);
         
