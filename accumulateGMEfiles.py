@@ -438,7 +438,7 @@ def DailyBasisInserter():
     for Syms in Symbols:
         print(Syms);        
         #IEXColmaker(Syms);
-DailyBasisInserter():        
+DailyBasisInserter();       
                 
         
         
