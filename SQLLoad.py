@@ -24,7 +24,9 @@ def CallFromSQL(x,y,date):
     
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
-    
+    print(query);
+    print(titles);
+    print(results);
     results.columns=titles;
     #results=results.to_html()
     #print(results);
