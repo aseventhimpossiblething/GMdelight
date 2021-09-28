@@ -436,9 +436,10 @@ def runNasdaq():
 def DailyBasisInserter():
     Symbols=runNasdaq()['Symbols'];
     for Syms in Symbols:
-        print(Syms);        
+        print("Currently ",Syms);  
+        print("Next ",Syms); 
         IEXColmaker(Syms);
-        SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+        SqlCall=SQLLoad.CallFromSQL(Syms,"DailyTable");
         print(SqlCall);
 
         
