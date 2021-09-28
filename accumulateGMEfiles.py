@@ -180,6 +180,8 @@ def IEXColmaker(TargetSymbol):
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=compare(arr1,vixarr1,'vx'); 
         xlfxarr1=compare(arr1,xlfxarr1,'xl');
+        Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
+        #SqlCall=SQLLoad.CallFromSQL();
         return xlfxarr1;
         """       
         arr1['dayshiftedclose']=dayshiftedclose;
