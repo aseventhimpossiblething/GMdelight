@@ -107,6 +107,7 @@ def MakeDailyTable(z,a):
     cursor.close()    
     print("Beginging Table insertion")
     rowcount=0;
+    """
     while rowcount<len(x):
           littleStr="";       
           littlecount=0;
@@ -123,6 +124,12 @@ def MakeDailyTable(z,a):
           SQLite3conn.commit() 
           SQLite3conn.close();
           rowcount=rowcount+1;
+    """ 
+    SQLite3conn=sqlite3.connect("DailyDB")
+    cursor=SQLite3conn.cursor(); 
+    cursor.execute(novelXstr2);
+    SQLite3conn.commit() 
+    SQLite3conn.close();
     print("end Table insertion");
     return;
     #CallFromSQL();  
