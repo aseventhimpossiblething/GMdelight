@@ -443,7 +443,7 @@ def DailyBasisInserter():
     tally=0;
     print("initiating DailyBasisInserter() 3 ")  
     print("len(Symbols) ",len(Symbols))
-    while tally > len(Symbols):
+    while tally < len(Symbols):
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
         print("Currently ",Symbols[tally]);  
