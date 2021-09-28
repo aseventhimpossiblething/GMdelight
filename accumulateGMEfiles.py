@@ -183,8 +183,13 @@ def IEXColmaker(TargetSymbol):
         arr1['dayshiftedclose']=dayshiftedclose;
         print("Last arr1 vix xlf change est no predictions =====")
         
+        
+        
+        
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
+        print("Creation of xlfarrvix-------------------")
+        
         
         xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         xy=xlfarrvix['dayshiftedclose'];
@@ -387,14 +392,14 @@ def DailyBasisInserter():
         
 
         
-DailyBasisInserter();       
+#DailyBasisInserter();       
                 
         
         
 #pullNasdaqAbbreves();
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
-#IEXColmaker("AMD");
+IEXColmaker("AMD");
 #SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 #print(SqlCall);
 
