@@ -188,7 +188,7 @@ def IEXColmaker(TargetSymbol):
         
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
-        xlfarrvix=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1)
+        xlfarrvix=xlfarrvix.drop(['xldate','vxdate'], axis=1)
         print("xlfarrvix.columns ",xlfarrvix.columns)
         print("Creation of xlfarrvix-------------------")
         print(xlfarrvix)
@@ -198,7 +198,7 @@ def IEXColmaker(TargetSymbol):
         
         
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
-        xx=xlfarrvix.drop(['dayshiftedclose'], axis=1);
+        xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         xy=xlfarrvix['dayshiftedclose'];
         vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
         vy=arrvix['dayshiftedclose'];
