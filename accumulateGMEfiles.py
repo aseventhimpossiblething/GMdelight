@@ -305,22 +305,28 @@ def IEXColmaker(TargetSymbol):
         print(reviewFrame.corr());
         print("std")
         STD=numpy.std(reviewFrame);
-        #print("STD ",STD)
-        #print(STD);
-        print("reviewFrame ")
-        print(reviewFrame);
-        print("Arr1-----------------------------------Negligable")
-        
+        print("STD ",STD)
         #print(STD);
         #print("reviewFrame ")
         #print(reviewFrame);
-        #print("exp============")
-        #print("vreviewFrame.corr()");
-        #print(vreviewFrame.corr());
+        print("Arr1-----------------------------------Negligable")
+        print("v1-----------------------------------Negligable")
+        
+        print("vreviewFrame.corr()");
+        print(vreviewFrame.corr());
         #print("vstd")
-        vSTD=numpy.std(reviewFrame);
-        #print(vSTD)
-     
+        vSTD=numpy.std(vreviewFrame);
+        print(vSTD)
+        print("v1-----------------------------------Negligable")
+        print("x-----------------------------------")
+        print("xreviewFrame.corr()");
+        print(xreviewFrame.corr());
+        #print("xstd")
+        xSTD=numpy.std(xreviewFrame);
+        print(xSTD)
+        
+        print("x-----------------------------------")
+        
         
         #print("This is arr1");
         #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
