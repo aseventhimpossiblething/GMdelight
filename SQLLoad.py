@@ -106,7 +106,7 @@ def MakeDailyTable(z,a):
           SQLite3conn.commit() 
           SQLite3conn.close();
           rowcount=rowcount+1;
-    CallFromSQL();  
+    #CallFromSQL();  
     
     
     #cursor.execute(query);
