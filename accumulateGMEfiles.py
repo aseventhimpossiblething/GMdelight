@@ -449,7 +449,7 @@ def DailyBasisInserter():
     print("len(Symbols) ",len(Symbols))
     while tally < len(Symbols):
         print("date ",date.today());        
-        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
+        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",date.today());
         print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
@@ -471,7 +471,7 @@ def DailyBasisInserter():
 #pullNasdaqAbbreves();
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
-IEXColmaker("AMD");
+#IEXColmaker("AMD");
 #SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 #print(SqlCall);
 
