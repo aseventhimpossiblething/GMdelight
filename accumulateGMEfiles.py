@@ -434,8 +434,11 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
+    print("initiating DailyBasisInserter() 1 ")    
     Symbols=runNasdaq()['Symbols'];
+    print("initiating DailyBasisInserter() 2 ")     
     tally=0;
+    print("initiating DailyBasisInserter() 3 ")     
     while tally > len(Symbols):  
         #for Syms in Symbols:
         print("Currently ",Symbols[tally]);  
