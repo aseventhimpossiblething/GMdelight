@@ -198,7 +198,7 @@ def IEXColmaker(TargetSymbol):
         #LastChartDate=xlfarrvix['date'][len(xlfarrvix['date'])];
         #print("LastChartDate ",LastChartDate);                              
         #'dayshiftedclose'
-        #px=xlfarrvix.drop(['dayshiftedclose']);
+        px=xlfarrvix.drop(['dayshiftedclose'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         #xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
         #xTreeModPredict200=xTreeMod200.predict(xx_test);
