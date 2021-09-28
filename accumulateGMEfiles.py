@@ -414,8 +414,10 @@ def runNasdaq():
        print("Nasdaq Symbol Update Failed - Archive in use") 
        NasdaqNativeAbbreviations=pandas.read_excel('NasdaqArcaneNative.xlsx');
        NasdaqAbbreviations=pandas.read_excel('NasdaqArcaneOther.xlsx');
-      
-    TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
+
+    #dfmi.loc[:, ('one', 'second')]
+    TopSymbols=NasdaqNativeAbbreviations.loc[:, ("Symbol","Security Name","ETF")]    
+    #TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
     TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
     
     #dfmi.loc[:, ('one', 'second')]
