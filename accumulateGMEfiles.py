@@ -189,7 +189,7 @@ def IEXColmaker(TargetSymbol):
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         print("Creation of xlfarrvix-------------------")
-        
+        print(xlfxarr1)
         Sqltable=SQLLoad.MakeDailyTable(xlfxarr1,TargetSymbol);
         
         
