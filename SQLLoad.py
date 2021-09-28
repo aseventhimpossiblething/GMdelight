@@ -8,10 +8,14 @@ print(date.today())
 
 
 
-def CallFromSQL():
+def CallFromSQL(x,y):
+    
+    
     #print(" start CallFromSQL()")
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select*from DailyTable"
+    
+    query.replace("*",x).replace("DailyTable",y)
     cursor=SQLite3conn.cursor();
         
     cursor.execute(query);
