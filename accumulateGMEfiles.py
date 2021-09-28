@@ -453,7 +453,7 @@ def DailyBasisInserter():
         tally=tally+1;
 
         
-DailyBasisInserter();       
+#DailyBasisInserter();       
                 
         
         
