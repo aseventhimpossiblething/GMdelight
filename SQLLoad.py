@@ -126,7 +126,7 @@ def MakeDailyTable(z,a):
     #print("end Make Daily")
     SQLite3conn.close();
     #CallFromSQL();
-    return results;
+    #return results;
 
     
     
