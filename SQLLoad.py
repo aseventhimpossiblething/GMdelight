@@ -15,7 +15,7 @@ def CallFromSQL(x,y,date,date2):
     query="select*from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
     if date.find("-")>-1:
-       query=query+" (where 'date' between "+date+") and "+date2+";"  
+       query=query+" (where date = '"+date+"';"  
     cursor=SQLite3conn.cursor();
         
     cursor.execute(query);
