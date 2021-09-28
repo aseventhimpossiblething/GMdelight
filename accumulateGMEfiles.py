@@ -190,6 +190,10 @@ def IEXColmaker(TargetSymbol):
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         print("Creation of xlfarrvix-------------------")
         
+        Sqltable=SQLLoad.MakeDailyTable(xlfxarr1,TargetSymbol);
+        
+        
+        
         
         xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         xy=xlfarrvix['dayshiftedclose'];
