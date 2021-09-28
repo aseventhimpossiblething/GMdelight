@@ -25,10 +25,10 @@ def CallFromSQL(x,y,date,date2):
     
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
-    print(query);
-    print(titles);
-    print(results);
-    print(len(results));
+    #print(query);
+    #print(titles);
+    #print(results);
+    #print(len(results));
     results.columns=titles;
     #results=results.to_html()
     #print(results);
