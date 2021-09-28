@@ -452,17 +452,20 @@ def DailyBasisInserter():
         today=date.today()        
         d=timedelta(days=5);
         fromday=today-d;
-        print("fromday ",fromday);
-        print("date ",today);  
+        #print("fromday ",fromday);
+        #print("date ",today);  
         
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday,today);
+        if len(SqlCall)<1:
+           IEXColmaker(Symbols[tally]);     
+           print("Its running")     
         print(len(SqlCall));
-        print(SqlCall);        
+        #print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
         print("Currently ",Symbols[tally]);  
         print("Next ",Symbols[tally+1]); 
-        IEXColmaker(Symbols[tally]);
+        #IEXColmaker(Symbols[tally]);
         #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
         #print(SqlCall);
         tallyPattern.append(tally);
