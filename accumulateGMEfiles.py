@@ -352,6 +352,8 @@ def IEXColmaker(TargetSymbol):
         
         print("This is arr1");
         Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
+        SqlCall=SQLLoad.CallFromSQL();
+        print(SqlCall);
         #compare(arr1,xlfxarr1,'xl');      
         return;
               
