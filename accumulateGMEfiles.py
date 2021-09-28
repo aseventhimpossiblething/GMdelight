@@ -193,18 +193,18 @@ def IEXColmaker(TargetSymbol):
         print("Creation of xlfarrvix-------------------")
         print(xlfarrvix)
         
-        print("len ",len(xlfarrvix['date']))
+        #print("len ",len(xlfarrvix['date']))
         
-        LastChartDate=xlfarrvix['date'][len(xlfarrvix['date'])-1];
+        #LastChartDate=xlfarrvix['date'][len(xlfarrvix['date'])-1];
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-1];
         
-        print("LastChartDate ",LastChartDate); 
+        #print("LastChartDate ",LastChartDate); 
         print("LastChartRow ",LastChartRow);
         #'dayshiftedclose'
-        px=xlfarrvix.drop(['dayshiftedclose'], axis=1);
+        px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
-        #xTreeModPredict200=xTreeMod200.predict(xx_test);
+        xTreeModPredict200=xTreeMod200.predict(LastChartRow);
         #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         
         
