@@ -9,12 +9,8 @@ print(date.today())
 
 
 def CallFromSQL(x,y):
-    
-    
-    #print(" start CallFromSQL()")
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select*from DailyTable"
-    
     query.replace("*",x).replace("DailyTable",y)
     cursor=SQLite3conn.cursor();
         
@@ -34,7 +30,9 @@ def CallFromSQL(x,y):
     return results;
 
 def MakeDailyTable(z,a):
-   
+    tablename="DailyTable";
+    
+    print("start of makeDailyTable ")
     a='"'+a+'"';
     curDate='"'+str(date.today())+'"'
     CurrentDate=[];
@@ -44,10 +42,7 @@ def MakeDailyTable(z,a):
         CurrentDate.append(curDate);
     z[['Symbol']]=symbolCol;
     z[['PredictionDay']]=CurrentDate;
-    
-    
-        
-    
+          
     x=z.drop(columns=['index','date'])
     NewdateCol1=[];
     acount=0;
@@ -56,15 +51,13 @@ def MakeDailyTable(z,a):
           NewdateCol1.append(NewDateEntry)  
           acount=acount+1;
     x['date']=NewdateCol1;        
-        
+    print("date rectification")    
     
     
     
     
     novelXstr="";
     y=x.columns;
-    #print("Make Data Input")
-    #NewFrameTitles=[];
     for elem in y:
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         if strtest.find('str')>-1:
@@ -73,26 +66,33 @@ def MakeDailyTable(z,a):
            elem="'"+elem+"'"+" REAL, ";
         novelXstr=novelXstr+elem;
     novelXstr=novelXstr[:len(novelXstr)-1];
-    novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");" 
+    novelXstr2="create table DailyTable("+novelXstr[:len(novelXstr)-1]+");"
+    novelXstr2=novelXstr2.replace("DailyTable",tablename)
     novelXstr3=novelXstr.replace(" REAL","");
     novelXstr3=novelXstr3.replace(" TEXT","");
     novelXstr3=novelXstr3.replace(" BLOB","");
     novelXstr3=novelXstr3[:len(novelXstr3)-1];
+    print("Data Type Rectification ")
   
-    
+    print("Begining Table making")
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
+    insert.replace("DailyTable",tablename)
     #query="select*from DailyTable"
     
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     try:
      cursor.execute(novelXstr2);
-     print("Table 'DailyTable' Created"); 
+     rmess="Table 'DailyTable' Created"
+     rmess.replace("DailyTable",tablename)   
+     print(rmess); 
     except:
-      print("Table 'DailyTable' already exists");    
+     rmess="Table 'DailyTable' already exists"
+     rmess.replace("DailyTable",tablename)  
+      print(rmess);    
     cursor.close()    
-    
+    print("Beginging Table insertion")
     rowcount=0;
     while rowcount<len(x):
           littleStr="";       
@@ -110,6 +110,8 @@ def MakeDailyTable(z,a):
           SQLite3conn.commit() 
           SQLite3conn.close();
           rowcount=rowcount+1;
+    print("end Table insertion");
+    return;
     #CallFromSQL();  
     
     
