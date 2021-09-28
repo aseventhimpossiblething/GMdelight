@@ -418,7 +418,7 @@ def runNasdaq():
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
     TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
     
-    dfmi.loc[:, ('one', 'second')]
+    #dfmi.loc[:, ('one', 'second')]
     BottomSymbols=NasdaqAbbreviations.loc[:, ("ACT Symbol","Security Name","ETF")]    
     #BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
