@@ -103,6 +103,7 @@ def MakeDailyTable(z,a):
           SQLite3conn=sqlite3.connect("DailyDB")
           cursor=SQLite3conn.cursor(); 
           cursor.execute(insertionOrder);
+          SQLite3conn.commit() 
           SQLite3conn.close();
           rowcount=rowcount+1;
     """
