@@ -430,13 +430,18 @@ def runNasdaq():
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
 
     #print(IEXColmaker("AMD"))    
-    print(STKsymbols)
+    #print(STKsymbols)
     return STKsymbols;
     
+def DailyBasisInserter():
+    runNasdaq()[0];    
+        
+        
 #pullNasdaqAbbreves();
-runNasdaq();
+print(runNasdaq());
+print(runNasdaq()[0]);
 IEXColmaker("AMD");
-SqlCall=SQLLoad.CallFromSQL();
+SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 print(SqlCall);
 
 
