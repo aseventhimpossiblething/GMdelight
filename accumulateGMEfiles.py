@@ -260,7 +260,7 @@ def IEXColmaker(TargetSymbol):
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
         
-        ------------------------------------------------
+        #------------------------------------------------
         print("xx review series splits ")
         xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
         
@@ -291,7 +291,7 @@ def IEXColmaker(TargetSymbol):
         xreviewFrame['Tree Prediction 100']=xTreeModPredict100;
         xreviewFrame['Tree Prediction 200']=xTreeModPredict200;
         xreviewFrame['Linear Prediction']=xLinearPredictMod;
-        ------------------------------------------------
+        #------------------------------------------------
         
         
         
