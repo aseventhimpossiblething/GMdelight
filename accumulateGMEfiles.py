@@ -434,7 +434,12 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
-    runNasdaq()['Symbols'];    
+    Symbols=runNasdaq()['Symbols'];
+    for Syms in Symbols:
+        print(Syms);        
+        #IEXColmaker(Syms);
+DailyBasisInserter():        
+                
         
         
 #pullNasdaqAbbreves();
