@@ -448,9 +448,13 @@ def DailyBasisInserter():
     print("initiating DailyBasisInserter() 3 ")  
     print("len(Symbols) ",len(Symbols))
     while tally < len(Symbols):
-        print("date ",date.today());  
-        print("date-2 ",date.today()-2);
-        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",date.today(),date.today()-2);
+        today=date.today()        
+        d=datetime.timedelta(days=5);
+        fromday=today-d;
+        print("fromday ",fromday);
+        print("date ",today);  
+        
+        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday,today());
         print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
