@@ -37,7 +37,7 @@ def CallFromSQL(x,y,date,date2):
     return results;
 
 def MakeDailyTable(z,a):
-    tablename="DailyTabl";
+    tablename="DailyTable";
     
     print("start of makeDailyTable ")
     a='"'+a+'"';
@@ -125,7 +125,7 @@ def MakeDailyTable(z,a):
           SQLite3conn.close();
           rowcount=rowcount+1;
     """ 
-    SQLite3conn=sqlite3.connect("DailyDB")
+    SQLite3conn=sqlite3.connect("DailyD")
     cursor=SQLite3conn.cursor(); 
     cursor.execute(novelXstr2);
     SQLite3conn.commit() 
