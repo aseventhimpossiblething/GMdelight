@@ -90,7 +90,7 @@ def MakeDailyTable(z,a):
     except:
      rmess="Table 'DailyTable' already exists"
      rmess.replace("DailyTable",tablename)  
-      print(rmess);    
+     print(rmess);    
     cursor.close()    
     print("Beginging Table insertion")
     rowcount=0;
