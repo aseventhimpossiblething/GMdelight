@@ -193,7 +193,7 @@ def IEXColmaker(TargetSymbol):
         print("Creation of xlfarrvix-------------------")
         print(xlfarrvix)
         
-        #print("len ",len(xlfarrvix['date']))
+        print("len ",len(xlfarrvix['date']))
         
         #LastChartDate=xlfarrvix['date'][len(xlfarrvix['date'])];
         #print("LastChartDate ",LastChartDate);                              
