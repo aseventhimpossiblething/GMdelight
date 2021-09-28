@@ -145,7 +145,7 @@ def IEXColmaker(TargetSymbol):
             if xdesignator<ydesignator:
                while count < len(x):
                   if x[count]==y[count]: 
-                     #print(count,"--",x[count],"==",y[count]);   
+                     print(count,"--",x[count],"==",y[count]);   
                   else:
                      arr=[];   
                      yrmo=y[count][:8];
