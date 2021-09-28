@@ -447,7 +447,7 @@ def runNasdaq():
 #pullNasdaqAbbreves();
 #runNasdaq();
 IEXColmaker("AMD");
-#SqlCall=SQLLoad.CallFromSQL();
+SqlCall=SQLLoad.CallFromSQL();
 print(SqlCall);
 
 
