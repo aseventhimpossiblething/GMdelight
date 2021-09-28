@@ -451,6 +451,7 @@ def DailyBasisInserter():
     print("initiating DailyBasisInserter() 3 ")  
     print("len(Symbols) ",len(Symbols))
     while tally < len(Symbols):
+        IEXColmaker(Symbols[tally]);        
         today=date.today()        
         d=timedelta(days=5);
         fromday=today-d;
