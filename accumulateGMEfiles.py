@@ -461,8 +461,8 @@ def DailyBasisInserter():
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
 IEXColmaker("AMD");
-#SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
-#print(SqlCall);
+SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+print(SqlCall);
 
 
 
