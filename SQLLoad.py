@@ -23,8 +23,8 @@ def CallFromSQL():
     results=pandas.DataFrame(results);
     
     results.columns=titles;
-    #results=results.to_html()
-    print(results);
+    results=results.to_html()
+    #print(results);
     cursor.close();
     print(" end CallFromSQL()")
     return results;
