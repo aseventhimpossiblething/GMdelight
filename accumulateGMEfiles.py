@@ -204,10 +204,10 @@ def IEXColmaker(TargetSymbol):
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
         xTreeModPredict200=xTreeMod200.predict(LastChartRow);
         #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
+        
         print("py ",py)
         print("big show---xTreeModPredict200 ",xTreeModPredict200)
-        
-        
+              
         
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
