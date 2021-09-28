@@ -439,7 +439,8 @@ def DailyBasisInserter():
     print("initiating DailyBasisInserter() 2 ")     
     tally=0;
     print("initiating DailyBasisInserter() 3 ")     
-    while tally > len(Symbols):  
+    while tally > len(Symbols):
+        print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
         print("Currently ",Symbols[tally]);  
         print("Next ",Symbols[tally+1]); 
@@ -454,8 +455,8 @@ DailyBasisInserter();
         
         
 #pullNasdaqAbbreves();
-print(runNasdaq());
-print(runNasdaq()['Symbols']);
+#print(runNasdaq());
+#print(runNasdaq()['Symbols']);
 #IEXColmaker("AMD");
 #SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 #print(SqlCall);
