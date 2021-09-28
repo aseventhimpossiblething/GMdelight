@@ -58,7 +58,7 @@ def IEXColmaker(TargetSymbol):
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
-        #print(iexpull)
+      
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         xlfdata=json.loads(xlfPull.text);
@@ -418,8 +418,9 @@ def runNasdaq():
     TopSymbols=NasdaqNativeAbbreviations[["Symbol","Security Name","ETF"]];
     TopSymbols["MKT"]=NasdaqMKTIndicator0(TopSymbols);
     
-    
-    BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
+    dfmi.loc[:, ('one', 'second')]
+    BottomSymbols=NasdaqAbbreviations.loc[:, ("ACT Symbol","Security Name","ETF")]    
+    #BottomSymbols=NasdaqAbbreviations[["ACT Symbol","Security Name","ETF"]];
     BottomSymbols["Symbol"]=BottomSymbols["ACT Symbol"];
     BottomSymbols=BottomSymbols.drop(["ACT Symbol"], axis=1);
     BottomSymbols["MKT"]=NONnasdaqMKTIndicator(NasdaqAbbreviations["Exchange"]);
