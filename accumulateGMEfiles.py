@@ -19,7 +19,7 @@ import threading
 import requests
 import os
 from datetime import datetime, date, timedelta
-from datetime import timedelta
+#from datetime import timedelta
 import pandas
 import json
 import numpy
