@@ -204,7 +204,7 @@ def IEXColmaker(TargetSymbol):
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
         xTreeModPredict200=xTreeMod200.predict(LastChartRow);
         #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
-        
+        print("big show---xTreeModPredict200 ",xTreeModPredict200)
         
         
         
