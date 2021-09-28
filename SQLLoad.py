@@ -90,10 +90,15 @@ def MakeDailyTable(z,a):
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     try:
+     print("Try Trying 1")   
      cursor.execute(novelXstr2);
+     print("Try Trying 2")    
      rmess="Table 'DailyTable' Created"
-     rmess.replace("DailyTable",tablename)   
+     print("Try Trying 3")       
+     rmess.replace("DailyTable",tablename) 
+     print("Try Trying 4")       
      print(rmess); 
+     print("Try Trying 5")       
     except:
      rmess="Table 'DailyTable' already exists"
      rmess.replace("DailyTable",tablename)  
