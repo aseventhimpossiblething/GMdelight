@@ -437,6 +437,7 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
+    tallyPattern=[];    
     print("initiating DailyBasisInserter() 1 ")    
     Symbols=runNasdaq()['Symbols'];
     print("initiating DailyBasisInserter() 2 ")     
@@ -449,9 +450,12 @@ def DailyBasisInserter():
         print("Currently ",Symbols[tally]);  
         print("Next ",Symbols[tally+1]); 
         IEXColmaker(Symbols[tally]);
-        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
-        print(SqlCall);
+        #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
+        #print(SqlCall);
+        tallyPattern.append(tally);
+        print('tallyPattern - ',tallyPattern)
         tally=tally+1;
+        
 
         
 DailyBasisInserter();       
