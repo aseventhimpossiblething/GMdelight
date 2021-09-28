@@ -73,7 +73,7 @@ def IEXColmaker(TargetSymbol):
         xlfkeys=list(xlfdata[0].keys());
         
         def colPrefix(x):
-            print("colPrefix running")    
+            #print("colPrefix running")    
             prefixedelems=[];
             for elems in x:
                 elems="vx"+elems;
@@ -144,42 +144,45 @@ def IEXColmaker(TargetSymbol):
         #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
-            print("fail.....................")    
+            """
+            #print("fail.....................")    
             print("fail.....................")     
             print("fail.....................")    
             print("fail.....................")     
             #return;
-            
+            """
             
                 
             f=248 
+            """
             print("len 1------------------------------",len(y1));
             print(len(x1),"==",len(y1))    
             print("last row? ",y1[f:])
             print(y1.columns)    
+            """
             if len(y1)>len(x1):
                #return;         
                #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(x1)]);
                
-               print("Inner--------")
+               #print("Inner--------")
                #return y1=y1.drop([len(x1)]);
-               print("len 2------------------------------",len(y1)); 
-               print(len(x1),"==",len(y1))
-               print("Inner 2.2 --------") 
-               print(y1[f:])
-               print("Inner 2.3 --------") 
+               #print("len 2------------------------------",len(y1)); 
+               #print(len(x1),"==",len(y1))
+               #print("Inner 2.2 --------") 
+               #print(y1[f:])
+               #print("Inner 2.3 --------") 
                #return ;
-               print("Inner 2.4 --------")
+               #print("Inner 2.4 --------")
                return y1; 
-               print("Inner 2.5 --------") 
+               #print("Inner 2.5 --------") 
         
                
-            print("-----Out again") 
-            print("len 2------------------------------",len(y1)); 
-            print(len(x1),"==",len(y1))
-            print(y1[f:])
-            print("-----after return?")     
+            #print("-----Out again") 
+            #print("len 2------------------------------",len(y1)); 
+            #print(len(x1),"==",len(y1))
+            #print(y1[f:])
+            #print("-----after return?")     
                 
             """    
             if len(y1)>len(x1):
@@ -192,11 +195,11 @@ def IEXColmaker(TargetSymbol):
             #return;    
             #print(len(y1));     
             #list(y1.columns).find('date')
-            print("-----after return 1?") 
+            #print("-----after return 1?") 
             daten=z+'date'    
             x=x1['date']; 
             y=y1[daten];    
-            print("-----after return? 2")     
+            #print("-----after return? 2")     
             #print("compare running")    
             #arr=[]; 
             count=0;  
@@ -204,13 +207,13 @@ def IEXColmaker(TargetSymbol):
             ydesignator=int(y[len(y)-1][8:]);
             alty=y1;
             #arr1=arr1.drop([len(dayshiftedclose)])
-            print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
+            #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
             if xdesignator==ydesignator:
-               print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
+               #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                return y1;
-            print("-----after return? 3")  
+            #print("-----after return? 3")  
             if xdesignator<ydesignator:
-               print(xdesignator,"<",ydesignator)  
+               #print(xdesignator,"<",ydesignator)  
                 
                while count < len(x):
                   if x[count]==y[count]: 
@@ -218,8 +221,8 @@ def IEXColmaker(TargetSymbol):
                         
                   else:
                      arr=[];   
-                     print("break")           
-                     print(count,"--",x[count],"==",y[count]); 
+                     #print("break")           
+                     #print(count,"--",x[count],"==",y[count]); 
                      yrmo=y[count][:8];
                      newday=x[count];
                      newday=pandas.DataFrame([newday], columns=[daten]);
@@ -239,10 +242,10 @@ def IEXColmaker(TargetSymbol):
                      topcan=topcan.append(bottomcan);
                      topcan=topcan.drop(columns=['index'])   
                      topcan=topcan.reset_index();
-                     print(topcan)
+                     #print(topcan)
                      
                      tdesignator=topcan[daten].iloc[len(topcan)-1]; 
-                     print((tdesignator[8:]))   
+                     #print((tdesignator[8:]))   
                      tdesignator=int(tdesignator[8:]); 
                      if xdesignator==tdesignator:
                         print("final")        
@@ -348,9 +351,9 @@ def IEXColmaker(TargetSymbol):
      
         
         print("This is arr1");
-        SQLLoad.MakeDailyTable(arr1,TargetSymbol);
+        Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         #compare(arr1,xlfxarr1,'xl');      
-        return arr1;
+        return;
               
 
 def Char2Num(col):
@@ -439,30 +442,11 @@ def runNasdaq():
     #print(IEXColmaker("AMD"))    
     print(STKsymbols) 
     
-    
-    
-"""
-['Symbols', 'Security Name', 'ETF', 'MKT', 'ETF Num','index', 'close', 'high', 'low', 'open', 'symbol', 'volume', 'id',\
- 'key', 'subkey', 'date', 'updated', 'changeOverTime','marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow', 'uVolume',\
- 'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'label', 'change','changePercent', 'date1']    
-"""
-"""
-['Symbols', 'Security Name', 'ETF', 'MKT', 'ETF Num', 'close', 'high', 'low', 'open', 'volume',\
-  'date', 'updated', 'changeOverTime','marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow', 'uVolume',\
- 'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume', 'change','changePercent']    
-"""
-
-
-
 #pullNasdaqAbbreves();
 #runNasdaq();
-print(IEXColmaker("AMD"));
+IEXColmaker("AMD");
 
-sqlTableCreate="create table main.iextransaction(Symbols text,SecurityName text,ETF  text,MKT real,ETFNum  real,close real,high real,low real,open real,volume real,date real,updated real,changeOverTime real,marketChangeOverTime real,uOpen real,uClose real,uHigh real,uLow real,uVolume real,fOpen real,fClose real,fHigh real,fLow real,fVolume real,change real,changePercent real)"   
-#os.system("sqlite3");
 
-#os.system(sqlTableCreate);
-#os.system(.exit);
 
 #---------------------------------------------------------------------------------------------------------------
 """
