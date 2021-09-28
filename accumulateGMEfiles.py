@@ -204,7 +204,7 @@ def IEXColmaker(TargetSymbol):
         vy=arrvix['dayshiftedclose'];
         x=arr1.drop(['dayshiftedclose','date'], axis=1);
         y=arr1['dayshiftedclose'];
-        print("Immediately before training XY split-------")          
+        print("Immediately before training X-Y split-------")          
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
         print("Starting 10 tree-----fit")
         TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
@@ -249,10 +249,7 @@ def IEXColmaker(TargetSymbol):
         vLinearMod=linear_model.LinearRegression().fit(vx_train,vy_train);
         vLinearPredictMod=vLinearMod.predict(vx_test);
         
-        
-        
-        
-        print("vx based review frame ")
+        print("vx base review frame ")
         vreviewFrame=pandas.DataFrame(vy_test);
         vreviewFrame.columns=['Shifted close'];
         vreviewFrame['close']=list(vx_test['close']);
@@ -262,15 +259,57 @@ def IEXColmaker(TargetSymbol):
         vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
+        
+        ------------------------------------------------
+        print("xx review series splits ")
+        xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
+        
+        print("xx tree model 10 ")
+        xTreeMod10=RandomForestRegressor(n_estimators = 10).fit(xx_train,xy_train);
+        xTreeModPredict10=xTreeMod10.predict(xx_test);
+        
+        print("xx tree model 100 ")
+        xTreeMod100=RandomForestRegressor(n_estimators = 100).fit(xx_train,xy_train);
+        xTreeModPredict100=vTreeMod100.predict(xx_test);
+        
+        print("xx tree model 200 ")
+        xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
+        xTreeModPredict200=vTreeMod200.predict(xx_test);
+        
+        print("vx linear model ")
+        xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
+        xLinearPredictMod=xLinearMod.predict(xx_test);
+        
+        
+        print("xx base review frame ")
+        vxreviewFrame=pandas.DataFrame(xy_test);
+        xreviewFrame.columns=['Shifted close'];
+        xreviewFrame['close']=list(xx_test['close']);
+          
+        print("xx model specific review frame ")        
+        xreviewFrame['Tree Prediction 10']=xTreeModPredict10;
+        xreviewFrame['Tree Prediction 100']=xTreeModPredict100;
+        xreviewFrame['Tree Prediction 200']=xTreeModPredict200;
+        xreviewFrame['Linear Prediction']=xLinearPredictMod;
+        ------------------------------------------------
+        
+        
+        
+        
+     
      
         print("after pause ")
         
-       
-        #print("reviewFrame.corr()");
-        #print(reviewFrame.corr());
-        #print("std")
-        #STD=numpy.std(reviewFrame);
-        #print(STD)
+        print("Arr1-----------------------------------Negligable")
+        print("reviewFrame.corr()");
+        print(reviewFrame.corr());
+        print("std")
+        STD=numpy.std(reviewFrame);
+        #print("STD ",STD)
+        #print(STD);
+        print("reviewFrame ")
+        print(reviewFrame);
+        print("Arr1-----------------------------------Negligable")
         
         #print(STD);
         #print("reviewFrame ")
