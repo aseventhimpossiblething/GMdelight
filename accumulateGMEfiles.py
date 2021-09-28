@@ -50,8 +50,7 @@ def SinglestockIEXdict(x,y,z):
         
         
 def IEXColmaker(TargetSymbol):
-        #TargetSymbol="AMD"
-        print("IEXColmaker(): running");
+        #print("IEXColmaker(): running");
         URLPull=test;
         URLPull=URLPull.replace("xTargetSymbolx",TargetSymbol)
         vixPull=URLPull.replace(TargetSymbol,"VXX");
@@ -59,7 +58,7 @@ def IEXColmaker(TargetSymbol):
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
-        print(iexpull)
+        #print(iexpull)
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         xlfdata=json.loads(xlfPull.text);
@@ -199,9 +198,7 @@ def IEXColmaker(TargetSymbol):
             daten=z+'date'    
             x=x1['date']; 
             y=y1[daten];    
-            #print("-----after return? 2")     
-            #print("compare running")    
-            #arr=[]; 
+       
             count=0;  
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
@@ -211,18 +208,12 @@ def IEXColmaker(TargetSymbol):
             if xdesignator==ydesignator:
                #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                return y1;
-            #print("-----after return? 3")  
             if xdesignator<ydesignator:
-               #print(xdesignator,"<",ydesignator)  
-                
                while count < len(x):
                   if x[count]==y[count]: 
                      print(count,"--",x[count],"==",y[count]);   
-                        
                   else:
                      arr=[];   
-                     #print("break")           
-                     #print(count,"--",x[count],"==",y[count]); 
                      yrmo=y[count][:8];
                      newday=x[count];
                      newday=pandas.DataFrame([newday], columns=[daten]);
@@ -232,7 +223,6 @@ def IEXColmaker(TargetSymbol):
                      narr=narr.transpose();
                      altyCols=list(alty.columns).remove('index');
                      narr.columns=alty.columns; 
-                     #narr[daten];
                      narr=narr.drop(columns=[daten]);
                      narr[daten]=newday;
                      topcan=alty[:count];
@@ -242,19 +232,17 @@ def IEXColmaker(TargetSymbol):
                      topcan=topcan.append(bottomcan);
                      topcan=topcan.drop(columns=['index'])   
                      topcan=topcan.reset_index();
-                     #print(topcan)
-                     
+                                          
                      tdesignator=topcan[daten].iloc[len(topcan)-1]; 
-                     #print((tdesignator[8:]))   
                      tdesignator=int(tdesignator[8:]); 
                      if xdesignator==tdesignator:
-                        print("final")        
-                        print("xdesignator=tdesignator ",xdesignator,"==",tdesignator)        
+                        #print("final")        
+                        #print("xdesignator=tdesignator ",xdesignator,"==",tdesignator)        
                         return topcan        
                      else:
-                        print("lens() ",len(x1),"--",len(topcan));        
-                        print("compare() ,looping");
-                        print("because xdesignator=tdesignator ",xdesignator,"==",tdesignator,"--",xdesignator==tdesignator)   
+                        #print("lens() ",len(x1),"--",len(topcan));        
+                        #print("compare() ,looping");
+                        #print("because xdesignator=tdesignator ",xdesignator,"==",tdesignator,"--",xdesignator==tdesignator)   
                         if len(topcan)>len(x1):
                            #topcan=topcan.drop([len(topcan)-1]);  
                            #compare(x1,topcan,z); 
@@ -333,24 +321,24 @@ def IEXColmaker(TargetSymbol):
      
         print("after pause ")
        
-        print("reviewFrame.corr()");
-        print(reviewFrame.corr());
-        print("std")
+        #print("reviewFrame.corr()");
+        #print(reviewFrame.corr());
+        #print("std")
         STD=numpy.std(reviewFrame);
-        print(STD)
+        #print(STD)
         
         #print(STD);
         #print("reviewFrame ")
         #print(reviewFrame);
-        print("exp============")
-        print("vreviewFrame.corr()");
-        print(vreviewFrame.corr());
-        print("vstd")
+        #print("exp============")
+        #print("vreviewFrame.corr()");
+        #print(vreviewFrame.corr());
+        #print("vstd")
         vSTD=numpy.std(reviewFrame);
-        print(vSTD)
+        #print(vSTD)
      
         
-        print("This is arr1");
+        #print("This is arr1");
         Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         #SqlCall=SQLLoad.CallFromSQL();
         #print(SqlCall);
@@ -442,10 +430,11 @@ def runNasdaq():
     STKsymbols["ETF Num"]=Char2Num(STKsymbols["ETF"])
 
     #print(IEXColmaker("AMD"))    
-    print(STKsymbols) 
+    print(STKsymbols)
+    return STKsymbols;
     
 #pullNasdaqAbbreves();
-#runNasdaq();
+runNasdaq();
 IEXColmaker("AMD");
 SqlCall=SQLLoad.CallFromSQL();
 print(SqlCall);
