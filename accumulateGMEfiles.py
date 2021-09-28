@@ -195,8 +195,8 @@ def IEXColmaker(TargetSymbol):
         
         print("len ",len(xlfarrvix['date']))
         
-        LastChartDate=xlfarrvix['date'][len(xlfarrvix['date'])];
-        #print("LastChartDate ",LastChartDate);                              
+        LastChartDate=xlfarrvix['date'][len(xlfarrvix['date'])-1];
+        print("LastChartDate ",LastChartDate);                              
         #'dayshiftedclose'
         px=xlfarrvix.drop(['dayshiftedclose'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
