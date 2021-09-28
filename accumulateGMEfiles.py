@@ -434,12 +434,12 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
-    runNasdaq()[0];    
+    runNasdaq()['Symbols'];    
         
         
 #pullNasdaqAbbreves();
 print(runNasdaq());
-print(runNasdaq()[0]);
+print(runNasdaq()['Symbols']);
 IEXColmaker("AMD");
 SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 print(SqlCall);
