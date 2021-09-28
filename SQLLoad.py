@@ -8,13 +8,14 @@ print(date.today())
 
 
 
-def CallFromSQL(x,y,date):
+def CallFromSQL(x,y,date,date2):
     date=str(date);
+    date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select*from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
     if date.find("-")>-1:
-       query=query+" where date="+date;  
+       query=query+" (where date between "+date+") and "+date2;  
     cursor=SQLite3conn.cursor();
         
     cursor.execute(query);
@@ -27,6 +28,7 @@ def CallFromSQL(x,y,date):
     print(query);
     print(titles);
     print(results);
+    print(len(results)):
     results.columns=titles;
     #results=results.to_html()
     #print(results);
