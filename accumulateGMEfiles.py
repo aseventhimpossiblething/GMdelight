@@ -188,15 +188,17 @@ def IEXColmaker(TargetSymbol):
         
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
+        xlfarrvix=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1)
         print("xlfarrvix.columns ",xlfarrvix.columns)
         print("Creation of xlfarrvix-------------------")
         print(xlfarrvix)
-        Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
+        #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         
         
         
         
-        xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        xx=xlfarrvix.drop(['dayshiftedclose'], axis=1);
         xy=xlfarrvix['dayshiftedclose'];
         vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
         vy=arrvix['dayshiftedclose'];
@@ -247,6 +249,9 @@ def IEXColmaker(TargetSymbol):
         vLinearMod=linear_model.LinearRegression().fit(vx_train,vy_train);
         vLinearPredictMod=vLinearMod.predict(vx_test);
         
+        
+        
+        
         print("vx based review frame ")
         vreviewFrame=pandas.DataFrame(vy_test);
         vreviewFrame.columns=['Shifted close'];
@@ -259,11 +264,12 @@ def IEXColmaker(TargetSymbol):
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
      
         print("after pause ")
+        
        
         #print("reviewFrame.corr()");
         #print(reviewFrame.corr());
         #print("std")
-        STD=numpy.std(reviewFrame);
+        #STD=numpy.std(reviewFrame);
         #print(STD)
         
         #print(STD);
