@@ -50,7 +50,7 @@ def SinglestockIEXdict(x,y,z):
         
         
 def IEXColmaker(TargetSymbol):
-        #print("IEXColmaker(): running");
+        print("IEXColmaker(): running");
         URLPull=test;
         print("URL Data Pulled ")
         URLPull=URLPull.replace("xTargetSymbolx",TargetSymbol)
@@ -112,10 +112,6 @@ def IEXColmaker(TargetSymbol):
             shiftCol=[];
             shiftColDate=[];
             w=w[q];
-            #print(w)    
-            #w=frame (arr1);    
-            #q=basis columns
-            #z=projection timeframe in days
             date=arr1['date'];
             count=0;
             while count<len(w):
@@ -126,78 +122,13 @@ def IEXColmaker(TargetSymbol):
               shiftCol.append(w[count]);
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
-        #arr1=arr1.drop([len(dayshiftedclose)]);
-        #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
-        #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
-        
-        #print(arr1.columns)
-        #print(arr1['date'])
-        
-        #print(vixarr1.columns)
-        #print(vixarr1['vxdate'])
-        
-        #print(xlfxarr1['xldate'])
-        
-        #print(vixarr1)
-        #print(xlfxarr1)
-        #print(vixarr1)
-        
-        
-        #print(arr1['date'],vixarr1['vxdate'],xlfxarr1['xldate']);
         print("pause before?")
         def compare(x1,y1,z):
-            """
-            #print("fail.....................")    
-            print("fail.....................")     
-            print("fail.....................")    
-            print("fail.....................")     
-            #return;
-            """
-            
-                
             f=248 
-            """
-            print("len 1------------------------------",len(y1));
-            print(len(x1),"==",len(y1))    
-            print("last row? ",y1[f:])
-            print(y1.columns)    
-            """
             if len(y1)>len(x1):
-               #return;         
-               #y1=y1.drop([len(dayshiftedclose)]); 
                y1=y1.drop([len(x1)]);
-               
-               #print("Inner--------")
-               #return y1=y1.drop([len(x1)]);
-               #print("len 2------------------------------",len(y1)); 
-               #print(len(x1),"==",len(y1))
-               #print("Inner 2.2 --------") 
-               #print(y1[f:])
-               #print("Inner 2.3 --------") 
-               #return ;
-               #print("Inner 2.4 --------")
                return y1; 
-               #print("Inner 2.5 --------") 
-        
-               
-            #print("-----Out again") 
-            #print("len 2------------------------------",len(y1)); 
-            #print(len(x1),"==",len(y1))
-            #print(y1[f:])
-            #print("-----after return?")     
-                
-            """    
-            if len(y1)>len(x1):
-               #y1=y1.drop([len(dayshiftedclose)]); 
-               y1=y1.drop([len(y1)-1]);
-            print(len(y1));    
-            print(y1.iloc[len(y1)-1])    
-            """
-            
-            #return;    
-            #print(len(y1));     
-            #list(y1.columns).find('date')
-            #print("-----after return 1?") 
+                    
             daten=z+'date'    
             x=x1['date']; 
             y=y1[daten];    
@@ -206,8 +137,8 @@ def IEXColmaker(TargetSymbol):
             xdesignator=int(x[len(x)-1][8:]);
             ydesignator=int(y[len(y)-1][8:]);
             alty=y1;
-            #arr1=arr1.drop([len(dayshiftedclose)])
-            #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
+           
+            print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
             if xdesignator==ydesignator:
                #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                return y1;
@@ -239,32 +170,16 @@ def IEXColmaker(TargetSymbol):
                      tdesignator=topcan[daten].iloc[len(topcan)-1]; 
                      tdesignator=int(tdesignator[8:]); 
                      if xdesignator==tdesignator:
-                        #print("final")        
-                        #print("xdesignator=tdesignator ",xdesignator,"==",tdesignator)        
                         return topcan        
                      else:
-                        #print("lens() ",len(x1),"--",len(topcan));        
-                        #print("compare() ,looping");
-                        #print("because xdesignator=tdesignator ",xdesignator,"==",tdesignator,"--",xdesignator==tdesignator)   
                         if len(topcan)>len(x1):
-                           #topcan=topcan.drop([len(topcan)-1]);  
-                           #compare(x1,topcan,z); 
                            return topcan;
-                        #compare(x1,topcan,z);
-                     #return topcan;   
-                     
                   count=count+1;
-                  #compare(x1,topcan,z);
             return y1;            
-             
-        #compare(arr1['date'],xlfxarr1['xldate']); 
-        #print("first divergence ",comp);
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=compare(arr1,vixarr1,'vx'); 
         xlfxarr1=compare(arr1,xlfxarr1,'xl'); 
-        #vixarr1=vixarr1.drop([len(dayshiftedclose)]);
-        #xlfxarr1=xlfxarr1.drop([len(dayshiftedclose)]);
-        
+               
         arr1['dayshiftedclose']=dayshiftedclose;
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
@@ -277,13 +192,13 @@ def IEXColmaker(TargetSymbol):
         y=arr1['dayshiftedclose'];
         print("Immediately before training XY split-------")          
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
-        
+        print("Starting 10 tree-----")
         TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
         TreeModPredict10=TreeMod10.predict(x_test);
-               
+        print("Starting 100 tree-----")       
         TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
         TreeModPredict100=TreeMod100.predict(x_test);
-        
+        print("Starting 200 tree-----")
         TreeMod200=RandomForestRegressor(n_estimators = 200).fit(x_train,y_train);
         TreeModPredict200=TreeMod200.predict(x_test);
             
