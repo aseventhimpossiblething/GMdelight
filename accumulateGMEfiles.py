@@ -270,11 +270,11 @@ def IEXColmaker(TargetSymbol):
         
         print("xx tree model 100 ")
         xTreeMod100=RandomForestRegressor(n_estimators = 100).fit(xx_train,xy_train);
-        xTreeModPredict100=vTreeMod100.predict(xx_test);
+        xTreeModPredict100=xTreeMod100.predict(xx_test);
         
         print("xx tree model 200 ")
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
-        xTreeModPredict200=vTreeMod200.predict(xx_test);
+        xTreeModPredict200=xTreeMod200.predict(xx_test);
         
         print("vx linear model ")
         xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
