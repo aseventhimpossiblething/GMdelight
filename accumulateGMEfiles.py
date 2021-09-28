@@ -387,14 +387,14 @@ def DailyBasisInserter():
         
 
         
-#DailyBasisInserter();       
+DailyBasisInserter();       
                 
         
         
 #pullNasdaqAbbreves();
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
-IEXColmaker("AMD");
+#IEXColmaker("AMD");
 #SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 #print(SqlCall);
 
