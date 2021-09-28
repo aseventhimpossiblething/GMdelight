@@ -52,16 +52,19 @@ def SinglestockIEXdict(x,y,z):
 def IEXColmaker(TargetSymbol):
         #print("IEXColmaker(): running");
         URLPull=test;
+        print("URL Data Pulled ")
         URLPull=URLPull.replace("xTargetSymbolx",TargetSymbol)
         vixPull=URLPull.replace(TargetSymbol,"VXX");
         xlfPull=URLPull.replace(TargetSymbol,"SQQQ");
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
+        print("Secondary Data Pulled ")
       
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         xlfdata=json.loads(xlfPull.text);
+        print("Jsons Loaded ")
        
         arr=[];
         vixarr=[];
@@ -458,16 +461,16 @@ def DailyBasisInserter():
         
 
         
-DailyBasisInserter();       
+#DailyBasisInserter();       
                 
         
         
 #pullNasdaqAbbreves();
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
-#IEXColmaker("AMD");
-#SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
-#print(SqlCall);
+IEXColmaker("AMD");
+SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+print(SqlCall);
 
 
 
