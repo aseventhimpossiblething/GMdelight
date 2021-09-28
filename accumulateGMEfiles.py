@@ -282,7 +282,7 @@ def IEXColmaker(TargetSymbol):
         
         
         print("xx base review frame ")
-        vxreviewFrame=pandas.DataFrame(xy_test);
+        xreviewFrame=pandas.DataFrame(xy_test);
         xreviewFrame.columns=['Shifted close'];
         xreviewFrame['close']=list(xx_test['close']);
           
