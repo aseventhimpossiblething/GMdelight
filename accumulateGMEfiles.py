@@ -178,8 +178,9 @@ def IEXColmaker(TargetSymbol):
             return y1;            
         arr1=arr1.drop([len(dayshiftedclose)]);
         vixarr1=compare(arr1,vixarr1,'vx'); 
-        xlfxarr1=compare(arr1,xlfxarr1,'xl'); 
-               
+        xlfxarr1=compare(arr1,xlfxarr1,'xl');
+        return xlfxarr1;
+        """       
         arr1['dayshiftedclose']=dayshiftedclose;
         print("Last arr1 vix xlf change est no predictions =====")
         
@@ -346,7 +347,7 @@ def IEXColmaker(TargetSymbol):
         #print(SqlCall);
         #compare(arr1,xlfxarr1,'xl');      
         return;
-              
+        """      
 
 def Char2Num(col):
  arr={};
@@ -447,6 +448,9 @@ def DailyBasisInserter():
     print("initiating DailyBasisInserter() 3 ")  
     print("len(Symbols) ",len(Symbols))
     while tally < len(Symbols):
+        print("date ",date.today());        
+        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
+        print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
         print("Currently ",Symbols[tally]);  
