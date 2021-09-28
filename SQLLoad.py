@@ -86,7 +86,7 @@ def MakeDailyTable(z,a):
      print("Table 'DailyTable' Created"); 
     except:
       print("Table 'DailyTable' already exists");    
-        
+    cursor.close()    
     rowcount=0;
     while rowcount<len(x):
           littleStr="";       
@@ -98,6 +98,8 @@ def MakeDailyTable(z,a):
                 
           littleStr=littleStr[:len(littleStr)-1]
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
+          SQLite3conn=sqlite3.connect("DailyDB")
+          cursor=SQLite3conn.cursor(); 
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
     """
