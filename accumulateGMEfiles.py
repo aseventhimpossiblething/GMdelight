@@ -436,8 +436,8 @@ def runNasdaq():
 def DailyBasisInserter():
     Symbols=runNasdaq()['Symbols'];
     for Syms in Symbols:
-        print(Syms);        
-        #IEXColmaker(Syms);
+        #print(Syms);        
+        print(IEXColmaker(Syms));
 DailyBasisInserter();       
                 
         
