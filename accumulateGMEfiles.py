@@ -18,7 +18,7 @@ import openpyxl
 import threading
 import requests
 import os
-from datetime import datetime
+from datetime import datetime, date
 import pandas
 import json
 import numpy
