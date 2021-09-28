@@ -436,8 +436,12 @@ def runNasdaq():
 def DailyBasisInserter():
     Symbols=runNasdaq()['Symbols'];
     for Syms in Symbols:
-        #print(Syms);        
-        print(IEXColmaker(Syms));
+        print(Syms);        
+        IEXColmaker(Syms);
+        SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+        print(SqlCall);
+
+        
 DailyBasisInserter();       
                 
         
@@ -446,8 +450,8 @@ DailyBasisInserter();
 print(runNasdaq());
 print(runNasdaq()['Symbols']);
 IEXColmaker("AMD");
-SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
-print(SqlCall);
+#SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+#print(SqlCall);
 
 
 
