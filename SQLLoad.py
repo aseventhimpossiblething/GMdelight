@@ -11,7 +11,7 @@ print(date.today())
 def CallFromSQL(x,y,date,date2):
     date=str(date);
     date2=str(date2);
-    SQLite3conn=sqlite3.connect("DailyD");
+    SQLite3conn=sqlite3.connect("DailyDB");
     query="select*from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
     if date.find("-")>-1:
@@ -125,7 +125,7 @@ def MakeDailyTable(z,a):
           SQLite3conn.close();
           rowcount=rowcount+1;
     """ 
-    SQLite3conn=sqlite3.connect("DailyD")
+    SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor(); 
     cursor.execute(novelXstr2);
     SQLite3conn.commit() 
