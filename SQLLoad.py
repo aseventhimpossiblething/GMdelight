@@ -106,29 +106,31 @@ def MakeDailyTable(z,a):
           SQLite3conn.commit() 
           SQLite3conn.close();
           rowcount=rowcount+1;
-    """
-    cursor.execute(query);
-    info=cursor.description;
-    info=pandas.DataFrame(info);
-    titles=info[0]
+          CallFromSQL();  
+    
+    
+    #cursor.execute(query);
+    #info=cursor.description;
+    #info=pandas.DataFrame(info);
+    #titles=info[0]
     #print("len -",len(titles)," ",type(titles),"-titles-",titles)
     
-    results=cursor.fetchall();
-    results=pandas.DataFrame(results);
+    #results=cursor.fetchall();
+    #results=pandas.DataFrame(results);
     #print(type," -- ",type(results))
     
     
-    results.columns=titles;
+    #results.columns=titles;
     #results.columns=x.columns;
     #print(results.columns);
-    results=results.to_html()
-    print(results);
+    #results=results.to_html()
+    #print(results);
     #NewFrameTitles
     #print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
     #print(len(novelXstr)," novelXstr - ",novelXstr)
     #print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
     #print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
-    """   
+      
     #print("end Make Daily")
     #SQLite3conn.close();
     #CallFromSQL();
