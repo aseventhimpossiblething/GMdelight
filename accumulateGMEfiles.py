@@ -456,6 +456,7 @@ def DailyBasisInserter():
         print("date ",today);  
         
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday,today);
+        print(len(SqlCall));
         print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
