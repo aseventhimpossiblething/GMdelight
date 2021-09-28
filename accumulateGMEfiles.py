@@ -450,7 +450,7 @@ def DailyBasisInserter():
     print("len(Symbols) ",len(Symbols))
     while tally < len(Symbols):
         today=date.today()        
-        d=datetime.timedelta(days=5);
+        d=timedelta(days=5);
         fromday=today-d;
         print("fromday ",fromday);
         print("date ",today);  
