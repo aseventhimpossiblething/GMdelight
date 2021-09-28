@@ -22,7 +22,7 @@ def CallFromSQL():
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
     
-    #results.columns=titles;
+    results.columns=titles;
     #results=results.to_html()
     print(results);
     cursor.close();
@@ -79,7 +79,7 @@ def MakeDailyTable(z,a):
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
     #query="select*from DailyTable"
-    """
+    
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     try:
@@ -88,7 +88,7 @@ def MakeDailyTable(z,a):
     except:
       print("Table 'DailyTable' already exists");    
     cursor.close()    
-    """
+    
     rowcount=0;
     while rowcount<len(x):
           littleStr="";       
