@@ -454,16 +454,16 @@ def DailyBasisInserter():
         tally=tally+1;
 
         
-#DailyBasisInserter();       
+DailyBasisInserter();       
                 
         
         
 #pullNasdaqAbbreves();
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
-IEXColmaker("AMD");
-SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
-print(SqlCall);
+#IEXColmaker("AMD");
+#SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+#print(SqlCall);
 
 
 
