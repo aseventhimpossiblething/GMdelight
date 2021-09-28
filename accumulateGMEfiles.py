@@ -464,7 +464,7 @@ def DailyBasisInserter():
         
 
         
-#DailyBasisInserter();       
+DailyBasisInserter();       
                 
         
         
