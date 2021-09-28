@@ -17,7 +17,7 @@ def CallFromSQL(x,y,date,date2):
     if date.find("-")>-1:
        query=query+" (where date = '"+date+"';"  
     cursor=SQLite3conn.cursor();
-        
+    print(query)    
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
