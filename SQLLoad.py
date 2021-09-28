@@ -37,7 +37,7 @@ def CallFromSQL(x,y,date,date2):
     return results;
 
 def MakeDailyTable(z,a):
-    tablename="DailyTable";
+    tablename="DailyTabl";
     
     print("start of makeDailyTable ")
     a='"'+a+'"';
