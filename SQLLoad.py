@@ -79,6 +79,7 @@ def MakeDailyTable(z,a):
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
     #query="select*from DailyTable"
+    """
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     try:
@@ -87,6 +88,7 @@ def MakeDailyTable(z,a):
     except:
       print("Table 'DailyTable' already exists");    
     cursor.close()    
+    """
     rowcount=0;
     while rowcount<len(x):
           littleStr="";       
@@ -101,6 +103,7 @@ def MakeDailyTable(z,a):
           SQLite3conn=sqlite3.connect("DailyDB")
           cursor=SQLite3conn.cursor(); 
           cursor.execute(insertionOrder);
+          SQLite3conn.close();
           rowcount=rowcount+1;
     """
     cursor.execute(query);
@@ -126,7 +129,7 @@ def MakeDailyTable(z,a):
     #print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
     """   
     #print("end Make Daily")
-    SQLite3conn.close();
+    #SQLite3conn.close();
     #CallFromSQL();
     #return results;
 
