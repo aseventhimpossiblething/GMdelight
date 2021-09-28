@@ -138,14 +138,14 @@ def IEXColmaker(TargetSymbol):
             ydesignator=int(y[len(y)-1][8:]);
             alty=y1;
            
-            print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
+            #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator) 
             if xdesignator==ydesignator:
                #print("xdesignator==ydesignator ",xdesignator,"==",ydesignator)         
                return y1;
             if xdesignator<ydesignator:
                while count < len(x):
                   if x[count]==y[count]: 
-                     print(count,"--",x[count],"==",y[count]);   
+                     #print(count,"--",x[count],"==",y[count]);   
                   else:
                      arr=[];   
                      yrmo=y[count][:8];
@@ -181,6 +181,8 @@ def IEXColmaker(TargetSymbol):
         xlfxarr1=compare(arr1,xlfxarr1,'xl'); 
                
         arr1['dayshiftedclose']=dayshiftedclose;
+        print("Last arr1 vix xlf change est no predictions =====")
+        
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         
@@ -192,46 +194,55 @@ def IEXColmaker(TargetSymbol):
         y=arr1['dayshiftedclose'];
         print("Immediately before training XY split-------")          
         x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
-        print("Starting 10 tree-----")
+        print("Starting 10 tree-----fit")
         TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
         TreeModPredict10=TreeMod10.predict(x_test);
-        print("Starting 100 tree-----")       
+        print("Starting 100 tree-----fit")       
         TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
         TreeModPredict100=TreeMod100.predict(x_test);
-        print("Starting 200 tree-----")
+        print("Starting 200 tree-----fit")
         TreeMod200=RandomForestRegressor(n_estimators = 200).fit(x_train,y_train);
         TreeModPredict200=TreeMod200.predict(x_test);
-            
+        print("Starting Linear-----fit")    
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
-              
+         
+        print("starting base review frames")        
         reviewFrame=pandas.DataFrame(y_test);
         reviewFrame.columns=['Shifted close'];
         reviewFrame['close']=list(x_test['close']);
-           
+        
+        print("starting model specific review frames")
         reviewFrame['Tree Prediction 10']=TreeModPredict10;
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Tree Prediction 200']=TreeModPredict200;
         reviewFrame['Linear Prediction']=LinearPredictMod;
         
+        print("vx review series splits ")
         vx_train,vx_test,vy_train,vy_test=train_test_split(vx,vy,test_size=0.2);
         
+        print("vx tree model 10 ")
         vTreeMod10=RandomForestRegressor(n_estimators = 10).fit(vx_train,vy_train);
         vTreeModPredict10=vTreeMod10.predict(vx_test);
-               
+        
+        print("vx tree model 100 ")
         vTreeMod100=RandomForestRegressor(n_estimators = 100).fit(vx_train,vy_train);
         vTreeModPredict100=vTreeMod100.predict(vx_test);
         
+        print("vx tree model 200 ")
         vTreeMod200=RandomForestRegressor(n_estimators = 200).fit(vx_train,vy_train);
         vTreeModPredict200=vTreeMod200.predict(vx_test);
-            
+        
+        print("vx linear model ")
         vLinearMod=linear_model.LinearRegression().fit(vx_train,vy_train);
         vLinearPredictMod=vLinearMod.predict(vx_test);
-              
+        
+        print("vx based review frame ")
         vreviewFrame=pandas.DataFrame(vy_test);
         vreviewFrame.columns=['Shifted close'];
         vreviewFrame['close']=list(vx_test['close']);
-           
+          
+        print("vx model specific review frame ")        
         vreviewFrame['Tree Prediction 10']=vTreeModPredict10;
         vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
@@ -384,8 +395,8 @@ def DailyBasisInserter():
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
 IEXColmaker("AMD");
-SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
-print(SqlCall);
+#SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
+#print(SqlCall);
 
 
 
