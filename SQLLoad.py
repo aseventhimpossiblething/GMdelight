@@ -17,7 +17,7 @@ def CallFromSQL(x,y,date,date2):
     if date.find("-")>-1:
        query=query+" where date = '"+date+"';"  
     cursor=SQLite3conn.cursor();
-    print(query)    
+    #print(query)    
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
@@ -48,7 +48,7 @@ def MakeDailyTable(z,a):
         symbolCol.append(a);
         CurrentDate.append(curDate);
     z[['Symbol']]=symbolCol;
-    z[['PredictionDay']]=CurrentDate;
+    z[['insertionDay']]=CurrentDate;
           
     x=z.drop(columns=['index','date'])
     NewdateCol1=[];
