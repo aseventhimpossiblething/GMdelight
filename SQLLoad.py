@@ -78,7 +78,7 @@ def MakeDailyTable(z,a):
     
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
-    query="select*from DailyTable"
+    #query="select*from DailyTable"
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     try:
@@ -100,7 +100,7 @@ def MakeDailyTable(z,a):
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
           cursor.execute(insertionOrder);
           rowcount=rowcount+1;
-    
+    """
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
@@ -122,10 +122,10 @@ def MakeDailyTable(z,a):
     #print(len(novelXstr)," novelXstr - ",novelXstr)
     #print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
     #print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
-       
+    """   
     #print("end Make Daily")
     SQLite3conn.close();
-    CallFromSQL();
+    #CallFromSQL();
     return results;
 
     
