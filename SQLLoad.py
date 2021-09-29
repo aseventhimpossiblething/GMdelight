@@ -22,7 +22,7 @@ def CallFromSQL(x,y,date):
     if date.find("-")>-1:
        query=query+" where Symbol = '"+x+"' and insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
-    print(query)    
+    #print(query)    
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
