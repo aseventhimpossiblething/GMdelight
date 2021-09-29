@@ -15,7 +15,7 @@ def CallFromSQL(x,y,date):
     query="select*from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
     if date.find("-")>-1:
-       query=query+" where insertionDay = '"+date+"';"  
+       #query=query+" where insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
     #print(query)    
     cursor.execute(query);
@@ -26,7 +26,7 @@ def CallFromSQL(x,y,date):
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
     #print(query);
-    #print(titles);
+    print(titles);
     #print(results);
     #print(len(results));
     results.columns=titles;
