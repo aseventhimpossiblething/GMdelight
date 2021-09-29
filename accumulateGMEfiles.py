@@ -71,10 +71,11 @@ def IEXColmaker(TargetSymbol):
         vixarr=[];
         xlfarr=[];
         
-        print("iexdata - ",len(iexdata),"  iexdata - ")
-        
+        #print("iexdata - ",len(iexdata),"  iexdata - ")
+        """
         if len(iexdata)==0:
                 return len(iexdata);
+        """
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         xlfkeys=list(xlfdata[0].keys());
@@ -524,8 +525,10 @@ def DailyBasisInserter():
         insertedSymbols.append(Symbols[tally]);
         #print('tallyPattern ---------- ',tallyPattern)
         #print('insertedSymbols-------- ',insertedSymbols)
+        """
         if (len(insertedSymbols)%10)==0:
            print("len(insertedSymbols----) ",len(insertedSymbols))
+        """
         if len(insertedSymbols)>2:
            print("Last Successfully loaded Inserted Symbol - ",insertedSymbols[len(insertedSymbols)-1])
         tally=tally+1;
