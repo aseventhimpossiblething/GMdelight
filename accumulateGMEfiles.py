@@ -465,7 +465,7 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
-    skiplist="BHF";    
+    skiplist="BHFAL";    
     today=date.today()        
     d=timedelta(days=1);
     fromday=today-d;    
@@ -473,43 +473,29 @@ def DailyBasisInserter():
     insertedSymbols=[];    
     print("initiating DailyBasisInserter() 1 ")    
     Symbols=runNasdaq()['Symbols'];
-    #print("initiating DailyBasisInserter() 2 ")     
     tally=0;
-    #print("initiating DailyBasisInserter() 3 ")  
-    #print("len(Symbols) ",len(Symbols))
-    #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
     while tally < len(Symbols):
-        #IEXColmaker(Symbols[tally]);
-        
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",today);
         SqlCall1=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",fromday);
         last2days=len(SqlCall)+len(SqlCall1)
-        #print(SqlCall);
-        #print("len(SqlCall) - ",len(SqlCall));
+       
         inskip=skiplist.find(str(Symbols[tally]));
         print('inskip===',inskip)
         print('Symbols[tally] ===',Symbols[tally])
-               
+        print("Currently ",Symbols[tally]);  
+        print("Next ",Symbols[tally+1]);
         if last2days<1:
            IEXColmaker(Symbols[tally]);     
            print("-----Inserting---------")     
-        #print(len(SqlCall));
-        #print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
-        #for Syms in Symbols:
-        print("Currently ",Symbols[tally]);  
-        print("Next ",Symbols[tally+1]); 
-        #IEXColmaker(Symbols[tally]);
-        #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
-        #print(SqlCall);
         tallyPattern.append(tally);
         insertedSymbols.append(Symbols[tally]);
         #print('tallyPattern ---------- ',tallyPattern)
-        print('insertedSymbols-------- ',insertedSymbols)
+        #print('insertedSymbols-------- ',insertedSymbols)
         if (len(insertedSymbols)%10)==0:
            print("len(insertedSymbols----) ",len(insertedSymbols))
         if len(insertedSymbols)>2:
-           print("Last Inserted Symbol - ",insertedSymbols[len(insertedSymbols)-1])
+           print("Last Successfully loaded Inserted Symbol - ",insertedSymbols[len(insertedSymbols)-1])
         tally=tally+1;
         
 
