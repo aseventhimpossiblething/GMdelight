@@ -71,7 +71,7 @@ def IEXColmaker(TargetSymbol):
         vixarr=[];
         xlfarr=[];
         
-        #print("iexdata - ",iexdata,"  iexdata - ")
+        print("iexdata - ",len(iexdata),"  iexdata - ")
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         xlfkeys=list(xlfdata[0].keys());
