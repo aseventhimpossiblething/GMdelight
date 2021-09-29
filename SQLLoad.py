@@ -134,7 +134,7 @@ def MakeDailyTable(z,a):
           cursor.execute(insertionOrder);
           SQLite3conn.commit() 
           SQLite3conn.close();
-          SQLite3conn.commit()
+          #SQLite3conn.commit()
           rowcount=rowcount+1;
     
     """
