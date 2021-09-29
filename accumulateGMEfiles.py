@@ -211,7 +211,8 @@ def IEXColmaker(TargetSymbol):
         print(px)
         counting=0;
         for col in px:
-                print(px[counting]);
+                cul=px.columns[counting]
+                print(px[cul]);
                 print("end cols")
                 counting=counting+1;
                 
