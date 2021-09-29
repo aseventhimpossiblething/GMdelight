@@ -492,7 +492,7 @@ def DailyBasisInserter():
         print('insertedSymbols-------- ',insertedSymbols)
         print("len(insertedSymbols----) ",len(insertedSymbols))
         if len(insertedSymbols)>2:
-           print("Last Inserted Symbol - ",insertedSymbols[len(insertedSymbols)]-1)
+           print("Last Inserted Symbol - ",insertedSymbols[len(insertedSymbols)])
         tally=tally+1;
         
 
