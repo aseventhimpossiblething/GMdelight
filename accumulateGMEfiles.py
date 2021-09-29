@@ -458,7 +458,7 @@ def DailyBasisInserter():
     print("len(Symbols) ",len(Symbols))
     #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
     while tally < len(Symbols):
-        #IEXColmaker(Symbols[tally]);
+        IEXColmaker(Symbols[tally]);
         """
         today=date.today()        
         d=timedelta(days=5);
