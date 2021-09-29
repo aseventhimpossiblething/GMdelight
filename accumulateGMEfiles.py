@@ -379,7 +379,7 @@ def IEXColmaker(TargetSymbol):
         print("Std_ofTP10 ",Std_ofTP10)
         print("Std_ofTP100 ",Std_ofTP100)
         print("Std_ofTP200 ",Std_ofTP200)
-        print("Std_ofTP1000 ",Std_ofT Shifted Close
+        print("Std_ofTP1000 ",Std_ofT Shifted Close)
         print('Linear StD=',xLinearPredictMod)
         
         
