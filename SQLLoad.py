@@ -9,16 +9,16 @@ print(date.today())
 
 
 def CallFromSQL(x,y,date):
-    print("x" ,x)
-    print("y" ,y)
+    #print("x" ,x)
+    #print("y" ,y)
     date=str(date);
     #date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
     query='select * from DailyTable'
     #query.replace("*",x)#.replace("DailyTable",y)
-    print("date ",date)
-    print("len date ",len(date))
-    print("date find - ",date.find("-"))
+    #print("date ",date)
+    #print("len date ",len(date))
+    #print("date find - ",date.find("-"))
     if date.find("-")>-1:
        query=query+" where Symbol = '"+x+"' and insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
@@ -32,7 +32,7 @@ def CallFromSQL(x,y,date):
     results=pandas.DataFrame(results);
     #print(query);
     #print(titles);
-    print(results);
+    #print(results);
     #print("len results = ",len(results));
     if len(results)>0:
         results.columns=titles;
