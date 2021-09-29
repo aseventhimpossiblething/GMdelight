@@ -206,10 +206,10 @@ def IEXColmaker(TargetSymbol):
         
         
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
-        LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);
         
         #print("LastChartRow ",LastChartRow);
-        px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
      
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
@@ -230,7 +230,7 @@ def IEXColmaker(TargetSymbol):
         
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         
-        xx=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         
         xy=xlfarrvix['dayshiftedclose'];
         """
