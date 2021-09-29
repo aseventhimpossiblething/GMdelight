@@ -205,13 +205,14 @@ def IEXColmaker(TargetSymbol):
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);
         
         #print("LastChartRow ",LastChartRow);
-        px=xlfarrvix.drop(['dayshiftedclose','date','Symbols','insertionDay'], axis=1);
+        px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         print(px.columns)
         print(px)
         counting=0;
         for col in px:
                 cul=px.columns[counting]
+                print("px[cul].str.find('A') ",px[cul].str.find('A'))
                 print(px[cul]);
                 print("end cols")
                 counting=counting+1;
