@@ -12,7 +12,7 @@ def CallFromSQL(x,y,date):
     date=str(date);
     #date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
-    query="select*from DailyTable"
+    query="select * from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
     if date.find("-")>-1:
        query=query+" where insertionDay = '"+date+"';"  
