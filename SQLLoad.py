@@ -20,7 +20,7 @@ def CallFromSQL(x,y,date):
     print("len date ",len(date))
     print("date find - ",date.find("-"))
     if date.find("-")>-1:
-       query=query+" where Symbol = "+x+" and insertionDay = '"+date+"';"  
+       query=query+" where Symbol = '"+x+"' and insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
     print(query)    
     cursor.execute(query);
