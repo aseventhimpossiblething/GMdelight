@@ -306,22 +306,27 @@ def IEXColmaker(TargetSymbol):
         print("xx tree model 10 ")
         xTreeMod10=RandomForestRegressor(n_estimators = 10).fit(xx_train,xy_train);
         xTreeModPredict10=xTreeMod10.predict(xx_test);
+        Std_ofTP10=numpy.std(xTreeModPredict10);
         
         print("xx tree model 100 ")
         xTreeMod100=RandomForestRegressor(n_estimators = 100).fit(xx_train,xy_train);
         xTreeModPredict100=xTreeMod100.predict(xx_test);
+        Std_ofTP100=numpy.std(xTreeModPredict100);
         
         print("xx tree model 200 ")
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
         xTreeModPredict200=xTreeMod200.predict(xx_test);
+        Std_ofTP200=numpy.std(xTreeModPredict200);
         
         print("xx tree model 1000 ")
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(xx_train,xy_train);
         xTreeModPredict1000=xTreeMod1000.predict(xx_test);
+        Std_ofTP1000=numpy.std(xTreeModPredict1000);
         
-        print("vx linear model ")
+        print("xx linear model ")
         xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
         xLinearPredictMod=xLinearMod.predict(xx_test);
+        Std_ofTPxLinearPredictMod=numpy.std(xLinearPredictMod);
         
         
         print("xx base review frame ")
@@ -370,6 +375,12 @@ def IEXColmaker(TargetSymbol):
         print(xSTD)
         
         print("x-----------------------------------")
+        print("Std_of Shifted Close ",numpy.std(xy))
+        print("Std_ofTP10 ",Std_ofTP10)
+        print("Std_ofTP100 ",Std_ofTP100)
+        print("Std_ofTP200 ",Std_ofTP200)
+        print("Std_ofTP1000 ",Std_ofT Shifted Close
+        print('Linear StD=',xLinearPredictMod)
         
         
         #print("This is arr1");
