@@ -447,24 +447,26 @@ def runNasdaq():
     
 def DailyBasisInserter():
     today=date.today()        
-    d=timedelta(days=20);
+    d=timedelta(days=1);
     fromday=today-d;    
     tallyPattern=[]; 
     insertedSymbols=[];    
     print("initiating DailyBasisInserter() 1 ")    
     Symbols=runNasdaq()['Symbols'];
-    print("initiating DailyBasisInserter() 2 ")     
+    #print("initiating DailyBasisInserter() 2 ")     
     tally=0;
-    print("initiating DailyBasisInserter() 3 ")  
-    print("len(Symbols) ",len(Symbols))
+    #print("initiating DailyBasisInserter() 3 ")  
+    #print("len(Symbols) ",len(Symbols))
     #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
     while tally < len(Symbols):
         #IEXColmaker(Symbols[tally]);
         
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",today);
-        print(SqlCall);
-        print("len(SqlCall) - ",len(SqlCall));
-        if len(SqlCall)<1:
+        SqlCall1=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",fromday);
+        last2days=len(SqlCall)+len(SqlCall1)
+        #print(SqlCall);
+        #print("len(SqlCall) - ",len(SqlCall));
+        if last2days<1:
            IEXColmaker(Symbols[tally]);     
            print("-----Inserting---------")     
         #print(len(SqlCall));
