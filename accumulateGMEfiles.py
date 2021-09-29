@@ -216,6 +216,7 @@ def IEXColmaker(TargetSymbol):
         xLinearMod=linear_model.LinearRegression().fit(px,py);
         xLinearPredictMod=vLinearMod.predict(LastChartRow);
         print("xLinearPredictMod ",xLinearPredictMod,"Extracted value - ",xLinearPredictMod[1])
+        return xlfarrvix;
         
         """
         #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
