@@ -17,7 +17,7 @@ def CallFromSQL(x,y,date):
     if date.find("-")>-1:
        query=query+" where insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
-    #print(query)    
+    print(query)    
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
@@ -27,7 +27,7 @@ def CallFromSQL(x,y,date):
     results=pandas.DataFrame(results);
     #print(query);
     #print(titles);
-    #print(results);
+    print(results);
     #print("len results = ",len(results));
     if len(results)>0:
         results.columns=titles;
