@@ -219,9 +219,9 @@ def IEXColmaker(TargetSymbol):
                 print("end cols")
                 counting=counting+1;
         """        
-        xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
-        xTreeModPredict200=xTreeMod200.predict(LastChartRow);
-        print("200 Tree",xTreeModPredict200,"Extracted value - ",xTreeModPredict200[1])
+        xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
+        xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
+        print("1000 Tree",xTreeModPredict1000,"Extracted value - ",xTreeModPredict1000[1])
         
         #print("vx linear model ")
         xLinearMod=linear_model.LinearRegression().fit(px,py);
