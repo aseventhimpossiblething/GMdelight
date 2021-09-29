@@ -227,7 +227,7 @@ def IEXColmaker(TargetSymbol):
         
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         
-        xx=xlfarrvix.drop(['dayshiftedclose','date','Symbol'], axis=1);
+        xx=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         
         xy=xlfarrvix['dayshiftedclose'];
         """
