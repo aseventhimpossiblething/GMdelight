@@ -380,7 +380,7 @@ def IEXColmaker(TargetSymbol):
         print("Std_ofTP100 ",Std_ofTP100)
         print("Std_ofTP200 ",Std_ofTP200)
         print("Std_ofTP1000 ",Std_ofTP1000)
-        print('Linear StD=',xLinearPredictMod)
+        print('Linear StD=',numpy.std(xLinearPredictMod))
         
         
         #print("This is arr1");
