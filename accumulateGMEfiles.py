@@ -466,7 +466,7 @@ def DailyBasisInserter():
         #print("fromday ",fromday);
         #print("date ",today);  
         """
-        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",today);
+        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",today);
         print(SqlCall);
         print("len(SqlCall) - ",len(SqlCall));
         if len(SqlCall)>0:
