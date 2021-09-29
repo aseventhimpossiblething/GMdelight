@@ -43,7 +43,7 @@ def MakeDailyTable(z,a):
     cursor.execute("drop table DailyTable;")
     SQLite3conn.commit()
     SQLite3conn.close()
-    SQLite3conn.commit()
+    #SQLite3conn.commit()
     
     
     tablename="DailyTable";
