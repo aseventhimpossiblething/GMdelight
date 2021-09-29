@@ -71,7 +71,7 @@ def IEXColmaker(TargetSymbol):
         vixarr=[];
         xlfarr=[];
         
-        print("iexdata - ",iexdata,"  iexdata - ")
+        #print("iexdata - ",iexdata,"  iexdata - ")
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         xlfkeys=list(xlfdata[0].keys());
@@ -224,9 +224,11 @@ def IEXColmaker(TargetSymbol):
         #print("py ",py)
         #print("big show---xTreeModPredict200 ",xTreeModPredict200)
               
-        """
-        #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        
+        xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        
         xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
+        """
         xy=xlfarrvix['dayshiftedclose'];
         vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
         vy=arrvix['dayshiftedclose'];
