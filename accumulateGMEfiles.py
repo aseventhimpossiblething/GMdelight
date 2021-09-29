@@ -51,21 +51,21 @@ def SinglestockIEXdict(x,y,z):
         
         
 def IEXColmaker(TargetSymbol):
-        print("IEXColmaker(): running");
+        #print("IEXColmaker(): running");
         URLPull=test;
-        print("URL Data Pulled ")
+        #print("URL Data Pulled ")
         URLPull=URLPull.replace("xTargetSymbolx",TargetSymbol)
         vixPull=URLPull.replace(TargetSymbol,"VXX");
         xlfPull=URLPull.replace(TargetSymbol,"SQQQ");
         iexpull=requests.get(URLPull);
         vixPull=requests.get(vixPull);
         xlfPull=requests.get(xlfPull);
-        print("Secondary Data Pulled ")
+        #print("Secondary Data Pulled ")
       
         iexdata=json.loads(iexpull.text);
         vixdata=json.loads(vixPull.text);
         xlfdata=json.loads(xlfPull.text);
-        print("Jsons Loaded ")
+        #print("Jsons Loaded ")
        
         arr=[];
         vixarr=[];
@@ -123,7 +123,7 @@ def IEXColmaker(TargetSymbol):
               shiftCol.append(w[count]);
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
-        print("pause before?")
+        #print("pause before?")
         def compare(x1,y1,z):
             f=248 
             if len(y1)>len(x1):
@@ -184,7 +184,7 @@ def IEXColmaker(TargetSymbol):
         
                
         arr1['dayshiftedclose']=dayshiftedclose;
-        print("Last arr1 vix xlf change est no predictions =====")
+        #print("Last arr1 vix xlf change est no predictions =====")
         
         
         
@@ -193,7 +193,7 @@ def IEXColmaker(TargetSymbol):
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         xlfarrvix=xlfarrvix.drop(['xldate','vxdate'], axis=1)
         #print("xlfarrvix.columns ",xlfarrvix.columns)
-        print("Creation of xlfarrvix-------------------")
+        #print("Creation of xlfarrvix-------------------")
         #print(xlfarrvix)
         
         Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
@@ -482,7 +482,7 @@ def DailyBasisInserter():
         insertedSymbols.append(Symbols[tally]);
         print('tallyPattern - ',tallyPattern)
         print(' insertedSymbols - ',insertedSymbols)
-        insertedSymbols
+        print("len(insertedSymbols) ",len(insertedSymbols))
         tally=tally+1;
         
 
