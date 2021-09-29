@@ -459,17 +459,11 @@ def DailyBasisInserter():
     #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
     while tally < len(Symbols):
         #IEXColmaker(Symbols[tally]);
-        """
-        today=date.today()        
-        d=timedelta(days=5);
-        fromday=today-d;
-        #print("fromday ",fromday);
-        #print("date ",today);  
-        """
+        
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",today);
         print(SqlCall);
         print("len(SqlCall) - ",len(SqlCall));
-        if len(SqlCall)>0:
+        if len(SqlCall)<1:
            #IEXColmaker(Symbols[tally]);     
            print("-----Its running---------")     
         print(len(SqlCall));
