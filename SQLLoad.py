@@ -40,8 +40,8 @@ def MakeDailyTable(z,a):
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     cursor.execute("drop table DailyTable;")
-    cursor.commit()
-    cursor.close()
+    SQLite3conn.commit()
+    SQLite3conn.close()
     
     tablename="DailyTable";
     
