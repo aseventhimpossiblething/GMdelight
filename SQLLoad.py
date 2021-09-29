@@ -107,7 +107,7 @@ def MakeDailyTable(z,a):
     #cursor.execute(novelXstr2);
     try:
      print("Try Trying 1") 
-     print(novelXstr2)
+     #print(novelXstr2)
      print("Try Trying 1.5")    
      cursor.execute(novelXstr2);
      print("Try Trying 2")    
