@@ -490,7 +490,7 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
-    skiplist="";    
+    skiplist=" ";    
     today=date.today()        
     d=timedelta(days=1);
     fromday=today-d;    
@@ -517,7 +517,7 @@ def DailyBasisInserter():
         iexdata=json.loads(iexpull.text);
         print(len(iexdata))
         if len(iexdata)==0:
-           inskip=inskip+Symbols[tally];
+           inskip=str(inskip)+str(Symbols[tally]);
            print("iexdata - ",len(iexdata),"  iexdata - fired ")
         
         if last2days<1 and inskip<0:
