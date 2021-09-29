@@ -199,9 +199,9 @@ def IEXColmaker(TargetSymbol):
         #print("xlfarrvix.columns ",xlfarrvix.columns)
         print("Creation of xlfarrvix-------------------")
         #print(xlfarrvix)
-        
-        #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
-        Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
+        print(xlfarrvix.columns);
+        Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
+        #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         
         
         
