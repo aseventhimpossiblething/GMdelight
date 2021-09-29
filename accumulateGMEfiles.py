@@ -72,6 +72,9 @@ def IEXColmaker(TargetSymbol):
         xlfarr=[];
         
         print("iexdata - ",len(iexdata),"  iexdata - ")
+        
+        if len(iexdata)==0:
+                return len(iexdata);
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         xlfkeys=list(xlfdata[0].keys());
@@ -489,8 +492,8 @@ def DailyBasisInserter():
         print("Next ",Symbols[tally+1]);
         
         if last2days<1 and inskip<0:
-           IEXColmaker(Symbols[tally]);     
-           print("-----Inserting---------")     
+           if IEXColmaker(Symbols[tally])>0:
+              print("-----Inserting---------")     
         print("initiating DailyBasisInserter() loop ",tally)         
         tallyPattern.append(tally);
         insertedSymbols.append(Symbols[tally]);
