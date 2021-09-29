@@ -465,6 +465,7 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
+    skiplist="BHF";    
     today=date.today()        
     d=timedelta(days=1);
     fromday=today-d;    
@@ -485,6 +486,9 @@ def DailyBasisInserter():
         last2days=len(SqlCall)+len(SqlCall1)
         #print(SqlCall);
         #print("len(SqlCall) - ",len(SqlCall));
+        inskip=skiplist.find(Symbols[tally]);
+        print('inskip===',inskip)
+               
         if last2days<1:
            IEXColmaker(Symbols[tally]);     
            print("-----Inserting---------")     
