@@ -447,7 +447,7 @@ def runNasdaq():
     
 def DailyBasisInserter():
     today=date.today()        
-    d=timedelta(days=5);
+    d=timedelta(days=20);
     fromday=today-d;    
     tallyPattern=[];    
     print("initiating DailyBasisInserter() 1 ")    
