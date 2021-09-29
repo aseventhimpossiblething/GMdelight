@@ -512,8 +512,10 @@ def DailyBasisInserter():
         
         URLPull=test;
         URLPull=URLPull.replace("xTargetSymbolx",Symbols[tally])
+        print(URLPull)
         iexpull=requests.get(URLPull);
         iexdata=json.loads(iexpull.text);
+        print(iexdata)
         if iexdata==0:
            inskip=inskip+Symbols[tally];
            print("iexdata - ",len(iexdata),"  iexdata - fired ")
