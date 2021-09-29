@@ -209,7 +209,7 @@ def IEXColmaker(TargetSymbol):
         
         
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
-        LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);
+        LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         
         #print("LastChartRow ",LastChartRow);
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
