@@ -89,9 +89,11 @@ def MakeDailyTable(z,a):
     
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
+    cursor.execute(novelXstr2);
     try:
      print("Try Trying 1") 
      print(novelXstr2)
+     print("Try Trying 1.5")    
      cursor.execute(novelXstr2);
      print("Try Trying 2")    
      rmess="Table 'DailyTable' Created"
