@@ -37,13 +37,13 @@ def CallFromSQL(x,y,date,date2):
     return results;
 
 def MakeDailyTable(z,a):
-    
+    """
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
     cursor.execute("drop table DailyTable;")
     SQLite3conn.commit()
     SQLite3conn.close()
-    
+    """
     
     tablename="DailyTable";
     
@@ -97,7 +97,7 @@ def MakeDailyTable(z,a):
     
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
-    cursor.execute(novelXstr2);
+    #cursor.execute(novelXstr2);
     try:
      print("Try Trying 1") 
      print(novelXstr2)
