@@ -301,7 +301,8 @@ def IEXColmaker(TargetSymbol):
         """
         #------------------------------------------------
         print("xx review series splits ")
-        xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
+        xx_train,xx_test,xy_train,xy_test=train_test_split(px,py,test_size=0.2);
+        #xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
         
         print("xx tree model 10 ")
         xTreeMod10=RandomForestRegressor(n_estimators = 10).fit(xx_train,xy_train);
