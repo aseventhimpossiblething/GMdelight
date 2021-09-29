@@ -486,7 +486,7 @@ def DailyBasisInserter():
         last2days=len(SqlCall)+len(SqlCall1)
         #print(SqlCall);
         #print("len(SqlCall) - ",len(SqlCall));
-        inskip=skiplist.find(Symbols[tally]);
+        inskip=skiplist.find(str(Symbols[tally]));
         print('inskip===',inskip)
                
         if last2days<1:
