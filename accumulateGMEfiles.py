@@ -453,6 +453,7 @@ def DailyBasisInserter():
     tally=0;
     print("initiating DailyBasisInserter() 3 ")  
     print("len(Symbols) ",len(Symbols))
+    SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
     while tally < len(Symbols):
         #IEXColmaker(Symbols[tally]);        
         today=date.today()        
@@ -461,7 +462,8 @@ def DailyBasisInserter():
         #print("fromday ",fromday);
         #print("date ",today);  
         
-        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday,today);
+        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
+        print(SqlCall);
         if len(SqlCall)<1:
            #IEXColmaker(Symbols[tally]);     
            print("Its running")     
@@ -480,14 +482,14 @@ def DailyBasisInserter():
         
 
         
-#DailyBasisInserter();       
+DailyBasisInserter();       
                 
         
         
 #pullNasdaqAbbreves();
 #print(runNasdaq());
 #print(runNasdaq()['Symbols']);
-IEXColmaker("AMD");
+#IEXColmaker("AMD");
 #SqlCall=SQLLoad.CallFromSQL("*","DailyTable");
 #print(SqlCall);
 
