@@ -14,6 +14,9 @@ def CallFromSQL(x,y,date):
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select * from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
+    print("date ",date)
+    print("len date ",len(date))
+    print("date find - ",date.find("-"))
     if date.find("-")>-1:
        query=query+" where insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
