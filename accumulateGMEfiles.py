@@ -446,6 +446,9 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
+    today=date.today()        
+    d=timedelta(days=5);
+    fromday=today-d;    
     tallyPattern=[];    
     print("initiating DailyBasisInserter() 1 ")    
     Symbols=runNasdaq()['Symbols'];
@@ -453,15 +456,16 @@ def DailyBasisInserter():
     tally=0;
     print("initiating DailyBasisInserter() 3 ")  
     print("len(Symbols) ",len(Symbols))
-    SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
+    #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
     while tally < len(Symbols):
-        #IEXColmaker(Symbols[tally]);        
+        #IEXColmaker(Symbols[tally]);
+        """
         today=date.today()        
         d=timedelta(days=5);
         fromday=today-d;
         #print("fromday ",fromday);
         #print("date ",today);  
-        
+        """
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
         print(SqlCall);
         if len(SqlCall)<1:
