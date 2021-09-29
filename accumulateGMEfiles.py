@@ -209,7 +209,9 @@ def IEXColmaker(TargetSymbol):
         py=xlfarrvix['dayshiftedclose'];
         print(px.columns)
         print(px)
-        
+        for col in px:
+                print(col);
+                print("end cols")
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
         xTreeModPredict200=xTreeMod200.predict(LastChartRow);
         print("200 Tree",xTreeModPredict200,"Extracted value - ",xTreeModPredict200[1])
