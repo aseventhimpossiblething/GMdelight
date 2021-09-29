@@ -225,7 +225,7 @@ def IEXColmaker(TargetSymbol):
         
         #print("vx linear model ")
         xLinearMod=linear_model.LinearRegression().fit(px,py);
-        xLinearPredictMod=vLinearMod.predict(LastChartRow);
+        xLinearPredictMod=xLinearMod.predict(LastChartRow);
         print("xLinearPredictMod ",xLinearPredictMod,"Extracted value - ",xLinearPredictMod[1])
         return xlfarrvix;
         
