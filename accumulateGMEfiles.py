@@ -200,9 +200,9 @@ def IEXColmaker(TargetSymbol):
         print("Creation of xlfarrvix-------------------")
         #print(xlfarrvix)
         
-        Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
-        #SqlCall=SQLLoad.CallFromSQL();
-        #return xlfarrvix;
+        #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
+        Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
+        
         
         
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
