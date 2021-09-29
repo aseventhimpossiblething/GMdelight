@@ -198,7 +198,7 @@ def IEXColmaker(TargetSymbol):
         
         Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         #SqlCall=SQLLoad.CallFromSQL();
-        return xlfarrvix;
+        #return xlfarrvix;
         
         
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
