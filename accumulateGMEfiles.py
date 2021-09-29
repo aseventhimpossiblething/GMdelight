@@ -225,7 +225,7 @@ def IEXColmaker(TargetSymbol):
         #print("big show---xTreeModPredict200 ",xTreeModPredict200)
               
         
-        xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         
         xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         """
