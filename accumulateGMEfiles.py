@@ -216,6 +216,7 @@ def IEXColmaker(TargetSymbol):
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         
+        print('---xlfarrvix -',px)
         print('---xlfarrvix corr -',px.corr())
      
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
