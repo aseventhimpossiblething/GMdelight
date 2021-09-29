@@ -15,7 +15,7 @@ def CallFromSQL(x,y,date):
     #date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select * from DailyTable"
-    query.replace("*",x).replace("DailyTable",y)
+    str(query).replace("*",x).replace("DailyTable",y)
     print("date ",date)
     print("len date ",len(date))
     print("date find - ",date.find("-"))
