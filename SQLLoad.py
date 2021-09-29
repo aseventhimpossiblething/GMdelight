@@ -37,6 +37,12 @@ def CallFromSQL(x,y,date,date2):
     return results;
 
 def MakeDailyTable(z,a):
+    SQLite3conn=sqlite3.connect("DailyDB")
+    cursor=SQLite3conn.cursor();
+    cursor.execute("drop table DailyTable;")
+    cursor.commit()
+    cursor.close()
+    
     tablename="DailyTable";
     
     print("start of makeDailyTable ")
