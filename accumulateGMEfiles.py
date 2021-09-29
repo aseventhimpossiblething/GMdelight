@@ -194,7 +194,7 @@ def IEXColmaker(TargetSymbol):
         xlfarrvix=xlfarrvix.drop(['xldate','vxdate'], axis=1)
         print("xlfarrvix.columns ",xlfarrvix.columns)
         print("Creation of xlfarrvix-------------------")
-        print(xlfarrvix)
+        #print(xlfarrvix)
         
         Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         #SqlCall=SQLLoad.CallFromSQL();
@@ -449,7 +449,8 @@ def DailyBasisInserter():
     today=date.today()        
     d=timedelta(days=20);
     fromday=today-d;    
-    tallyPattern=[];    
+    tallyPattern=[]; 
+    insertedSymbols=[];    
     print("initiating DailyBasisInserter() 1 ")    
     Symbols=runNasdaq()['Symbols'];
     print("initiating DailyBasisInserter() 2 ")     
@@ -465,8 +466,8 @@ def DailyBasisInserter():
         print("len(SqlCall) - ",len(SqlCall));
         if len(SqlCall)<1:
            IEXColmaker(Symbols[tally]);     
-           print("-----Its running---------")     
-        print(len(SqlCall));
+           print("-----Inserting---------")     
+        #print(len(SqlCall));
         #print(SqlCall);        
         print("initiating DailyBasisInserter() loop ",tally)         
         #for Syms in Symbols:
@@ -476,7 +477,10 @@ def DailyBasisInserter():
         #SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable");
         #print(SqlCall);
         tallyPattern.append(tally);
+        insertedSymbols.append(Symbols[tally]);
         print('tallyPattern - ',tallyPattern)
+        print(' insertedSymbols - ',insertedSymbols)
+        insertedSymbols
         tally=tally+1;
         
 
