@@ -464,7 +464,7 @@ def DailyBasisInserter():
         print(SqlCall);
         print("len(SqlCall) - ",len(SqlCall));
         if len(SqlCall)<1:
-           #IEXColmaker(Symbols[tally]);     
+           IEXColmaker(Symbols[tally]);     
            print("-----Its running---------")     
         print(len(SqlCall));
         #print(SqlCall);        
