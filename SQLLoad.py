@@ -26,9 +26,9 @@ def CallFromSQL(x,y,date):
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
     #print(query);
-    print(titles);
+    #print(titles);
     #print(results);
-    print("len results = ",len(results));
+    #print("len results = ",len(results));
     if len(results)>0:
         results.columns=titles;
     #results=results.to_html()
