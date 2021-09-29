@@ -14,13 +14,13 @@ def CallFromSQL(x,y,date):
     date=str(date);
     #date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
-    query='select '+x+' from DailyTable'
-    query.replace("*",x)#.replace("DailyTable",y)
+    query='select * from DailyTable'
+    #query.replace("*",x)#.replace("DailyTable",y)
     print("date ",date)
     print("len date ",len(date))
     print("date find - ",date.find("-"))
     if date.find("-")>-1:
-       query=query+" where insertionDay = '"+date+"';"  
+       query=query+" where Symbol = "+x+" and insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
     print(query)    
     cursor.execute(query);
