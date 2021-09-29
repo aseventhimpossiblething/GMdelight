@@ -488,6 +488,7 @@ def DailyBasisInserter():
         #print("len(SqlCall) - ",len(SqlCall));
         inskip=skiplist.find(str(Symbols[tally]));
         print('inskip===',inskip)
+        print('Symbols[tally] ===',Symbols[tally])
                
         if last2days<1:
            IEXColmaker(Symbols[tally]);     
