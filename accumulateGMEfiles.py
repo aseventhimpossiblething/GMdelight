@@ -70,7 +70,8 @@ def IEXColmaker(TargetSymbol):
         arr=[];
         vixarr=[];
         xlfarr=[];
-                
+        
+        print("iexdata - ",iexdata,"  iexdata - ")
         keys=list(iexdata[0].keys());
         vixkeys=list(vixdata[0].keys());
         xlfkeys=list(xlfdata[0].keys());
