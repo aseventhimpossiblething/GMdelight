@@ -471,7 +471,7 @@ def runNasdaq():
     return STKsymbols;
     
 def DailyBasisInserter():
-    skiplist="BHFAL";    
+    skiplist="";    
     today=date.today()        
     d=timedelta(days=1);
     fromday=today-d;    
@@ -491,9 +491,17 @@ def DailyBasisInserter():
         print("Currently ",Symbols[tally]);  
         print("Next ",Symbols[tally+1]);
         
+        URLPull=test;
+        URLPull=URLPull.replace("xTargetSymbolx",Symbols[tally])
+        iexpull=requests.get(URLPull);
+        iexdata=json.loads(iexpull.text);
+        if iexdata==0:
+           inskip=inskip+Symbols[tally];
+           print("iexdata - ",len(iexdata),"  iexdata - fired ")
+        
         if last2days<1 and inskip<0:
-           if IEXColmaker(Symbols[tally])>0:
-              print("-----Inserting---------")     
+           IEXColmaker(Symbols[tally]);
+           print("-----Inserting---------")     
         print("initiating DailyBasisInserter() loop ",tally)         
         tallyPattern.append(tally);
         insertedSymbols.append(Symbols[tally]);
