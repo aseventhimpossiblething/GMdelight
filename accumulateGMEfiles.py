@@ -466,7 +466,7 @@ def DailyBasisInserter():
         #print("fromday ",fromday);
         #print("date ",today);  
         """
-        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",fromday);
+        SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTable",today);
         print(SqlCall);
         if len(SqlCall)<1:
            #IEXColmaker(Symbols[tally]);     
