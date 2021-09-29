@@ -488,8 +488,8 @@ def DailyBasisInserter():
         #print(SqlCall);
         tallyPattern.append(tally);
         insertedSymbols.append(Symbols[tally]);
-        print('tallyPattern ---------- ',tallyPattern)
-        print('insertedSymbols-------- ',insertedSymbols)
+        #print('tallyPattern ---------- ',tallyPattern)
+        #print('insertedSymbols-------- ',insertedSymbols)
         print("len(insertedSymbols----) ",len(insertedSymbols))
         if len(insertedSymbols)>2:
            print("Last Inserted Symbol - ",insertedSymbols[len(insertedSymbols)-1])
