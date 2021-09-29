@@ -207,35 +207,23 @@ def IEXColmaker(TargetSymbol):
         #print("LastChartRow ",LastChartRow);
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
-        print(px.columns)
-        print(px)
-        print(py)
-        """
-        counting=0;
-        for col in px:
-                cul=px.columns[counting]
-                print("px[cul].str.find('A') ",px[cul].str.find('A'))
-                print(px[cul]);
-                print("end cols")
-                counting=counting+1;
-        """        
+     
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
         xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
         print("1000 Tree",xTreeModPredict1000,"Extracted value - ",xTreeModPredict1000[1])
         
-        #print("vx linear model ")
         xLinearMod=linear_model.LinearRegression().fit(px,py);
         xLinearPredictMod=xLinearMod.predict(LastChartRow);
         print("xLinearPredictMod ",xLinearPredictMod,"Extracted value - ",xLinearPredictMod[1])
-        return xlfarrvix;
+        #return xlfarrvix;
         
-        """
+        #--------------------------------------------------------------------------------------------------------------------------------------------------
         #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         
-        print("py ",py)
-        print("big show---xTreeModPredict200 ",xTreeModPredict200)
+        #print("py ",py)
+        #print("big show---xTreeModPredict200 ",xTreeModPredict200)
               
-        
+        """
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         xy=xlfarrvix['dayshiftedclose'];
@@ -254,6 +242,9 @@ def IEXColmaker(TargetSymbol):
         print("Starting 200 tree-----fit")
         TreeMod200=RandomForestRegressor(n_estimators = 200).fit(x_train,y_train);
         TreeModPredict200=TreeMod200.predict(x_test);
+        print("Starting 1000 tree-----fit")
+        TreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
+        TreeModPredict1000=TreeMod1000.predict(LastChartRow);
         print("Starting Linear-----fit")    
         LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
         LinearPredictMod=LinearMod.predict(x_test);
@@ -267,7 +258,9 @@ def IEXColmaker(TargetSymbol):
         reviewFrame['Tree Prediction 10']=TreeModPredict10;
         reviewFrame['Tree Prediction 100']=TreeModPredict100;
         reviewFrame['Tree Prediction 200']=TreeModPredict200;
+        reviewFrame['Tree Prediction 200']=TreeModPredict1000 
         reviewFrame['Linear Prediction']=LinearPredictMod;
+        
         
         print("vx review series splits ")
         vx_train,vx_test,vy_train,vy_test=train_test_split(vx,vy,test_size=0.2);
@@ -298,7 +291,7 @@ def IEXColmaker(TargetSymbol):
         vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
         vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
         vreviewFrame['Linear Prediction']=vLinearPredictMod;
-        
+        """
         #------------------------------------------------
         print("xx review series splits ")
         xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
@@ -315,6 +308,10 @@ def IEXColmaker(TargetSymbol):
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
         xTreeModPredict200=xTreeMod200.predict(xx_test);
         
+        print("xx tree model 1000 ")
+        xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(xx_train,xy_train);
+        xTreeModPredict1000=xTreeMod1000.predict(xx_test);
+        
         print("vx linear model ")
         xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
         xLinearPredictMod=xLinearMod.predict(xx_test);
@@ -329,6 +326,7 @@ def IEXColmaker(TargetSymbol):
         xreviewFrame['Tree Prediction 10']=xTreeModPredict10;
         xreviewFrame['Tree Prediction 100']=xTreeModPredict100;
         xreviewFrame['Tree Prediction 200']=xTreeModPredict200;
+        xreviewFrame['Tree Prediction 1000']=xTreeModPredict1000;
         xreviewFrame['Linear Prediction']=xLinearPredictMod;
         #------------------------------------------------
         
@@ -338,7 +336,7 @@ def IEXColmaker(TargetSymbol):
      
      
         print("after pause ")
-        
+        """
         print("Arr1-----------------------------------Negligable")
         print("reviewFrame.corr()");
         print(reviewFrame.corr());
@@ -358,9 +356,9 @@ def IEXColmaker(TargetSymbol):
         print(vSTD)
         print("v1-----------------------------------Negligable")
         print("x-----------------------------------")
+        """
         print("xreviewFrame.corr()");
         print(xreviewFrame.corr());
-        #print("xstd")
         xSTD=numpy.std(xreviewFrame);
         print(xSTD)
         
@@ -373,7 +371,7 @@ def IEXColmaker(TargetSymbol):
         #print(SqlCall);
         #compare(arr1,xlfxarr1,'xl');      
         return;
-        """      
+              
 
 def Char2Num(col):
  arr={};
