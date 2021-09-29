@@ -8,9 +8,9 @@ print(date.today())
 
 
 
-def CallFromSQL(x,y,date,date2):
+def CallFromSQL(x,y,date):
     date=str(date);
-    date2=str(date2);
+    #date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
     query="select*from DailyTable"
     query.replace("*",x).replace("DailyTable",y)
