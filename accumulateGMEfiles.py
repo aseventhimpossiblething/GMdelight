@@ -477,14 +477,15 @@ def DailyBasisInserter():
     while tally < len(Symbols):
         SqlCall=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",today);
         SqlCall1=SQLLoad.CallFromSQL(Symbols[tally],"DailyTabl",fromday);
-        last2days=len(SqlCall)+len(SqlCall1)
+        last2days=len(SqlCall)+len(SqlCall1);
        
         inskip=skiplist.find(str(Symbols[tally]));
         print('inskip===',inskip)
         print('Symbols[tally] ===',Symbols[tally])
         print("Currently ",Symbols[tally]);  
         print("Next ",Symbols[tally+1]);
-        if last2days<1:
+        
+        if last2days<1 and inskip<0:
            IEXColmaker(Symbols[tally]);     
            print("-----Inserting---------")     
         print("initiating DailyBasisInserter() loop ",tally)         
