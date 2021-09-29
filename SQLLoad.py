@@ -28,7 +28,7 @@ def CallFromSQL(x,y,date):
     #print(query);
     print(titles);
     #print(results);
-    #print(len(results));
+    print("len results = ",len(results));
     results.columns=titles;
     #results=results.to_html()
     #print(results);
