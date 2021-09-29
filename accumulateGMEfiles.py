@@ -200,16 +200,24 @@ def IEXColmaker(TargetSymbol):
         #SqlCall=SQLLoad.CallFromSQL();
         return xlfarrvix;
         
-        """
+        
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);
         
-        print("LastChartRow ",LastChartRow);
+        #print("LastChartRow ",LastChartRow);
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         
         xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(px,py);
         xTreeModPredict200=xTreeMod200.predict(LastChartRow);
+        print("200 Tree",xTreeModPredict200,"Extracted value - ",xTreeModPredict200[1])
+        
+        #print("vx linear model ")
+        xLinearMod=linear_model.LinearRegression().fit(px,py);
+        xLinearPredictMod=vLinearMod.predict(LastChartRow);
+        print("xLinearPredictMod ",xLinearPredictMod,"Extracted value - ",xLinearPredictMod[1])
+        
+        """
         #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         
         print("py ",py)
@@ -483,6 +491,7 @@ def DailyBasisInserter():
         print('tallyPattern ---------- ',tallyPattern)
         print('insertedSymbols-------- ',insertedSymbols)
         print("len(insertedSymbols----) ",len(insertedSymbols))
+        print("Last Inserted Symbol - ",insertedSymbols[len(insertedSymbols)]-1)
         tally=tally+1;
         
 
