@@ -480,9 +480,9 @@ def DailyBasisInserter():
         #print(SqlCall);
         tallyPattern.append(tally);
         insertedSymbols.append(Symbols[tally]);
-        print('tallyPattern - ',tallyPattern)
-        print(' insertedSymbols - ',insertedSymbols)
-        print("len(insertedSymbols) ",len(insertedSymbols))
+        print('tallyPattern ---------- ',tallyPattern)
+        print('insertedSymbols-------- ',insertedSymbols)
+        print("len(insertedSymbols----) ",len(insertedSymbols))
         tally=tally+1;
         
 
