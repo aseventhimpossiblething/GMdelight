@@ -229,9 +229,9 @@ def IEXColmaker(TargetSymbol):
         """
         components=PCA(n_components=6);
         components=components.fit_transform(prePcaSet);
-        component=pandas.DataFrame(components);
+        components=pandas.DataFrame(components);
         
-        print("components ------  ",components)
+        print(type(components)," components ------  ",components)
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
         xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
