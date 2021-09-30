@@ -63,7 +63,7 @@ def projection(xlfarrvix):
         py=xlfarrvix['dayshiftedclose'];
         
         pxcor=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
-        pxcor=pxcor.corr()
+        pxcor=pxcor.corr(method=pearson)
         
         component=PCA(n_components=4);
         components=component.fit(px);
