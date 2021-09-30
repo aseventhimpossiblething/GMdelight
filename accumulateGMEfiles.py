@@ -70,7 +70,9 @@ def projection(xlfarrvix):
             x[count];
             print("after len -- ",len(x[0]));
             #print("x[0] ",x[0]);
-            #print("x[0] ",x[0]);    
+            #print("x[0] ",x[0]);  
+            pandas.DataFrame(x);
+            print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",x.corr())
             return x;
         reorderDF(px);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
