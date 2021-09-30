@@ -230,12 +230,14 @@ def IEXColmaker(TargetSymbol):
         component=PCA(n_components=6);
         #explainedVarience=component.explained_variance_
         components=component.fit(prePcaSet);
-        explainedVarience=components.explained_variance_
+        explainedVarience=components.explained_variance_ratio_
         #comps=pandas.DataFrame(components, columns=['1','2','3','4','5','6']);
         
-        print(type(components)," components ------  ")
+        #print(type(components)," components ------  ")
         print("Explained Varience Ratio = ",explainedVarience)
+        print(type(components)," components ------ below  ")
         print(components)
+        print(type(components)," components ------ below  ")
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
         xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
