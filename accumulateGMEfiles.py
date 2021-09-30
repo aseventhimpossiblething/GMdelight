@@ -523,7 +523,7 @@ def DailyBasisInserter():
            print("skip ",skip)
            print("iexdata - ",len(iexdata),"  iexdata - fired ")
         
-        if last2days<1 and skip<0:
+        if last2days<1 and skip>0:
            IEXColmaker(Symbols[tally]);
            print("-----Inserting---------")     
         print("initiating DailyBasisInserter() loop ",tally)         
