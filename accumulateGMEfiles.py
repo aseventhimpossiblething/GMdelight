@@ -231,10 +231,12 @@ def IEXColmaker(TargetSymbol):
         #explainedVarience=component.explained_variance_
         components=component.fit(prePcaSet);
         explainedVarience=components.explained_variance_
+        explainedVarienceRatio=components.explained_variance_ratio_
         #comps=pandas.DataFrame(components, columns=['1','2','3','4','5','6']);
         
         #print(type(components)," components ------  ")
-        print("Explained Varience Ratio = ",explainedVarience)
+        print("Explained Varience =       ",explainedVarience)
+        print("Explained Varience Ratio = ",explainedVarienceRatio)
         print(type(components)," components ------ below  ")
         print(components)
         print(type(components)," components ------ below  ")
