@@ -64,17 +64,17 @@ def projection(xlfarrvix):
         
         component=PCA(n_components=4);
         components=component.fit(px);
-        px=component.fit_transform(px);
-        px=pandas.DataFrame(px);
+        pxPCA=component.fit_transform(px);
+        pxPCA=pandas.DataFrame(pxPCA);
         explainedVarience=components.explained_variance_
         explainedVarienceRatio=components.explained_variance_ratio_
-        LastChartRow=px.iloc[len(px[0])-2:];
+        LastChartRowPCA=px.iloc[len(px[0])-2:];
              
         print("Explained Varience =       ",explainedVarience)
         print("Explained Varience Ratio = ",explainedVarienceRatio)
         print(type(components)," components ------ below  ")
         print(components)
-        print(px)
+        print(pxPCA)
         print(type(components)," components ------ above  ")
         
         
