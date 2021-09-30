@@ -60,8 +60,14 @@ def projection(xlfarrvix):
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
-        py=xlfarrvix['dayshiftedclose'];
+        py=xlfarrvix['dayshiftedclose']; 
         
+        def reorderDF(x):
+            count=1;
+            x=x.values.tolist():
+            return x;
+        reorderDF(px);
+        print("reorderDF(px) -- ",reorderDF(px));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         pxcor=pxco.corr(method='pearson')
         
