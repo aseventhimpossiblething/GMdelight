@@ -52,6 +52,112 @@ def SinglestockIEXdict(x,y,z):
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
         return innerarr;      
+  
+        
+        
+def projection(xlfarrvix):        
+        #--new func-----------------
+        LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
+        LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        prePcaSet=xlfarrvix.drop(['date','Symbol','insertionDay'], axis=1)
+        
+        px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        py=xlfarrvix['dayshiftedclose'];
+        
+        component=PCA(n_components=6);
+        components=component.fit(prePcaSet);
+        componentstransformed=component.fit_transform(prePcaSet);
+        componentstransformed=pandas.DataFrame(componentstransformed);
+        explainedVarience=components.explained_variance_
+        explainedVarienceRatio=components.explained_variance_ratio_
+             
+        print("Explained Varience =       ",explainedVarience)
+        print("Explained Varience Ratio = ",explainedVarienceRatio)
+        print(type(components)," components ------ below  ")
+        print(components)
+        print(componentstransformed)
+        print(type(components)," components ------ below  ")
+        
+        xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
+        xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
+        print("1000 Tree",xTreeModPredict1000,"Extracted value - ",xTreeModPredict1000[1])
+        
+        xLinearMod=linear_model.LinearRegression().fit(px,py);
+        xLinearPredictMod=xLinearMod.predict(LastChartRow);
+        print("xLinearPredictMod ",xLinearPredictMod,"Extracted value - ",xLinearPredictMod[1])
+        #return xlfarrvix;
+        
+        #--------------------------------------------------------------------------------------------------------------------------------------------------
+     
+        #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
+        #xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
+        xx=componentstransformed;
+        xy=xlfarrvix['dayshiftedclose'];
+    
+        #------------------------------------------------
+        print("xx review series splits ")
+        xx_train,xx_test,xy_train,xy_test=train_test_split(px,py,test_size=0.2);
+        #xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
+        
+        print("xx tree model 10 ")
+        xTreeMod10=RandomForestRegressor(n_estimators = 10).fit(xx_train,xy_train);
+        xTreeModPredict10=xTreeMod10.predict(xx_test);
+        Std_ofTP10=numpy.std(xTreeModPredict10);
+        
+        print("xx tree model 100 ")
+        xTreeMod100=RandomForestRegressor(n_estimators = 100).fit(xx_train,xy_train);
+        xTreeModPredict100=xTreeMod100.predict(xx_test);
+        Std_ofTP100=numpy.std(xTreeModPredict100);
+        
+        print("xx tree model 200 ")
+        xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
+        xTreeModPredict200=xTreeMod200.predict(xx_test);
+        Std_ofTP200=numpy.std(xTreeModPredict200);
+        
+        print("xx tree model 1000 ")
+        xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(xx_train,xy_train);
+        xTreeModPredict1000=xTreeMod1000.predict(xx_test);
+        Std_ofTP1000=numpy.std(xTreeModPredict1000);
+        
+        print("xx linear model ")
+        xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
+        xLinearPredictMod=xLinearMod.predict(xx_test);
+        Std_ofTPxLinearPredictMod=numpy.std(xLinearPredictMod);
+        
+        
+        print("xx base review frame ")
+        xreviewFrame=pandas.DataFrame(xy_test);
+        xreviewFrame.columns=['Shifted close'];
+        xreviewFrame['close']=list(xx_test['close']);
+          
+        print("xx model specific review frame ")        
+        xreviewFrame['Tree Prediction 10']=xTreeModPredict10;
+        xreviewFrame['Tree Prediction 100']=xTreeModPredict100;
+        xreviewFrame['Tree Prediction 200']=xTreeModPredict200;
+        xreviewFrame['Tree Prediction 1000']=xTreeModPredict1000;
+        xreviewFrame['Linear Prediction']=xLinearPredictMod;
+        #------------------------------------------------
+        
+        
+        print("after pause ")
+        
+        print("xreviewFrame.corr()");
+        print(xreviewFrame.corr());
+        xSTD=numpy.std(xreviewFrame);
+        print(xSTD)
+        
+        print("x-----------------------------------")
+        print("Std_of Shifted Close ",numpy.std(xy))
+        print("Std_ofTP10 ",Std_ofTP10)
+        print("Std_ofTP100 ",Std_ofTP100)
+        print("Std_ofTP200 ",Std_ofTP200)
+        print("Std_ofTP1000 ",Std_ofTP1000)
+        print('Linear StD=',numpy.std(xLinearPredictMod))
+                 
+        return;        
+        
+        
+        
         
         
 def IEXColmaker(TargetSymbol):
@@ -210,7 +316,9 @@ def IEXColmaker(TargetSymbol):
         print(xlfarrvix.columns);
         Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
-        
+        #projection(xlfarrvix)
+        return xlfarrvix;
+        """
        
         #--new func-----------------
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
@@ -311,7 +419,7 @@ def IEXColmaker(TargetSymbol):
         print('Linear StD=',numpy.std(xLinearPredictMod))
                  
         return;
-              
+        """      
 
 def Char2Num(col):
  arr={};
