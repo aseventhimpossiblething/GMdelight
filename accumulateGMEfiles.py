@@ -59,15 +59,13 @@ def projection(xlfarrvix):
         #--new func-----------------
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
-        prePcaSet=xlfarrvix.drop(['date','Symbol','insertionDay'], axis=1)
-        
-        px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         py=xlfarrvix['dayshiftedclose'];
         
         component=PCA(n_components=6);
-        components=component.fit(prePcaSet);
-        componentstransformed=component.fit_transform(prePcaSet);
-        componentstransformed=pandas.DataFrame(componentstransformed);
+        components=component.fit(px);
+        px=component.fit_transform(px);
+        px=pandas.DataFrame(px);
         explainedVarience=components.explained_variance_
         explainedVarienceRatio=components.explained_variance_ratio_
              
@@ -75,8 +73,9 @@ def projection(xlfarrvix):
         print("Explained Varience Ratio = ",explainedVarienceRatio)
         print(type(components)," components ------ below  ")
         print(components)
-        print(componentstransformed)
-        print(type(components)," components ------ below  ")
+        print(px)
+        print(type(components)," components ------ above  ")
+        
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
         xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
@@ -91,7 +90,7 @@ def projection(xlfarrvix):
      
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         #xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
-        xx=componentstransformed;
+        xx=px;
         xy=xlfarrvix['dayshiftedclose'];
     
         #------------------------------------------------
