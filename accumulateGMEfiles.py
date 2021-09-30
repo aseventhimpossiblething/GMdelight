@@ -231,7 +231,9 @@ def IEXColmaker(TargetSymbol):
         components=components.fit_transform(prePcaSet);
         components=pandas.DataFrame(components);
         
-        print(type(components)," components ------  ",components)
+        print(type(components)," components ------  ")
+        print("Explained Varience Ratio = ",components.explained_variance_ratio_)
+        print(components)
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
         xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
