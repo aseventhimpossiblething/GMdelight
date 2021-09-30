@@ -70,7 +70,7 @@ def projection(xlfarrvix):
             y[count];
             print("after len -- ",len(y[0]));
             xdf=pandas.DataFrame(y[0]);
-            xdf[1]=x[1];
+            xdf[1]=y[1];
             print("xdf.columns---------------------------------------------------------------------------",xdf.columns)
             print(" len xdf",len(xdf))    
             print(xdf.corr());
