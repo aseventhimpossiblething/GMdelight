@@ -230,7 +230,7 @@ def IEXColmaker(TargetSymbol):
         component=PCA(n_components=6);
         #explainedVarience=component.explained_variance_
         components=component.fit(prePcaSet);
-        explainedVarience=components.explained_variance_ratio_
+        explainedVarience=components.explained_variance_
         #comps=pandas.DataFrame(components, columns=['1','2','3','4','5','6']);
         
         #print(type(components)," components ------  ")
