@@ -72,7 +72,7 @@ def projection(xlfarrvix):
             #print("x[0] ",x[0]);
             #print("x[0] ",x[0]);  
             xdf=pandas.DataFrame(x[0]);
-            xdf[1]=x[]1;
+            xdf[1]=x[1];
         
             #x=x
             print("xdf.columns---------------------------------------------------------------------------",xdf.columns)
