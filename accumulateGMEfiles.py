@@ -71,7 +71,7 @@ def projection(xlfarrvix):
             print("after len -- ",len(x[0]));
             #print("x[0] ",x[0]);
             #print("x[0] ",x[0]);  
-            x=pandas.DataFrame(x);
+            x=pandas.DataFrame(x[0]);
             print("x.columns---------------------------------------------------------------------------",x.columns)
             print(" len x[0]",len(x[0]))    
             #print(x.corr())
