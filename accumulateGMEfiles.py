@@ -63,11 +63,13 @@ def projection(xlfarrvix):
         py=xlfarrvix['dayshiftedclose']; 
         
         def reorderDF(x):
-            count=1;
+            count=0;
             x=x.values.tolist();
+            x[count];
+            print(len(x));
             return x;
         reorderDF(px);
-        print("reorderDF(px) -- type ",type(reorderDF(px)));
+        print(" len reorderDF(px) ",len(reorderDF(px)));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         pxcor=pxco.corr(method='pearson')
         
