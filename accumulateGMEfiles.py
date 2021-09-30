@@ -66,16 +66,19 @@ def projection(xlfarrvix):
             print("start len -- ",len(x['index']));    
             count=0;
             x=x.values.tolist();
-            x=numpy.array(x).T
+            x=numpy.array(x).T;
             x[count];
             print("after len -- ",len(x[0]));
             #print("x[0] ",x[0]);
             #print("x[0] ",x[0]);  
-            x=pandas.DataFrame(x[0]);
-            print("x.columns---------------------------------------------------------------------------",x.columns)
-            print(" len x[0]",len(x[0]))    
-            #print(x.corr())
-            return x;
+            xdf=pandas.DataFrame(x[0]);
+            xdf[1]=x[]1;
+        
+            #x=x
+            print("xdf.columns---------------------------------------------------------------------------",xdf.columns)
+            print(" len xdf",len(xdf))    
+            print(xdf.corr())
+            return xdf;
         reorderDF(px);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
