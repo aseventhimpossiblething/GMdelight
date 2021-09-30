@@ -146,7 +146,7 @@ def projection(xlfarrvix):
         
         
         print("after pause ")
-        
+        print("xreviewFrame datatype ------------- ",xreviewFrame)
         print("xreviewFrame.corr()");
         print(xreviewFrame.corr());
         xSTD=numpy.std(xreviewFrame);
