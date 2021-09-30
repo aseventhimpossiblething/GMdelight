@@ -128,7 +128,7 @@ def projection(xlfarrvix):
         print("xx base review frame ")
         xreviewFrame=pandas.DataFrame(xy_test);
         xreviewFrame.columns=['Shifted close'];
-        xreviewFrame['close']=list(xx_test['close']);
+        #xreviewFrame['close']=list(xx_test['close']);
           
         print("xx model specific review frame ")        
         xreviewFrame['Tree Prediction 10']=xTreeModPredict10;
