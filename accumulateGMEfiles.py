@@ -66,6 +66,7 @@ def projection(xlfarrvix):
             print("start len -- ",len(x['index']));    
             count=0;
             x=x.values.tolist();
+            x=numpy.array(x).T
             x[count];
             print("after len -- ",len(x[0]));
             #print("x[0] ",x[0]);
