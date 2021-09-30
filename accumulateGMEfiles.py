@@ -75,7 +75,7 @@ def projection(xlfarrvix):
             print(" len xdf",len(xdf))    
             print(xdf.corr());
             
-            while count<
+            #while count<
             return xdf;
         reorderDF(px);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
