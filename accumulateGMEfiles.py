@@ -212,31 +212,21 @@ def IEXColmaker(TargetSymbol):
         #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         
        
-        
+        #--new func-----------------
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
-        
         prePcaSet=xlfarrvix.drop(['date','Symbol','insertionDay'], axis=1)
         
-        
-        #print("LastChartRow ",LastChartRow);
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         
-        """
-        print('---xlfarrvix -',px)
-        print('---xlfarrvix corr -',px.corr(method='pearson'))
-        """
         component=PCA(n_components=6);
-        #explainedVarience=component.explained_variance_
         components=component.fit(prePcaSet);
         componentstransformed=component.fit_transform(prePcaSet);
         componentstransformed=pandas.DataFrame(componentstransformed);
         explainedVarience=components.explained_variance_
         explainedVarienceRatio=components.explained_variance_ratio_
-        #comps=pandas.DataFrame(components, columns=['1','2','3','4','5','6']);
-        
-        #print(type(components)," components ------  ")
+             
         print("Explained Varience =       ",explainedVarience)
         print("Explained Varience Ratio = ",explainedVarienceRatio)
         print(type(components)," components ------ below  ")
@@ -254,84 +244,12 @@ def IEXColmaker(TargetSymbol):
         #return xlfarrvix;
         
         #--------------------------------------------------------------------------------------------------------------------------------------------------
-        #Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
-        
-        #print("py ",py)
-        #print("big show---xTreeModPredict200 ",xTreeModPredict200)
-              
-        
+     
         #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
         #xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
         xx=componentstransformed;
-        
-       
         xy=xlfarrvix['dayshiftedclose'];
-        """
-        vx=arrvix.drop(['dayshiftedclose','date','vxdate'], axis=1);
-        vy=arrvix['dayshiftedclose'];
-        x=arr1.drop(['dayshiftedclose','date'], axis=1);
-        y=arr1['dayshiftedclose'];
-        print("Immediately before training X-Y split-------")          
-        x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2);
-        print("Starting 10 tree-----fit")
-        TreeMod10=RandomForestRegressor(n_estimators = 10).fit(x_train,y_train);
-        TreeModPredict10=TreeMod10.predict(x_test);
-        print("Starting 100 tree-----fit")       
-        TreeMod100=RandomForestRegressor(n_estimators = 100).fit(x_train,y_train);
-        TreeModPredict100=TreeMod100.predict(x_test);
-        print("Starting 200 tree-----fit")
-        TreeMod200=RandomForestRegressor(n_estimators = 200).fit(x_train,y_train);
-        TreeModPredict200=TreeMod200.predict(x_test);
-        print("Starting 1000 tree-----fit")
-        TreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
-        TreeModPredict1000=TreeMod1000.predict(LastChartRow);
-        print("Starting Linear-----fit")    
-        LinearMod=linear_model.LinearRegression().fit(x_train,y_train);
-        LinearPredictMod=LinearMod.predict(x_test);
-         
-        print("starting base review frames")        
-        reviewFrame=pandas.DataFrame(y_test);
-        reviewFrame.columns=['Shifted close'];
-        reviewFrame['close']=list(x_test['close']);
-        
-        print("starting model specific review frames")
-        reviewFrame['Tree Prediction 10']=TreeModPredict10;
-        reviewFrame['Tree Prediction 100']=TreeModPredict100;
-        reviewFrame['Tree Prediction 200']=TreeModPredict200;
-        reviewFrame['Tree Prediction 200']=TreeModPredict1000 
-        reviewFrame['Linear Prediction']=LinearPredictMod;
-        
-        
-        print("vx review series splits ")
-        vx_train,vx_test,vy_train,vy_test=train_test_split(vx,vy,test_size=0.2);
-        
-        print("vx tree model 10 ")
-        vTreeMod10=RandomForestRegressor(n_estimators = 10).fit(vx_train,vy_train);
-        vTreeModPredict10=vTreeMod10.predict(vx_test);
-        
-        print("vx tree model 100 ")
-        vTreeMod100=RandomForestRegressor(n_estimators = 100).fit(vx_train,vy_train);
-        vTreeModPredict100=vTreeMod100.predict(vx_test);
-        
-        print("vx tree model 200 ")
-        vTreeMod200=RandomForestRegressor(n_estimators = 200).fit(vx_train,vy_train);
-        vTreeModPredict200=vTreeMod200.predict(vx_test);
-        
-        print("vx linear model ")
-        vLinearMod=linear_model.LinearRegression().fit(vx_train,vy_train);
-        vLinearPredictMod=vLinearMod.predict(vx_test);
-        
-        print("vx base review frame ")
-        vreviewFrame=pandas.DataFrame(vy_test);
-        vreviewFrame.columns=['Shifted close'];
-        vreviewFrame['close']=list(vx_test['close']);
-          
-        print("vx model specific review frame ")        
-        vreviewFrame['Tree Prediction 10']=vTreeModPredict10;
-        vreviewFrame['Tree Prediction 100']=vTreeModPredict100;
-        vreviewFrame['Tree Prediction 200']=vTreeModPredict200;
-        vreviewFrame['Linear Prediction']=vLinearPredictMod;
-        """
+    
         #------------------------------------------------
         print("xx review series splits ")
         xx_train,xx_test,xy_train,xy_test=train_test_split(px,py,test_size=0.2);
@@ -377,32 +295,8 @@ def IEXColmaker(TargetSymbol):
         #------------------------------------------------
         
         
-        
-        
-     
-     
         print("after pause ")
-        """
-        print("Arr1-----------------------------------Negligable")
-        print("reviewFrame.corr()");
-        print(reviewFrame.corr());
-        print("std")
-        STD=numpy.std(reviewFrame);
-        print("STD ",STD)
-        #print(STD);
-        #print("reviewFrame ")
-        #print(reviewFrame);
-        print("Arr1-----------------------------------Negligable")
-        print("v1-----------------------------------Negligable")
         
-        print("vreviewFrame.corr()");
-        print(vreviewFrame.corr());
-        #print("vstd")
-        vSTD=numpy.std(vreviewFrame);
-        print(vSTD)
-        print("v1-----------------------------------Negligable")
-        print("x-----------------------------------")
-        """
         print("xreviewFrame.corr()");
         print(xreviewFrame.corr());
         xSTD=numpy.std(xreviewFrame);
@@ -415,13 +309,7 @@ def IEXColmaker(TargetSymbol):
         print("Std_ofTP200 ",Std_ofTP200)
         print("Std_ofTP1000 ",Std_ofTP1000)
         print('Linear StD=',numpy.std(xLinearPredictMod))
-        
-        
-        #print("This is arr1");
-        #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
-        #SqlCall=SQLLoad.CallFromSQL();
-        #print(SqlCall);
-        #compare(arr1,xlfxarr1,'xl');      
+                 
         return;
               
 
