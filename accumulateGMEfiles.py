@@ -63,12 +63,13 @@ def projection(xlfarrvix):
         py=xlfarrvix['dayshiftedclose']; 
         
         def reorderDF(x):
-            print(len(x));    
+            print("start len -- ",len(x));    
             count=0;
             x=x.values.tolist();
             x[count];
-            print(len(x));
-            print(x[0]);
+            print("after len -- ",len(x));
+            #print("x[0] ",x[0]);
+            #print("x[0] ",x[0]);    
             return x;
         reorderDF(px);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
