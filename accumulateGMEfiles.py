@@ -68,7 +68,7 @@ def projection(xlfarrvix):
         pxPCA=pandas.DataFrame(pxPCA);
         explainedVarience=components.explained_variance_
         explainedVarienceRatio=components.explained_variance_ratio_
-        LastChartRowPCA=px.iloc[len(px[0])-2:];
+        LastChartRowPCA=px.iloc[len(pxPCA[0])-2:];
              
         print("Explained Varience =       ",explainedVarience)
         print("Explained Varience Ratio = ",explainedVarienceRatio)
