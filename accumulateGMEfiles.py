@@ -228,8 +228,8 @@ def IEXColmaker(TargetSymbol):
         print('---xlfarrvix corr -',px.corr(method='pearson'))
         """
         component=PCA(n_components=6);
-        explainedVarience=component.explained_variance_
-        components=component.fit_transform(prePcaSet);
+        #explainedVarience=component.explained_variance_
+        components=component.fit(prePcaSet);
         explainedVarience=components.explained_variance_
         comps=pandas.DataFrame(components);
         
