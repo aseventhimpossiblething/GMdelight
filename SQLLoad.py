@@ -118,7 +118,7 @@ def MakeDailyTable(z,a):
      print(rmess); 
      print("Try Trying 5")       
     except:
-     rmess="Tried to create Table failed ssuming Table 'DailyTable' already exists"
+     rmess="Tried to create Table failed assuming Table 'DailyTable' already exists"
      rmess.replace("DailyTable",tablename)  
      print(rmess);    
     cursor.close()    
