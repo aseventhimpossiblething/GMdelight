@@ -229,7 +229,7 @@ def IEXColmaker(TargetSymbol):
         """
         components=PCA(n_components=6);
         components=components.fit_transform(prePcaSet);
-        component=pandas.DataFRame(components);
+        component=pandas.DataFrame(components);
         
         print("components ------  ",components)
         
