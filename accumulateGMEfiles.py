@@ -33,6 +33,10 @@ ols = linear_model.LinearRegression()
 
 from sklearn.model_selection import train_test_split
 
+from sklearn.decomposition import PCA
+#pca_breast = PCA(n_components=2)
+#principalComponents_breast = pca_breast.fit_transform(x)
+
 
 test="https://sandbox.iexapis.com/stable/stock/xTargetSymbolx/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
 def SinglestockIEXdict(x,y,z):
@@ -207,18 +211,28 @@ def IEXColmaker(TargetSymbol):
         Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
         #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         
-        
+       
         
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        
+        prePcaSet=xlfarrvix.drop(['date','Symbol','insertionDay'], axis=1)
+        
         
         #print("LastChartRow ",LastChartRow);
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         py=xlfarrvix['dayshiftedclose'];
         
+        """
         print('---xlfarrvix -',px)
         print('---xlfarrvix corr -',px.corr(method='pearson'))
-     
+        """
+        components=PCA(n_components=6);
+        components=components.fit_transform(prePcaSet);
+        component=pandas.DataFRame(components);
+        
+        print("components ------  ",components)
+        
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
         xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
         print("1000 Tree",xTreeModPredict1000,"Extracted value - ",xTreeModPredict1000[1])
