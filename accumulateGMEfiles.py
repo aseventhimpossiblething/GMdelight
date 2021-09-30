@@ -62,6 +62,9 @@ def projection(xlfarrvix):
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         py=xlfarrvix['dayshiftedclose'];
         
+        pxcor=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
+        pxcor=pxcor.corr()
+        
         component=PCA(n_components=4);
         components=component.fit(px);
         pxPCA=component.fit_transform(px);
@@ -76,6 +79,8 @@ def projection(xlfarrvix):
         print(components)
         print(pxPCA)
         print(type(components)," components ------ above  ")
+        print("pxcor ---- ",pxcor)
+        
         
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
