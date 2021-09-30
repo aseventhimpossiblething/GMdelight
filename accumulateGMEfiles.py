@@ -232,7 +232,7 @@ def IEXColmaker(TargetSymbol):
         components=pandas.DataFrame(components);
         
         print(type(components)," components ------  ")
-        print("Explained Varience Ratio = ",components.explained_variance_ratio_)
+        print("Explained Varience Ratio = ",.format(components.explained_variance_ratio_))
         print(components)
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
