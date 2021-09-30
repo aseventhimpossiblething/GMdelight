@@ -62,7 +62,7 @@ def projection(xlfarrvix):
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         py=xlfarrvix['dayshiftedclose'];
         
-        component=PCA(n_components=6);
+        component=PCA(n_components=4);
         components=component.fit(px);
         px=component.fit_transform(px);
         px=pandas.DataFrame(px);
