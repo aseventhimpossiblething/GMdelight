@@ -64,7 +64,7 @@ def projection(xlfarrvix):
         
         def reorderDF(x):
             count=1;
-            x=x.values.tolist():
+            x=x.values.tolist();
             return x;
         reorderDF(px);
         print("reorderDF(px) -- ",reorderDF(px));
