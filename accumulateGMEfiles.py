@@ -315,8 +315,7 @@ def IEXColmaker(TargetSymbol):
         
         print(xlfarrvix.columns);
         Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
-        #Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
-        #projection(xlfarrvix)
+        projection(xlfarrvix)
         print("end ")
         return xlfarrvix;
         """
