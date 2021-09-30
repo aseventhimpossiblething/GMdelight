@@ -65,19 +65,17 @@ def projection(xlfarrvix):
         def reorderDF(x):
             print("start len -- ",len(x['index']));    
             count=0;
-            x=x.values.tolist();
-            x=numpy.array(x).T;
-            x[count];
-            print("after len -- ",len(x[0]));
-            #print("x[0] ",x[0]);
-            #print("x[0] ",x[0]);  
-            xdf=pandas.DataFrame(x[0]);
+            y=x.values.tolist();
+            y=numpy.array(y).T;
+            y[count];
+            print("after len -- ",len(y[0]));
+            xdf=pandas.DataFrame(y[0]);
             xdf[1]=x[1];
-        
-            #x=x
             print("xdf.columns---------------------------------------------------------------------------",xdf.columns)
             print(" len xdf",len(xdf))    
-            print(xdf.corr())
+            print(xdf.corr());
+            
+            while count<
             return xdf;
         reorderDF(px);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
