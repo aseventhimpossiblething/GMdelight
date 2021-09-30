@@ -227,12 +227,13 @@ def IEXColmaker(TargetSymbol):
         print('---xlfarrvix -',px)
         print('---xlfarrvix corr -',px.corr(method='pearson'))
         """
-        components=PCA(n_components=6);
-        components=components.fit_transform(prePcaSet);
+        component=PCA(n_components=6);
+        explainedVarience=component.explained_varience_ratio_
+        components=component.fit_transform(prePcaSet);
         components=pandas.DataFrame(components);
         
         print(type(components)," components ------  ")
-        print("Explained Varience Ratio = ",.format(components.explained_variance_ratio_))
+        print("Explained Varience Ratio = ",explainedVarience)
         print(components)
         
         xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
