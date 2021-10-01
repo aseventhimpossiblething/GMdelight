@@ -60,7 +60,7 @@ def projection(xlfarrvix):
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         LCR=list(LastChartRow.columns)
-        def clear(frame,x,y);
+        def clear(frame,x,y):
             for i in LCR:
                 j=i.find(x);
                 j=i.find(y);
