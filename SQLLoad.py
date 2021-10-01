@@ -36,7 +36,7 @@ def MakeDailyTable(z,a):
     #SQLite3conn.commit()
     """
     
-    tablename="DailyTable";
+    tablename="DailyTable2";
     
     print("start of makeDailyTable ")
     a='"'+a+'"';
