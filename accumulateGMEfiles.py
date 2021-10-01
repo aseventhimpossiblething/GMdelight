@@ -96,6 +96,7 @@ def projection(xlfarrvix):
                    print(NFrame)     
                 else:
                    NFrame[colnam]=newcols[count];
+                count=count+1;
             #return NFrame;    
             print("past main reorder")            
             y=x.values.tolist();
