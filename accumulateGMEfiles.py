@@ -68,7 +68,7 @@ def projection(xlfarrvix):
                    frame=frame.drop([x],axiz=1)
                    frame=frame.drop([y],axiz=1)
             return frame;       
-        clear(LastChartRow,'Symbol','insertionDay);                
+        clear(LastChartRow,'Symbol','insertionDay');                
         """
         print("LCR----------------LCR-----",LCR)
         print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
