@@ -59,7 +59,7 @@ def projection(xlfarrvix):
        
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
-        LCR=list(LastChartRow.columns)
+        #LCR=list(LastChartRow.columns)
         def clear(frame,x,y):
             for i in LCR:
                 j=i.find(x);
@@ -68,13 +68,13 @@ def projection(xlfarrvix):
                    frame=frame.drop([x],axiz=1)
                    frame=frame.drop([y],axiz=1)
             return frame;       
-        clear(LastChartRow,'Symbol','insertionDay');                
-        clear(xlfarrvix,'Symbol','insertionDay'); 
+        #clear(LastChartRow,'Symbol','insertionDay');                
+        #clear(xlfarrvix,'Symbol','insertionDay'); 
 
 
-        LastChartRow=clear(xlfarrvix,'Symbol','insertionDay') 
+        #LastChartRow=clear(xlfarrvix,'Symbol','insertionDay') 
         #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
-        LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
+        #LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
         py=xlfarrvix['dayshiftedclose']; 
         
@@ -99,26 +99,12 @@ def projection(xlfarrvix):
                    NFrame[colnam]=newcols[count];
                 count=count+1;
             return NFrame;    
-            """
-            print("past main reorder")            
-            y=x.values.tolist();
-            y=numpy.array(y).T;
-            y[count];
-            print("after len -- ",len(y[0]));
-            xdf=pandas.DataFrame(y[0]);
-            xdf[1]=y[1];
-            print(xdf)
-            print(x['index'])
-            print("x.columns---------------------------------------------------------------------------",x.columns)    
-            print("xdf.columns---------------------------------------------------------------------------",xdf.columns)
-            print(" len xdf",len(xdf))    
-            print(xdf.corr());
-            
-            #while count<
-            return xdf;
-            """       
-        reorderDF(xlfarrvix);
-        print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
+           
+        xlfarrvix=reorderDF(xlfarrvix);
+        LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
+        px=xlfarrvix
+        py=LastChartRow
+        #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         pxcor=pxco.corr(method='pearson')
         
