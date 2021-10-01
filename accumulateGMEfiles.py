@@ -61,6 +61,7 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         LCR=LastChartRow.columns.str
         print("LCR----------------LCR-----",LCR)
+        print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
         if LCR.find('Symbol')>-1:
            LastChartRow=LastChartRow.drop(['Symbol']);
         if LCR.find('insertionDay')>-1:
