@@ -444,7 +444,10 @@ def DailyBasisInserter():
         print(URLPull)
         iexpull=requests.get(URLPull);
         iexdata=json.loads(iexpull.text);
-        print(len(iexdata))
+        print("len(iexdata) -- ",len(iexdata));
+        print("iexdata------------------------Start-------------------------------------------------------");
+        print(iexdata);
+        print("iexdata------------------------end-------------------------------------------------------");
         if len(iexdata)==0:
            inskip=str(inskip)+str(Symbols[tally]);
            skip=inskip.find(str(Symbols[tally])); 
