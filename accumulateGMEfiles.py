@@ -59,7 +59,7 @@ def projection(xlfarrvix):
         #--new func-----------------
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
-        LCR=LastChartRow.columns
+        LCR=LastChartRow.columns.str
         if LCR.find('Symbol')>-1:
            LastChartRow=LastChartRow.drop(['Symbol']);
         if LCR.find('insertionDay')>-1:
