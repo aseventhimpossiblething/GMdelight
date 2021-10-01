@@ -63,7 +63,9 @@ def projection(xlfarrvix):
         py=xlfarrvix['dayshiftedclose']; 
         
         def reorderDF(x):
-            print("start len -- ",len(x['index']));    
+            print("start len -- ",len(x['index']));
+            newtitle=[];
+            newcols=[];    
             count=0;
             y=x.values.tolist();
             y=numpy.array(y).T;
@@ -212,7 +214,6 @@ def IEXColmaker(TargetSymbol):
         xlfkeys=list(xlfdata[0].keys());
         
         def colPrefix(x):
-            #print("colPrefix running")    
             prefixedelems=[];
             for elems in x:
                 elems="vx"+elems;
@@ -259,7 +260,6 @@ def IEXColmaker(TargetSymbol):
               shiftCol.append(w[count]);
             return shiftCol;
         dayshiftedclose=metricshift(arr1,'close');
-        #print("pause before?")
         def compare(x1,y1,z):
             f=248 
             if len(y1)>len(x1):
@@ -446,7 +446,7 @@ def DailyBasisInserter():
         iexdata=json.loads(iexpull.text);
         print("len(iexdata) -- ",len(iexdata));
         print("iexdata------------------------Start-------------------------------------------------------");
-        print(iexdata);
+        print(pandas.DataFrame(iexdata));
         print("iexdata------------------------end-------------------------------------------------------");
         if len(iexdata)==0:
            inskip=str(inskip)+str(Symbols[tally]);
