@@ -98,7 +98,8 @@ def projection(xlfarrvix):
                 else:
                    NFrame[colnam]=newcols[count];
                 count=count+1;
-            #return NFrame;    
+            return NFrame;    
+            """
             print("past main reorder")            
             y=x.values.tolist();
             y=numpy.array(y).T;
@@ -115,6 +116,7 @@ def projection(xlfarrvix):
             
             #while count<
             return xdf;
+            """       
         reorderDF(xlfarrvix);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
