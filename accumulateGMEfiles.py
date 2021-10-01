@@ -58,6 +58,12 @@ def SinglestockIEXdict(x,y,z):
 def projection(xlfarrvix):        
         #--new func-----------------
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
+        if LastChartRow.find('Symbol')>-1:
+           LastChartRow=LastChartRow.drop(['Symbol']);
+        if LastChartRow.find('insertionDay')>-1:
+           LastChartRow=LastChartRow.drop(['insertionDay']);
+            
+             
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         py=xlfarrvix['dayshiftedclose']; 
