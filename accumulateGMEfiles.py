@@ -459,7 +459,8 @@ def DailyBasisInserter():
         
         if len(iexdata)==0:
            inskip=str(inskip)+str(Symbols[tally]);
-           skip=inskip.find(str(Symbols[tally])); 
+           skip=inskip.find(str(Symbols[tally]));
+           skip=skip+len(iexdata);     
            print("inskip ",inskip)
            print("skip ",skip)
            print("iexdata - ",len(iexdata),"  iexdata - fired ")
