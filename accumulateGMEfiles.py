@@ -93,7 +93,7 @@ def projection(xlfarrvix):
             
             #while count<
             return xdf;
-        reorderDF(px);
+        reorderDF(xlfarrvix);
         print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         pxcor=pxco.corr(method='pearson')
