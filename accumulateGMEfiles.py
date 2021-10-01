@@ -59,7 +59,7 @@ def projection(xlfarrvix):
        
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
-        LCR=LastChartRow.columns.values
+        LCR=list(LastChartRow.columns)
         print("LCR----------------LCR-----",LCR)
         print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
         print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
