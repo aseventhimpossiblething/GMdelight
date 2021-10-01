@@ -466,13 +466,14 @@ def DailyBasisInserter():
            print("iexdata - ",len(iexdata),"  iexdata - fired ")
            last2days=last2days+skip;
         if last2days<1:
-              IEXColmaker(Symbols[tally]);
-              print("-----Inserting---------")  
-               
               print("iexdata------------------------Start-------------------------------------------------------");
               print(pandas.DataFrame(iexdata)['date']);
               print("iexdata------------------------end-------------------------------------------------------"); 
-                
+                  
+              IEXColmaker(Symbols[tally]);
+              print("-----Inserting---------")  
+               
+        
                 
         print("initiating DailyBasisInserter() loop ",tally)         
         tallyPattern.append(tally);
