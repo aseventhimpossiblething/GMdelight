@@ -457,7 +457,7 @@ def DailyBasisInserter():
         iexdata=json.loads(iexpull.text);
         print("len(iexdata) -- ",len(iexdata));
         
-        if len(iexdata)==0:
+        if len(iexdata)<60:
            inskip=str(inskip)+str(Symbols[tally]);
            skip=inskip.find(str(Symbols[tally]));
            skip=skip+len(iexdata);     
