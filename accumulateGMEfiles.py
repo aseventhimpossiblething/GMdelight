@@ -457,7 +457,7 @@ def DailyBasisInserter():
         iexdata=json.loads(iexpull.text);
         print("len(iexdata) -- ",len(iexdata));
         print("iexdata------------------------Start-------------------------------------------------------");
-        print(pandas.DataFrame(iexdata));
+        print(pandas.DataFrame(iexdata)['date']);
         print("iexdata------------------------end-------------------------------------------------------");
         if len(iexdata)==0:
            inskip=str(inskip)+str(Symbols[tally]);
