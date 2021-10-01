@@ -322,7 +322,7 @@ def IEXColmaker(TargetSymbol):
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         xlfarrvix=xlfarrvix.drop(['xldate','vxdate'], axis=1)
         
-        Sqltable=SQLLoad.MakeDailyTable(xlfarrvix,TargetSymbol);
+        Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         projection(xlfarrvix)
         return xlfarrvix;
        
