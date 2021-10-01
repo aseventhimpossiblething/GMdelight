@@ -1,7 +1,6 @@
 print("pre import sql")
 import sqlite3
 import pandas
-#import datetime
 from datetime import date
 
 print(date.today())
@@ -9,20 +8,12 @@ print(date.today())
 
 
 def CallFromSQL(x,y,date):
-    #print("x" ,x)
-    #print("y" ,y)
     date=str(date);
-    #date2=str(date2);
     SQLite3conn=sqlite3.connect("DailyDB");
     query='select * from DailyTable'
-    #query.replace("*",x)#.replace("DailyTable",y)
-    #print("date ",date)
-    #print("len date ",len(date))
-    #print("date find - ",date.find("-"))
     if date.find("-")>-1:
        query=query+" where Symbol = '"+x+"' and insertionDay = '"+date+"';"  
     cursor=SQLite3conn.cursor();
-    #print(query)    
     cursor.execute(query);
     info=cursor.description;
     info=pandas.DataFrame(info);
@@ -30,16 +21,9 @@ def CallFromSQL(x,y,date):
     
     results=cursor.fetchall();
     results=pandas.DataFrame(results);
-    #print(query);
-    #print(titles);
-    #print(results);
-    #print("len results = ",len(results));
     if len(results)>0:
         results.columns=titles;
-    #results=results.to_html()
-    #print(results);
     cursor.close();
-    #print(" end CallFromSQL()")
     return results;
 
 def MakeDailyTable(z,a):
@@ -81,7 +65,9 @@ def MakeDailyTable(z,a):
     novelXstr="";
     y=x.columns;
     for elem in y:
+        
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
+        print("strtest ",strtest)
         if strtest.find('str')>-1:
            elem="'"+elem+"'"+" TEXT, ";
         else:
@@ -100,11 +86,8 @@ def MakeDailyTable(z,a):
     insertionCols=novelXstr
     insert="insert into DailyTable() Values()"
     insert.replace("DailyTable",tablename)
-    #query="select*from DailyTable"
-    
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
-    #cursor.execute(novelXstr2);
     try:
      print("Try Trying 1") 
      #print(novelXstr2)
@@ -122,7 +105,7 @@ def MakeDailyTable(z,a):
      rmess.replace("DailyTable",tablename)  
      print(rmess);    
     cursor.close()    
-    print("Beginging Table insertion")
+    print("Begining Table insertion")
     rowcount=0;
     
     while rowcount<len(x):
@@ -142,46 +125,9 @@ def MakeDailyTable(z,a):
           SQLite3conn.close();
           #SQLite3conn.commit()
           rowcount=rowcount+1;
-    
-    """
-    SQLite3conn=sqlite3.connect("DailyDB")
-    cursor=SQLite3conn.cursor(); 
-    cursor.execute(novelXstr2);
-    SQLite3conn.commit() 
-    SQLite3conn.close();
-    """
-    print("end Table insertion");
+ 
     return;
-    #CallFromSQL();  
     
-    
-    #cursor.execute(query);
-    #info=cursor.description;
-    #info=pandas.DataFrame(info);
-    #titles=info[0]
-    #print("len -",len(titles)," ",type(titles),"-titles-",titles)
-    
-    #results=cursor.fetchall();
-    #results=pandas.DataFrame(results);
-    #print(type," -- ",type(results))
-    
-    
-    #results.columns=titles;
-    #results.columns=x.columns;
-    #print(results.columns);
-    #results=results.to_html()
-    #print(results);
-    #NewFrameTitles
-    #print(len( NewFrameTitles),"  NewFrameTitles - ",NewFrameTitles) 
-    #print(len(novelXstr)," novelXstr - ",novelXstr)
-    #print(len(novelXstr2)," novelXstr2 - ",novelXstr2)
-    #print(len(novelXstr3)," novelXstr3 - ",novelXstr3)
-      
-    #print("end Make Daily")
-    #SQLite3conn.close();
-    #CallFromSQL();
-    #return results;
-
     
     
 
