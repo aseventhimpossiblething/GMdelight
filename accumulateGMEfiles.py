@@ -83,6 +83,7 @@ def projection(xlfarrvix):
             newtitle=[];
             newcols=[];    
             count=0;
+            print("len(x.columns)  ",len(x.columns))    
             while count < len(x.columns):
                 colnam=x.columns[count];
                 col=x[colnam];
@@ -91,7 +92,7 @@ def projection(xlfarrvix):
                 newtitle.append(colnam);
                 newcols.append(col);
                 if count==0:
-                   NFrame=pandas.DataFrame(newcols, columns=[newtitle[count]]);
+                   NFrame=pandas.DataFrame(newcols, columns=[colnam]);
                    print("NFrame")
                    print(NFrame)     
                 else:
