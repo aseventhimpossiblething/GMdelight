@@ -69,19 +69,13 @@ def projection(xlfarrvix):
                    frame=frame.drop([y],axiz=1)
             return frame;       
         clear(LastChartRow,'Symbol','insertionDay');                
-        """
-        print("LCR----------------LCR-----",LCR)
-        print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
-        print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
-        if LCR.find('Symbol')>-1:
-           LastChartRow=LastChartRow.drop(['Symbol']);
-        if LCR.find('insertionDay')>-1:
-           LastChartRow=LastChartRow.drop(['insertionDay']);
-        """    
-        LastChartRow=LastChartRow=clear(LastChartRow,'Symbol','insertionDay') 
+        clear(xlfarrvix,'Symbol','insertionDay'); 
+
+
+        LastChartRow=LastChartRow=clear(xlfarrvixLastChartRow,'Symbol','insertionDay') 
         #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
-        px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
+        px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
         py=xlfarrvix['dayshiftedclose']; 
         
         def reorderDF(x):
