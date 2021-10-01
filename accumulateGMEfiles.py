@@ -456,9 +456,7 @@ def DailyBasisInserter():
         iexpull=requests.get(URLPull);
         iexdata=json.loads(iexpull.text);
         print("len(iexdata) -- ",len(iexdata));
-        print("iexdata------------------------Start-------------------------------------------------------");
-        print(pandas.DataFrame(iexdata)['date']);
-        print("iexdata------------------------end-------------------------------------------------------");
+        
         if len(iexdata)==0:
            inskip=str(inskip)+str(Symbols[tally]);
            skip=inskip.find(str(Symbols[tally])); 
@@ -468,7 +466,13 @@ def DailyBasisInserter():
            last2days=last2days+skip;
         if last2days<1:
               IEXColmaker(Symbols[tally]);
-              print("-----Inserting---------")     
+              print("-----Inserting---------")  
+               
+              print("iexdata------------------------Start-------------------------------------------------------");
+              print(pandas.DataFrame(iexdata)['date']);
+              print("iexdata------------------------end-------------------------------------------------------"); 
+                
+                
         print("initiating DailyBasisInserter() loop ",tally)         
         tallyPattern.append(tally);
         insertedSymbols.append(Symbols[tally]);
