@@ -65,7 +65,8 @@ def MakeDailyTable(z,a):
     novelXstr="";
     y=x.columns;
     for elem in y:
-        
+        #print("x - ",x);
+        print("elem - ",elem)
         strtest=str(type(x[elem][1]))+str(type(x[elem][2]))+str(type(x[elem][3]))+str(type(x[elem][4]))+str(type(x[elem][5]));
         print("strtest ",strtest)
         if strtest.find('str')>-1:
