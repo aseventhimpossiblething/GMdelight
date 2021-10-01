@@ -67,6 +67,17 @@ def projection(xlfarrvix):
             newtitle=[];
             newcols=[];    
             count=0;
+            while count < len(x.columns):
+                colnam=x.columns[count];
+                col=x[colnam];
+                newtitle.append(colnam);
+                newcols.append(col);
+                if count=0;
+                   NFrame=pandas.DataFrame(newcols, columns=[newtitle[count]]);
+                else:
+                   NFrame[colnam]=newcols[count];
+            #return NFrame;    
+                        
             y=x.values.tolist();
             y=numpy.array(y).T;
             y[count];
