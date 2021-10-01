@@ -60,6 +60,16 @@ def projection(xlfarrvix):
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         LCR=list(LastChartRow.columns)
+        def clear(frame,x,y);
+            for i in LCR:
+                j=i.find(x);
+                j=i.find(y);
+                if j > -1:
+                   frame=frame.drop([x],axiz=1)
+                   frame=frame.drop([y],axiz=1)
+            return frame;       
+        clear(LastChartRow,'Symbol','insertionDay);                
+        """
         print("LCR----------------LCR-----",LCR)
         print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
         print("LCR----------------LCR-----find Symbol---",LCR.find('Symbol'))
@@ -67,9 +77,10 @@ def projection(xlfarrvix):
            LastChartRow=LastChartRow.drop(['Symbol']);
         if LCR.find('insertionDay')>-1:
            LastChartRow=LastChartRow.drop(['insertionDay']);
-            
-             
-        LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        """    
+        LastChartRow=LastChartRow=clear(LastChartRow,'Symbol','insertionDay) 
+        #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
+        LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
         px=xlfarrvix.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1)
         py=xlfarrvix['dayshiftedclose']; 
         
