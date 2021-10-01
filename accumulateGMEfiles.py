@@ -86,14 +86,18 @@ def projection(xlfarrvix):
             while count < len(x.columns):
                 colnam=x.columns[count];
                 col=x[colnam];
+                print("colnam -- ",colnam)
+                print("col    -- ",col)
                 newtitle.append(colnam);
                 newcols.append(col);
                 if count==0:
                    NFrame=pandas.DataFrame(newcols, columns=[newtitle[count]]);
+                   print("NFrame")
+                   print(NFrame)     
                 else:
                    NFrame[colnam]=newcols[count];
             #return NFrame;    
-                        
+            print("past main reorder")            
             y=x.values.tolist();
             y=numpy.array(y).T;
             y[count];
