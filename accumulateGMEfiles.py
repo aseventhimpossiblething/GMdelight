@@ -72,7 +72,7 @@ def projection(xlfarrvix):
         clear(xlfarrvix,'Symbol','insertionDay'); 
 
 
-        LastChartRow=LastChartRow=clear(xlfarrvixLastChartRow,'Symbol','insertionDay') 
+        LastChartRow=clear(xlfarrvixLast,'Symbol','insertionDay') 
         #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
