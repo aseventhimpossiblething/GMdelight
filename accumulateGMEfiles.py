@@ -73,7 +73,7 @@ def projection(xlfarrvix):
                         str=str+str(type(frame[name][lcount]))
                         lcount=lcount+1;
                   print("str -- ",str)              
-                  print("str.find("str") - ",str.find("str"))     
+                  print("str.find(str) - ",str.find("str"))     
                   
             for i in LCR:
                         
