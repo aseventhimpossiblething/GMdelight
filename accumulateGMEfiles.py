@@ -139,10 +139,14 @@ def projection(xlfarrvix):
                    print("count ",count)     
                    print("newtitle")
                    print(newtitle)     
-                   print("newcols")     
-                   print(newcols)     
+                   print("newcols")
+                   #NFrame=newtitle[]
+                   print(newcols) 
+                   newcols.insert(0,newtitle[count]) 
+                   print(newcols)      
                    NFrame=pandas.DataFrame(newcols);
-                   NFrame.columns=newtitle[count];
+                
+                   #NFrame.columns=newtitle[count];
                    
                    print("NFrame")
                    print(NFrame)
