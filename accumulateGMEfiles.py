@@ -109,8 +109,8 @@ def projection(xlfarrvix):
             x=x.drop(['index'], axis=1)    
                 
             print("reorderDF")
-            print("x['index']")
-            print(x['index'])
+            #print("x['index']")
+            #print(x['index'])
             print("start len -- ",len(x['index']));
             newtitle=[];
             newcols=[];    
