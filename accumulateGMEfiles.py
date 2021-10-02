@@ -97,12 +97,7 @@ def projection(xlfarrvix):
             print(x);
             
             x=x.drop(['index'], axis=1)    
-                
-            
-            #print("x['index']")
-            #print(x['index'])
-            #print("start len -- ",len(x['index']));
-                
+                          
             newtitle=[];
             newcols=[];    
             count=0;
@@ -110,21 +105,17 @@ def projection(xlfarrvix):
             while count < len(x.columns):
                 colnam=x.columns[count];
                 col=x[colnam];
+                """
+                
                 if colnam.lower()=="index":
                    x=x.drop([colnam], axis=1)
                    
                 else:
-                   #print("colnam -- ",colnam)
-                   #print("col    -- ",col)
-                   newtitle.append(colnam);
-                   newcols.append(col);
-                """        
-                print("count ",count)     
-                print("newtitle")
-                print(newtitle)     
-                print("newcols")     
-                print(newcols)
-                print("len(newtitle) ",len(newtitle))
+                """
+                #print("colnam -- ",colnam)
+                #print("col    -- ",col)
+                newtitle.append(colnam);
+                newcols.append(col);
                 """
                 if len(newtitle)==1:
                    """     
@@ -144,13 +135,13 @@ def projection(xlfarrvix):
                    
                    print("NFrame")
                    print(NFrame)
-             
+                """
                 count=count+1;
             
             print("newtitle")
             print(newtitle)    
             #print("newcols")
-            #print(newcols)    
+            print(newcols)    
                 
             return NFrame;    
            
