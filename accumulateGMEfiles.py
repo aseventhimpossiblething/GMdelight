@@ -61,8 +61,22 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         #LCR=list(LastChartRow.columns)
         def clear(frame,x,y):
-            LCR=list(frame.columns)    
+            len(frame.columns)    
+            LCR=list(frame.columns)
+            count=0;
+            while count<len(frame.columns):
+                  str="-";      
+                  print("len(frame.columns)  -- ",len(frame.columns));
+                  name=LCR[count];
+                  lcount=0;
+                  while lcount<5:
+                        str=str+str(type(frame[name][lcount]))
+                        lcount=lcount+1:
+                  print("str -- ",str)              
+                  print("str.find("str") - ",str.find("str"))     
+                  
             for i in LCR:
+                        
                 j=i.find(x);
                 k=i.find(y);
                 if j > -1:
