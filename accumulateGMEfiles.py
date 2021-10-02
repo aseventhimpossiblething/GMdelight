@@ -61,11 +61,12 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         #LCR=list(LastChartRow.columns)
         def clear(frame,x,y):
-            print("inside def clear")    
+            print("inside def clear------------------------------------------clear clear clear")    
             print(frame)    
             len(frame.columns)    
             LCR=list(frame.columns)
             count=0;
+            """
             while count<len(frame.columns):
                   string="-";      
                   print("len(frame.columns)  -- ",len(frame.columns));
@@ -80,11 +81,11 @@ def projection(xlfarrvix):
                         #print("type(frame[name][lcount]) ",type(frame[name][lcount]))
                         #print("frame[name][lcount] ",type(frame[name][lcount]))
                         #print("type-type-type(frame[name][lcount]) ",type(type(frame[name][lcount])))
-                        string=string+str(type(frame[name][count][lcount]))
+                        string=string+str(type(frame[name][lcount]))
                         lcount=lcount+1;
                   print("str -- ",str)              
                   print("str.find(str) - ",str.find("str"))     
-                  
+            """      
             for i in LCR:
                         
                 j=i.find(x);
@@ -108,7 +109,7 @@ def projection(xlfarrvix):
         def reorderDF(x):
             x=x.drop(['index'], axis=1)    
                 
-            print("reorderDF")
+            print("reorderDF------------------------------reorder reorder")
             #print("x['index']")
             #print(x['index'])
             #print("start len -- ",len(x['index']));
@@ -146,7 +147,7 @@ def projection(xlfarrvix):
                    print(newcols) 
                    """
                    newcols.insert(0,newtitle[count]) 
-                   print(newcols)      
+                   #print(newcols)      
                    NFrame=pandas.DataFrame(newcols);
                 
                    #NFrame.columns=newtitle[count];
@@ -167,6 +168,7 @@ def projection(xlfarrvix):
     
         print("line 132")
         print(xlfarrvix)
+        
         px=clear(xlfarrvix,'Symbol','insertionDay');
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         py=LastChartRow
