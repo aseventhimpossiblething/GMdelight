@@ -65,7 +65,7 @@ def projection(xlfarrvix):
             LCR=list(frame.columns)
             count=0;
             while count<len(frame.columns):
-                  str="-";      
+                  string="-";      
                   print("len(frame.columns)  -- ",len(frame.columns));
                   name=LCR[count];
                   lcount=0;
