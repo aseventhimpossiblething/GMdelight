@@ -61,6 +61,7 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         #LCR=list(LastChartRow.columns)
         def clear(frame,x,y):
+            print("inside def clear")    
             print(frame)    
             len(frame.columns)    
             LCR=list(frame.columns)
@@ -372,10 +373,10 @@ def IEXColmaker(TargetSymbol):
         arrvix=arr1.merge(vixarr1, on="index");
         xlfarrvix=arrvix.merge(xlfxarr1, on="index");
         xlfarrvix=xlfarrvix.drop(['xldate','vxdate'], axis=1)
-        print("arr1")
-        print(arr1)
-        print("xlfarrvix")
-        print(xlfarrvix)
+        #print("arr1")
+        #print(arr1)
+        #print("xlfarrvix")
+        #print(xlfarrvix)
         Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         projection(xlfarrvix)
         return xlfarrvix;
