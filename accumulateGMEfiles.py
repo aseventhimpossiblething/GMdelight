@@ -120,7 +120,7 @@ def projection(xlfarrvix):
                 colnam=x.columns[count];
                 col=x[colnam];
                 if colnam.lower()=="index":
-                   x=x.drop([colnam]) 
+                   x=x.drop([colnam], axis=1) 
                 else:
                    #print("colnam -- ",colnam)
                    #print("col    -- ",col)
