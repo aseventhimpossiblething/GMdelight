@@ -105,7 +105,7 @@ def projection(xlfarrvix):
         px=xlfarrvix
         py=LastChartRow
         #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
-        pxco=xlfarrvix.drop(['index','dayshiftedclose','date','Symbol','insertionDay'], axis=1)
+        pxco=xlfarrvix.drop(['index','dayshiftedclose','date'], axis=1)
         pxcor=pxco.corr(method='pearson')
         
         component=PCA(n_components=4);
