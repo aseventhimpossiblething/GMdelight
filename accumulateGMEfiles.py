@@ -107,7 +107,9 @@ def projection(xlfarrvix):
         print(xlfarrvix)
         def reorderDF(x):
                 
-            print("reorderDF")    
+                
+            print("reorderDF")
+            print(x)
             print("start len -- ",len(x['index']));
             newtitle=[];
             newcols=[];    
