@@ -126,7 +126,7 @@ def projection(xlfarrvix):
                    #print("col    -- ",col)
                    newtitle.append(colnam);
                    newcols.append(col);
-                if len[newtitle]==1:
+                if len(newtitle)==1:
                    print("newtitle")
                    print(newtitle)     
                    print("newcols")     
