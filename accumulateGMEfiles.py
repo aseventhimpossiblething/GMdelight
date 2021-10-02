@@ -109,8 +109,8 @@ def projection(xlfarrvix):
                 newcols.append(col);
                 if count==0:
                    NFrame=pandas.DataFrame(newcols, columns=[colnam]);
-                   print("NFrame")
-                   print(NFrame)     
+                   #print("NFrame")
+                   #print(NFrame)     
                 else:
                    NFrame[colnam]=newcols[count];
                 count=count+1;
