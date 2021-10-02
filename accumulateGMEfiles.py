@@ -104,6 +104,7 @@ def projection(xlfarrvix):
         py=xlfarrvix['dayshiftedclose']; 
         
         def reorderDF(x):
+            print("reorderDF")    
             print("start len -- ",len(x['index']));
             newtitle=[];
             newcols=[];    
@@ -508,7 +509,7 @@ def DailyBasisInserter():
               print("iexdata------------------------Start-------------------------------------------------------");
               print(pandas.DataFrame(iexdata)['date']);
               print("iexdata------------------------end-------------------------------------------------------"); 
-                  
+              print(Symbols[tally]," activating IEXcolmaker with length ",len(iexdata))    
               IEXColmaker(Symbols[tally]);
               print("-----Inserting---------")  
                
