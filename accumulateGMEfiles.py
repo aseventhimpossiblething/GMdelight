@@ -61,12 +61,14 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         #LCR=list(LastChartRow.columns)
         def clear(frame,x,y):
+            LCR=list(frame.columns)    
             for i in LCR:
                 j=i.find(x);
-                j=i.find(y);
+                k=i.find(y);
                 if j > -1:
                    frame=frame.drop([x],axiz=1)
-                   frame=frame.drop([y],axiz=1)
+                if k > -1:
+                  frame=frame.drop([y],axiz=1)        
             return frame;       
         #clear(LastChartRow,'Symbol','insertionDay');                
         #px=clear(xlfarrvix,'Symbol','insertionDay'); 
