@@ -129,6 +129,8 @@ def projection(xlfarrvix):
            
         xlfarrvix=reorderDF(xlfarrvix);
         #px=xlfarrvix
+        print("line 132")
+        print(xlfarrvix)
         px=clear(xlfarrvix,'Symbol','insertionDay');
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         py=LastChartRow
