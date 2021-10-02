@@ -72,6 +72,8 @@ def projection(xlfarrvix):
                   colName=LCR[count];
                   specifiCol=frame[colName];
                   while lcount<5:
+                        print("lcount -- ",lcount)
+                        print("specifiCo -- ",specifiCo)
                         item=specifiCol[lcount];
                         itemType=str(type(item));
                         stringifiedClasses=stringifiedClasses+itemType                        
