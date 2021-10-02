@@ -69,7 +69,7 @@ def projection(xlfarrvix):
                    frame=frame.drop([y],axiz=1)
             return frame;       
         #clear(LastChartRow,'Symbol','insertionDay');                
-        #clear(xlfarrvix,'Symbol','insertionDay'); 
+        #px=clear(xlfarrvix,'Symbol','insertionDay'); 
 
 
         #LastChartRow=clear(xlfarrvix,'Symbol','insertionDay') 
@@ -101,8 +101,9 @@ def projection(xlfarrvix):
             return NFrame;    
            
         xlfarrvix=reorderDF(xlfarrvix);
+        #px=xlfarrvix
+        px=clear(xlfarrvix,'Symbol','insertionDay');
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
-        px=xlfarrvix
         py=LastChartRow
         #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date'], axis=1)
