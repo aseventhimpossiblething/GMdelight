@@ -61,6 +61,7 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         #LCR=list(LastChartRow.columns)
         def clear(frame,x,y):
+            print(frame)    
             len(frame.columns)    
             LCR=list(frame.columns)
             count=0;
