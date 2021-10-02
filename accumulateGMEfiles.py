@@ -102,8 +102,9 @@ def projection(xlfarrvix):
         #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
         #LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
-        py=xlfarrvix['dayshiftedclose']; 
-        
+        py=xlfarrvix['dayshiftedclose'];
+        print("above reorder")
+        print(xlfarrvix)
         def reorderDF(x):
             print("reorderDF")    
             print("start len -- ",len(x['index']));
@@ -128,7 +129,7 @@ def projection(xlfarrvix):
             return NFrame;    
            
         xlfarrvix=reorderDF(xlfarrvix);
-        #px=xlfarrvix
+    
         print("line 132")
         print(xlfarrvix)
         px=clear(xlfarrvix,'Symbol','insertionDay');
