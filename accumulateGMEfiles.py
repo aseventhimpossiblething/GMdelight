@@ -131,9 +131,11 @@ def projection(xlfarrvix):
                 print("newtitle")
                 print(newtitle)     
                 print("newcols")     
-                print(newcols) 
+                print(newcols)
+                print("len(newtitle) ",len(newtitle))
                 
                 if len(newtitle)==1:
+                   print(len(newtitle)," firing NFrame ")     
                    print("count ",count)     
                    print("newtitle")
                    print(newtitle)     
@@ -143,9 +145,11 @@ def projection(xlfarrvix):
                    NFrame.columns=newtitle[count];
                    
                    print("NFrame")
-                   print(NFrame)     
+                   print(NFrame)
+                """
                 else:
                    NFrame[colnam]=newcols[count];
+                """
                 count=count+1;
             
             print("newtitle")
