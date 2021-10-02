@@ -93,12 +93,16 @@ def projection(xlfarrvix):
         print("above reorder")
         print(xlfarrvix)
         def reorderDF(x):
+            print("reorderDF------------------------------reorder reorder")
+            print(x);
+            
             x=x.drop(['index'], axis=1)    
                 
-            print("reorderDF------------------------------reorder reorder")
+            
             #print("x['index']")
             #print(x['index'])
             #print("start len -- ",len(x['index']));
+                
             newtitle=[];
             newcols=[];    
             count=0;
