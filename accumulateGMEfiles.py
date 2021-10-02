@@ -76,10 +76,10 @@ def projection(xlfarrvix):
                         print("lcount ",lcount)
                         print("frame[name] ",frame[name])
                         #print("type(frame[name][lcount].values) ",type(frame[name][lcount].values));
-                        print("frame[name][lcount] ",frame[name][lcount])
-                        print("type(frame[name][lcount]) ",type(frame[name][lcount]))
+                        #print("frame[name][lcount] ",frame[name][lcount])
+                        #print("type(frame[name][lcount]) ",type(frame[name][lcount]))
                         #print("frame[name][lcount] ",type(frame[name][lcount]))
-                        print("type-type-type(frame[name][lcount]) ",type(type(frame[name][lcount])))
+                        #print("type-type-type(frame[name][lcount]) ",type(type(frame[name][lcount])))
                         string=string+str(type(frame[name][lcount]))
                         lcount=lcount+1;
                   print("str -- ",str)              
