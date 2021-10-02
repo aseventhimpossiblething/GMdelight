@@ -71,7 +71,7 @@ def projection(xlfarrvix):
                   lcount=0;
                   while lcount<5:
                         str=str+str(type(frame[name][lcount]))
-                        lcount=lcount+1:
+                        lcount=lcount+1;
                   print("str -- ",str)              
                   print("str.find("str") - ",str.find("str"))     
                   
