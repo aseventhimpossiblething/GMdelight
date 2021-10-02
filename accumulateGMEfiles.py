@@ -74,7 +74,7 @@ def projection(xlfarrvix):
                         print("frame[name][lcount] ",frame[name][lcount])
                         print("type(frame[name][lcount]) ",type(frame[name][lcount]))
                         #print("frame[name][lcount] ",type(frame[name][lcount]))
-                        print("type-type-type(frame[name][lcount]) ",)type(type(frame[name][lcount])))
+                        print("type-type-type(frame[name][lcount]) ",type(type(frame[name][lcount])))
                         str=str+type(frame[name][lcount])
                         lcount=lcount+1;
                   print("str -- ",str)              
