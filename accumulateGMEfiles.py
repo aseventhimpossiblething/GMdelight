@@ -106,7 +106,7 @@ def projection(xlfarrvix):
         print("above reorder")
         print(xlfarrvix)
         def reorderDF(x):
-            x=x.drop(['index'])    
+            x=x.drop(['index'], axis=1)    
                 
             print("reorderDF")
             print("x['index']")
