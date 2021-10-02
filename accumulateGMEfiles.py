@@ -115,8 +115,8 @@ def projection(xlfarrvix):
             while count < len(x.columns):
                 colnam=x.columns[count];
                 col=x[colnam];
-                print("colnam -- ",colnam)
-                print("col    -- ",col)
+                #print("colnam -- ",colnam)
+                #print("col    -- ",col)
                 newtitle.append(colnam);
                 newcols.append(col);
                 if count==0:
@@ -126,6 +126,12 @@ def projection(xlfarrvix):
                 else:
                    NFrame[colnam]=newcols[count];
                 count=count+1;
+            
+            print("newtitle")
+            print(newtitle)    
+            print("newcols")
+            print(newcols)    
+                
             return NFrame;    
            
         xlfarrvix=reorderDF(xlfarrvix);
