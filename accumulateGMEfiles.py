@@ -127,14 +127,16 @@ def projection(xlfarrvix):
                    #print("col    -- ",col)
                    newtitle.append(colnam);
                    newcols.append(col);
+                """        
                 print("count ",count)     
                 print("newtitle")
                 print(newtitle)     
                 print("newcols")     
                 print(newcols)
                 print("len(newtitle) ",len(newtitle))
-                
+                """
                 if len(newtitle)==1:
+                   """     
                    print(len(newtitle)," firing NFrame ")     
                    print("count ",count)     
                    print("newtitle")
@@ -142,6 +144,7 @@ def projection(xlfarrvix):
                    print("newcols")
                    #NFrame=newtitle[]
                    print(newcols) 
+                   """
                    newcols.insert(0,newtitle[count]) 
                    print(newcols)      
                    NFrame=pandas.DataFrame(newcols);
@@ -150,10 +153,7 @@ def projection(xlfarrvix):
                    
                    print("NFrame")
                    print(NFrame)
-                """
-                else:
-                   NFrame[colnam]=newcols[count];
-                """
+             
                 count=count+1;
             
             print("newtitle")
