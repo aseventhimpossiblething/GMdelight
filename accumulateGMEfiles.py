@@ -66,35 +66,19 @@ def projection(xlfarrvix):
             len(frame.columns)    
             LCR=list(frame.columns)
             count=0;
-            """
+            lcount=0; 
+            stringifiedClasses="-"
             while count<len(frame.columns):
-                  string="-";      
-                  print("len(frame.columns)  -- ",len(frame.columns));
-                  name=LCR[count];
-                  lcount=0;
+                  colName=LCR[count];
+                  specifiCol=frame[colName];
                   while lcount<5:
-                        print("count ",count)
-                        print("lcount ",lcount)
-                        print("frame[name] ",frame[name])
-                        #print("type(frame[name][lcount].values) ",type(frame[name][lcount].values));
-                        #print("frame[name][lcount] ",frame[name][lcount])
-                        #print("type(frame[name][lcount]) ",type(frame[name][lcount]))
-                        #print("frame[name][lcount] ",type(frame[name][lcount]))
-                        #print("type-type-type(frame[name][lcount]) ",type(type(frame[name][lcount])))
-                        string=string+str(type(frame[name][lcount]))
-                        lcount=lcount+1;
-                  print("str -- ",str)              
-                  print("str.find(str) - ",str.find("str"))     
-            """      
-            for i in LCR:
-                        
-                j=i.find(x);
-                k=i.find(y);
-                if j > -1:
-                   frame=frame.drop([x],axiz=1)
-                if k > -1:
-                  frame=frame.drop([y],axiz=1)        
-            return frame;       
+                        item=specifiCol[lcount];
+                        itemType=type(item);
+                        stringifiedClasses=stringifiedClasses+itemType                        
+                        lcount=lcount+1;        
+                  colname
+                  count=count+1;
+            print("stringifiedClasses-------------",tringifiedClasses)            
         #clear(LastChartRow,'Symbol','insertionDay');                
         #px=clear(xlfarrvix,'Symbol','insertionDay'); 
 
