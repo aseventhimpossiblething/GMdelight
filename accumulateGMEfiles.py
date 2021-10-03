@@ -93,8 +93,10 @@ def projection(xlfarrvix):
         print("above reorder")
         print(xlfarrvix)
         def reorderDF(x):
-            print("x.corr() ",x.corr())    
+            print("x.corr() ",x.corr()) 
+            comparisonCol=x['dayshiftedclose'];
             newtitle=[];
+            corrlist=[];    
             newcols=[];    
             count=0;
             while count < len(x.columns):
@@ -112,9 +114,17 @@ def projection(xlfarrvix):
             count=0;
             while count <= (len(newcols)-1):
                   NFrame[newtitle[count]]=newcols[count]      
-                  count=count+1;      
-            #NFrame.columns=[newtitle[count]];
-            #print("nframe corr ------ ",NFrame.corr())
+                  count=count+1;
+             while count <= (len(newcols)-1):
+                  #NFrame[newtitle[count]]=newcols[count]
+                  compFrame["comparisonCol"]=comparisonCol;
+                  compFrame[newtitle[count]]
+                  print("compFrame ")
+                  print(compFrame) 
+                  print("compFrame.corr ")
+                  print(compFrame.corr())  
+                  count=count+1;                
+            
         
             return NFrame;    
            
