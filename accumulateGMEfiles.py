@@ -126,6 +126,7 @@ def projection(xlfarrvix):
                       DropCols.append(x.columns[count])
                       print("Drop all -- ",DropCols)  
                   count=count+1;
+            x.drop(DropCols,axis=1)            
             count=0;            
             while count <= len(x.columns):
                   compFrame=pandas.DataFrame(comparisonCol);
