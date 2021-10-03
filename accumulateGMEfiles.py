@@ -126,9 +126,9 @@ def projection(xlfarrvix):
             while count <= len(x.columns):
                   #print("comparisonCol.columns -- ",comparisonCol.columns)      
                   print("start-----",count)
-                  print("comparisonCol.columns -- ",comparisonCol.columns)        
+                  print("comparisonCol[0] -- ",comparisonCol[0])        
                   print("x.columns[count] ",x.columns[count])
-                  if comparisonCol.columns==x.columns[count]:
+                  if comparisonCol[0]==x.columns[count]:
                      count=count+1;
                      print("Jump count!--",count)
                   compFrame=pandas.DataFrame(comparisonCol);
