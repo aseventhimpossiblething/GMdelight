@@ -127,32 +127,30 @@ def projection(xlfarrvix):
                 count=count+1;
             count=0;            
             while count <= len(x.columns)-1:
-                  #print("comparisonCol.columns -- ",comparisonCol.columns)      
                   print("start-----",count)
-                  #print("comparisonCol -- ",comparisonCol)        
                   print("x.columns[count] ",x.columns[count])
                   targetchecknumber=str(x.columns[count]).find(target);
                   if targetchecknumber==-1:
-                      """           
-                      if target==x.columns[count]:
-                        count=count+1;
-                        print("Jump count!--",count)
-                      """
                       compFrame=pandas.DataFrame(comparisonCol);
                       compFrame[x.columns[count]]=list(x[x.columns[count]])
                       corrTable=compFrame.corr();
                       corrTable=corrTable[x.columns[count]];
                       corrTable=corrTable.drop(x.columns[count], axis=0)      
                       corrlist.append(corrTable[0])
-                
                   print("end-------",count)
-                  
                   count=count+1;
             mean=numpy.mean(corrlist) 
             median=numpy.median(corrlist)
+            newtitle;
+            corrlist;
+            dict=dict.fromkeys(corrlist,newtitle)    
             print("mean ",mean)
-            print("median ",median)  
+            print("median ",median) 
+            print("Dict ",Dict)
+            print("newtitle")    
+            print(newtitle)    
             print("DropCols = ",DropCols)
+                
             return x;
         
         xlfarrvix=reorderDF(xlfarrvix);
