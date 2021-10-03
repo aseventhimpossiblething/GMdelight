@@ -103,7 +103,7 @@ def projection(xlfarrvix):
             comparisonCol=x['dayshiftedclose'];
             newtitle=[];
             corrlist=[];    
-            newcols=[]; 
+            DropCols=[]; 
             #typeStr=""
             count=0;
             while count < len(x.columns):
@@ -112,15 +112,15 @@ def projection(xlfarrvix):
                 #print("count 1 ",count)
                      
                 newtitle.append(colnam);
-                newcols.append(col);
+                #newcols.append(col);
                 
                
                 count=count+1;
-            NFrame=pandas.DataFrame(newcols[0], columns=[newtitle[0]]); 
+            #NFrame=pandas.DataFrame(newcols[0], columns=[newtitle[0]]); 
                       
             count=0;
             while count < len(x.columns):
-                  NFrame[x.columns[count]]=newcols[count]
+                  #NFrame[x.columns[count]]=newcols[count]
                   
                   typeStr=""                         
                   scount=0;
@@ -131,19 +131,22 @@ def projection(xlfarrvix):
                         print("typeStr - ",typeStr) 
                         scount=scount+1;                   
                                            
-                  print(" typeStr.find(str) ", typeStr.find("str"))                     
-                        
+                  print(" typeStr.find(str) ", typeStr.find("str"))
+                  if typeStr.find("str")>-1:
+                      print("Drop col -- ",x.columns[count])
+                      DropCols.append(x.columns[count])
+                      print("Drop all -- ",DropCols)  
                   count=count+1;
             count=0;            
             while count <= len(x.columns):
                   #NFrame[newtitle[count]]=newcols[count]
                   compFrame=pandas.DataFrame(comparisonCol);
-                  print("compFrame 1")
-                  print(compFrame)       
+                  #print("compFrame 1")
+                  #print(compFrame)       
                   #compFrame[newtitle[count]]=x[newtitle[count]]
                   compFrame[newtitle[count]]=list(x[newtitle[count]])
-                  print("compFrame 2")
-                  print(compFrame)
+                  #print("compFrame 2")
+                  #print(compFrame)
                   corrTable=compFrame.corr();
                   corrTable=corrTable[newtitle[count]];
                   corrTable=corrTable.drop(newtitle[count], axis=0)      
@@ -158,7 +161,7 @@ def projection(xlfarrvix):
                   count=count+1;                
             
         
-            return NFrame;    
+            #return NFrame;    
            
         xlfarrvix=reorderDF(xlfarrvix);
     
