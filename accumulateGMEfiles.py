@@ -129,7 +129,7 @@ def projection(xlfarrvix):
                         print("typeStr - ",typeStr) 
                         scount=scount+1;                   
                                            
-                  print(" typeStr.find("str") ", typeStr.find("str"))                     
+                  print(" typeStr.find(str) ", typeStr.find("str"))                     
                         
                   count=count+1;
             count=0;            
