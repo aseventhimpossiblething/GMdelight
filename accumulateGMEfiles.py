@@ -93,11 +93,6 @@ def projection(xlfarrvix):
         print("above reorder")
         print(xlfarrvix)
         def reorderDF(x):
-            print("reorderDF------------------------------reorder reorder")
-            print(x);
-            
-            x=x.drop(['index'], axis=1)    
-                          
             newtitle=[];
             newcols=[];    
             count=0;
@@ -111,55 +106,15 @@ def projection(xlfarrvix):
                 
                
                 count=count+1;
-            newtitle[0];
-            newcols[0];
-            #nf=[];
-            #nf.append(newtitle[0]);
             NFrame=pandas.DataFrame(newcols[0], columns=[newtitle[0]]); 
-            #print("NFrame")  
-            #print(NFrame)
-            #print("x[newtitle][0]")
-            #print(x[[newtitle][0]])
-                
+                      
             count=0;
             while count <= (len(newcols)-1):
-                  print("top ------- ",count);
-                  print("len(newcols[0] ",len(newcols)); 
-                  print("len(newcols[0]-1 ",len(newcols)-1);
-                  print("count ",count);      
-                  print("newtitle[count] ",newtitle[count])
-                  print()
-                  print("newcols[count] ",newcols[count] )
-                  print("new----")      
-                  NFrame[newtitle[count]]=newcols[count] 
-                  #print("count ",count);
-                        
-                  print("Botton ----- ",count);
-                  #print(NFrame);      
-                  """      
-                  print("newtitle[count] ")      
-                  print(newtitle[count]);      
-                  print("newcols[count] ")
-                  print(newcols[count]);      
-                  """
-                        
+                  NFrame[newtitle[count]]=newcols[count]      
                   count=count+1;      
-                  
-                
-            NFrame=pandas.DataFrame(nf);
             NFrame.columns=[newtitle[count]];
-            print("NFrame")  
-            print(NFrame)
-            print("x[[newtitle][0]]")
-            print(x[[newtitle][0]])            
-            #print("nf")  
-            #print(nf)
-            
-            #print("newtitle")
-            #print(newtitle)    
-            #print("newcols")
-            #print(newcols)    
-               
+            print("nframe corr ------ ",Nframe.corr())
+        
             return NFrame;    
            
         xlfarrvix=reorderDF(xlfarrvix);
