@@ -125,7 +125,7 @@ def projection(xlfarrvix):
                   typeStr=""                         
                   scount=0;
                   while scount < 5:
-                        typeStr=typeStr+str(type(NFrame[x.columns[count]]));
+                        typeStr=typeStr+str(type(NFrame[x.columns[count][scount]]));
                         print("typeStr - ",typeStr) 
                         scount=scount+1;                   
                                            
