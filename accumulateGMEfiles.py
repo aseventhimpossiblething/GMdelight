@@ -112,7 +112,7 @@ def projection(xlfarrvix):
             while count <= (len(newcols)-1):
                   NFrame[newtitle[count]]=newcols[count]      
                   count=count+1;      
-            NFrame.columns=[newtitle[count]];
+            #NFrame.columns=[newtitle[count]];
             print("nframe corr ------ ",Nframe.corr())
         
             return NFrame;    
