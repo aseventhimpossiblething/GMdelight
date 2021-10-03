@@ -135,10 +135,10 @@ def projection(xlfarrvix):
                      count=count+1;
                      print("Jump count!--",count)
                   compFrame=pandas.DataFrame(comparisonCol);
-                  compFrame[newtitle[count]]=list(x[newtitle[count]])
+                  compFrame[x.columns[count]]=list(x[x.columns[count]])
                   corrTable=compFrame.corr();
-                  corrTable=corrTable[newtitle[count]];
-                  corrTable=corrTable.drop(newtitle[count], axis=0)      
+                  corrTable=corrTable[x.columns[count]];
+                  corrTable=corrTable.drop(x.columns[count], axis=0)      
                   corrlist.append(corrTable[0])
                   #print("corrTable")
                   #print(corrTable)
@@ -148,7 +148,9 @@ def projection(xlfarrvix):
                   
                   count=count+1;
             mean=numpy.mean(corrlist) 
-            median=numpy.median(corrlist) 
+            median=numpy.median(corrlist)
+            print("mean ",mean)
+            print("median ",median)  
             print("DropCols = ",DropCols)
             return x;
         
