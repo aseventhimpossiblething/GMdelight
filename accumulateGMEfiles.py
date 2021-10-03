@@ -139,9 +139,12 @@ def projection(xlfarrvix):
                 count=count+1;
             count=0;            
             while count <= len(x.columns):
-                  print("start-----",count)      
+                  print("start-----",count)   
+                  print("x.columns[count] ",x.columns[count]) 
                   compFrame=pandas.DataFrame(comparisonCol);
+                  print(" compFrame=pandas.DataFrame(comparisonCol); ------ ",count)        
                   compFrame[x.columns[count]]=list(x[x.columns[count]])
+                  print("corrTable=compFrame.corr();")      
                   corrTable=compFrame.corr();
                   corrTable=corrTable[x.columns[count]];
                   corrTable=corrTable.drop(x.columns[count], axis=0)      
