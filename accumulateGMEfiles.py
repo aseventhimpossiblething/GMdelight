@@ -106,14 +106,15 @@ def projection(xlfarrvix):
             comparisonCol=x['dayshiftedclose'];
             newtitle=[];
             corrlist=[];    
-            DropCols=[]; 
+            DropCols=[];
+            """
             count=0;
             while count < len(x.columns):
                 colnam=x.columns[count];
                 #col=x[colnam];
                 newtitle.append(colnam);
                 count=count+1;
-                                  
+            """                      
             count=0;
             while count < len(x.columns):
                   typeStr=""                         
@@ -129,14 +130,20 @@ def projection(xlfarrvix):
                       DropCols.append(x.columns[count])
                       print("Drop all -- ",DropCols)  
                   count=count+1;
-            x=x.drop(DropCols,axis=1)            
+            x=x.drop(DropCols,axis=1)
+            count=0;
+            while count < len(x.columns):
+                colnam=x.columns[count];
+                #col=x[colnam];
+                newtitle.append(colnam);
+                count=count+1;
             count=0;            
             while count <= len(x.columns):
                   compFrame=pandas.DataFrame(comparisonCol);
-                  compFrame[newtitle[count]]=list(x[newtitle[count]])
+                  compFrame[x.columns[count]]=list(x[x.columns[count]])
                   corrTable=compFrame.corr();
-                  corrTable=corrTable[newtitle[count]];
-                  corrTable=corrTable.drop(newtitle[count], axis=0)      
+                  corrTable=corrTable[x.columns[count]];
+                  corrTable=corrTable.drop(x.columns[count], axis=0)      
                   corrlist.append(corrTable[0])
                   print("corrTable")
                   print(corrTable)
@@ -144,7 +151,8 @@ def projection(xlfarrvix):
                   print(corrlist) 
                   
                   count=count+1;                
-            print("DropCols = ",DropCols) 
+            print("DropCols = ",DropCols)
+            return x;
         
         xlfarrvix=reorderDF(xlfarrvix);
     
