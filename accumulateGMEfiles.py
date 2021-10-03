@@ -139,8 +139,8 @@ def projection(xlfarrvix):
             print(x[0])
             count=0;
             while count < len(x.columns):
-                  newtitle[];
-                  newcols[];          
+                  newtitle[count];
+                  newcols[count];          
                   count=count+1;
                 
             #print("newtitle")
