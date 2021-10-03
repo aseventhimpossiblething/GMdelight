@@ -125,11 +125,14 @@ def projection(xlfarrvix):
             while count <= len(newcols[0]):
                   NFrame[newtitle[count]]=newcols[count] 
                   print("count ",count);
+                  print("count ")
+                  print(NFrame);      
+                  """      
                   print("newtitle[count] ")      
                   print(newtitle[count]);      
                   print("newcols[count] ")
                   print(newcols[count]);      
-                
+                  """
                         
                   count=count+1;      
                   
