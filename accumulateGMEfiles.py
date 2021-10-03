@@ -113,7 +113,7 @@ def projection(xlfarrvix):
                   NFrame[newtitle[count]]=newcols[count]      
                   count=count+1;      
             #NFrame.columns=[newtitle[count]];
-            print("nframe corr ------ ",Nframe.corr())
+            print("nframe corr ------ ",NFrame.corr())
         
             return NFrame;    
            
