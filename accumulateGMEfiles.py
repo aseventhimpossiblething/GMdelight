@@ -94,7 +94,7 @@ def projection(xlfarrvix):
         print(xlfarrvix)
         def reorderDF(x):
             x=x.drop(['index'], axis=1)    
-            print("any(index) -- ",x.columns.any('index'))    
+            print("any(index) -- ",x.columns.any('cat'))    
             print("x.corr() ",x.corr()) 
             comparisonCol=x['dayshiftedclose'];
             newtitle=[];
