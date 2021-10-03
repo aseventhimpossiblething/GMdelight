@@ -141,7 +141,7 @@ def projection(xlfarrvix):
                 
             count=0;
             while count < len(newcols[0]):
-                  NFrame[newtitle[count]]=newcols[newtitle[count]]      
+                  NFrame[newtitle[count]]=newcols[count]      
                         
                   """
                   print("count ",count)      
