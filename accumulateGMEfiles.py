@@ -122,7 +122,7 @@ def projection(xlfarrvix):
             #print(x[[newtitle][0]])
                 
             count=0;
-            while count <= len(newcols[0]-1):
+            while count <= len(newcols):
                   print("top ------- ",count);
                   print("len(newcols[0] ",len(newcols[0])); 
                   print("len(newcols[0]-1 ",len(newcols[0]-1));
