@@ -118,7 +118,7 @@ def projection(xlfarrvix):
             count=0;            
             while count <= (len(newcols)-1):
                   #NFrame[newtitle[count]]=newcols[count]
-                  compFrame["comparisonCol"]=comparisonCol;
+                  compFrame=comparisonCol;
                   compFrame[newtitle[count]]
                   print("compFrame ")
                   print(compFrame) 
