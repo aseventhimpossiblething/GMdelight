@@ -101,7 +101,8 @@ def projection(xlfarrvix):
             comparisonCol=x['dayshiftedclose'];
             newtitle=[];
             corrlist=[];    
-            newcols=[];    
+            newcols=[]; 
+            typeStr=""
             count=0;
             while count < len(x.columns):
                 colnam=x.columns[count];
@@ -116,8 +117,10 @@ def projection(xlfarrvix):
             NFrame=pandas.DataFrame(newcols[0], columns=[newtitle[0]]); 
                       
             count=0;
-            while count <= (len(newcols)-1):
-                  NFrame[newtitle[count]]=newcols[count]      
+            while count < len(x.columns)):
+                  NFrame[x.columns[count]]=newcols[count]  
+                  typeStr=typeStr+str(type(NFrame[x.columns[count]]));
+                        
                   count=count+1;
             count=0;            
             while count <= (len(newcols)-1):
