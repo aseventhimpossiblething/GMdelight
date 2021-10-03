@@ -145,7 +145,7 @@ def projection(xlfarrvix):
             corrlist;
             ColDropChart=pandas.DataFrame(corrlist,columns=[newtitle]);    
             Dictionary=dict(zip(corrlist,newtitle))
-            print("ColDropCharSTD)
+            print("ColDropCharSTD")
             print(ColDropChar)
             print("ColDropCharLST)
             print(list(ColDropChar))      
