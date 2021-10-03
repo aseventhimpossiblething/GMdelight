@@ -137,8 +137,8 @@ def projection(xlfarrvix):
             NFrame=pandas.DataFrame(); 
             print("NFrame")  
             print(NFrame)
-            print("x[0]")
-            print(x[0])
+            print("x[newtitle][0]")
+            print(x[[newtitle][0]])
             count=0;
             while count < len(newcols[0]):
                   nf.append(newcols[0][count]);      
@@ -147,8 +147,8 @@ def projection(xlfarrvix):
                   count=count+1;
             print("NFrame")  
             print(NFrame)
-            print("x[0]")
-            print(x[0])            
+            print("x[[newtitle][0]]")
+            print(x[[newtitle][0]])            
             print("nf")  
             print(nf)
             
