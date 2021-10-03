@@ -124,7 +124,7 @@ def projection(xlfarrvix):
                 newtitle.append(colnam);
                 count=count+1;
             count=0;            
-            while count <= len(x.columns):
+            while count <= len(x.columns)-1:
                   #print("comparisonCol.columns -- ",comparisonCol.columns)      
                   print("start-----",count)
                   #print("comparisonCol -- ",comparisonCol)        
