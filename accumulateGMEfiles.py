@@ -101,21 +101,13 @@ def projection(xlfarrvix):
             newtitle=[];
             newcols=[];    
             count=0;
-            print("len(x.columns)  ",len(x.columns))    
             while count < len(x.columns):
                 colnam=x.columns[count];
                 col=x[colnam];
-                """
-                
-                if colnam.lower()=="index":
-                   x=x.drop([colnam], axis=1)
-                   
-                else:
-                """
-                #print("colnam -- ",colnam)
-                #print("col    -- ",col)
+                     
                 newtitle.append(colnam);
                 newcols.append(col);
+                
                 """
                 if len(newtitle)==1:
                      
@@ -137,11 +129,24 @@ def projection(xlfarrvix):
                    print(NFrame)
                 """
                 count=count+1;
-            
-            print("newtitle")
-            print(newtitle)    
+            newtitle[0];
+            newcols[0];
+            NFrame=newtitle[0]+newcols[0];   
+            NFrame=pandas.DataFrame(); 
+            print("NFrame")  
+            print(NFrame)
+            print("x[0]")
+            print(x[0])
+            count=0;
+            while count < len(x.columns):
+                  newtitle[];
+                  newcols[];          
+                  count=count+1;
+                
+            #print("newtitle")
+            #print(newtitle)    
             #print("newcols")
-            print(newcols)    
+            #print(newcols)    
                 
             return NFrame;    
            
