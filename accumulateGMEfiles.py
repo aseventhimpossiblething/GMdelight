@@ -98,6 +98,8 @@ def projection(xlfarrvix):
             print("str.find(index)) -- ",x.columns.str.find('index'))
             print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
+            print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
+            print("len x.columns -- ",len(x.columns))    
             if sum(x.columns.str.find('index'))>len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -133,18 +135,20 @@ def projection(xlfarrvix):
                      count=count+1;
                      print("Jump count!--",count)
                   compFrame=pandas.DataFrame(comparisonCol);
-                  compFrame[x.columns[count]]=list(x[x.columns[count]])
+                  compFrame[newtitle[count]]=list(x[newtitle[count]])
                   corrTable=compFrame.corr();
-                  corrTable=corrTable[x.columns[count]];
-                  corrTable=corrTable.drop(x.columns[count], axis=0)      
+                  corrTable=corrTable[newtitle[count]];
+                  corrTable=corrTable.drop(newtitle[count], axis=0)      
                   corrlist.append(corrTable[0])
-                  print("corrTable")
-                  print(corrTable)
-                  print("corrlist")
-                  print(corrlist) 
+                  #print("corrTable")
+                  #print(corrTable)
+                  #print("corrlist")
+                  #print(corrlist) 
                   print("end-------",count)
                   
-                  count=count+1;                
+                  count=count+1;
+            mean=numpy.mean(corrlist) 
+            median=numpy.median(corrlist) 
             print("DropCols = ",DropCols)
             return x;
         
