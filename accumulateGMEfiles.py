@@ -117,7 +117,7 @@ def projection(xlfarrvix):
             NFrame=pandas.DataFrame(newcols[0], columns=[newtitle[0]]); 
                       
             count=0;
-            while count < len(x.columns)):
+            while count < len(x.columns):
                   NFrame[x.columns[count]]=newcols[count]  
                   typeStr=typeStr+str(type(NFrame[x.columns[count]]));
                         
