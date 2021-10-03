@@ -120,7 +120,7 @@ def projection(xlfarrvix):
                         #print("typeStr - ",typeStr) 
                         scount=scount+1;                   
                                            
-                  print(" typeStr.find(str) ", typeStr.find("str"))
+                  #print(" typeStr.find(str) ", typeStr.find("str"))
                   if typeStr.find("str")>-1:
                       print("Drop col -- ",x.columns[count])
                       DropCols.append(x.columns[count])
