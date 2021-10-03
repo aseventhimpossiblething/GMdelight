@@ -134,11 +134,12 @@ def projection(xlfarrvix):
             nf=[];
             nf.append(newtitle[0]);
             #NFrame=newtitle[0]+newcols[0];   
-            #NFrame=pandas.DataFrame(nf); 
+            NFrame=pandas.DataFrame(newcols[0], columns=[newtitle[0]]); 
             #print("NFrame")  
             #print(NFrame)
             #print("x[newtitle][0]")
             #print(x[[newtitle][0]])
+            """    
             count=0;
             while count < len(newcols[0]):
                   print("count ",count)      
@@ -159,7 +160,7 @@ def projection(xlfarrvix):
             #print(newtitle)    
             #print("newcols")
             #print(newcols)    
-                
+            """    
             return NFrame;    
            
         xlfarrvix=reorderDF(xlfarrvix);
