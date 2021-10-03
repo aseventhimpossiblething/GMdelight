@@ -95,14 +95,16 @@ def projection(xlfarrvix):
         def reorderDF(x):
             #x=x.drop(['index'], axis=1)    
             print("str.find(cat)) -- ",x.columns.str.find('cat'))
-            print("str.find(index)) -- ",x.columns.str.find('index'))  
-            print("str.find(index)) sum -- ",sum(x.columns.str.find('index'))) 
+            print("str.find(index)) -- ",x.columns.str.find('index'))
+            print("str.find(cat)) sum",sum(x.columns.str.find('cat')")
+            print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
+                
             print("x.corr() ",x.corr()) 
             comparisonCol=x['dayshiftedclose'];
             newtitle=[];
             corrlist=[];    
             newcols=[]; 
-            typeStr=""
+            #typeStr=""
             count=0;
             while count < len(x.columns):
                 colnam=x.columns[count];
@@ -118,12 +120,20 @@ def projection(xlfarrvix):
                       
             count=0;
             while count < len(x.columns):
-                  NFrame[x.columns[count]]=newcols[count]  
-                  typeStr=typeStr+str(type(NFrame[x.columns[count]]));
+                  NFrame[x.columns[count]]=newcols[count]
+                  
+                  typeStr=""                         
+                  scount=0;
+                  while scount < 5:
+                        typeStr=typeStr+str(type(NFrame[x.columns[count]]));
+                        print("typeStr - ",typeStr) 
+                        scount=scount+1;                   
+                                           
+                  print(" typeStr.find("str") ", typeStr.find("str"))                     
                         
                   count=count+1;
             count=0;            
-            while count <= (len(newcols)-1):
+            while count <= len(x.columns):
                   #NFrame[newtitle[count]]=newcols[count]
                   compFrame=pandas.DataFrame(comparisonCol);
                   print("compFrame 1")
