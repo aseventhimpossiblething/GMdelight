@@ -98,7 +98,7 @@ def projection(xlfarrvix):
             print("str.find(index)) -- ",x.columns.str.find('index'))
             print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
-            if x.columns.str.find('index')>len(x.columns):
+            if sum(x.columns.str.find('index'))>len(x.columns):
                         x=x.drop(['index'], axis=1);
                         
                 
