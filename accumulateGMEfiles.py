@@ -145,7 +145,7 @@ def projection(xlfarrvix):
             corrlist;
             Dictionary=dict(zip(corrlist,newtitle))
             #Dictionary=dict(zip(newtitle,corrlist))
-            print("Dictionary[corrlist][0] ",Dictionary[corrlist][0])
+            print("Dictionary[[corrlist][0]] ",Dictionary[[corrlist][0]])
             print("Dictionary[min (corrlist)]) ",Dictionary[min(corrlist)])
             #print("Dictionary[close] ",Dictionary["close"])
             print("mean ",mean)
