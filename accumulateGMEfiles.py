@@ -130,7 +130,7 @@ def projection(xlfarrvix):
                   #print("comparisonCol.columns -- ",comparisonCol.columns)      
                   print("start-----",count)
                   #print("comparisonCol -- ",comparisonCol)        
-                  #print("x.columns[count] ",x.columns[count])
+                  print("x.columns[count] ",x.columns[count])
                   if target==x.columns[count]:
                      count=count+1;
                      print("Jump count!--",count)
