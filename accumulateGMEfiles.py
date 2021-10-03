@@ -131,16 +131,15 @@ def projection(xlfarrvix):
                   print(compFrame)
                   corrTable=compFrame.corr();
                   corrTable=corrTable[newtitle[count]];
+                  corrTable=corrTable.drop(newtitle[count], axis=0)      
                   #print("compFrame.corr ")
                   #print(compFrame.corr())
-                  print("corrTable 0")
+                  corrlist.append(corrTable[0])
+                  print("corrTable")
                   print(corrTable)
-                  if corrTable[0]==1:
-                     corrTable=corrTable.drop("0", axis=0) 
-                  if corrTable[1]==1:
-                     corrTable=corrTable.drop("1", axis=0)
-                  print("corrTable final?")
-                  print(corrTable)
+                  print("corrlist")
+                  print(corrlist) 
+                  
                   count=count+1;                
             
         
