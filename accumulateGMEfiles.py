@@ -408,7 +408,8 @@ def IEXColmaker(TargetSymbol):
         #print("xlfarrvix")
         #print(xlfarrvix)
         Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
-        projection(xlfarrvix)
+        #projection(xlfarrvix)
+        projection(arr1)
         return xlfarrvix;
        
             
