@@ -109,9 +109,6 @@ def projection(xlfarrvix):
                 colnam=x.columns[count];
                 #col=x[colnam];
                 newtitle.append(colnam);
-           
-                
-               
                 count=count+1;
                                   
             count=0;
@@ -120,7 +117,7 @@ def projection(xlfarrvix):
                   scount=0;
                   while scount < 5:
                         typeStr=typeStr+str(type(x[x.columns[count]][scount]));
-                        print("typeStr - ",typeStr) 
+                        #print("typeStr - ",typeStr) 
                         scount=scount+1;                   
                                            
                   print(" typeStr.find(str) ", typeStr.find("str"))
