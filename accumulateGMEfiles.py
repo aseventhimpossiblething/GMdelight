@@ -124,7 +124,7 @@ def projection(xlfarrvix):
                 count=count+1;
             count=0;            
             while count <= len(x.columns):
-                  #print("comparisonCol.columns -- ",comparisonCol.columns)      
+                  print("comparisonCol.columns -- ",comparisonCol.columns)      
                   print("start-----",count)
                   print("comparisonCol -- ",comparisonCol)        
                   print("x.columns[count] ",x.columns[count])
