@@ -123,15 +123,12 @@ def projection(xlfarrvix):
                 
             count=0;
             while count < len(newcols[0]):
-                  NFrame[newtitle[count]]=newcols[count]      
+                  NFrame[newtitle[count]]=newcols[count] 
+                  print("count ",count);
+                  print("newcols[count] ",newcols[count])      
+                        
                   count=count+1;      
-                  """
-                  print("count ",count)      
-                  nf.append(newcols[0][count]);      
-                  #newtitle[count];
-                  #newcols[count];          
-                  count=count+1;
-                  """
+                  
                 
             NFrame=pandas.DataFrame(nf);
             NFrame.columns=[newtitle[count]];
