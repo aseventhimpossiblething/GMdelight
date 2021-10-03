@@ -96,7 +96,7 @@ def projection(xlfarrvix):
             #x=x.drop(['index'], axis=1)    
             print("str.find(cat)) -- ",x.columns.str.find('cat'))
             print("str.find(index)) -- ",x.columns.str.find('index'))
-            print("str.find(cat)) sum",sum(x.columns.str.find('cat')")
+            print("str.find(cat)) sum",sum(x.columns.str.find('cat'))
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
                 
             print("x.corr() ",x.corr()) 
