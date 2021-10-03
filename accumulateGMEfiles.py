@@ -98,6 +98,9 @@ def projection(xlfarrvix):
             print("str.find(index)) -- ",x.columns.str.find('index'))
             print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
+            if x.columns.str.find('index')>len(x.columns):
+                        x=x.drop(['index'], axis=1);
+                        
                 
            
             comparisonCol=x['dayshiftedclose'];
@@ -126,7 +129,7 @@ def projection(xlfarrvix):
                       DropCols.append(x.columns[count])
                       print("Drop all -- ",DropCols)  
                   count=count+1;
-            x.drop(DropCols,axis=1)            
+            x=x.drop(DropCols,axis=1)            
             count=0;            
             while count <= len(x.columns):
                   compFrame=pandas.DataFrame(comparisonCol);
