@@ -115,7 +115,7 @@ def projection(xlfarrvix):
             while count <= (len(newcols)-1):
                   NFrame[newtitle[count]]=newcols[count]      
                   count=count+1;
-             while count <= (len(newcols)-1):
+            while count <= (len(newcols)-1):
                   #NFrame[newtitle[count]]=newcols[count]
                   compFrame["comparisonCol"]=comparisonCol;
                   compFrame[newtitle[count]]
