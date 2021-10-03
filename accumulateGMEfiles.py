@@ -131,19 +131,20 @@ def projection(xlfarrvix):
                   print("start-----",count)
                   #print("comparisonCol -- ",comparisonCol)        
                   print("x.columns[count] ",x.columns[count])
-                  if target==x.columns[count]:
-                     count=count+1;
-                     print("Jump count!--",count)
-                  compFrame=pandas.DataFrame(comparisonCol);
-                  compFrame[x.columns[count]]=list(x[x.columns[count]])
-                  corrTable=compFrame.corr();
-                  corrTable=corrTable[x.columns[count]];
-                  corrTable=corrTable.drop(x.columns[count], axis=0)      
-                  corrlist.append(corrTable[0])
-                  #print("corrTable")
-                  #print(corrTable)
-                  #print("corrlist")
-                  #print(corrlist) 
+                  targetchecknumber=str(x.columns[count]).find(target);
+                  if targetchecknumber==-1:
+                      """           
+                      if target==x.columns[count]:
+                        count=count+1;
+                        print("Jump count!--",count)
+                      """
+                      compFrame=pandas.DataFrame(comparisonCol);
+                      compFrame[x.columns[count]]=list(x[x.columns[count]])
+                      corrTable=compFrame.corr();
+                      corrTable=corrTable[x.columns[count]];
+                      corrTable=corrTable.drop(x.columns[count], axis=0)      
+                      corrlist.append(corrTable[0])
+                
                   print("end-------",count)
                   
                   count=count+1;
