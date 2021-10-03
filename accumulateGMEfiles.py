@@ -100,31 +100,17 @@ def projection(xlfarrvix):
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
             if sum(x.columns.str.find('index'))>len(x.columns):
                         x=x.drop(['index'], axis=1);
-                        
-                
-           
             comparisonCol=x['dayshiftedclose'];
             newtitle=[];
             corrlist=[];    
             DropCols=[];
-            """
-            count=0;
-            while count < len(x.columns):
-                colnam=x.columns[count];
-                #col=x[colnam];
-                newtitle.append(colnam);
-                count=count+1;
-            """                      
             count=0;
             while count < len(x.columns):
                   typeStr=""                         
                   scount=0;
                   while scount < 5:
                         typeStr=typeStr+str(type(x[x.columns[count]][scount]));
-                        #print("typeStr - ",typeStr) 
                         scount=scount+1;                   
-                                           
-                  #print(" typeStr.find(str) ", typeStr.find("str"))
                   if typeStr.find("str")>-1:
                       print("Drop col -- ",x.columns[count])
                       DropCols.append(x.columns[count])
@@ -134,17 +120,19 @@ def projection(xlfarrvix):
             count=0;
             while count < len(x.columns):
                 colnam=x.columns[count];
-                #col=x[colnam];
                 newtitle.append(colnam);
                 count=count+1;
             count=0;            
             while count <= len(x.columns):
-                  print("start-----",count)   
-                  print("x.columns[count] ",x.columns[count]) 
+                  #print("comparisonCol.columns -- ",comparisonCol.columns)      
+                  print("start-----",count)
+                  print("comparisonCol.columns -- ",comparisonCol.columns)        
+                  print("x.columns[count] ",x.columns[count])
+                  if comparisonCol.columns==x.columns[count]:
+                     count=count+1;
+                     print("Jump count!--",count)
                   compFrame=pandas.DataFrame(comparisonCol);
-                  print(" compFrame=pandas.DataFrame(comparisonCol); ------ ",count)        
                   compFrame[x.columns[count]]=list(x[x.columns[count]])
-                  print("corrTable=compFrame.corr();")      
                   corrTable=compFrame.corr();
                   corrTable=corrTable[x.columns[count]];
                   corrTable=corrTable.drop(x.columns[count], axis=0)      
