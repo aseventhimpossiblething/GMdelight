@@ -143,7 +143,7 @@ def projection(xlfarrvix):
             median=numpy.median(corrlist)
             newtitle;
             corrlist;
-            dict=dict.fromkeys(corrlist,newtitle)    
+            Dictionary=dict.fromkeys(corrlist,newtitle)    
             print("mean ",mean)
             print("median ",median) 
             print("Dictionary ",Dict)
