@@ -146,7 +146,7 @@ def projection(xlfarrvix):
             Dictionary=dict.fromkeys(corrlist,newtitle)    
             print("mean ",mean)
             print("median ",median) 
-            print("Dictionary ",Dict)
+            print("Dictionary ",Dictionary)
             print("newtitle")    
             print(newtitle)    
             print("DropCols = ",DropCols)
