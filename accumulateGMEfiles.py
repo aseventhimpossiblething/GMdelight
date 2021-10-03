@@ -147,7 +147,7 @@ def projection(xlfarrvix):
             Dictionary=dict(zip(corrlist,newtitle))
             print("ColDropCharSTD")
             print(ColDropChar)
-            print("ColDropCharLST)
+            print("ColDropCharLST")
             print(list(ColDropChar))      
             #Dictionary=dict(zip(newtitle,corrlist))
             print("Dictionary[corrlist[0]] ",Dictionary[corrlist[0]])
