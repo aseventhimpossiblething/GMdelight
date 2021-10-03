@@ -104,30 +104,12 @@ def projection(xlfarrvix):
             while count < len(x.columns):
                 colnam=x.columns[count];
                 col=x[colnam];
+                #print("count 1 ",count)
                      
                 newtitle.append(colnam);
                 newcols.append(col);
                 
-                """
-                if len(newtitle)==1:
-                     
-                   print(len(newtitle)," firing NFrame ")     
-                   print("count ",count)     
-                   print("newtitle")
-                   print(newtitle)     
-                   print("newcols")
-                   #NFrame=newtitle[]
-                   print(newcols) 
-                
-                   newcols.insert(0,newtitle[count]) 
-                   #print(newcols)      
-                   NFrame=pandas.DataFrame(newcols);
-                
-                   #NFrame.columns=newtitle[count];
-                   
-                   print("NFrame")
-                   print(NFrame)
-                """
+               
                 count=count+1;
             newtitle[0];
             newcols[0];
@@ -142,7 +124,7 @@ def projection(xlfarrvix):
             count=0;
             while count < len(newcols[0]):
                   NFrame[newtitle[count]]=newcols[count]      
-                        
+                  count=count+1;      
                   """
                   print("count ",count)      
                   nf.append(newcols[0][count]);      
@@ -150,6 +132,7 @@ def projection(xlfarrvix):
                   #newcols[count];          
                   count=count+1;
                   """
+                
             NFrame=pandas.DataFrame(nf);
             NFrame.columns=[newtitle[count]];
             print("NFrame")  
