@@ -100,7 +100,8 @@ def projection(xlfarrvix):
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
             if sum(x.columns.str.find('index'))>len(x.columns):
                         x=x.drop(['index'], axis=1);
-            comparisonCol=x['dayshiftedclose'];
+            target='dayshiftedclose'            
+            comparisonCol=x[target];
             newtitle=[];
             corrlist=[];    
             DropCols=[];
@@ -124,11 +125,11 @@ def projection(xlfarrvix):
                 count=count+1;
             count=0;            
             while count <= len(x.columns):
-                  print("comparisonCol.columns -- ",comparisonCol.columns)      
+                  #print("comparisonCol.columns -- ",comparisonCol.columns)      
                   print("start-----",count)
-                  print("comparisonCol -- ",comparisonCol)        
-                  print("x.columns[count] ",x.columns[count])
-                  if comparisonCol[0]==x.columns[count]:
+                  #print("comparisonCol -- ",comparisonCol)        
+                  #print("x.columns[count] ",x.columns[count])
+                  if target==x.columns[count]:
                      count=count+1;
                      print("Jump count!--",count)
                   compFrame=pandas.DataFrame(comparisonCol);
