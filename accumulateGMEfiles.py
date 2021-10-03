@@ -135,9 +135,9 @@ def projection(xlfarrvix):
                   #print(compFrame.corr())
                   print("corrTable 0")
                   print(corrTable)
-                  if corrTable[0]=1:
+                  if corrTable[0]==1:
                      corrTable=corrTable.drop("0", axis=0) 
-                  if corrTable[1]=1:
+                  if corrTable[1]==1:
                      corrTable=corrTable.drop("1", axis=0)
                   print("corrTable final?")
                   print(corrTable)
