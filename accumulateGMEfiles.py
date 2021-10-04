@@ -180,7 +180,7 @@ def projection(xlfarrvix):
     
         print("line 132")
         #print(xlfarrvix)
-        def PredictionForests(xlfarrvix):
+        def PredictionForests(xlfarrvix,Label):
             #xlfarrvix=reorderDF(xlfarrvix);
             px=xlfarrvix.drop(['dayshiftedclose'],axis=1);
             py=xlfarrvix['dayshiftedclose']
@@ -218,35 +218,35 @@ def projection(xlfarrvix):
             xy=xlfarrvix['dayshiftedclose'];
     
             #------------------------------------------------
-            print("xx review series splits ")
+            #print("xx review series splits ")
             xx_train,xx_test,xy_train,xy_test=train_test_split(px,py,test_size=0.2);
             #xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
         
-            print("xx tree model 10 ")
+            #print("xx tree model 10 ")
             xTreeMod10=RandomForestRegressor(n_estimators = 10).fit(xx_train,xy_train);
             xTreeModPredict10=xTreeMod10.predict(xx_test);
             Std_ofTP10=numpy.std(xTreeModPredict10);
         
-            print("xx tree model 100 ")
+            #print("xx tree model 100 ")
             xTreeMod100=RandomForestRegressor(n_estimators = 100).fit(xx_train,xy_train);
             xTreeModPredict100=xTreeMod100.predict(xx_test);
             Std_ofTP100=numpy.std(xTreeModPredict100);
         
-            print("xx tree model 200 ")
+            #print("xx tree model 200 ")
             xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
             xTreeModPredict200=xTreeMod200.predict(xx_test);
             Std_ofTP200=numpy.std(xTreeModPredict200);
         
-            print("xx tree model 1000 ")
+            #print("xx tree model 1000 ")
             xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(xx_train,xy_train);
             xTreeModPredict1000=xTreeMod1000.predict(xx_test);
             Std_ofTP1000=numpy.std(xTreeModPredict1000);
         
-            print("xx linear model ")
+            #print("xx linear model ")
             xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
             xLinearPredictMod=xLinearMod.predict(xx_test);
             Std_ofTPxLinearPredictMod=numpy.std(xLinearPredictMod);
-            print("xx base review frame ")
+            #print("xx base review frame ")
             xreviewFrame=pandas.DataFrame(xy_test);
             xreviewFrame.columns=['Shifted close'];
             #xreviewFrame['close']=list(xx_test['close']);
@@ -259,21 +259,24 @@ def projection(xlfarrvix):
             xreviewFrame['Linear Prediction']=xLinearPredictMod;
             #------------------------------------------------
             print("after pause ")
-            print("xreviewFrame datatype ------------- ",type(xreviewFrame))
+            print("Top Standard----------------------------- ",Label)
             print("xreviewFrame.corr()");
             print(xreviewFrame.corr());
             xSTD=numpy.std(xreviewFrame);
             print(xSTD)
         
-            print("x-----------------------------------")
+            #print("x-----------------------------------")
             print("Std_of Shifted Close ",numpy.std(xy))
             print("Std_ofTP10 ",Std_ofTP10)
             print("Std_ofTP100 ",Std_ofTP100)
             print("Std_ofTP200 ",Std_ofTP200)
             print("Std_ofTP1000 ",Std_ofTP1000)
             print('Linear StD=',numpy.std(xLinearPredictMod))
+            print("Bottom Standard--------------------------- ",Label)
+        PredictionForests(xlfarrvix,"xlfarrvix w/o reorder");
         xlfarrvix=reorderDF(xlfarrvix);    
-        PredictionForests(xlfarrvix);    
+        PredictionForests(xlfarrvix,"xlfarrvix w/ reorder");
+        #PredictionForests(xlfarrvix,"xlfarrvix w/o reorder");
                  
         return;        
         
