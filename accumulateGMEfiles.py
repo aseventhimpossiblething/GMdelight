@@ -61,13 +61,15 @@ def projection(xlfarrvix):
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         
         def clear(x):
-            #x=x.drop(['index'], axis=1)    
+            #x=x.drop(['index'], axis=1) 
+            """
             print("str.find(cat)) -- ",x.columns.str.find('cat'))
             print("str.find(index)) -- ",x.columns.str.find('index'))
             print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
             print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
-            print("len x.columns -- ",len(x.columns))    
+            print("len x.columns -- ",len(x.columns)) 
+            """
             if abs(sum(x.columns.str.find('index')))<len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -83,9 +85,9 @@ def projection(xlfarrvix):
                         typeStr=typeStr+str(type(x[x.columns[count]][scount]));
                         scount=scount+1;                   
                   if typeStr.find("str")>-1:
-                      print("Drop col -- ",x.columns[count])
+                      #print("Drop col -- ",x.columns[count])
                       DropCols.append(x.columns[count])
-                      print("Drop all -- ",DropCols)  
+                      #print("Drop all -- ",DropCols)  
                   count=count+1;
             x=x.drop(DropCols,axis=1)
             return x;
@@ -93,9 +95,10 @@ def projection(xlfarrvix):
         
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
         py=xlfarrvix['dayshiftedclose'];
-        print("above reorder")
-        print(xlfarrvix)
+        #print("above reorder")
+        #print(xlfarrvix)
         def reorderDF(x):
+            """    
             #x=x.drop(['index'], axis=1)    
             print("str.find(cat)) -- ",x.columns.str.find('cat'))
             print("str.find(index)) -- ",x.columns.str.find('index'))
@@ -103,6 +106,7 @@ def projection(xlfarrvix):
             print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
             print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
             print("len x.columns -- ",len(x.columns))    
+            """
             if abs(sum(x.columns.str.find('index')))<len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -118,9 +122,9 @@ def projection(xlfarrvix):
                         typeStr=typeStr+str(type(x[x.columns[count]][scount]));
                         scount=scount+1;                   
                   if typeStr.find("str")>-1:
-                      print("Drop col -- ",x.columns[count])
+                      #print("Drop col -- ",x.columns[count])
                       DropCols.append(x.columns[count])
-                      print("Drop all -- ",DropCols)  
+                      #print("Drop all -- ",DropCols)  
                   count=count+1;
             x=x.drop(DropCols,axis=1)
             count=0;
@@ -145,17 +149,19 @@ def projection(xlfarrvix):
                   count=count+1;
             mean=numpy.mean(corrlist) 
             median=numpy.median(corrlist)
-            print("mean   =",mean);
-            print("median =",median);  
+            #print("mean   =",mean);
+            #print("median =",median);  
             newtitle;
             corrlist;
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
             while mean<median:
+               """ 
                print("start----mean<median--------------");           
                print('corrlist - - ',corrlist); 
                print('min corrlist - - ',min(corrlist));
                print('max corrlist - - ',max(corrlist));
+               """
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
@@ -165,18 +171,20 @@ def projection(xlfarrvix):
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
                x=x.drop([lowestCol],axis=1) 
-               print("lowestCol = ",lowestCol)
-               print("end----mean<median--------------"); 
+               #print("lowestCol = ",lowestCol)
+               #print("end----mean<median--------------"); 
             count=0;
             while count<len(corrlist):
-                  print("start----drop below mean--------------",mean);  
+                  #print("start----drop below mean--------------",mean);  
                   corrElement=corrlist[count];
-                  print("corrElement = ",corrElement) 
+                  #print("corrElement = ",corrElement) 
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
+                     """
                      print("corIndex = ",corIndex)
                      print("corrlist = ",corrlist)
                      print("newtitle = ",newtitle)   
+                     """
                      DropCol=newtitle[corIndex]
                      DropColNames.append(DropCol);   
                      corrlist.pop(corIndex);
@@ -184,15 +192,18 @@ def projection(xlfarrvix):
                      x=x.drop([DropCol],axis=1)
                      mean=numpy.mean(corrlist);
                      median=numpy.mean(corrlist);
+                     """
                      print("len(corrlist) - ",len(corrlist))
                      print("mean - ",mean)
                      print("median - ",median) 
-                  print("end----drop below mean--------------");        
+                     """
+                  #print("end----drop below mean--------------");        
                                 
                   count=count+1;      
                   #print("end-------------------");
-                  print("end----drop below mean--------------");       
+                  #print("end----drop below mean--------------");       
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
+            """
             print("mean ",mean)
             print("median ",median) 
             print("newtitle")    
@@ -204,7 +215,7 @@ def projection(xlfarrvix):
             print("x columns - ",x.columns)    
             #x=x.drop([DropColNames],axis=1)
             print(x)    
-                
+            """    
             return x;
         
         
@@ -260,29 +271,54 @@ def projection(xlfarrvix):
             xTreeModPredict10=xTreeMod10.predict(xx_test);
             Std_ofTP10=numpy.std(xTreeModPredict10);
         
+            PCAxTreeMod10=RandomForestRegressor(n_estimators = 10).fit(PCAxx_train,PCAxy_train);
+            PCAxTreeModPredict10=PCAxTreeMod10.predict(PCAxx_test);
+            PCAStd_ofTP10=numpy.std(PCAxTreeModPredict10);
+        
             #print("xx tree model 100 ")
             xTreeMod100=RandomForestRegressor(n_estimators = 100).fit(xx_train,xy_train);
             xTreeModPredict100=xTreeMod100.predict(xx_test);
             Std_ofTP100=numpy.std(xTreeModPredict100);
+            
+            PCAxTreeMod100=RandomForestRegressor(n_estimators = 100).fit(PCAxx_train,PCAxy_train);
+            PCAxTreeModPredict100=PCAxTreeMod100.predict(PCAxx_test);
+            PCAStd_ofTP100=numpy.std(PCAxTreeModPredict100);     
         
             #print("xx tree model 200 ")
             xTreeMod200=RandomForestRegressor(n_estimators = 200).fit(xx_train,xy_train);
             xTreeModPredict200=xTreeMod200.predict(xx_test);
             Std_ofTP200=numpy.std(xTreeModPredict200);
         
+            PCAxTreeMod200=RandomForestRegressor(n_estimators = 200).fit(PCAxx_train,PCAxy_train);
+            PCAxTreeModPredict200=PCAxTreeMod200.predict(PCAxx_test);
+            PCAStd_ofTP200=numpy.std(PCAxTreeModPredict200);
+        
             #print("xx tree model 1000 ")
             xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(xx_train,xy_train);
             xTreeModPredict1000=xTreeMod1000.predict(xx_test);
             Std_ofTP1000=numpy.std(xTreeModPredict1000);
         
+            PCAxTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(PCAxx_train,PCAxy_train);
+            PCAxTreeModPredict1000=PCAxTreeMod1000.predict(PCAxx_test);
+            PCAStd_ofTP1000=numpy.std(PCAxTreeModPredict1000);
+        
             #print("xx linear model ")
             xLinearMod=linear_model.LinearRegression().fit(xx_train,xy_train);
             xLinearPredictMod=xLinearMod.predict(xx_test);
             Std_ofTPxLinearPredictMod=numpy.std(xLinearPredictMod);
+        
+            PCAxLinearMod=linear_model.LinearRegression().fit(PCAxx_train,PCAxy_train);
+            PCAxLinearPredictMod=PCAxLinearMod.predict(PCAxx_test);
+            PCAStd_ofTPxLinearPredictMod=numpy.std(PCAxLinearPredictMod);
+        
+        
             #print("xx base review frame ")
             xreviewFrame=pandas.DataFrame(xy_test);
             xreviewFrame.columns=['Shifted close'];
-            #xreviewFrame['close']=list(xx_test['close']);
+             
+            PCAxreviewFrame=pandas.DataFrame(PCAxy_test);
+            PCAxreviewFrame.columns=['Shifted close'];
+          
           
             print("xx model specific review frame ")        
             xreviewFrame['Tree Prediction 10']=xTreeModPredict10;
@@ -292,13 +328,12 @@ def projection(xlfarrvix):
             xreviewFrame['Linear Prediction']=xLinearPredictMod;
             #------------------------------------------------
             print("after pause ")
+        
             print("Top Standard----------------------------- ",Label)
             print("xreviewFrame.corr()");
             print(xreviewFrame.corr());
             xSTD=numpy.std(xreviewFrame);
             print(xSTD)
-        
-            #print("x-----------------------------------")
             print("Std_of Shifted Close ",numpy.std(xy))
             print("Std_ofTP10 ",Std_ofTP10)
             print("Std_ofTP100 ",Std_ofTP100)
@@ -306,6 +341,19 @@ def projection(xlfarrvix):
             print("Std_ofTP1000 ",Std_ofTP1000)
             print('Linear StD=',numpy.std(xLinearPredictMod))
             print("Bottom Standard--------------------------- ",Label)
+        
+            print("Top PCA----------------------------- ",Label)
+            print("xreviewFrame.corr()");
+            print(xreviewFrame.corr());
+            xSTD=numpy.std(xreviewFrame);
+            print(xSTD)
+            print("Std_of Shifted Close ",numpy.std(xy))
+            print("Std_ofTP10 ",Std_ofTP10)
+            print("Std_ofTP100 ",Std_ofTP100)
+            print("Std_ofTP200 ",Std_ofTP200)
+            print("Std_ofTP1000 ",Std_ofTP1000)
+            print('Linear StD=',numpy.std(xLinearPredictMod))
+            print("Bottom PCA--------------------------- ",Label)    
         PredictionForests(xlfarrvix,"xlfarrvix w/o reorder");
         xlfarrvix=reorderDF(xlfarrvix);    
         PredictionForests(xlfarrvix,"xlfarrvix w/ reorder");
