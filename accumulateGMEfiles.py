@@ -316,9 +316,11 @@ def projection(XAV):
             print("Std_ofTP200 ",Std_ofTP200)
             print("Std_ofTP1000 ",Std_ofTP1000)
             print('Linear StD=',numpy.std(xLinearPredictMod))
-            print("Bottom PCA--------------------------- ",Label)    
+            print("Bottom PCA--------------------------- ",Label)  
+        preserveshift=XAV['dayshiftedclose']
         PredictionForests(XAV," w/o reorder");
-        XAV=reorderDF(XAV);    
+        XAV=reorderDF(XAV); 
+        XAVXAV['dayshiftedclose']=preserveshift
         PredictionForests(XAV," w/ reorder");
         
                  
