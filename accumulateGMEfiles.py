@@ -180,6 +180,7 @@ def projection(xlfarrvix):
                      x=x.drop([DropCol],axis=1)
                      mean=numpy.mean(corrlist);
                      median=numpy.mean(corrlist);
+                     print("len(corrlist) - ",len(corrlist))
                      print("mean - ",mean)
                      print("median - ",median) 
                   print("end----drop below mean--------------");        
