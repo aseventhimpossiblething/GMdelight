@@ -272,8 +272,8 @@ def projection(xlfarrvix):
             print("Std_ofTP200 ",Std_ofTP200)
             print("Std_ofTP1000 ",Std_ofTP1000)
             print('Linear StD=',numpy.std(xLinearPredictMod))
-            xlfarrvix=reorderDF(xlfarrvix);    
-            PredictionForests(xlfarrvix);    
+        xlfarrvix=reorderDF(xlfarrvix);    
+        PredictionForests(xlfarrvix);    
                  
         return;        
         
