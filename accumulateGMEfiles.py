@@ -55,21 +55,12 @@ def SinglestockIEXdict(x,y,z):
   
         
         
-def projection(xlfarrvix):        
+def projection(XAV):        
        
-        LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
+        LastChartRow=XAV.iloc[len(XAV['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         
         def clear(x):
-            #x=x.drop(['index'], axis=1) 
-            """
-            print("str.find(cat)) -- ",x.columns.str.find('cat'))
-            print("str.find(index)) -- ",x.columns.str.find('index'))
-            print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
-            print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
-            print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
-            print("len x.columns -- ",len(x.columns)) 
-            """
             if abs(sum(x.columns.str.find('index')))<len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -91,23 +82,12 @@ def projection(xlfarrvix):
                   count=count+1;
             x=x.drop(DropCols,axis=1)
             return x;
-        #xlfarrvix=clear(xlfarrvix);
-        
-        px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
-        py=xlfarrvix['dayshiftedclose'];
+               
+        px=XAV.drop(['dayshiftedclose','date'], axis=1)
+        py=XAV['dayshiftedclose'];
         #print("above reorder")
         #print(xlfarrvix)
         def reorderDF(x):
-            """    
-            #x=x.drop(['index'], axis=1)    
-            print("str.find(cat)) -- ",x.columns.str.find('cat'))
-            print("str.find(index)) -- ",x.columns.str.find('index'))
-            print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
-            print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
-            print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
-            print("len x.columns -- ",len(x.columns))    
-            """
-            
             if abs(sum(x.columns.str.find('index')))<len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -158,12 +138,7 @@ def projection(xlfarrvix):
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
             while mean<median:
-               """ 
-               print("start----mean<median--------------");           
-               print('corrlist - - ',corrlist); 
-               print('min corrlist - - ',min(corrlist));
-               print('max corrlist - - ',max(corrlist));
-               """
+          
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
@@ -205,20 +180,7 @@ def projection(xlfarrvix):
                   #print("end-------------------");
                   #print("end----drop below mean--------------");       
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
-            """
-            print("mean ",mean)
-            print("median ",median) 
-            print("newtitle")    
-            print(newtitle)
-            print("DropColNames = ",DropColNames)
-            print("DropCols = ",DropCols)
-            #DropCols=DropCols+DropColNames
-            print("DropCols = ",DropCols)
-            print("x columns - ",x.columns)    
-            #x=x.drop([DropColNames],axis=1)
-            print(x) 
-            
-            """    
+               
             print("Dayshift test inside reorder  ",x['dayshiftedclose'])
             return x;
         
@@ -226,14 +188,14 @@ def projection(xlfarrvix):
     
         print("line 132")
         #print(xlfarrvix)
-        def PredictionForests(xlfarrvix,Label):
-            xlfarrvix=clear(xlfarrvix);    
+        def PredictionForests(XENO,Label):
+            XENO=clear(XENO);    
             #xlfarrvix=reorderDF(xlfarrvix);
-            px=xlfarrvix.drop(['dayshiftedclose'],axis=1);
-            py=xlfarrvix['dayshiftedclose']
-            LastChartRow=px.iloc[len(xlfarrvix['dayshiftedclose'])-2:];
+            px=XENO.drop(['dayshiftedclose'],axis=1);
+            py=XENO['dayshiftedclose']
+            LastChartRow=px.iloc[len(XENO['dayshiftedclose'])-2:];
         
-            pxco=xlfarrvix.drop(['dayshiftedclose'], axis=1)
+            pxco=XENO.drop(['dayshiftedclose'], axis=1)
             pxcor=pxco.corr(method='pearson')
             component=PCA(n_components=4);
             components=component.fit(px);
@@ -259,11 +221,8 @@ def projection(xlfarrvix):
             #return xlfarrvix;
         
             #--------------------------------------------------------------------------------------------------------------------------------------------------
-     
-            #xx=xlfarrvix.drop(['dayshiftedclose','date','xldate'], axis=1);
-            #xx=xlfarrvix.drop(['dayshiftedclose','date'], axis=1);
             xx=px;
-            xy=xlfarrvix['dayshiftedclose'];
+            xy=XENO['dayshiftedclose'];
     
             #------------------------------------------------
             #print("xx review series splits ")
