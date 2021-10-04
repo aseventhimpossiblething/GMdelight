@@ -127,8 +127,8 @@ def projection(xlfarrvix):
                 count=count+1;
             count=0;            
             while count <= len(x.columns)-1:
-                  print("start-----",count)
-                  print("x.columns[count] ",x.columns[count])
+                  #print("start-----",count)
+                  #print("x.columns[count] ",x.columns[count])
                   targetchecknumber=str(x.columns[count]).find(target);
                   if targetchecknumber==-1:
                       compFrame=pandas.DataFrame(comparisonCol);
@@ -137,17 +137,20 @@ def projection(xlfarrvix):
                       corrTable=corrTable[x.columns[count]];
                       corrTable=corrTable.drop(x.columns[count], axis=0)      
                       corrlist.append(corrTable[0])
-                      print("corrlist = ",corrlist)  
-                  print("end-------",count)
+                      #print("corrlist = ",corrlist)  
+                  #print("end-------",count)
                   count=count+1;
             mean=numpy.mean(corrlist) 
             median=numpy.median(corrlist)
+            print("mean   =",mean);
+            print("median =",median);  
             newtitle;
             corrlist;
             #ColDropChart=pandas.DataFrame(corrlist,columns=[newtitle]);    
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
             while mean<median:
+               print("start------------------");           
                print('corrlist - - ',corrlist); 
                print('min corrlist - - ',min(corrlist));  
                lowestCol=Dictionary[min(corrlist)];
@@ -158,6 +161,7 @@ def projection(xlfarrvix):
                corrlist.pop(corrInt);
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
+               print("end-------------------"); 
         
         
         
@@ -176,7 +180,7 @@ def projection(xlfarrvix):
             #print("Dictionary[close] ",Dictionary["close"])
             print("mean ",mean)
             print("median ",median) 
-            print("Dictionary ",Dictionary)
+            #print("Dictionary ",Dictionary)
             print("newtitle")    
             print(newtitle)    
             print("DropCols = ",DropCols)
