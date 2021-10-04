@@ -128,6 +128,7 @@ def projection(xlfarrvix):
                       #print("Drop all -- ",DropCols)  
                   count=count+1;
             x=x.drop(DropCols,axis=1)
+            print("DropCols --- ",DropCols)
             count=0;
             while count < len(x.columns):
                 colnam=x.columns[count];
