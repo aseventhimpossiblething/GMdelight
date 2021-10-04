@@ -210,15 +210,15 @@ def projection(xlfarrvix):
     
         print("line 132")
         #print(xlfarrvix)
-        
+        xlfarrvix=reorderDF(xlfarrvix);
         px=reorderDF(xlfarrvix);
-        py=px.iloc[len(px['dayshiftedclose'])-2:];
+        #py=px.iloc[len(px['dayshiftedclose'])-2:];
         #py=LastChartRow
         #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
-        #px=px.drop(['index','dayshiftedclose','date'], axis=1)
-        #LastChartRow=px.iloc[len(xlfarrvix['date'])-2:];
+        py=xlfarrvix['dayshiftedclose']
+        LastChartRow=xlfarrvix.iloc[len(xlfarrvix['dayshiftedclose'])-2:];
         #py=LastChartRow
-        pxco=xlfarrvix.drop(['index','dayshiftedclose','date'], axis=1)
+        pxco=xlfarrvix.drop(['dayshiftedclose'], axis=1)
         pxcor=pxco.corr(method='pearson')
         
         component=PCA(n_components=4);
