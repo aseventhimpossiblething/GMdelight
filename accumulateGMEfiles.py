@@ -146,7 +146,7 @@ def projection(xlfarrvix):
             #ColDropChart=pandas.DataFrame(corrlist,columns=[newtitle]);    
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
-            if mean<median:
+            while mean<median:
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
