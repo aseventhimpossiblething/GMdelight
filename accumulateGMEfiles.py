@@ -174,10 +174,10 @@ def projection(xlfarrvix):
                      print("corIndex = ",corIndex)
                      print("corrlist = ",corrlist)
                      print("newtitle = ",newtitle)   
-                     DropCol=newtitle.index(corIndex)
+                     DropCol=newtitle[corIndex]
                      DropColNames.append(DropCol);   
                      corrlist.pop(corIndex);
-                     newtitle.pop(corIndex); 
+                     newtitle.pop(DropCol); 
                      x=x.drop([DropCol],axis=1)
                      mean=numpy.mean(corrlist);
                      median=numpy.mean(corrlist);
