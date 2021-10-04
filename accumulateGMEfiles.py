@@ -317,10 +317,10 @@ def projection(XAV):
             print("Std_ofTP1000 ",Std_ofTP1000)
             print('Linear StD=',numpy.std(xLinearPredictMod))
             print("Bottom PCA--------------------------- ",Label)    
-        PredictionForests(xlfarrvix,"xlfarrvix w/o reorder");
-        xlfarrvix=reorderDF(xlfarrvix);    
-        PredictionForests(xlfarrvix,"xlfarrvix w/ reorder");
-        #PredictionForests(xlfarrvix,"xlfarrvix w/o reorder");
+        PredictionForests(xlfarrvix," w/o reorder");
+        XAV=reorderDF(XAV);    
+        PredictionForests(XAV," w/ reorder");
+        
                  
         return;        
         
