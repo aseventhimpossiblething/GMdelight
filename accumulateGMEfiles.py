@@ -146,10 +146,9 @@ def projection(xlfarrvix):
             print("median =",median);  
             newtitle;
             corrlist;
-            #ColDropChart=pandas.DataFrame(corrlist,columns=[newtitle]);    
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
-            while mean<=median:
+            while mean<median:
                print("start------------------");           
                print('corrlist - - ',corrlist); 
                print('min corrlist - - ',min(corrlist));
