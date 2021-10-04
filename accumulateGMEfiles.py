@@ -217,6 +217,7 @@ def projection(xlfarrvix):
             px=xlfarrvix.drop(['dayshiftedclose'],axis=1);
             py=xlfarrvix['dayshiftedclose']
             LastChartRow=px.iloc[len(xlfarrvix['dayshiftedclose'])-2:];
+        
             pxco=xlfarrvix.drop(['dayshiftedclose'], axis=1)
             pxcor=pxco.corr(method='pearson')
             component=PCA(n_components=4);
@@ -252,7 +253,7 @@ def projection(xlfarrvix):
             #------------------------------------------------
             #print("xx review series splits ")
             xx_train,xx_test,xy_train,xy_test=train_test_split(px,py,test_size=0.2);
-            #xx_train,xx_test,xy_train,xy_test=train_test_split(xx,xy,test_size=0.2);
+            PCAxx_train,PCAxx_test,PCAxy_train,PCAxy_test=train_test_split(pxPCA,py,test_size=0.2);
         
             #print("xx tree model 10 ")
             xTreeMod10=RandomForestRegressor(n_estimators = 10).fit(xx_train,xy_train);
