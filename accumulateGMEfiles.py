@@ -161,6 +161,8 @@ def projection(xlfarrvix):
                corrlist.pop(corrInt);
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
+               x=x.drop([lowestCol],axis=1) 
+               print("lowestCol = ",lowestCol)
                print("end-------------------");
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("mean ",mean)
@@ -172,7 +174,7 @@ def projection(xlfarrvix):
             #DropCols=DropCols+DropColNames
             print("DropCols = ",DropCols)
             print("x columns - ",x.columns)    
-            x=x.drop([DropColNames],axis=1)
+            #x=x.drop([DropColNames],axis=1)
                 
             return x;
         
