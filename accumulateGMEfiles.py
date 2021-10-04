@@ -149,7 +149,8 @@ def projection(xlfarrvix):
             if mean<median:
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
-               newtitle.pop(lowestCol);
+               dropInt=newtitle.find(lowestCol); 
+               newtitle.pop(dropInt);
                corrlist.pop(min(corrlist));
                print("DropColNames - ",DropColNames)
                print("mean = ",mean)
