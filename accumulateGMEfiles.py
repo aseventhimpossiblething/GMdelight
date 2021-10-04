@@ -107,6 +107,7 @@ def projection(xlfarrvix):
             print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
             print("len x.columns -- ",len(x.columns))    
             """
+            
             if abs(sum(x.columns.str.find('index')))<len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -214,8 +215,10 @@ def projection(xlfarrvix):
             print("DropCols = ",DropCols)
             print("x columns - ",x.columns)    
             #x=x.drop([DropColNames],axis=1)
-            print(x)    
+            print(x) 
+            
             """    
+            print("Dayshift test inside reorder  ",x['dayshiftedclose'])
             return x;
         
         
