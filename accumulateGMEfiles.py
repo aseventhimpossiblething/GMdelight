@@ -143,12 +143,22 @@ def projection(xlfarrvix):
             median=numpy.median(corrlist)
             newtitle;
             corrlist;
-            ColDropChart=pandas.DataFrame(corrlist,columns=[newtitle]);    
+            #ColDropChart=pandas.DataFrame(corrlist,columns=[newtitle]);    
             Dictionary=dict(zip(corrlist,newtitle))
-            print("ColDropCharSTD")
-            print(ColDropChar)
-            print("ColDropCharLST")
-            print(list(ColDropChar))      
+            DropColNames=[];
+            if mean<median:
+               lowCorr=Dictionary[min(corrlist)];
+               DropIndex=corrlist.index(lowCorr);
+               DropColNames.append(x.columns[newtitle]);
+               newtitle.pop(DropIndex);
+               corrlist.pop(lowCorr);
+               print("DropColNames - ",DropColNames)
+               print("mean = ",mean)
+               print("median = ",median)
+            #print("ColDropCharSTD")
+            #print(ColDropChar)
+            #print("ColDropCharLST")
+            #print(list(ColDropChar))      
             #Dictionary=dict(zip(newtitle,corrlist))
             print("Dictionary[corrlist[0]] ",Dictionary[corrlist[0]])
             print("Dictionary[min (corrlist)]) ",Dictionary[min(corrlist)])
