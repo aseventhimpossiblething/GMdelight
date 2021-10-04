@@ -161,32 +161,17 @@ def projection(xlfarrvix):
                corrlist.pop(corrInt);
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
-               print("end-------------------"); 
-        
-        
-        
-                
-               
-               print("DropColNames - ",DropColNames)
-               print("mean = ",mean)
-               print("median = ",median)
-            #print("ColDropCharSTD")
-            #print(ColDropChar)
-            #print("ColDropCharLST")
-            #print(list(ColDropChar))      
-            #Dictionary=dict(zip(newtitle,corrlist))
-            #print("Dictionary[corrlist[0]] ",Dictionary[corrlist[0]])
-            #print("Dictionary[min (corrlist)]) ",Dictionary[min(corrlist)])
-            #print("Dictionary[close] ",Dictionary["close"])
+               print("end-------------------");
+            TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("mean ",mean)
             print("median ",median) 
-            #print("Dictionary ",Dictionary)
             print("newtitle")    
             print(newtitle)
             print("DropColNames = ",DropColNames)
             print("DropCols = ",DropCols)
             DropCols=DropCols+DropColNames
-            print("DropCols = ",DropCols)    
+            print("DropCols = ",DropCols)
+            x=x.drop([DropCols],axis=1)
                 
             return x;
         
