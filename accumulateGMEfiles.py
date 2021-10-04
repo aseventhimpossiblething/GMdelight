@@ -152,7 +152,8 @@ def projection(xlfarrvix):
             while mean<median:
                print("start------------------");           
                print('corrlist - - ',corrlist); 
-               print('min corrlist - - ',min(corrlist));  
+               print('min corrlist - - ',min(corrlist));
+               print('max corrlist - - ',max(corrlist));
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
@@ -182,7 +183,8 @@ def projection(xlfarrvix):
             print("median ",median) 
             #print("Dictionary ",Dictionary)
             print("newtitle")    
-            print(newtitle)    
+            print(newtitle)
+            print("DropColName = ",DropColName)
             print("DropCols = ",DropCols)
                 
             return x;
