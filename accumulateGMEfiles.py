@@ -136,7 +136,7 @@ def projection(xlfarrvix):
                       corrTable=compFrame.corr();
                       corrTable=corrTable[x.columns[count]];
                       corrTable=corrTable.drop(x.columns[count], axis=0)      
-                      corrlist.append(corrTable[0])
+                      corrlist.append(abs(corrTable[0]))
                       #print("corrlist = ",corrlist)  
                   #print("end-------",count)
                   count=count+1;
