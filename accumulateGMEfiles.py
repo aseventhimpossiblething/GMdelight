@@ -171,6 +171,7 @@ def projection(xlfarrvix):
             print("DropCols = ",DropCols)
             #DropCols=DropCols+DropColNames
             print("DropCols = ",DropCols)
+            print("x columns - ",x.columns)    
             x=x.drop([DropColNames],axis=1)
                 
             return x;
