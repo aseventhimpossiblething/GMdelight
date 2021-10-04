@@ -170,6 +170,8 @@ def projection(xlfarrvix):
                   corrElement=corrlist[count];
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
+                     print("corIndex = ",corIndex)
+                     print("corrlis ",corrlis)   
                      DropCol=newtitle.index(corIndex)
                      DropColNames.append(DropCol);   
                      corrlist.pop(corIndex);
