@@ -175,9 +175,13 @@ def projection(xlfarrvix):
                      corrlist.pop(corIndex);
                      newtitle.pop(corIndex); 
                      x=x.drop([DropCol],axis=1)
+                     mean=numpy.mean(corrlist);
+                     median=numpy.mean(corrlist);
+                     print("mean - ",mean)
+                     print("median - ",median) 
                   print("end----drop below mean--------------");        
                                 
-                  count+count+1;      
+                  count=count+1;      
                   #print("end-------------------");
                   print("end----drop below mean--------------");       
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
