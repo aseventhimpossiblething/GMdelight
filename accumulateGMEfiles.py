@@ -178,7 +178,7 @@ def projection(xlfarrvix):
                   print("end----drop below mean--------------");        
                                 
                   count+count+1;      
-                  $print("end-------------------");
+                  #print("end-------------------");
                   print("end----drop below mean--------------");       
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("mean ",mean)
