@@ -136,7 +136,6 @@ def projection(XAV):
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
             while mean<median:
-          
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
@@ -299,7 +298,7 @@ def projection(XAV):
         PredictionForests(XAV," w/o reorder");
         XAV=reorderDF(XAV); 
         XAV['dayshiftedclose']=preserveshift
-        PredictionForests(XAV," w/ reorder");
+        #PredictionForests(XAV," w/ reorder");
         return;        
         
         
