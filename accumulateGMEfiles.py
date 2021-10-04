@@ -59,37 +59,7 @@ def projection(xlfarrvix):
        
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
-        #LCR=list(LastChartRow.columns)
-        """
-        def clear(frame,x,y):
-            print("inside def clear------------------------------------------clear clear clear")    
-            print(frame)    
-            len(frame.columns)    
-            LCR=list(frame.columns)
-            count=0;
-            lcount=0; 
-            stringifiedClasses="-"
-            while count<len(frame.columns):
-                  colName=LCR[count];
-                  specifiCol=frame[colName];
-                  while lcount<5:
-                        print("lcount -- ",lcount)
-                        print("specifiCol -- ",specifiCol)
-                        item=specifiCol[lcount];
-                        itemType=str(type(item));
-                        stringifiedClasses=stringifiedClasses+itemType                        
-                        lcount=lcount+1;        
-                  colname
-                  count=count+1;
-            print("stringifiedClasses-------------",tringifiedClasses)            
-        
-        #clear(LastChartRow,'Symbol','insertionDay');                
-        #px=clear(xlfarrvix,'Symbol','insertionDay'); 
-        """  
-
-        #LastChartRow=clear(xlfarrvix,'Symbol','insertionDay') 
-        #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
-        #LastChartRow=LastChartRow.drop(['dayshiftedclose','date'], axis=1);      
+           
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
         py=xlfarrvix['dayshiftedclose'];
         print("above reorder")
@@ -460,8 +430,8 @@ def IEXColmaker(TargetSymbol):
         #print("xlfarrvix")
         #print(xlfarrvix)
         Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
-        #projection(xlfarrvix)
-        projection(arr1)
+        projection(xlfarrvix)
+        #projection(arr1)
         return xlfarrvix;
        
             
