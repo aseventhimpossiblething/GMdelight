@@ -150,7 +150,7 @@ def projection(xlfarrvix):
                lowestCol=Dictionary[min(corrlist)];
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
-               corrInt=Indexcorrlist.index(min(corrlist));
+               corrInt=corrlist.index(min(corrlist));
                newtitle.pop(dropInt);
                corrlist.pop(corrInt);
                
