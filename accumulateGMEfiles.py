@@ -216,7 +216,7 @@ def projection(xlfarrvix):
         #py=LastChartRow
         #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
         py=xlfarrvix['dayshiftedclose']
-        LastChartRow=xlfarrvix.iloc[len(xlfarrvix['dayshiftedclose'])-2:];
+        LastChartRow=px.iloc[len(xlfarrvix['dayshiftedclose'])-2:];
         #py=LastChartRow
         pxco=xlfarrvix.drop(['dayshiftedclose'], axis=1)
         pxcor=pxco.corr(method='pearson')
