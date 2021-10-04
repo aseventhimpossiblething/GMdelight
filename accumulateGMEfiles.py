@@ -211,7 +211,7 @@ def projection(xlfarrvix):
         print("line 132")
         #print(xlfarrvix)
         xlfarrvix=reorderDF(xlfarrvix);
-        px=reorderDF(xlfarrvix);
+        px=xlfarrvix.drop(['dayshiftedclose'],axis=1);
         #py=px.iloc[len(px['dayshiftedclose'])-2:];
         #py=LastChartRow
         #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
