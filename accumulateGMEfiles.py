@@ -60,6 +60,7 @@ def projection(xlfarrvix):
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         #LCR=list(LastChartRow.columns)
+        """
         def clear(frame,x,y):
             print("inside def clear------------------------------------------clear clear clear")    
             print(frame)    
@@ -81,9 +82,10 @@ def projection(xlfarrvix):
                   colname
                   count=count+1;
             print("stringifiedClasses-------------",tringifiedClasses)            
+        
         #clear(LastChartRow,'Symbol','insertionDay');                
         #px=clear(xlfarrvix,'Symbol','insertionDay'); 
-
+        """  
 
         #LastChartRow=clear(xlfarrvix,'Symbol','insertionDay') 
         #LastChartRow=LastChartRow.drop(['dayshiftedclose','date','Symbol','insertionDay'], axis=1);
@@ -204,18 +206,18 @@ def projection(xlfarrvix):
                 
             return x;
         
-        xlfarrvix=reorderDF(xlfarrvix);
+        #xlfarrvix=reorderDF(xlfarrvix);
     
         print("line 132")
         #print(xlfarrvix)
         
-        px=clear(xlfarrvix,'Symbol','insertionDay');
-        LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
-        py=LastChartRow
+        px=reorderDF(xlfarrvix);
+        py=px.iloc[len(px['dayshiftedclose'])-2:];
+        #py=LastChartRow
         #print(" len reorderDF(px)[0]--------------------------------------------------------- ",len(reorderDF(px)[0]));
-        px=px.drop(['index','dayshiftedclose','date'], axis=1)
-        LastChartRow=px.iloc[len(xlfarrvix['date'])-2:];
-        py=LastChartRow
+        #px=px.drop(['index','dayshiftedclose','date'], axis=1)
+        #LastChartRow=px.iloc[len(xlfarrvix['date'])-2:];
+        #py=LastChartRow
         pxco=xlfarrvix.drop(['index','dayshiftedclose','date'], axis=1)
         pxcor=pxco.corr(method='pearson')
         
