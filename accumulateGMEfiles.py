@@ -184,7 +184,7 @@ def projection(xlfarrvix):
             #print("Dictionary ",Dictionary)
             print("newtitle")    
             print(newtitle)
-            print("DropColName = ",DropColName)
+            print("DropColNames = ",DropColNames)
             print("DropCols = ",DropCols)
                 
             return x;
