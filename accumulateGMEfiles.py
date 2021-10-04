@@ -52,11 +52,8 @@ def SinglestockIEXdict(x,y,z):
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
         return innerarr;      
-  
-        
         
 def projection(XAV):        
-       
         LastChartRow=XAV.iloc[len(XAV['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
         
@@ -83,11 +80,12 @@ def projection(XAV):
             x=x.drop(DropCols,axis=1)
             return x;
                
-        px=XAV.drop(['dayshiftedclose','date'], axis=1)
-        py=XAV['dayshiftedclose'];
+        #px=XAV.drop(['dayshiftedclose','date'], axis=1)
+        #py=XAV['dayshiftedclose'];
         #print("above reorder")
         #print(xlfarrvix)
         def reorderDF(x):
+            print("Dayshift test inside reorder  ",x['dayshiftedclose'])    
             if abs(sum(x.columns.str.find('index')))<len(x.columns):
                         x=x.drop(['index'], axis=1);
             target='dayshiftedclose'            
@@ -148,20 +146,13 @@ def projection(XAV):
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
                x=x.drop([lowestCol],axis=1) 
-               #print("lowestCol = ",lowestCol)
-               #print("end----mean<median--------------"); 
+            
             count=0;
             while count<len(corrlist):
-                  #print("start----drop below mean--------------",mean);  
                   corrElement=corrlist[count];
-                  #print("corrElement = ",corrElement) 
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
-                     """
-                     print("corIndex = ",corIndex)
-                     print("corrlist = ",corrlist)
-                     print("newtitle = ",newtitle)   
-                     """
+                     
                      DropCol=newtitle[corIndex]
                      DropColNames.append(DropCol);   
                      corrlist.pop(corIndex);
@@ -169,25 +160,13 @@ def projection(XAV):
                      x=x.drop([DropCol],axis=1)
                      mean=numpy.mean(corrlist);
                      median=numpy.mean(corrlist);
-                     """
-                     print("len(corrlist) - ",len(corrlist))
-                     print("mean - ",mean)
-                     print("median - ",median) 
-                     """
-                  #print("end----drop below mean--------------");        
-                                
+                     
                   count=count+1;      
-                  #print("end-------------------");
-                  #print("end----drop below mean--------------");       
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
-               
             print("Dayshift test inside reorder  ",x['dayshiftedclose'])
             return x;
-        
-        
-    
+                    
         print("line 132")
-        #print(xlfarrvix)
         def PredictionForests(XENO,Label):
             XENO=clear(XENO);    
             #xlfarrvix=reorderDF(xlfarrvix);
@@ -281,8 +260,7 @@ def projection(XAV):
              
             PCAxreviewFrame=pandas.DataFrame(PCAxy_test);
             PCAxreviewFrame.columns=['Shifted close'];
-          
-          
+                    
             print("xx model specific review frame ")        
             xreviewFrame['Tree Prediction 10']=xTreeModPredict10;
             xreviewFrame['Tree Prediction 100']=xTreeModPredict100;
@@ -322,8 +300,6 @@ def projection(XAV):
         XAV=reorderDF(XAV); 
         XAV['dayshiftedclose']=preserveshift
         PredictionForests(XAV," w/ reorder");
-        
-                 
         return;        
         
         
