@@ -168,6 +168,7 @@ def projection(xlfarrvix):
             while count<len(corrlist):
                   print("start----drop below mean--------------",mean);  
                   corrElement=corrlist[count];
+                  print("corrElement = ",corrElement) 
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
                      print("corIndex = ",corIndex)
