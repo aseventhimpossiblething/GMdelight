@@ -156,6 +156,12 @@ def projection(xlfarrvix):
                corrInt=corrlist.index(min(corrlist));
                newtitle.pop(dropInt);
                corrlist.pop(corrInt);
+               mean=numpy.mean(corrlist);
+               median=numpy.mean(corrlist);
+        
+        
+        
+                
                
                print("DropColNames - ",DropColNames)
                print("mean = ",mean)
