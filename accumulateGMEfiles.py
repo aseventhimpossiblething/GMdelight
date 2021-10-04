@@ -59,7 +59,38 @@ def projection(xlfarrvix):
        
         LastChartRow=xlfarrvix.iloc[len(xlfarrvix['date'])-2:];
         print("type(LastChartRow.columns) ---- ",type(LastChartRow.columns))
-           
+        
+        def clear(x):
+            #x=x.drop(['index'], axis=1)    
+            print("str.find(cat)) -- ",x.columns.str.find('cat'))
+            print("str.find(index)) -- ",x.columns.str.find('index'))
+            print("str.find(cat)) sum",sum(x.columns.str.find('cat')))
+            print("str.find(index)) sum -- ",sum(x.columns.str.find('index')))
+            print("sum str.find(index)) -- ",sum(x.columns.str.find('index')))
+            print("len x.columns -- ",len(x.columns))    
+            if abs(sum(x.columns.str.find('index')))<len(x.columns):
+                        x=x.drop(['index'], axis=1);
+            target='dayshiftedclose'            
+            #comparisonCol=x[target];
+            #newtitle=[];
+            #corrlist=[];    
+            DropCols=[];
+            count=0;
+            while count < len(x.columns):
+                  typeStr=""                         
+                  scount=0;
+                  while scount < 5:
+                        typeStr=typeStr+str(type(x[x.columns[count]][scount]));
+                        scount=scount+1;                   
+                  if typeStr.find("str")>-1:
+                      print("Drop col -- ",x.columns[count])
+                      DropCols.append(x.columns[count])
+                      print("Drop all -- ",DropCols)  
+                  count=count+1;
+            x=x.drop(DropCols,axis=1)
+            return x;
+        #xlfarrvix=clear(xlfarrvix);
+        
         px=xlfarrvix.drop(['dayshiftedclose','date'], axis=1)
         py=xlfarrvix['dayshiftedclose'];
         print("above reorder")
@@ -181,6 +212,7 @@ def projection(xlfarrvix):
         print("line 132")
         #print(xlfarrvix)
         def PredictionForests(xlfarrvix,Label):
+            xlfarrvix=clear(xlfarrvix);    
             #xlfarrvix=reorderDF(xlfarrvix);
             px=xlfarrvix.drop(['dayshiftedclose'],axis=1);
             py=xlfarrvix['dayshiftedclose']
