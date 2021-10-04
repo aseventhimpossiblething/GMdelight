@@ -149,7 +149,7 @@ def projection(xlfarrvix):
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
             while mean<median:
-               print("start------------------");           
+               print("start----mean<median--------------");           
                print('corrlist - - ',corrlist); 
                print('min corrlist - - ',min(corrlist));
                print('max corrlist - - ',max(corrlist));
@@ -163,8 +163,10 @@ def projection(xlfarrvix):
                median=numpy.mean(corrlist);
                x=x.drop([lowestCol],axis=1) 
                print("lowestCol = ",lowestCol)
+               print("end----mean<median--------------"); 
             count=0;
             while count<len(corrlist):
+                  print("start----drop below mean--------------",mean);  
                   corrElement=corrlist[count];
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
@@ -173,9 +175,11 @@ def projection(xlfarrvix):
                      corrlist.pop(corIndex);
                      newtitle.pop(corIndex); 
                      x=x.drop([DropCol],axis=1)
+                  print("end----drop below mean--------------");        
                                 
                   count+count+1;      
-               print("end-------------------");
+                  $print("end-------------------");
+                  print("end----drop below mean--------------");       
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("mean ",mean)
             print("median ",median) 
