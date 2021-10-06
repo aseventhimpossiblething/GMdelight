@@ -298,7 +298,7 @@ def projection(XAV):
         PredictionForests(XAV," w/o reorder");
         reorderDF(XAV); 
         XAV['dayshiftedclose']=preserveshift
-        #PredictionForests(XAV," w/ reorder");
+        PredictionForests(XAV," w/ reorder");
         return;        
         
         
