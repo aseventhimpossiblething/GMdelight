@@ -291,7 +291,7 @@ def projection(XAV):
             print("Top PCA----------------------------- ",Label)
             print("PCAxreviewFrame.corr()");
             print(PCAxreviewFrame.corr());
-            xSTD=numpy.std(PCAxreviewFrame);
+            PCAxSTD=numpy.std(PCAxreviewFrame);
             print(PCAxSTD)
             print("Std_of Shifted Close ",numpy.std(xy))
             print("Std_ofTP10 ",PCAStd_ofTP10)
