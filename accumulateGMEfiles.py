@@ -101,9 +101,9 @@ def projection(XAV):
                         typeStr=typeStr+str(type(x[x.columns[count]][scount]));
                         scount=scount+1;                   
                   if typeStr.find("str")>-1:
-                      #print("Drop col -- ",x.columns[count])
+                      print("Drop col -- ",x.columns[count])
                       DropCols.append(x.columns[count])
-                      #print("Drop all -- ",DropCols)  
+                      print("Drop all -- ",DropCols)  
                   count=count+1;
             x=x.drop(DropCols,axis=1)
             print("DropCols --- ",DropCols)
