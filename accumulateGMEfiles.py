@@ -296,7 +296,7 @@ def projection(XAV):
             print("Bottom PCA--------------------------- ",Label)  
         preserveshift=XAV['dayshiftedclose']
         PredictionForests(XAV," w/o reorder");
-        XAV=reorderDF(XAV); 
+        reorderDF(XAV); 
         XAV['dayshiftedclose']=preserveshift
         #PredictionForests(XAV," w/ reorder");
         return;        
