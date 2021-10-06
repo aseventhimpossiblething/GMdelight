@@ -192,6 +192,7 @@ def projection(XAV):
             print(type(components)," components ------ above  ")
             print("pxcor ---- ",pxcor)
             print(type(pxco))
+                
             xTreeMod1000=RandomForestRegressor(n_estimators = 1000).fit(px,py);
             xTreeModPredict1000=xTreeMod1000.predict(LastChartRow);
             print("1000 Tree",xTreeModPredict1000,"Extracted value - ",xTreeModPredict1000[1])
@@ -199,12 +200,11 @@ def projection(XAV):
             xLinearPredictMod=xLinearMod.predict(LastChartRow);
             print("xLinearPredictMod ",xLinearPredictMod,"Extracted value - ",xLinearPredictMod[1])
             #return xlfarrvix;
-        
+                    
             #--------------------------------------------------------------------------------------------------------------------------------------------------
             xx=px;
             xy=XENO['dayshiftedclose'];
-    
-            #------------------------------------------------
+              
             #print("xx review series splits ")
             xx_train,xx_test,xy_train,xy_test=train_test_split(px,py,test_size=0.2);
             PCAxx_train,PCAxx_test,PCAxy_train,PCAxy_test=train_test_split(pxPCA,py,test_size=0.2);
@@ -301,7 +301,13 @@ def projection(XAV):
             print("Std_ofTP200 ",PCAStd_ofTP200)
             print("Std_ofTP1000 ",PCAStd_ofTP1000)
             print('Linear StD=',numpy.std(PCAxLinearPredictMod))
-            print("Bottom PCA--------------------------- ",Label)  
+            print("Bottom PCA--------------------------- ",Label)
+            
+                
+            return xTreeModPredict1000[1];    
+                
+                
+                
         preserveshift=XAV['dayshiftedclose']
         PredictionForests(XAV," w/o reorder");
         reorderDF(XAV); 
