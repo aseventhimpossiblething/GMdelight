@@ -266,6 +266,12 @@ def projection(XAV):
             xreviewFrame['Tree Prediction 200']=xTreeModPredict200;
             xreviewFrame['Tree Prediction 1000']=xTreeModPredict1000;
             xreviewFrame['Linear Prediction']=xLinearPredictMod;
+                
+            PCAxreviewFrame['Tree Prediction 10']=PCAxTreeModPredict10;
+            PCAxreviewFrame['Tree Prediction 100']=PCAxTreeModPredict100;
+            PCAxreviewFrame['Tree Prediction 200']=PCAxTreeModPredict200;
+            PCAxreviewFrame['Tree Prediction 1000']=PCAxTreeModPredict1000;
+            PCAxreviewFrame['Linear Prediction']=PCAxLinearPredictMod;    
             #------------------------------------------------
             print("after pause ")
         
@@ -283,16 +289,16 @@ def projection(XAV):
             print("Bottom Standard--------------------------- ",Label)
         
             print("Top PCA----------------------------- ",Label)
-            print("xreviewFrame.corr()");
-            print(xreviewFrame.corr());
-            xSTD=numpy.std(xreviewFrame);
-            print(xSTD)
+            print("PCAxreviewFrame.corr()");
+            print(PCAxreviewFrame.corr());
+            xSTD=numpy.std(PCAxreviewFrame);
+            print(PCAxSTD)
             print("Std_of Shifted Close ",numpy.std(xy))
-            print("Std_ofTP10 ",Std_ofTP10)
-            print("Std_ofTP100 ",Std_ofTP100)
-            print("Std_ofTP200 ",Std_ofTP200)
-            print("Std_ofTP1000 ",Std_ofTP1000)
-            print('Linear StD=',numpy.std(xLinearPredictMod))
+            print("Std_ofTP10 ",PCAStd_ofTP10)
+            print("Std_ofTP100 ",PCAStd_ofTP100)
+            print("Std_ofTP200 ",PCAStd_ofTP200)
+            print("Std_ofTP1000 ",PCAStd_ofTP1000)
+            print('Linear StD=',numpy.std(PCAxLinearPredictMod))
             print("Bottom PCA--------------------------- ",Label)  
         preserveshift=XAV['dayshiftedclose']
         PredictionForests(XAV," w/o reorder");
