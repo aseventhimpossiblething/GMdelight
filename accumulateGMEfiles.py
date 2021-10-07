@@ -138,6 +138,8 @@ def projection(XAV):
             print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose'])    
             while mean<median:
                lowestCol=Dictionary[min(corrlist)];
+               print("lowestCol 2 whiles from the bottom -- 138 ",lowestCol)
+                
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
                corrInt=corrlist.index(min(corrlist));
