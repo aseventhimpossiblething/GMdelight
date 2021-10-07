@@ -155,7 +155,7 @@ def projection(XAV):
                         
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
-                     print("corrElement in if loop -- 156 ",corrElement;
+                     print("corrElement in if loop -- 156 ",corrElement);
                      print("x[dayshiftedclose]  in if loop -- 156 ",x['dayshiftedclose']);
                     
                      DropCol=newtitle[corIndex]
