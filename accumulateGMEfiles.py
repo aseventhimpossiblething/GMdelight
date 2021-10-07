@@ -159,7 +159,8 @@ def projection(XAV):
                      DropCol=newtitle[corIndex]
                      print("DropCol before Drop or Append  == ",DropCol)   
                         
-                     DropColNames.append(DropCol);   
+                     DropColNames.append(DropCol);
+                     print("DropCol before Drop after Append  == ",DropCol) 
                      corrlist.pop(corIndex);
                      newtitle.pop(corIndex); 
                      x=x.drop([DropCol],axis=1);
