@@ -320,11 +320,13 @@ def projection(XAV):
                 
                 
         preserveshift=XAV['dayshiftedclose']
+        print("===================================Top")
         PrimePrediction=PredictionForests(XAV," w/o reorder");
         reorderDF(XAV); 
         XAV['dayshiftedclose']=preserveshift
         print("XAV ",XAV)
         SecondaryPrediction=PredictionForests(XAV," w/ reorder");
+        print("===================================Bottom")
         return PrimePrediction;        
         
         
@@ -472,6 +474,13 @@ def IEXColmaker(TargetSymbol):
         Sqltable=SQLLoad.MakeDailyTable(arr1,TargetSymbol);
         #projection(xlfarrvix)
         #projection(arr1)
+        def PredictionColInsertPlus1(x):
+               slots=[];
+               SmCount=0;
+               CoLength=len(x['close']);
+               while SmCount<CoLength:
+                        
+                     SmCount=SmCount+1;   
         return xlfarrvix;
        
             
