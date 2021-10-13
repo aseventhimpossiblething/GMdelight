@@ -147,7 +147,7 @@ def projection(XAV):
                corrlist.pop(corrInt);
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
-               if lowestCol.find('dayshiftedclose')=-1:
+               if lowestCol.find('dayshiftedclose')==-1:
                   x=x.drop([lowestCol],axis=1) 
         
             print("x[dayshiftedclose] 1 while from the bottom -- 150 ",x['dayshiftedclose'])
