@@ -135,7 +135,8 @@ def projection(XAV):
             corrlist;
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
-            print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose']) 
+            print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose'])
+            sve=x['dayshiftedclose']
             x2=x; 
             while mean<median:
                lowestCol=Dictionary[min(corrlist)];
@@ -152,9 +153,11 @@ def projection(XAV):
                x2=x2.drop([lowestCol],axis=1) 
         
             print("x[dayshiftedclose] 1 while from the bottom -- 150 ",x['dayshiftedclose'])
+            print("sve 1 while from the bottom -- 150 ",sve)    
             count=0;
             while count<len(corrlist):
                   corrElement=corrlist[count];
+                  print("sve in while before if  -- 156 ",sve)      
                   print("x[dayshiftedclose]  in while before if  -- 156 ",x['dayshiftedclose']);
                         
                   if corrElement<mean:
@@ -184,7 +187,7 @@ def projection(XAV):
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("DropCol - ",DropCol)
             print("Dayshift test inside reorder  ",x['dayshiftedclose'])
-            x2['dayshiftedclose']=x['dayshiftedclose']      
+            x2['dayshiftedclose']=sve      
             return x2;
                     
         print("line 132")
