@@ -101,12 +101,12 @@ def projection(XAV):
                         typeStr=typeStr+str(type(x[x.columns[count]][scount]));
                         scount=scount+1;                   
                   if typeStr.find("str")>-1:
-                      print("Drop col -- ",x.columns[count])
+                      #print("Drop col -- ",x.columns[count])
                       DropCols.append(x.columns[count])
-                      print("Drop all -- ",DropCols)  
+                      #print("Drop all -- ",DropCols)  
                   count=count+1;
             x=x.drop(DropCols,axis=1)
-            print("DropCols --- ",DropCols)
+            #print("DropCols --- ",DropCols)
             count=0;
             while count < len(x.columns):
                 colnam=x.columns[count];
@@ -135,12 +135,12 @@ def projection(XAV):
             corrlist;
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
-            print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose'])
+            #print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose'])
             sve=x['dayshiftedclose']
             x2=x; 
             while mean<median:
                lowestCol=Dictionary[min(corrlist)];
-               print("lowestCol 2 whiles from the bottom -- 138 ",lowestCol)
+               #print("lowestCol 2 whiles from the bottom -- 138 ",lowestCol)
                 
                DropColNames.append(lowestCol);
                dropInt=newtitle.index(lowestCol); 
@@ -185,8 +185,8 @@ def projection(XAV):
                      
                   count=count+1;      
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
-            print("DropCol - ",DropCol)
-            print("Dayshift test inside reorder  ",sve)
+            #print("DropCol - ",DropCol)
+            #print("Dayshift test inside reorder  ",sve)
             x2['dayshiftedclose']=sve      
             return x2;
                     
