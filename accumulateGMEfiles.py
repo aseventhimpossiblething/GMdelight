@@ -158,7 +158,7 @@ def projection(XAV):
             while count<len(corrlist):
                   corrElement=corrlist[count];
                   print("sve in while before if  -- 156 ",sve)      
-                  print("x[dayshiftedclose]  in while before if  -- 156 ",x['dayshiftedclose']);
+                  #print("x[dayshiftedclose]  in while before if  -- 156 ",x['dayshiftedclose']);
                         
                   if corrElement<mean:
                      corIndex=corrlist.index(corrElement);
@@ -167,8 +167,8 @@ def projection(XAV):
                      #print("cnum -- 161 ",cnum);   
                      print("corIndex in if loop -- 156 ",corIndex);
                      print("corrElement in if loop -- 156 ",corrElement);
-                     
-                     print("x[dayshiftedclose]  in if loop -- 156 ",x['dayshiftedclose']);
+                     print("sve in if loop  -- 156 ",sve);
+                     #print("x[dayshiftedclose]  in if loop -- 156 ",x['dayshiftedclose']);
                     
                      DropCol=newtitle[corIndex]
                      DropCol.find('dayshiftedclose')   
