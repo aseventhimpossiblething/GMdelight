@@ -186,7 +186,7 @@ def projection(XAV):
                   count=count+1;      
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("DropCol - ",DropCol)
-            print("Dayshift test inside reorder  ",x['dayshiftedclose'])
+            print("Dayshift test inside reorder  ",sve)
             x2['dayshiftedclose']=sve      
             return x2;
                     
