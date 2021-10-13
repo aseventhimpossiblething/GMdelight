@@ -152,12 +152,12 @@ def projection(XAV):
                #if lowestCol.find('dayshiftedclose')==-1:
                x2=x2.drop([lowestCol],axis=1) 
         
-            print("x[dayshiftedclose] 1 while from the bottom -- 150 ",x['dayshiftedclose'])
-            print("sve 1 while from the bottom -- 150 ",sve)    
+            #print("x[dayshiftedclose] 1 while from the bottom -- 150 ",x['dayshiftedclose'])
+            #print("sve 1 while from the bottom -- 150 ",sve)    
             count=0;
             while count<len(corrlist):
                   corrElement=corrlist[count];
-                  print("sve in while before if  -- 156 ",sve)      
+                  #print("sve in while before if  -- 156 ",sve)      
                   #print("x[dayshiftedclose]  in while before if  -- 156 ",x['dayshiftedclose']);
                         
                   if corrElement<mean:
@@ -165,21 +165,21 @@ def projection(XAV):
                      #cnum=corrElement.find('dayshiftedclose')
                      #cnum=corIndex.find('dayshiftedclose');
                      #print("cnum -- 161 ",cnum);   
-                     print("corIndex in if loop -- 156 ",corIndex);
-                     print("corrElement in if loop -- 156 ",corrElement);
-                     print("sve in if loop  -- 156 ",sve);
+                     #print("corIndex in if loop -- 156 ",corIndex);
+                     #print("corrElement in if loop -- 156 ",corrElement);
+                     #print("sve in if loop  -- 156 ",sve);
                      #print("x[dayshiftedclose]  in if loop -- 156 ",x['dayshiftedclose']);
                     
                      DropCol=newtitle[corIndex]
                      DropCol.find('dayshiftedclose')   
                         
-                     print("DropCol before Drop or Append  == ",DropCol)   
+                     #print("DropCol before Drop or Append  == ",DropCol)   
                         
                      DropColNames.append(DropCol);
-                     print("DropCol before Drop after Append  == ",DropCol) 
+                     #print("DropCol before Drop after Append  == ",DropCol) 
                      corrlist.pop(corIndex);
                      newtitle.pop(corIndex); 
-                     x=x.drop([DropCol],axis=1);
+                     x2=x2.drop([DropCol],axis=1);
                      mean=numpy.mean(corrlist);
                      median=numpy.mean(corrlist);
                      
