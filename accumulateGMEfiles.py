@@ -135,7 +135,8 @@ def projection(XAV):
             corrlist;
             Dictionary=dict(zip(corrlist,newtitle))
             DropColNames=[];
-            print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose'])    
+            print("x[dayshiftedclose] 2 whiles from the bottom -- 138 ",x['dayshiftedclose']) 
+            x2=x; 
             while mean<median:
                lowestCol=Dictionary[min(corrlist)];
                print("lowestCol 2 whiles from the bottom -- 138 ",lowestCol)
@@ -147,8 +148,8 @@ def projection(XAV):
                corrlist.pop(corrInt);
                mean=numpy.mean(corrlist);
                median=numpy.mean(corrlist);
-               if lowestCol.find('dayshiftedclose')==-1:
-                  x=x.drop([lowestCol],axis=1) 
+               #if lowestCol.find('dayshiftedclose')==-1:
+               x2=x2.drop([lowestCol],axis=1) 
         
             print("x[dayshiftedclose] 1 while from the bottom -- 150 ",x['dayshiftedclose'])
             count=0;
@@ -183,7 +184,8 @@ def projection(XAV):
             TopQuartileCount=len(x.columns)-((len(x.columns))/4)
             print("DropCol - ",DropCol)
             print("Dayshift test inside reorder  ",x['dayshiftedclose'])
-            return x;
+            x2['dayshiftedclose']=x['dayshiftedclose']      
+            return x2;
                     
         print("line 132")
         def PredictionForests(XENO,Label):
