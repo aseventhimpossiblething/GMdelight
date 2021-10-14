@@ -39,7 +39,16 @@ from sklearn.decomposition import PCA
 
 
 test="https://sandbox.iexapis.com/stable/stock/xTargetSymbolx/chart/1y?token=Tpk_ae999384a70348b3855e8904d4c46e5e"
-def SinglestockIEXdict(x,y,z):
+vix=test.replace("xTargetSymbolx","VXX");
+xlf=test.replace("xTargetSymbolx","SQQQ");
+vix=requests.get(vix);
+xlf=requests.get(xlf);
+vixdata=json.loads(vix.text);
+xlfdata=json.loads(xlf.text);
+print("vix");
+print(vixdata);
+print("xlf");
+print(xlfdata);
         innerarr=[];
         count=0;
         if z!=0:
@@ -647,8 +656,8 @@ def DailyBasisInserter():
         tally=tally+1;
         
 
-        
-DailyBasisInserter();       
+print("paused for testing")        
+#DailyBasisInserter();       
                 
         
         
