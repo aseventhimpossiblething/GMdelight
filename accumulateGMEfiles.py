@@ -49,6 +49,7 @@ print("vix");
 print(vixdata);
 print("xlf");
 print(xlfdata);
+"""
         innerarr=[];
         count=0;
         if z!=0:
@@ -60,7 +61,8 @@ print(xlfdata);
               innerarr.append(push); 
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
-        return innerarr;      
+        return innerarr;
+"""        
         
 def projection(XAV):        
         LastChartRow=XAV.iloc[len(XAV['date'])-2:];
@@ -657,7 +659,7 @@ def DailyBasisInserter():
         
 
 print("paused for testing")        
-#DailyBasisInserter();       
+DailyBasisInserter();       
                 
         
         
