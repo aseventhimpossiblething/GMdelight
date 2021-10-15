@@ -30,6 +30,9 @@ def MakeDailyTable(z,a):
     listColnames=z.columns;
     FrstCol=listColnames[0];
     print("FrstCol = ",FrstCol);
+    ColStr1="";
+    for title in listColnames:
+        ColStr1=ColStr1+title;
     
     """
     SQLite3conn=sqlite3.connect("DailyDB")
@@ -54,10 +57,10 @@ def MakeDailyTable(z,a):
     z[['Symbol']]=symbolCol;
     z[['insertionDay']]=CurrentDate;
     
-    if listColnames.find('index')>-1:
+    if ColStr1.find('index')>-1:
        x=z.drop(columns=['index']);
     
-    if listColnames.find('date')>-1:
+    if ColStr1.find('date')>-1:
         x=z.drop(columns=['date']);
     #x=z.drop(columns=['index','date'])
     NewdateCol1=[];
