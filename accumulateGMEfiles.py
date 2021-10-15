@@ -49,7 +49,8 @@ print("vix");
 print(vixdata);
 print("xlf");
 print(xlfdata);
-"""
+#SinglestockIEXdict(data,key[count],z)
+def SinglestockIEXdict(x,y,z):
         innerarr=[];
         count=0;
         if z!=0:
@@ -62,7 +63,7 @@ print(xlfdata);
               count=count+1;
         out=pandas.DataFrame(innerarr, columns=[y]);
         return innerarr;
-"""        
+        
         
 def projection(XAV):        
         LastChartRow=XAV.iloc[len(XAV['date'])-2:];
