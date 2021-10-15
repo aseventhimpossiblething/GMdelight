@@ -134,7 +134,8 @@ def MakeDailyTable(z,a):
           insertionOrder="insert into DailyTable("+novelXstr3+") Values("+littleStr+")"
           SQLite3conn=sqlite3.connect("DailyDB")
           cursor=SQLite3conn.cursor(); 
-          print(insertionOrder)    
+          print(insertionOrder) 
+          print("insertionOrder") 
           cursor.execute(insertionOrder);
           SQLite3conn.commit() 
           SQLite3conn.close();
