@@ -47,7 +47,7 @@ def MakeDailyTable(z,a):
     curDate='"'+str(date.today())+'"'
     CurrentDate=[];
     symbolCol=[];
-    for symb in for symb in z['index']::
+    for symb in z[FrstCol]:
     #for symb in z['index']:
         symbolCol.append(a);
         CurrentDate.append(curDate);
