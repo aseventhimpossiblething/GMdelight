@@ -45,10 +45,13 @@ vix=requests.get(vix);
 xlf=requests.get(xlf);
 vixdata=json.loads(vix.text);
 xlfdata=json.loads(xlf.text);
+vixdata=pandas.DayaFrame(vixdata);
+xlfdata=pandas.DayaFrame(xlfdata);
 print("vix");
 print(vixdata);
 print("xlf");
 print(xlfdata);
+
 #SinglestockIEXdict(data,key[count],z)
 def SinglestockIEXdict(x,y,z):
         innerarr=[];
