@@ -54,9 +54,12 @@ def MakeDailyTable(z,a):
     z[['Symbol']]=symbolCol;
     z[['insertionDay']]=CurrentDate;
     
-    listColnames.find('index');
-    listColnames.find('date');
-    x=z.drop(columns=['index','date'])
+    if listColnames.find('index')>-1:
+       x=z.drop(columns=['index']);
+    
+    if listColnames.find('date')>-1:
+        x=z.drop(columns=['date']);
+    #x=z.drop(columns=['index','date'])
     NewdateCol1=[];
     acount=0;
     while acount<len(z['date']):
