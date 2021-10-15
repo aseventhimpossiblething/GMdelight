@@ -28,7 +28,9 @@ def CallFromSQL(x,y,date):
 
 def MakeDailyTable(z,a):
     listColnames=z.columns;
-    print("column names = ",listColnames)
+    FrstCol=listColnames[0];
+    print("FrstCol = ",FrstCol);
+    
     """
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
@@ -45,7 +47,8 @@ def MakeDailyTable(z,a):
     curDate='"'+str(date.today())+'"'
     CurrentDate=[];
     symbolCol=[];
-    for symb in z['index']:
+    for symb in for symb in z['index']::
+    #for symb in z['index']:
         symbolCol.append(a);
         CurrentDate.append(curDate);
     z[['Symbol']]=symbolCol;
