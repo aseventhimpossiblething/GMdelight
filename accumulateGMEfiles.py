@@ -47,6 +47,8 @@ vixdata=json.loads(vix.text);
 xlfdata=json.loads(xlf.text);
 vixdata=pandas.DataFrame(vixdata);
 xlfdata=pandas.DataFrame(xlfdata);
+SQLLoad.MakeDailyTable(vixdata,"VXX");
+SQLLoad.MakeDailyTable(xlfdata,"SQQQ");
 print("vix");
 print(vixdata);
 print("xlf");
