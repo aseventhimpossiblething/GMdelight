@@ -27,6 +27,8 @@ def CallFromSQL(x,y,date):
     return results;
 
 def MakeDailyTable(z,a):
+    listColnames=z.columns;
+    print("column names = ",listColnames)
     """
     SQLite3conn=sqlite3.connect("DailyDB")
     cursor=SQLite3conn.cursor();
